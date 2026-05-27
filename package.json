@@ -1,0 +1,12 @@
+{
+  "name": "la-real-simple",
+  "version": "1.0.0",
+  "description": "LA REAL — Landing simple (variante)",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "googleapis": "^129.0.0"
+  }
+}

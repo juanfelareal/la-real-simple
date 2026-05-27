@@ -1,0 +1,23 @@
+/* LA REAL — typography (Nexa) */
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('assets/fonts/NexaThin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nexa';
+  src: url('assets/fonts/NexaBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nexa';
+  src: url('assets/fonts/NexaBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

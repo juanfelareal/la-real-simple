@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LA REAL · Growth Partners para e-commerce</title>
+  <meta name="description" content="Hacemos crecer las marcas que ya están listas para escalar. +150 marcas, +$2.000M gestionados en pauta, 4.2x ROAS promedio. Aplica con tu marca." />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0E;
+      --fg: #EFEEEC;
+      --mute: rgba(239,238,236,.6);
+      --line: rgba(255,255,255,.08);
+      --accent: #3FCF3F;
+    }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Nexa', 'Geist', sans-serif;
+      font-weight: 300;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    /* Soft ambient glow */
+    .lr-glow {
+      position: fixed; pointer-events: none; z-index: 0;
+      width: 720px; height: 720px; border-radius: 50%;
+      background: radial-gradient(circle, color-mix(in oklab, var(--accent) 14%, transparent) 0%, transparent 60%);
+      filter: blur(80px);
+      top: -200px; left: 50%; transform: translateX(-50%);
+      opacity: .55;
+    }
+    .lr-glow.b { top: auto; bottom: -300px; left: 50%;
+      background: radial-gradient(circle, color-mix(in oklab, #6B7CFF 18%, transparent) 0%, transparent 60%);
+      opacity: .35;
+    }
+
+    /* Nav */
+    .lr-nav {
+      position: sticky; top: 16px; z-index: 50;
+      margin: 16px auto 0; max-width: 920px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 22px; border-radius: 999px;
+      background: rgba(14,15,20,.65); backdrop-filter: blur(12px);
+      border: .5px solid var(--line);
+    }
+    .lr-nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: .02em; font-size: 18px; }
+    .lr-nav-logo img { height: 22px; width: 22px; display: block; }
+    .lr-nav-right { display: flex; align-items: center; gap: 8px; }
+    .lr-lang { display: flex; gap: 0; font-size: 11px; padding: 2px; background: rgba(255,255,255,.04); border-radius: 999px; border: .5px solid var(--line); }
+    .lr-lang span { padding: 6px 12px; border-radius: 999px; color: var(--mute); cursor: pointer; transition: all .2s; }
+    .lr-lang span.on { background: var(--fg); color: #0A0A0E; }
+
+    /* CTA buttons */
+    .lr-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 22px; border-radius: 999px; border: 0;
+      background: var(--accent); color: #0A0A0E;
+      font-family: inherit; font-weight: 600; font-size: 14px;
+      cursor: pointer; transition: transform .15s, box-shadow .2s;
+    }
+    .lr-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px color-mix(in oklab, var(--accent) 35%, transparent); }
+    .lr-cta.ghost {
+      background: transparent; color: var(--fg);
+      border: .5px solid var(--line);
+    }
+    .lr-cta.ghost:hover { background: rgba(255,255,255,.04); box-shadow: none; }
+
+    /* Page container */
+    .lr-page {
+      position: relative; z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 28px 80px;
+      text-align: center;
+    }
+
+    /* Hero */
+    .lr-hero { padding: clamp(80px, 14vw, 160px) 0 clamp(48px, 8vw, 96px); }
+    .lr-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 7px 16px; border-radius: 999px;
+      background: rgba(255,255,255,.04); border: .5px solid var(--line);
+      font-size: 12px; color: var(--mute); letter-spacing: .04em;
+      margin-bottom: 32px;
+    }
+    .lr-hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+    .lr-hero h1 {
+      font-family: 'Nexa', 'Geist', sans-serif;
+      font-weight: 300;
+      font-size: clamp(44px, 7vw, 84px);
+      line-height: 1.02; letter-spacing: -.025em;
+      margin: 0 0 28px;
+    }
+    .lr-hero h1 em {
+      font-style: italic; font-weight: 300;
+      background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 40%, var(--fg)));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      padding-right: .18em; margin-right: -.12em;
+    }
+    .lr-hero p.lead {
+      font-family: 'Geist', sans-serif;
+      font-size: clamp(16px, 1.6vw, 19px);
+      line-height: 1.5; color: var(--mute);
+      max-width: 56ch; margin: 0 auto 40px;
+    }
+    .lr-hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* Proof strip */
+    .lr-proof {
+      padding: 32px 28px; border-top: .5px solid var(--line); border-bottom: .5px solid var(--line);
+      display: flex; gap: 36px; justify-content: center; align-items: center;
+      flex-wrap: wrap;
+      font-size: 13px; color: var(--mute);
+      margin-top: clamp(24px, 4vw, 48px);
+    }
+    .lr-proof span b { color: var(--fg); font-weight: 600; }
+    .lr-proof .sep { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; opacity: .6; }
+
+    /* About */
+    .lr-about { padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 88px); }
+    .lr-tag { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+    .lr-about h2 {
+      font-family: 'Nexa', 'Geist', sans-serif;
+      font-weight: 300; font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.05; letter-spacing: -.02em;
+      margin: 0 0 28px;
+    }
+    .lr-about h2 em { font-style: italic; color: var(--accent); }
+    .lr-about p {
+      font-family: 'Geist', sans-serif;
+      font-size: clamp(15px, 1.5vw, 17px); line-height: 1.6;
+      color: var(--mute); max-width: 56ch; margin: 0 auto 18px;
+    }
+
+    /* Choice cards (two paths) */
+    .lr-choice {
+      padding: clamp(40px, 6vw, 80px) 0;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; text-align: left;
+    }
+    .lr-choice-card {
+      padding: 32px 28px; border-radius: 22px;
+      background: rgba(255,255,255,.03); border: .5px solid var(--line);
+      transition: transform .25s, border-color .25s, background .25s;
+      cursor: pointer;
+      display: flex; flex-direction: column; gap: 10px;
+      color: inherit; font: inherit;
+      text-align: left; width: 100%;
+    }
+    .lr-choice-card:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+      background: rgba(63,207,63,.04);
+    }
+    .lr-choice-card .badge {
+      align-self: flex-start;
+      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--accent); padding: 4px 10px; border-radius: 999px;
+      background: rgba(63,207,63,.1);
+    }
+    .lr-choice-card h3 {
+      font-family: 'Nexa', 'Geist', sans-serif;
+      font-weight: 300; font-size: 22px; line-height: 1.2; letter-spacing: -.01em;
+      margin: 6px 0 0;
+    }
+    .lr-choice-card p {
+      font-family: 'Geist', sans-serif;
+      font-size: 14px; line-height: 1.55; color: var(--mute);
+      margin: 0;
+    }
+    .lr-choice-card .arrow {
+      margin-top: 12px; font-size: 14px; color: var(--accent);
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: gap .2s;
+    }
+    .lr-choice-card:hover .arrow { gap: 10px; }
+
+    /* Footer */
+    .lr-foot {
+      padding: 48px 28px 32px;
+      border-top: .5px solid var(--line);
+      text-align: center;
+      font-size: 12px; color: var(--mute);
+    }
+    .lr-foot a { color: var(--fg); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+    .lr-foot a:hover { border-color: var(--accent); }
+    .lr-foot .row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+
+    /* Mobile */
+    @media (max-width: 720px) {
+      .lr-nav { margin: 10px 12px 0; padding: 10px 14px; }
+      .lr-nav-logo { font-size: 15px; white-space: nowrap; }
+      #cta-nav { padding: 10px 14px; font-size: 13px; }
+      #cta-nav .cta-label { display: none; }
+      #cta-nav::after { content: '→'; }
+      .lr-page { padding: 0 20px 60px; }
+      .lr-hero { padding: 64px 0 48px; }
+      .lr-hero-eyebrow { margin-bottom: 24px; font-size: 11px; }
+      .lr-hero h1 { font-size: 40px; }
+      .lr-hero p.lead { font-size: 16px; margin-bottom: 28px; }
+      .lr-hero-ctas { flex-direction: column; align-items: stretch; }
+      .lr-hero-ctas .lr-cta { justify-content: center; }
+      .lr-proof { flex-direction: column; gap: 14px; padding: 24px 16px; }
+      .lr-proof .sep { display: none; }
+      .lr-about { padding: 56px 0 40px; }
+      .lr-about h2 { font-size: 32px; }
+      .lr-choice { grid-template-columns: 1fr; padding: 32px 0; }
+      .lr-choice-card { padding: 26px 22px; }
+    }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="lr-glow"></div>
+  <div class="lr-glow b"></div>
+
+  <nav class="lr-nav">
+    <a href="#" class="lr-nav-logo">
+      <img src="assets/favicon-32.png" alt="LA REAL" />
+      <span>LA REAL</span>
+    </a>
+    <div class="lr-nav-right">
+      <div class="lr-lang" id="lang-toggle">
+        <span class="on" data-lang="es">ES</span>
+        <span data-lang="en">EN</span>
+      </div>
+      <button class="lr-cta" onclick="window.D3Apply && window.D3Apply.openSelector()" id="cta-nav">
+        <span class="cta-label"><span data-i18n="cta_primary">Aplica con tu marca</span> →</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="lr-page">
+
+    <section class="lr-hero">
+      <div class="lr-hero-eyebrow">
+        <span class="dot"></span>
+        <span data-i18n="eyebrow">Growth Partners para e-commerce</span>
+      </div>
+      <h1 data-i18n-html="hero_title">
+        Hacemos crecer las marcas <em>que ya están listas para escalar.</em>
+      </h1>
+      <p class="lead" data-i18n="hero_lead">
+        Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.
+      </p>
+      <div class="lr-hero-ctas">
+        <button class="lr-cta" onclick="window.D3Apply && window.D3Apply.openSelector()">
+          <span data-i18n="cta_primary">Aplica con tu marca</span> →
+        </button>
+        <a class="lr-cta ghost" href="#about">
+          <span data-i18n="cta_secondary">Conoce más</span> ↓
+        </a>
+      </div>
+    </section>
+
+    <section class="lr-proof">
+      <span><b>+150</b> <span data-i18n="proof_brands">marcas</span></span>
+      <span class="sep"></span>
+      <span><b>+$2.000M</b> <span data-i18n="proof_spend">gestionados en pauta</span></span>
+      <span class="sep"></span>
+      <span><b>4.2x</b> <span data-i18n="proof_roas">ROAS promedio</span></span>
+      <span class="sep"></span>
+      <span><b>+5</b> <span data-i18n="proof_years">años por integrante</span></span>
+    </section>
+
+    <section class="lr-about" id="about">
+      <div class="lr-tag" data-i18n="about_tag">· Nosotros ·</div>
+      <h2 data-i18n-html="about_title">Somos <em>LA REAL.</em></h2>
+      <p data-i18n="about_p1">Un equipo pequeño que opera con disciplina. Sin promesas vacías, sin scope creep, sin proveedores intermedios.</p>
+      <p data-i18n="about_p2">Si tu marca no crece, nosotros tampoco. Por eso somos socios, no proveedores.</p>
+    </section>
+
+    <section class="lr-choice">
+      <button class="lr-choice-card" onclick="window.D3Apply && window.D3Apply.openForm('partner')">
+        <span class="badge" data-i18n="card1_badge">Growth Partner</span>
+        <h3 data-i18n="card1_title">Para marcas que ya venden.</h3>
+        <p data-i18n="card1_desc">Entramos como tu socio de crecimiento. Operamos el embudo completo: paid media, email, contenido y data.</p>
+        <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
+      </button>
+      <button class="lr-choice-card" onclick="window.D3Apply && window.D3Apply.openForm('advisor')">
+        <span class="badge" data-i18n="card2_badge">Growth Advisor</span>
+        <h3 data-i18n="card2_title">Para marcas que están arrancando.</h3>
+        <p data-i18n="card2_desc">Sesiones 1:1. Te enseñamos qué hacer para que tu marca empiece a vender y crecer online.</p>
+        <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
+      </button>
+    </section>
+
+  </main>
+
+  <footer class="lr-foot">
+    <div class="row">
+      <a href="mailto:hola@lareal.co">hola@lareal.co</a>
+      <span>Medellín · Remoto</span>
+      <a href="https://instagram.com/larealmarketing" target="_blank" rel="noopener">@larealmarketing</a>
+    </div>
+    <div>© 2026 LA REAL · <span data-i18n="footer_rights">Todos los derechos reservados.</span></div>
+  </footer>
+
+  <!-- Reused booking modal from the main landing -->
+  <div id="apply-root"></div>
+  <script src="src/content.js"></script>
+  <script type="text/babel" src="src/apply.jsx"></script>
+  <script type="text/babel">
+    const { useState } = React;
+
+    function ApplyHost() {
+      const [lang, setLang] = useState('es');
+
+      // Wire up language toggle + i18n strings
+      React.useEffect(() => {
+        const handler = (e) => {
+          const pill = e.target.closest('.lr-lang span');
+          if (!pill) return;
+          const next = pill.dataset.lang;
+          if (next === 'es' || next === 'en') applyLang(next);
+        };
+        document.addEventListener('click', handler);
+        applyLang('es');
+        return () => document.removeEventListener('click', handler);
+      }, []);
+
+      function applyLang(next) {
+        setLang(next);
+        document.documentElement.lang = next;
+        document.querySelectorAll('.lr-lang span').forEach((s) => {
+          s.classList.toggle('on', s.dataset.lang === next);
+        });
+        const dict = next === 'es' ? STRINGS.es : STRINGS.en;
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.dataset.i18n;
+          if (dict[key]) el.textContent = dict[key];
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+          const key = el.dataset.iI18nHtml || el.getAttribute('data-i18n-html');
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+      }
+
+      return window.D3Apply ? <window.D3Apply.Modal lang={lang} /> : null;
+    }
+
+    const STRINGS = {
+      es: {
+        eyebrow: 'Growth Partners para e-commerce',
+        hero_title: 'Hacemos crecer las marcas <em>que ya están listas para escalar.</em>',
+        hero_lead: 'Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.',
+        cta_primary: 'Aplica con tu marca',
+        cta_secondary: 'Conoce más',
+        proof_brands: 'marcas',
+        proof_spend: 'gestionados en pauta',
+        proof_roas: 'ROAS promedio',
+        proof_years: 'años por integrante',
+        about_tag: '· Nosotros ·',
+        about_title: 'Somos <em>LA REAL.</em>',
+        about_p1: 'Un equipo pequeño que opera con disciplina. Sin promesas vacías, sin scope creep, sin proveedores intermedios.',
+        about_p2: 'Si tu marca no crece, nosotros tampoco. Por eso somos socios, no proveedores.',
+        card1_badge: 'Growth Partner',
+        card1_title: 'Para marcas que ya venden.',
+        card1_desc: 'Entramos como tu socio de crecimiento. Operamos el embudo completo: paid media, email, contenido y data.',
+        card2_badge: 'Growth Advisor',
+        card2_title: 'Para marcas que están arrancando.',
+        card2_desc: 'Sesiones 1:1. Te enseñamos qué hacer para que tu marca empiece a vender y crecer online.',
+        card_cta: 'Aplicar',
+        footer_rights: 'Todos los derechos reservados.',
+      },
+      en: {
+        eyebrow: 'Growth Partners for e-commerce',
+        hero_title: 'We scale the brands <em>that are ready to grow.</em>',
+        hero_lead: 'Strategic partners to 150+ brands. We run the funnel end-to-end with the discipline of a CFO and the craft of an editorial studio.',
+        cta_primary: 'Apply with your brand',
+        cta_secondary: 'Learn more',
+        proof_brands: 'brands',
+        proof_spend: 'managed in paid media',
+        proof_roas: 'avg. ROAS',
+        proof_years: 'avg. years per member',
+        about_tag: '· About ·',
+        about_title: 'We are <em>LA REAL.</em>',
+        about_p1: 'A small team that operates with discipline. No empty promises, no scope creep, no middlemen.',
+        about_p2: "If your brand doesn't grow, neither do we. That's why we're partners, not vendors.",
+        card1_badge: 'Growth Partner',
+        card1_title: 'For brands already selling.',
+        card1_desc: 'We become your growth partner. We run the full funnel: paid media, email, content and data.',
+        card2_badge: 'Growth Advisor',
+        card2_title: "For brands just starting.",
+        card2_desc: '1:1 sessions. We teach you exactly what to do so your brand starts selling and growing online.',
+        card_cta: 'Apply',
+        footer_rights: 'All rights reserved.',
+      },
+    };
+
+    ReactDOM.createRoot(document.getElementById('apply-root')).render(<ApplyHost />);
+  </script>
+</body>
+</html>

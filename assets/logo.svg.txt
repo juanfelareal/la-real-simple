@@ -1,0 +1,2 @@
+<!-- LA REAL logo (inline SVG approximation of brand mark) -->
+<!-- Use class to control color via currentColor -->

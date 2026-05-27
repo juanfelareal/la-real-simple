@@ -1,0 +1,14 @@
+# Local dev
+.DS_Store
+.claude/
+.vercel/
+node_modules/
+.env
+.env.local
+*.log
+
+# Macros/state
+.image-slots.state.json
+.design-canvas.state.json
+.vercel
+.env*.local
