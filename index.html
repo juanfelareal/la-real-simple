@@ -165,30 +165,32 @@
       color: var(--mute); max-width: 50ch; margin: 0 auto 56px;
     }
     .lr-svc-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 16px; text-align: left;
+      display: flex; flex-direction: column; gap: 14px;
+      text-align: left;
     }
     .lr-svc-card {
-      padding: 32px 28px; border-radius: 22px;
+      padding: 36px 40px; border-radius: 22px;
       background: rgba(255,255,255,.03); border: .5px solid var(--line);
       transition: transform .25s, border-color .25s, background .25s;
       cursor: pointer;
-      display: flex; flex-direction: column; gap: 10px;
+      display: grid; grid-template-columns: 96px 1fr auto; gap: 32px;
+      align-items: center;
       color: inherit; font: inherit;
       text-align: left; width: 100%;
-      position: relative;
+      text-decoration: none;
     }
     .lr-svc-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       border-color: color-mix(in oklab, var(--accent) 55%, transparent);
       background: rgba(63,207,63,.04);
     }
     .lr-svc-card .num {
-      position: absolute; top: 22px; right: 28px;
       font-family: 'Nexa', 'Geist', sans-serif;
       font-style: italic; font-weight: 300;
-      font-size: 22px; color: var(--accent); opacity: .7;
+      font-size: 64px; color: var(--accent); opacity: .85;
+      line-height: 1; letter-spacing: -.02em;
     }
+    .lr-svc-card .body { display: flex; flex-direction: column; gap: 10px; }
     .lr-svc-card .badge {
       align-self: flex-start;
       font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
@@ -197,20 +199,23 @@
     }
     .lr-svc-card h3 {
       font-family: 'Nexa', 'Geist', sans-serif;
-      font-weight: 300; font-size: 22px; line-height: 1.2; letter-spacing: -.01em;
-      margin: 6px 0 0;
+      font-weight: 300; font-size: 26px; line-height: 1.15; letter-spacing: -.015em;
+      margin: 2px 0 0;
     }
     .lr-svc-card p {
       font-family: 'Geist', sans-serif;
       font-size: 14px; line-height: 1.55; color: var(--mute);
-      margin: 0;
+      margin: 0; max-width: 60ch;
     }
     .lr-svc-card .arrow {
-      margin-top: 12px; font-size: 14px; color: var(--accent);
-      display: inline-flex; align-items: center; gap: 6px;
-      transition: gap .2s;
+      font-size: 22px; color: var(--accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(63,207,63,.08); border: .5px solid color-mix(in oklab, var(--accent) 25%, transparent);
+      transition: transform .2s, background .2s;
+      flex-shrink: 0;
     }
-    .lr-svc-card:hover .arrow { gap: 10px; }
+    .lr-svc-card:hover .arrow { transform: translateX(4px); background: rgba(63,207,63,.18); }
 
     /* Footer */
     .lr-foot {
@@ -244,9 +249,11 @@
       .lr-svc { padding: 56px 0 40px; }
       .lr-svc h2 { font-size: 32px; }
       .lr-svc-sub { margin-bottom: 36px; font-size: 15px; }
-      .lr-svc-grid { grid-template-columns: 1fr; gap: 12px; }
-      .lr-svc-card { padding: 26px 22px; }
-      .lr-svc-card .num { font-size: 18px; top: 18px; right: 22px; }
+      .lr-svc-grid { gap: 12px; }
+      .lr-svc-card { padding: 24px 22px; grid-template-columns: 48px 1fr; gap: 18px; }
+      .lr-svc-card .num { font-size: 36px; }
+      .lr-svc-card .arrow { display: none; }
+      .lr-svc-card h3 { font-size: 20px; }
     }
   </style>
 
@@ -315,34 +322,42 @@
 
         <a class="lr-svc-card" href="/growth-advisor">
           <span class="num">01</span>
-          <span class="badge" data-i18n="svc1_badge">Growth Advisor</span>
-          <h3 data-i18n="svc1_title">Para marcas que están arrancando.</h3>
-          <p data-i18n="svc1_desc">Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.</p>
-          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+          <span class="body">
+            <span class="badge" data-i18n="svc1_badge">Growth Advisor</span>
+            <h3 data-i18n="svc1_title">Para marcas que están arrancando.</h3>
+            <p data-i18n="svc1_desc">Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.</p>
+          </span>
+          <span class="arrow">→</span>
         </a>
 
         <a class="lr-svc-card" href="/call-me">
           <span class="num">02</span>
-          <span class="badge" data-i18n="svc2_badge">Call me</span>
-          <h3 data-i18n="svc2_title">Consultoría 1:1 con Juanfe.</h3>
-          <p data-i18n="svc2_desc">Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.</p>
-          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+          <span class="body">
+            <span class="badge" data-i18n="svc2_badge">Call me</span>
+            <h3 data-i18n="svc2_title">Consultoría 1:1 con Juanfe.</h3>
+            <p data-i18n="svc2_desc">Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.</p>
+          </span>
+          <span class="arrow">→</span>
         </a>
 
         <a class="lr-svc-card" href="/metodologia-real">
           <span class="num">03</span>
-          <span class="badge" data-i18n="svc3_badge">Metodología REAL</span>
-          <h3 data-i18n="svc3_title">Programa intensivo de 5 semanas.</h3>
-          <p data-i18n="svc3_desc">Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses para que tu marca la rompa.</p>
-          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+          <span class="body">
+            <span class="badge" data-i18n="svc3_badge">Metodología REAL</span>
+            <h3 data-i18n="svc3_title">Programa intensivo de 5 semanas.</h3>
+            <p data-i18n="svc3_desc">Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses para que tu marca la rompa.</p>
+          </span>
+          <span class="arrow">→</span>
         </a>
 
         <a class="lr-svc-card" href="/growth-partner">
           <span class="num">04</span>
-          <span class="badge" data-i18n="svc4_badge">Growth Partner</span>
-          <h3 data-i18n="svc4_title">Para marcas que ya venden y quieren escalar.</h3>
-          <p data-i18n="svc4_desc">Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.</p>
-          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+          <span class="body">
+            <span class="badge" data-i18n="svc4_badge">Growth Partner</span>
+            <h3 data-i18n="svc4_title">Para marcas que ya venden y quieren escalar.</h3>
+            <p data-i18n="svc4_desc">Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.</p>
+          </span>
+          <span class="arrow">→</span>
         </a>
 
       </div>
