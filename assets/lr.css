@@ -251,6 +251,54 @@ h2.lr-h2 { font-size: clamp(32px, 5vw, 56px); }
   font-size: 12px; line-height: 1.4; color: var(--mute);
 }
 
+/* Pricing — dedicated section on service landings */
+.lr-price {
+  padding: clamp(48px, 8vw, 96px) 0;
+  text-align: center;
+}
+.lr-price-card {
+  display: inline-block;
+  padding: 48px 56px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(63,207,63,.05), rgba(63,207,63,.01));
+  border: .5px solid color-mix(in oklab, var(--accent) 25%, transparent);
+  position: relative;
+}
+.lr-price-card .label {
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--mute); margin-bottom: 16px;
+}
+.lr-price-card .amount {
+  font-family: 'Nexa', 'Geist', sans-serif;
+  font-weight: 300;
+  font-size: clamp(52px, 7vw, 84px);
+  line-height: 1; letter-spacing: -.025em;
+  color: var(--fg);
+}
+.lr-price-card .amount em {
+  font-style: italic; color: var(--accent);
+  font-weight: 300;
+}
+.lr-price-card .unit {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px; color: var(--mute);
+  margin-top: 14px;
+}
+.lr-price-card .usd {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px; color: rgba(239,238,236,.45);
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: .5px solid var(--line);
+}
+.lr-price-card .note {
+  font-family: 'Geist', sans-serif;
+  font-style: italic;
+  font-size: 13px; color: var(--mute);
+  margin-top: 18px; max-width: 36ch; margin-left: auto; margin-right: auto;
+  line-height: 1.5;
+}
+
 /* Big closing CTA */
 .lr-close {
   padding: clamp(48px, 8vw, 96px) 0;
@@ -290,4 +338,6 @@ h2.lr-h2 { font-size: clamp(32px, 5vw, 56px); }
   .lr-includes { grid-template-columns: repeat(2, 1fr); }
   .lr-section { padding: 56px 0; }
   .lr-section-head { margin-bottom: 40px; }
+  .lr-price-card { padding: 36px 28px; border-radius: 22px; max-width: 100%; }
+  .lr-price-card .amount { font-size: 48px; }
 }
