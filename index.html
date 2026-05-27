@@ -122,17 +122,6 @@
     }
     .lr-hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-    /* Proof strip */
-    .lr-proof {
-      padding: 32px 28px; border-top: .5px solid var(--line); border-bottom: .5px solid var(--line);
-      display: flex; gap: 36px; justify-content: center; align-items: center;
-      flex-wrap: wrap;
-      font-size: 13px; color: var(--mute);
-      margin-top: clamp(24px, 4vw, 48px);
-    }
-    .lr-proof span b { color: var(--fg); font-weight: 600; }
-    .lr-proof .sep { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; opacity: .6; }
-
     /* Services */
     .lr-svc { padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 88px); }
     .lr-tag { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
@@ -221,8 +210,6 @@
       .lr-hero p.lead { font-size: 16px; margin-bottom: 28px; }
       .lr-hero-ctas { flex-direction: column; align-items: stretch; }
       .lr-hero-ctas .lr-cta { justify-content: center; }
-      .lr-proof { flex-direction: column; gap: 14px; padding: 24px 16px; }
-      .lr-proof .sep { display: none; }
       .lr-svc { padding: 56px 0 40px; }
       .lr-svc h2 { font-size: 32px; }
       .lr-svc-sub { margin-bottom: 36px; font-size: 15px; }
@@ -277,16 +264,6 @@
           <span data-i18n="cta_secondary">Ver servicios</span> ↓
         </a>
       </div>
-    </section>
-
-    <section class="lr-proof">
-      <span><b>+150</b> <span data-i18n="proof_brands">marcas</span></span>
-      <span class="sep"></span>
-      <span><b>+$2.000M</b> <span data-i18n="proof_spend">gestionados en pauta</span></span>
-      <span class="sep"></span>
-      <span><b>4.2x</b> <span data-i18n="proof_roas">ROAS promedio</span></span>
-      <span class="sep"></span>
-      <span><b>+5</b> <span data-i18n="proof_years">años por integrante</span></span>
     </section>
 
     <section class="lr-svc" id="servicios">
@@ -391,10 +368,6 @@
         hero_lead: 'Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.',
         cta_primary: 'Aplica con tu marca',
         cta_secondary: 'Ver servicios',
-        proof_brands: 'marcas',
-        proof_spend: 'gestionados en pauta',
-        proof_roas: 'ROAS promedio',
-        proof_years: 'años por integrante',
         svc_tag: '· Servicios ·',
         svc_title: 'Así podemos <em>ayudarte.</em>',
         svc_sub: 'Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.',
@@ -419,10 +392,6 @@
         hero_lead: 'Strategic partners to 150+ brands. We run the funnel end-to-end with the discipline of a CFO and the craft of an editorial studio.',
         cta_primary: 'Apply with your brand',
         cta_secondary: 'See services',
-        proof_brands: 'brands',
-        proof_spend: 'managed in paid media',
-        proof_roas: 'avg. ROAS',
-        proof_years: 'avg. years per member',
         svc_tag: '· Services ·',
         svc_title: 'How we can <em>help you.</em>',
         svc_sub: 'Four ways to work with LA REAL, depending on where your brand is.',
