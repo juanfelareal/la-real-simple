@@ -133,29 +133,26 @@
     .lr-proof span b { color: var(--fg); font-weight: 600; }
     .lr-proof .sep { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; opacity: .6; }
 
-    /* About */
-    .lr-about { padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 88px); }
+    /* Services */
+    .lr-svc { padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 88px); }
     .lr-tag { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
-    .lr-about h2 {
+    .lr-svc h2 {
       font-family: 'Nexa', 'Geist', sans-serif;
       font-weight: 300; font-size: clamp(36px, 5vw, 56px);
       line-height: 1.05; letter-spacing: -.02em;
-      margin: 0 0 28px;
+      margin: 0 0 14px;
     }
-    .lr-about h2 em { font-style: italic; color: var(--accent); }
-    .lr-about p {
+    .lr-svc h2 em { font-style: italic; color: var(--accent); }
+    .lr-svc-sub {
       font-family: 'Geist', sans-serif;
       font-size: clamp(15px, 1.5vw, 17px); line-height: 1.6;
-      color: var(--mute); max-width: 56ch; margin: 0 auto 18px;
+      color: var(--mute); max-width: 50ch; margin: 0 auto 56px;
     }
-
-    /* Choice cards (two paths) */
-    .lr-choice {
-      padding: clamp(40px, 6vw, 80px) 0;
+    .lr-svc-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 16px; text-align: left;
     }
-    .lr-choice-card {
+    .lr-svc-card {
       padding: 32px 28px; border-radius: 22px;
       background: rgba(255,255,255,.03); border: .5px solid var(--line);
       transition: transform .25s, border-color .25s, background .25s;
@@ -163,34 +160,41 @@
       display: flex; flex-direction: column; gap: 10px;
       color: inherit; font: inherit;
       text-align: left; width: 100%;
+      position: relative;
     }
-    .lr-choice-card:hover {
+    .lr-svc-card:hover {
       transform: translateY(-3px);
       border-color: color-mix(in oklab, var(--accent) 55%, transparent);
       background: rgba(63,207,63,.04);
     }
-    .lr-choice-card .badge {
+    .lr-svc-card .num {
+      position: absolute; top: 22px; right: 28px;
+      font-family: 'Nexa', 'Geist', sans-serif;
+      font-style: italic; font-weight: 300;
+      font-size: 22px; color: var(--accent); opacity: .7;
+    }
+    .lr-svc-card .badge {
       align-self: flex-start;
       font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
       color: var(--accent); padding: 4px 10px; border-radius: 999px;
       background: rgba(63,207,63,.1);
     }
-    .lr-choice-card h3 {
+    .lr-svc-card h3 {
       font-family: 'Nexa', 'Geist', sans-serif;
       font-weight: 300; font-size: 22px; line-height: 1.2; letter-spacing: -.01em;
       margin: 6px 0 0;
     }
-    .lr-choice-card p {
+    .lr-svc-card p {
       font-family: 'Geist', sans-serif;
       font-size: 14px; line-height: 1.55; color: var(--mute);
       margin: 0;
     }
-    .lr-choice-card .arrow {
+    .lr-svc-card .arrow {
       margin-top: 12px; font-size: 14px; color: var(--accent);
       display: inline-flex; align-items: center; gap: 6px;
       transition: gap .2s;
     }
-    .lr-choice-card:hover .arrow { gap: 10px; }
+    .lr-svc-card:hover .arrow { gap: 10px; }
 
     /* Footer */
     .lr-foot {
@@ -219,10 +223,12 @@
       .lr-hero-ctas .lr-cta { justify-content: center; }
       .lr-proof { flex-direction: column; gap: 14px; padding: 24px 16px; }
       .lr-proof .sep { display: none; }
-      .lr-about { padding: 56px 0 40px; }
-      .lr-about h2 { font-size: 32px; }
-      .lr-choice { grid-template-columns: 1fr; padding: 32px 0; }
-      .lr-choice-card { padding: 26px 22px; }
+      .lr-svc { padding: 56px 0 40px; }
+      .lr-svc h2 { font-size: 32px; }
+      .lr-svc-sub { margin-bottom: 36px; font-size: 15px; }
+      .lr-svc-grid { grid-template-columns: 1fr; gap: 12px; }
+      .lr-svc-card { padding: 26px 22px; }
+      .lr-svc-card .num { font-size: 18px; top: 18px; right: 22px; }
     }
   </style>
 
@@ -267,8 +273,8 @@
         <button class="lr-cta" onclick="window.D3Apply && window.D3Apply.openSelector()">
           <span data-i18n="cta_primary">Aplica con tu marca</span> →
         </button>
-        <a class="lr-cta ghost" href="#about">
-          <span data-i18n="cta_secondary">Conoce más</span> ↓
+        <a class="lr-cta ghost" href="#servicios">
+          <span data-i18n="cta_secondary">Ver servicios</span> ↓
         </a>
       </div>
     </section>
@@ -283,26 +289,45 @@
       <span><b>+5</b> <span data-i18n="proof_years">años por integrante</span></span>
     </section>
 
-    <section class="lr-about" id="about">
-      <div class="lr-tag" data-i18n="about_tag">· Nosotros ·</div>
-      <h2 data-i18n-html="about_title">Somos <em>LA REAL.</em></h2>
-      <p data-i18n="about_p1">Un equipo pequeño que opera con disciplina. Sin promesas vacías, sin scope creep, sin proveedores intermedios.</p>
-      <p data-i18n="about_p2">Si tu marca no crece, nosotros tampoco. Por eso somos socios, no proveedores.</p>
-    </section>
+    <section class="lr-svc" id="servicios">
+      <div class="lr-tag" data-i18n="svc_tag">· Servicios ·</div>
+      <h2 data-i18n-html="svc_title">Así podemos <em>ayudarte.</em></h2>
+      <p class="lr-svc-sub" data-i18n="svc_sub">Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
+      <div class="lr-svc-grid">
 
-    <section class="lr-choice">
-      <button class="lr-choice-card" onclick="window.D3Apply && window.D3Apply.openForm('partner')">
-        <span class="badge" data-i18n="card1_badge">Growth Partner</span>
-        <h3 data-i18n="card1_title">Para marcas que ya venden.</h3>
-        <p data-i18n="card1_desc">Entramos como tu socio de crecimiento. Operamos el embudo completo: paid media, email, contenido y data.</p>
-        <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
-      </button>
-      <button class="lr-choice-card" onclick="window.D3Apply && window.D3Apply.openForm('advisor')">
-        <span class="badge" data-i18n="card2_badge">Growth Advisor</span>
-        <h3 data-i18n="card2_title">Para marcas que están arrancando.</h3>
-        <p data-i18n="card2_desc">Sesiones 1:1. Te enseñamos qué hacer para que tu marca empiece a vender y crecer online.</p>
-        <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
-      </button>
+        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openForm('advisor')">
+          <span class="num">01</span>
+          <span class="badge" data-i18n="svc1_badge">Growth Advisor</span>
+          <h3 data-i18n="svc1_title">Para marcas que están arrancando.</h3>
+          <p data-i18n="svc1_desc">Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.</p>
+          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
+        </button>
+
+        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openSelector()">
+          <span class="num">02</span>
+          <span class="badge" data-i18n="svc2_badge">Call me</span>
+          <h3 data-i18n="svc2_title">Consultoría 1:1 con Juanfe.</h3>
+          <p data-i18n="svc2_desc">Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.</p>
+          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
+        </button>
+
+        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openSelector()">
+          <span class="num">03</span>
+          <span class="badge" data-i18n="svc3_badge">Metodología REAL</span>
+          <h3 data-i18n="svc3_title">Programa intensivo de 5 semanas.</h3>
+          <p data-i18n="svc3_desc">Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses para que tu marca la rompa.</p>
+          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
+        </button>
+
+        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openForm('partner')">
+          <span class="num">04</span>
+          <span class="badge" data-i18n="svc4_badge">Growth Partner</span>
+          <h3 data-i18n="svc4_title">Para marcas que ya venden y quieren escalar.</h3>
+          <p data-i18n="svc4_desc">Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.</p>
+          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
+        </button>
+
+      </div>
     </section>
 
   </main>
@@ -365,21 +390,26 @@
         hero_title: 'Hacemos crecer las marcas <em>que ya están listas para escalar.</em>',
         hero_lead: 'Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.',
         cta_primary: 'Aplica con tu marca',
-        cta_secondary: 'Conoce más',
+        cta_secondary: 'Ver servicios',
         proof_brands: 'marcas',
         proof_spend: 'gestionados en pauta',
         proof_roas: 'ROAS promedio',
         proof_years: 'años por integrante',
-        about_tag: '· Nosotros ·',
-        about_title: 'Somos <em>LA REAL.</em>',
-        about_p1: 'Un equipo pequeño que opera con disciplina. Sin promesas vacías, sin scope creep, sin proveedores intermedios.',
-        about_p2: 'Si tu marca no crece, nosotros tampoco. Por eso somos socios, no proveedores.',
-        card1_badge: 'Growth Partner',
-        card1_title: 'Para marcas que ya venden.',
-        card1_desc: 'Entramos como tu socio de crecimiento. Operamos el embudo completo: paid media, email, contenido y data.',
-        card2_badge: 'Growth Advisor',
-        card2_title: 'Para marcas que están arrancando.',
-        card2_desc: 'Sesiones 1:1. Te enseñamos qué hacer para que tu marca empiece a vender y crecer online.',
+        svc_tag: '· Servicios ·',
+        svc_title: 'Así podemos <em>ayudarte.</em>',
+        svc_sub: 'Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.',
+        svc1_badge: 'Growth Advisor',
+        svc1_title: 'Para marcas que están arrancando.',
+        svc1_desc: 'Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.',
+        svc2_badge: 'Call me',
+        svc2_title: 'Consultoría 1:1 con Juanfe.',
+        svc2_desc: 'Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.',
+        svc3_badge: 'Metodología REAL',
+        svc3_title: 'Programa intensivo de 5 semanas.',
+        svc3_desc: 'Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses para que tu marca la rompa.',
+        svc4_badge: 'Growth Partner',
+        svc4_title: 'Para marcas que ya venden y quieren escalar.',
+        svc4_desc: 'Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.',
         card_cta: 'Aplicar',
         footer_rights: 'Todos los derechos reservados.',
       },
@@ -388,21 +418,26 @@
         hero_title: 'We scale the brands <em>that are ready to grow.</em>',
         hero_lead: 'Strategic partners to 150+ brands. We run the funnel end-to-end with the discipline of a CFO and the craft of an editorial studio.',
         cta_primary: 'Apply with your brand',
-        cta_secondary: 'Learn more',
+        cta_secondary: 'See services',
         proof_brands: 'brands',
         proof_spend: 'managed in paid media',
         proof_roas: 'avg. ROAS',
         proof_years: 'avg. years per member',
-        about_tag: '· About ·',
-        about_title: 'We are <em>LA REAL.</em>',
-        about_p1: 'A small team that operates with discipline. No empty promises, no scope creep, no middlemen.',
-        about_p2: "If your brand doesn't grow, neither do we. That's why we're partners, not vendors.",
-        card1_badge: 'Growth Partner',
-        card1_title: 'For brands already selling.',
-        card1_desc: 'We become your growth partner. We run the full funnel: paid media, email, content and data.',
-        card2_badge: 'Growth Advisor',
-        card2_title: "For brands just starting.",
-        card2_desc: '1:1 sessions. We teach you exactly what to do so your brand starts selling and growing online.',
+        svc_tag: '· Services ·',
+        svc_title: 'How we can <em>help you.</em>',
+        svc_sub: 'Four ways to work with LA REAL, depending on where your brand is.',
+        svc1_badge: 'Growth Advisor',
+        svc1_title: 'For brands just starting out.',
+        svc1_desc: 'Weekly support (once a week). We design together the strategy your business needs to take off online. You and your team execute.',
+        svc2_badge: 'Call me',
+        svc2_title: '1:1 consultation with Juanfe.',
+        svc2_desc: 'Solve anything related to growing your business in digital: strategy, communication and content, promotion, sales strategy.',
+        svc3_badge: 'REAL Method',
+        svc3_title: '5-week intensive program.',
+        svc3_desc: 'We teach you and your team in a personalized way everything you need to succeed in e-commerce. We also design together the strategy and plan for the months ahead so your brand crushes it.',
+        svc4_badge: 'Growth Partner',
+        svc4_title: 'For brands already selling, ready to scale.',
+        svc4_desc: 'We join you as your growth partner and run the funnel end-to-end: paid media, email, content and data. With the rigor of a CFO and the craft of a studio.',
         card_cta: 'Apply',
         footer_rights: 'All rights reserved.',
       },
