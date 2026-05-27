@@ -122,6 +122,33 @@
     }
     .lr-hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+    /* Brands marquee */
+    @keyframes lr-mq-roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .lr-mq { padding: clamp(48px, 7vw, 96px) 0 clamp(32px, 5vw, 64px); }
+    .lr-mq-title {
+      font-family: 'Geist', sans-serif;
+      font-size: clamp(13px, 1.2vw, 14px);
+      color: var(--mute); letter-spacing: .02em;
+      text-align: center; margin-bottom: 32px;
+    }
+    .lr-mq-rows { display: flex; flex-direction: column; gap: 4px; margin: 0 -28px; }
+    .lr-mq-row { overflow: hidden; }
+    .lr-mq-row + .lr-mq-row { opacity: .45; }
+    .lr-mq-track {
+      display: flex; gap: 0;
+      width: max-content;
+      font-family: 'Nexa', 'Geist', sans-serif;
+      font-size: clamp(36px, 4.5vw, 60px); font-weight: 300;
+      padding: 6px 0;
+      animation: lr-mq-roll 55s linear infinite;
+    }
+    .lr-mq-row.reverse .lr-mq-track {
+      animation-direction: reverse; animation-duration: 70s;
+    }
+    .lr-mq-item { display: inline-flex; align-items: center; }
+    .lr-mq-item .word { font-style: italic; opacity: .85; }
+    .lr-mq-item .ast { color: var(--accent); margin: 0 32px; opacity: .55; }
+
     /* Services */
     .lr-svc { padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 7vw, 88px); }
     .lr-tag { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
@@ -210,6 +237,10 @@
       .lr-hero p.lead { font-size: 16px; margin-bottom: 28px; }
       .lr-hero-ctas { flex-direction: column; align-items: stretch; }
       .lr-hero-ctas .lr-cta { justify-content: center; }
+      .lr-mq { padding: 40px 0; margin: 0 -20px; }
+      .lr-mq-rows { margin: 0; }
+      .lr-mq-track { font-size: 28px; }
+      .lr-mq-item .ast { margin: 0 18px; }
       .lr-svc { padding: 56px 0 40px; }
       .lr-svc h2 { font-size: 32px; }
       .lr-svc-sub { margin-bottom: 36px; font-size: 15px; }
@@ -237,9 +268,9 @@
         <span class="on" data-lang="es">ES</span>
         <span data-lang="en">EN</span>
       </div>
-      <button class="lr-cta" onclick="window.D3Apply && window.D3Apply.openSelector()" id="cta-nav">
-        <span class="cta-label"><span data-i18n="cta_primary">Aplica con tu marca</span> →</span>
-      </button>
+      <a class="lr-cta" id="cta-nav" href="#servicios">
+        <span class="cta-label"><span data-i18n="cta_secondary">Ver servicios</span> →</span>
+      </a>
     </div>
   </nav>
 
@@ -257,12 +288,22 @@
         Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.
       </p>
       <div class="lr-hero-ctas">
-        <button class="lr-cta" onclick="window.D3Apply && window.D3Apply.openSelector()">
-          <span data-i18n="cta_primary">Aplica con tu marca</span> →
-        </button>
-        <a class="lr-cta ghost" href="#servicios">
+        <a class="lr-cta" href="#servicios">
           <span data-i18n="cta_secondary">Ver servicios</span> ↓
         </a>
+      </div>
+    </section>
+
+    <!-- Brands marquee -->
+    <section class="lr-mq">
+      <div class="lr-mq-title" data-i18n="brands_title">Hemos trabajado con +200 empresas en +5 países.</div>
+      <div class="lr-mq-rows">
+        <div class="lr-mq-row">
+          <div class="lr-mq-track" id="mq-track-1"></div>
+        </div>
+        <div class="lr-mq-row reverse">
+          <div class="lr-mq-track" id="mq-track-2"></div>
+        </div>
       </div>
     </section>
 
@@ -272,37 +313,37 @@
       <p class="lr-svc-sub" data-i18n="svc_sub">Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
       <div class="lr-svc-grid">
 
-        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openForm('advisor')">
+        <a class="lr-svc-card" href="/growth-advisor">
           <span class="num">01</span>
           <span class="badge" data-i18n="svc1_badge">Growth Advisor</span>
           <h3 data-i18n="svc1_title">Para marcas que están arrancando.</h3>
           <p data-i18n="svc1_desc">Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.</p>
-          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
-        </button>
+          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+        </a>
 
-        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openSelector()">
+        <a class="lr-svc-card" href="/call-me">
           <span class="num">02</span>
           <span class="badge" data-i18n="svc2_badge">Call me</span>
           <h3 data-i18n="svc2_title">Consultoría 1:1 con Juanfe.</h3>
           <p data-i18n="svc2_desc">Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.</p>
-          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
-        </button>
+          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+        </a>
 
-        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openSelector()">
+        <a class="lr-svc-card" href="/metodologia-real">
           <span class="num">03</span>
           <span class="badge" data-i18n="svc3_badge">Metodología REAL</span>
           <h3 data-i18n="svc3_title">Programa intensivo de 5 semanas.</h3>
           <p data-i18n="svc3_desc">Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses para que tu marca la rompa.</p>
-          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
-        </button>
+          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+        </a>
 
-        <button class="lr-svc-card" onclick="window.D3Apply && window.D3Apply.openForm('partner')">
+        <a class="lr-svc-card" href="/growth-partner">
           <span class="num">04</span>
           <span class="badge" data-i18n="svc4_badge">Growth Partner</span>
           <h3 data-i18n="svc4_title">Para marcas que ya venden y quieren escalar.</h3>
           <p data-i18n="svc4_desc">Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.</p>
-          <span class="arrow"><span data-i18n="card_cta">Aplicar</span> →</span>
-        </button>
+          <span class="arrow"><span data-i18n="card_cta">Ver más info</span> →</span>
+        </a>
 
       </div>
     </section>
@@ -338,6 +379,7 @@
         };
         document.addEventListener('click', handler);
         applyLang('es');
+        renderBrands();
         return () => document.removeEventListener('click', handler);
       }, []);
 
@@ -361,6 +403,23 @@
       return window.D3Apply ? <window.D3Apply.Modal lang={lang} /> : null;
     }
 
+    // Brands marquee — populate the 2 rows; row 2 is rotated by half so different brands show at the same time
+    const BRANDS = ['Cacao Hunters','Dulcey','Kryolan','Panavayu','Barba Roja','Leonisa','Parchita','Once','Pachha','Zorro y Jaguar','Estruendo','Ukelele','Sandra Botero','Cíclico','IFW','Adriza','Atratus','Gratu','Natnack'];
+    function brandsHTML(list) {
+      const items = list.map((b) => `<span class="lr-mq-item"><span class="word">${b}</span><span class="ast">*</span></span>`).join('');
+      // Duplicate for seamless loop
+      return items + items;
+    }
+    function renderBrands() {
+      const t1 = document.getElementById('mq-track-1');
+      const t2 = document.getElementById('mq-track-2');
+      if (!t1 || !t2) return;
+      const half = Math.floor(BRANDS.length / 2);
+      const rotated = [...BRANDS.slice(half), ...BRANDS.slice(0, half)];
+      t1.innerHTML = brandsHTML(BRANDS);
+      t2.innerHTML = brandsHTML(rotated);
+    }
+
     const STRINGS = {
       es: {
         eyebrow: 'Growth Partners para e-commerce',
@@ -368,6 +427,7 @@
         hero_lead: 'Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.',
         cta_primary: 'Aplica con tu marca',
         cta_secondary: 'Ver servicios',
+        brands_title: 'Hemos trabajado con +200 empresas en +5 países.',
         svc_tag: '· Servicios ·',
         svc_title: 'Así podemos <em>ayudarte.</em>',
         svc_sub: 'Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.',
@@ -383,7 +443,7 @@
         svc4_badge: 'Growth Partner',
         svc4_title: 'Para marcas que ya venden y quieren escalar.',
         svc4_desc: 'Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.',
-        card_cta: 'Aplicar',
+        card_cta: 'Ver más info',
         footer_rights: 'Todos los derechos reservados.',
       },
       en: {
@@ -392,6 +452,7 @@
         hero_lead: 'Strategic partners to 150+ brands. We run the funnel end-to-end with the discipline of a CFO and the craft of an editorial studio.',
         cta_primary: 'Apply with your brand',
         cta_secondary: 'See services',
+        brands_title: "We've worked with 200+ brands across 5+ countries.",
         svc_tag: '· Services ·',
         svc_title: 'How we can <em>help you.</em>',
         svc_sub: 'Four ways to work with LA REAL, depending on where your brand is.',
@@ -407,7 +468,7 @@
         svc4_badge: 'Growth Partner',
         svc4_title: 'For brands already selling, ready to scale.',
         svc4_desc: 'We join you as your growth partner and run the funnel end-to-end: paid media, email, content and data. With the rigor of a CFO and the craft of a studio.',
-        card_cta: 'Apply',
+        card_cta: 'Learn more',
         footer_rights: 'All rights reserved.',
       },
     };
