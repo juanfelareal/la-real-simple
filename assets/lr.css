@@ -11,6 +11,31 @@ html, body { margin: 0; padding: 0; }
   --warn: #FBBF24;
   --danger: #ef4444;
 }
+
+/* Floating WhatsApp button — follows the user, glows */
+.lr-wa {
+  position: fixed; z-index: 200;
+  right: 22px; bottom: 22px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px; border-radius: 999px;
+  background: #25D366; color: #07130b;
+  font-family: 'Geist', sans-serif; font-weight: 600; font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(37,211,102,.45);
+  animation: lr-wa-glow 2.2s ease-in-out infinite;
+  transition: transform .2s;
+}
+.lr-wa:hover { transform: translateY(-2px) scale(1.03); }
+.lr-wa svg { width: 22px; height: 22px; display: block; }
+.lr-wa .lr-wa-label { white-space: nowrap; }
+@keyframes lr-wa-glow {
+  0%, 100% { box-shadow: 0 8px 28px rgba(37,211,102,.35); }
+  50% { box-shadow: 0 8px 40px rgba(37,211,102,.7); }
+}
+@media (max-width: 720px) {
+  .lr-wa { right: 16px; bottom: 16px; padding: 14px; }
+  .lr-wa .lr-wa-label { display: none; }
+}
 body {
   background: var(--bg);
   color: var(--fg);

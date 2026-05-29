@@ -184,18 +184,23 @@
       border-color: color-mix(in oklab, var(--accent) 55%, transparent);
       background: rgba(63,207,63,.04);
     }
+    .lr-svc-card { --svc: var(--accent); }
+    .lr-svc-card:hover {
+      border-color: color-mix(in oklab, var(--svc) 55%, transparent);
+      background: color-mix(in oklab, var(--svc) 5%, transparent);
+    }
     .lr-svc-card .num {
       font-family: 'Nexa', 'Geist', sans-serif;
       font-style: italic; font-weight: 300;
-      font-size: 64px; color: var(--accent); opacity: .85;
+      font-size: 64px; color: var(--svc); opacity: .85;
       line-height: 1; letter-spacing: -.02em;
     }
     .lr-svc-card .body { display: flex; flex-direction: column; gap: 10px; }
     .lr-svc-card .badge {
       align-self: flex-start;
       font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--accent); padding: 4px 10px; border-radius: 999px;
-      background: rgba(63,207,63,.1);
+      color: var(--svc); padding: 4px 10px; border-radius: 999px;
+      background: color-mix(in oklab, var(--svc) 12%, transparent);
     }
     .lr-svc-card h3 {
       font-family: 'Nexa', 'Geist', sans-serif;
@@ -223,14 +228,37 @@
       color: var(--mute); font-size: 12px;
     }
     .lr-svc-card .arrow {
-      font-size: 22px; color: var(--accent);
+      font-size: 22px; color: var(--svc);
       display: inline-flex; align-items: center; justify-content: center;
       width: 48px; height: 48px; border-radius: 50%;
-      background: rgba(63,207,63,.08); border: .5px solid color-mix(in oklab, var(--accent) 25%, transparent);
+      background: color-mix(in oklab, var(--svc) 10%, transparent); border: .5px solid color-mix(in oklab, var(--svc) 25%, transparent);
       transition: transform .2s, background .2s;
       flex-shrink: 0;
     }
-    .lr-svc-card:hover .arrow { transform: translateX(4px); background: rgba(63,207,63,.18); }
+    .lr-svc-card:hover .arrow { transform: translateX(4px); background: color-mix(in oklab, var(--svc) 20%, transparent); }
+
+    /* Floating WhatsApp button */
+    .lr-wa {
+      position: fixed; z-index: 200; right: 22px; bottom: 22px;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 22px; border-radius: 999px;
+      background: #25D366; color: #07130b;
+      font-family: 'Geist', sans-serif; font-weight: 600; font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(37,211,102,.45);
+      animation: lr-wa-glow 2.2s ease-in-out infinite;
+      transition: transform .2s;
+    }
+    .lr-wa:hover { transform: translateY(-2px) scale(1.03); }
+    .lr-wa svg { width: 22px; height: 22px; display: block; }
+    @keyframes lr-wa-glow {
+      0%, 100% { box-shadow: 0 8px 28px rgba(37,211,102,.35); }
+      50% { box-shadow: 0 8px 40px rgba(37,211,102,.7); }
+    }
+    @media (max-width: 720px) {
+      .lr-wa { right: 16px; bottom: 16px; padding: 14px; }
+      .lr-wa .lr-wa-label { display: none; }
+    }
 
     /* Footer */
     .lr-foot {
@@ -304,7 +332,7 @@
         <span data-i18n="eyebrow">Growth Partners para e-commerce</span>
       </div>
       <h1 data-i18n-html="hero_title">
-        Hacemos crecer las marcas <em>que ya están listas para escalar.</em>
+        Hacemos crecer las marcas <em>que ya están listas para escalar digitalmente.</em>
       </h1>
       <p class="lead" data-i18n="hero_lead">
         Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.
@@ -335,27 +363,27 @@
       <p class="lr-svc-sub" data-i18n="svc_sub">Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
       <div class="lr-svc-grid">
 
-        <a class="lr-svc-card" href="/growth-advisor">
+        <a class="lr-svc-card" href="/growth-advisor" style="--svc: #3FCF3F">
           <span class="num">01</span>
           <span class="body">
             <span class="badge" data-i18n="svc1_badge">Growth Advisor</span>
             <h3 data-i18n="svc1_title">Para marcas que están arrancando.</h3>
-            <p data-i18n="svc1_desc">Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.</p>
+            <p data-i18n="svc1_desc">Tu socio estratégico, mes a mes. Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online — tú y tu equipo ejecutan, nosotros guiamos.</p>
           </span>
           <span class="arrow">→</span>
         </a>
 
-        <a class="lr-svc-card" href="/call-me">
+        <a class="lr-svc-card" href="/call-me" style="--svc: #F5A623">
           <span class="num">02</span>
           <span class="body">
-            <span class="badge" data-i18n="svc2_badge">Call me</span>
-            <h3 data-i18n="svc2_title">Consultoría 1:1 con Juanfe.</h3>
-            <p data-i18n="svc2_desc">Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.</p>
+            <span class="badge" data-i18n="svc2_badge">Sesión estratégica</span>
+            <h3 data-i18n="svc2_title">Una sesión 1:1 con Juanfe.</h3>
+            <p data-i18n="svc2_desc">Resuelve un reto específico de tu marca en digital: estrategia, contenido, pauta o comercial. Sales con un plan ejecutable, grabación y 15 días de acompañamiento.</p>
           </span>
           <span class="arrow">→</span>
         </a>
 
-        <a class="lr-svc-card" href="/metodologia-real">
+        <a class="lr-svc-card" href="/metodologia-real" style="--svc: #A78BFA">
           <span class="num">03</span>
           <span class="body">
             <span class="badge" data-i18n="svc3_badge">Metodología REAL</span>
@@ -365,12 +393,12 @@
           <span class="arrow">→</span>
         </a>
 
-        <a class="lr-svc-card" href="/growth-partner">
+        <a class="lr-svc-card" href="/growth-partner" style="--svc: #4F8DFF">
           <span class="num">04</span>
           <span class="body">
             <span class="badge" data-i18n="svc4_badge">Growth Partner</span>
             <h3 data-i18n="svc4_title">Para marcas que ya venden y quieren escalar.</h3>
-            <p data-i18n="svc4_desc">Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.</p>
+            <p data-i18n="svc4_desc">Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Nuestro verdadero negocio es que tú vendas más.</p>
           </span>
           <span class="arrow">→</span>
         </a>
@@ -388,6 +416,11 @@
     </div>
     <div>© 2026 LA REAL · <span data-i18n="footer_rights">Todos los derechos reservados.</span></div>
   </footer>
+
+  <a class="lr-wa" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20LA%20REAL" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3 0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4.1.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3a8.2 8.2 0 1 1 7 4z"/></svg>
+    <span class="lr-wa-label">Escríbenos</span>
+  </a>
 
   <!-- Reused booking modal from the main landing -->
   <div id="apply-root"></div>
@@ -453,7 +486,7 @@
     const STRINGS = {
       es: {
         eyebrow: 'Growth Partners para e-commerce',
-        hero_title: 'Hacemos crecer las marcas <em>que ya están listas para escalar.</em>',
+        hero_title: 'Hacemos crecer las marcas <em>que ya están listas para escalar digitalmente.</em>',
         hero_lead: 'Somos socios estratégicos de +150 marcas. Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.',
         cta_primary: 'Aplica con tu marca',
         cta_secondary: 'Ver servicios',
@@ -463,22 +496,22 @@
         svc_sub: 'Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.',
         svc1_badge: 'Growth Advisor',
         svc1_title: 'Para marcas que están arrancando.',
-        svc1_desc: 'Acompañamiento semanal (1 vez por semana). Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online. Tú y tu equipo ejecutan.',
-        svc2_badge: 'Call me',
-        svc2_title: 'Consultoría 1:1 con Juanfe.',
-        svc2_desc: 'Resuelve cualquier tema relacionado con el crecimiento de tu empresa en digital: estrategia, comunicación y contenido, promoción, estrategia comercial.',
+        svc1_desc: 'Tu socio estratégico, mes a mes. Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online — tú y tu equipo ejecutan, nosotros guiamos.',
+        svc2_badge: 'Sesión estratégica',
+        svc2_title: 'Una sesión 1:1 con Juanfe.',
+        svc2_desc: 'Resuelve un reto específico de tu marca en digital: estrategia, contenido, pauta o comercial. Sales con un plan ejecutable, grabación y 15 días de acompañamiento.',
         svc3_badge: 'Metodología REAL',
         svc3_title: 'Programa intensivo de 5 semanas.',
         svc3_desc: 'Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses para que tu marca la rompa.',
         svc4_badge: 'Growth Partner',
         svc4_title: 'Para marcas que ya venden y quieren escalar.',
-        svc4_desc: 'Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Con la rigurosidad de un CFO y la creatividad de un estudio.',
+        svc4_desc: 'Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Nuestro verdadero negocio es que tú vendas más.',
         card_cta: 'Ver más info',
         footer_rights: 'Todos los derechos reservados.',
       },
       en: {
         eyebrow: 'Growth Partners for e-commerce',
-        hero_title: 'We scale the brands <em>that are ready to grow.</em>',
+        hero_title: 'We scale the brands <em>that are ready to grow online.</em>',
         hero_lead: 'Strategic partners to 150+ brands. We run the funnel end-to-end with the discipline of a CFO and the craft of an editorial studio.',
         cta_primary: 'Apply with your brand',
         cta_secondary: 'See services',
@@ -488,16 +521,16 @@
         svc_sub: 'Four ways to work with LA REAL, depending on where your brand is.',
         svc1_badge: 'Growth Advisor',
         svc1_title: 'For brands just starting out.',
-        svc1_desc: 'Weekly support (once a week). We design together the strategy your business needs to take off online. You and your team execute.',
-        svc2_badge: 'Call me',
-        svc2_title: '1:1 consultation with Juanfe.',
-        svc2_desc: 'Solve anything related to growing your business in digital: strategy, communication and content, promotion, sales strategy.',
+        svc1_desc: 'Your strategic partner, month to month. We design the strategy your business needs to take off online — you and your team execute, we guide.',
+        svc2_badge: 'Strategy session',
+        svc2_title: 'A 1:1 session with Juanfe.',
+        svc2_desc: 'Solve a specific challenge in digital: strategy, content, ads or sales. You leave with an executable plan, the recording, and 15 days of follow-up.',
         svc3_badge: 'REAL Method',
         svc3_title: '5-week intensive program.',
         svc3_desc: 'We teach you and your team in a personalized way everything you need to succeed in e-commerce. We also design together the strategy and plan for the months ahead so your brand crushes it.',
         svc4_badge: 'Growth Partner',
         svc4_title: 'For brands already selling, ready to scale.',
-        svc4_desc: 'We join you as your growth partner and run the funnel end-to-end: paid media, email, content and data. With the rigor of a CFO and the craft of a studio.',
+        svc4_desc: 'We join you as your growth partner and run the funnel end-to-end: paid media, email, content and data. Our real business is making you sell more.',
         card_cta: 'Learn more',
         footer_rights: 'All rights reserved.',
       },
