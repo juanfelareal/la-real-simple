@@ -69,21 +69,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 
 /* HERO */
 .hero{padding:96px 0 90px;position:relative;z-index:2;text-align:center;}
-.hero h1{font-weight:900;font-size:clamp(44px,7.6vw,104px);line-height:1.04;letter-spacing:-3px;color:#fff;max-width:none;margin:0 auto;}
-.hero h1 .u{display:inline-block;position:relative;white-space:nowrap;font-weight:900;
-  background:linear-gradient(95deg,#4ADE80 0%,#7FB9BB 55%,#4ADE80 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
-  padding-bottom:.04em;filter:drop-shadow(0 8px 30px rgba(74,222,128,0.38));}
-.hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.12em;width:100%;height:0.24em;overflow:visible;}
-.hero h1 .u svg path{filter:drop-shadow(0 2px 10px rgba(74,222,128,0.6));}
+.hero h1{font-weight:900;font-size:clamp(44px,7.6vw,104px);line-height:0.96;letter-spacing:-3px;color:#fff;max-width:none;margin:0 auto;}
+.hero h1 .u{display:inline-block;position:relative;white-space:nowrap;font-weight:900;color:var(--green);padding-bottom:.04em;}
+.hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.12em;width:100%;height:0.24em;}
 .hero .sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.74);max-width:62ch;margin:26px auto 0;font-weight:400;line-height:1.6;}
 .hero .sub b{color:#fff;font-weight:700;}
 .hero .cta-row{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap;align-items:center;justify-content:center;}
-.hero-stats{display:flex;gap:42px;margin-top:54px;flex-wrap:wrap;justify-content:center;}
-.hero-stats .s .n{font-weight:900;font-size:32px;line-height:1;letter-spacing:-1.5px;}
+.hero-stats{display:flex;gap:clamp(34px,5vw,64px);margin-top:54px;flex-wrap:wrap;justify-content:center;align-items:flex-start;}
+.hero-stats .s .n{font-weight:900;font-size:clamp(48px,6vw,76px);line-height:1;letter-spacing:-3px;font-variant-numeric:tabular-nums;}
 .hero-stats .s:nth-child(odd) .n{color:var(--green);}
 .hero-stats .s:nth-child(even) .n{color:var(--teal);}
-.hero-stats .s .l{font-size:12.5px;color:rgba(255,255,255,0.6);margin-top:7px;font-weight:500;}
+.hero-stats .s .l{font-size:13.5px;color:rgba(255,255,255,0.6);margin-top:9px;font-weight:500;}
 
 /* MARQUEE */
 .marquee{background:var(--green);overflow:hidden;position:relative;z-index:2;padding:13px 0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);}
@@ -200,8 +196,8 @@ footer .logo .word{font-size:16px;}
       <a class="btn btn-ghost" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20LA%20REAL" target="_blank" rel="noopener">Escríbenos <span class="arr">→</span></a>
     </div>
     <div class="hero-stats">
-      <div class="s"><div class="n">+200</div><div class="l">marcas en Latinoamérica</div></div>
-      <div class="s"><div class="n">+5</div><div class="l">países</div></div>
+      <div class="s"><div class="n" data-count="200" data-prefix="+">+200</div><div class="l">marcas en Latinoamérica</div></div>
+      <div class="s"><div class="n" data-count="5" data-prefix="+">+5</div><div class="l">países</div></div>
       <div class="s"><div class="n">est. 2018</div><div class="l">creciendo e-commerce</div></div>
     </div>
   </div>
@@ -297,6 +293,24 @@ document.getElementById('mq-track').innerHTML = mqHTML + mqHTML;
 
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Animated count-up for hero stats
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function countUp(el){
+  const target = +el.dataset.count;
+  const prefix = el.dataset.prefix || '';
+  if(reduceMotion){ el.textContent = prefix + target; return; }
+  const dur = 1500, start = performance.now();
+  function tick(now){
+    const t = Math.min(1,(now-start)/dur);
+    const eased = 1 - Math.pow(1-t,3);
+    el.textContent = prefix + Math.round(target*eased);
+    if(t<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const statObs = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){countUp(e.target);statObs.unobserve(e.target);}});},{threshold:0.6});
+document.querySelectorAll('.n[data-count]').forEach(el=>{el.textContent=(el.dataset.prefix||'')+'0';statObs.observe(el);});
 const bar=document.getElementById('bottombar');
 const onScroll=()=>{bar.classList.toggle('show',window.scrollY>640);};
 onScroll();window.addEventListener('scroll',onScroll,{passive:true});
