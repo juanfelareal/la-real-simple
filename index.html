@@ -198,7 +198,7 @@ footer .logo .word{font-size:16px;}
     <div class="hero-stats">
       <div class="s"><div class="n" data-count="200" data-prefix="+">+200</div><div class="l">marcas en Latinoamérica</div></div>
       <div class="s"><div class="n" data-count="5" data-prefix="+">+5</div><div class="l">países</div></div>
-      <div class="s"><div class="n">est. 2018</div><div class="l">creciendo e-commerce</div></div>
+      <div class="s"><div class="n" data-count="150" data-prefix="+$" data-suffix="M">+$150M</div><div class="l">en pauta gestionada al mes</div></div>
     </div>
   </div>
 </header>
@@ -299,18 +299,19 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 function countUp(el){
   const target = +el.dataset.count;
   const prefix = el.dataset.prefix || '';
-  if(reduceMotion){ el.textContent = prefix + target; return; }
+  const suffix = el.dataset.suffix || '';
+  if(reduceMotion){ el.textContent = prefix + target + suffix; return; }
   const dur = 1500, start = performance.now();
   function tick(now){
     const t = Math.min(1,(now-start)/dur);
     const eased = 1 - Math.pow(1-t,3);
-    el.textContent = prefix + Math.round(target*eased);
+    el.textContent = prefix + Math.round(target*eased) + suffix;
     if(t<1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 }
 const statObs = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){countUp(e.target);statObs.unobserve(e.target);}});},{threshold:0.6});
-document.querySelectorAll('.n[data-count]').forEach(el=>{el.textContent=(el.dataset.prefix||'')+'0';statObs.observe(el);});
+document.querySelectorAll('.n[data-count]').forEach(el=>{el.textContent=(el.dataset.prefix||'')+'0'+(el.dataset.suffix||'');statObs.observe(el);});
 const bar=document.getElementById('bottombar');
 const onScroll=()=>{bar.classList.toggle('show',window.scrollY>640);};
 onScroll();window.addEventListener('scroll',onScroll,{passive:true});
