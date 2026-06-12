@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LA REAL · Contenido & Diseño que vende</title>
-<meta name="description" content="Contenido y diseño que ponen a vender a tu marca. Email marketing, producción visual con IA y diseño para ecommerce. El equipo detrás de +120 marcas.">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LA REAL · Growth Partners para e-commerce</title>
+<meta name="description" content="Hacemos crecer las marcas que ya están listas para escalar digitalmente. +200 empresas en +5 países." />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
 :root{
   --navy:#0D1B2A; --navy-2:#0a1622; --cream:#F5F0EB; --cream-2:#EFE8DF;
@@ -23,6 +25,7 @@ body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--navy);-web
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
 section{scroll-margin-top:120px;}
 h1,h2,h3{font-family:'Inter',sans-serif;}
+a{color:inherit;text-decoration:none;}
 
 /* ANNOUNCEMENT */
 .announce{background:var(--green);color:var(--navy);font-size:13.5px;font-weight:700;text-align:center;padding:9px 40px;position:relative;letter-spacing:.2px;}
@@ -36,11 +39,16 @@ h1,h2,h3{font-family:'Inter',sans-serif;}
 nav{position:sticky;top:0;z-index:90;background:rgba(13,27,42,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:11px;padding-bottom:11px;}
 .logo{display:flex;align-items:center;gap:9px;}
-.logo img{width:32px;height:32px;display:block;}
+.logo .iso{width:30px;height:30px;display:block;background:#fff;-webkit-mask:url(assets/brand/iso.png) center/contain no-repeat;mask:url(assets/brand/iso.png) center/contain no-repeat;}
 .logo .word{color:#fff;font-weight:900;font-size:19px;letter-spacing:-0.5px;}
-.nav-links{display:flex;align-items:center;gap:28px;}
+.logo .word .pt{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:24px;}
 .nav-links a:not(.btn){color:rgba(255,255,255,0.78);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
 .nav-links a:not(.btn):hover{color:#fff;}
+.lang{display:inline-flex;gap:0;font-size:12px;font-weight:700;letter-spacing:1px;}
+.lang span{padding:6px 9px;cursor:pointer;color:rgba(255,255,255,0.5);transition:color .15s;}
+.lang span.on{color:var(--green);}
+.lang span:hover{color:#fff;}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:800;font-size:15px;border-radius:50px;padding:14px 26px;text-decoration:none;border:none;cursor:pointer;transition:transform .16s,background .2s,box-shadow .2s,border-color .2s;white-space:nowrap;}
@@ -61,14 +69,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 
 /* HERO */
 .hero{padding:90px 0 84px;position:relative;z-index:2;}
-.hero h1{font-weight:800;font-size:clamp(40px,6.6vw,76px);line-height:1.03;letter-spacing:-2.5px;color:#fff;max-width:15ch;}
+.hero h1{font-weight:800;font-size:clamp(40px,6.6vw,76px);line-height:1.03;letter-spacing:-2.5px;color:#fff;max-width:16ch;}
 .hero h1 .u{position:relative;white-space:nowrap;}
 .hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.1em;width:100%;height:0.2em;}
 .hero .sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.74);max-width:58ch;margin-top:24px;font-weight:400;line-height:1.6;}
 .hero .sub b{color:#fff;font-weight:700;}
 .hero .cta-row{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap;align-items:center;}
-.hero .rate{color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;}
-.hero .rate b{color:var(--teal);}
 .hero-stats{display:flex;gap:42px;margin-top:54px;flex-wrap:wrap;}
 .hero-stats .s .n{font-weight:900;font-size:32px;line-height:1;letter-spacing:-1.5px;}
 .hero-stats .s:nth-child(odd) .n{color:var(--green);}
@@ -77,146 +83,43 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 
 /* MARQUEE */
 .marquee{background:var(--green);overflow:hidden;position:relative;z-index:2;padding:13px 0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);}
-.marquee-track{display:flex;width:max-content;animation:scroll 26s linear infinite;}
+.marquee-track{display:flex;width:max-content;animation:scroll 38s linear infinite;}
 .marquee-track:hover{animation-play-state:paused;}
 .marquee span{font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);padding:0 26px;display:inline-flex;align-items:center;gap:26px;}
 .marquee span::after{content:'✦';font-size:11px;opacity:.55;}
 @keyframes scroll{to{transform:translateX(-50%);}}
 
-/* BLACK FRIDAY RESULTS */
-.bf{padding:96px 0;position:relative;z-index:2;}
-.bf .eyebrow{color:var(--teal);}
-.bf h2{font-weight:800;font-size:clamp(30px,4.6vw,54px);letter-spacing:-2px;color:#fff;line-height:1.03;}
-.bf .kick{color:rgba(255,255,255,0.6);font-size:16px;margin-top:14px;font-weight:500;}
-.bf .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px;}
-.bfcard{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:30px 24px;position:relative;}
-.bfcard .big{font-size:clamp(34px,4.4vw,46px);font-weight:900;letter-spacing:-2.5px;line-height:.95;}
-.bfcard:nth-child(4n+1) .big,.bfcard:nth-child(4n+3) .big{color:var(--green);}
-.bfcard:nth-child(4n+2) .big,.bfcard:nth-child(4n) .big{color:var(--teal);}
-.bfcard .lbl{font-size:13.5px;color:rgba(255,255,255,0.74);margin-top:10px;line-height:1.4;font-weight:500;}
-.note{position:absolute;top:-11px;right:-7px;background:var(--green);color:var(--navy);font-size:11.5px;font-weight:800;padding:5px 11px;border-radius:8px;transform:rotate(4deg);box-shadow:0 6px 16px rgba(0,0,0,0.3);white-space:nowrap;}
-.bfcard:nth-child(even) .note{background:var(--teal);transform:rotate(-3deg);}
-.bf .closing{margin-top:34px;font-size:clamp(17px,2.2vw,22px);font-weight:700;color:#fff;text-align:center;}
-.bf .closing span{color:var(--green);}
-
 /* LIGHT / SERVICES */
 .light{background:var(--cream);color:var(--ink);position:relative;}
 .intro{padding:84px 0 8px;}
 .intro h2{font-weight:800;font-size:clamp(30px,4.4vw,50px);letter-spacing:-1.5px;color:var(--navy);line-height:1.05;}
-.intro .lead{font-size:16.5px;color:var(--muted);margin-top:16px;line-height:1.6;}
-.svc{padding:72px 0;border-bottom:1px solid var(--line);}
-.svc:last-of-type{border-bottom:none;padding-bottom:90px;}
+.intro h2 .g{color:var(--green-deep);}
+.intro .lead{font-size:16.5px;color:var(--muted);margin-top:16px;line-height:1.6;max-width:52ch;}
+.svc{padding:46px 0 90px;}
 .svc .eyebrow{color:var(--green-deep);}
 .svc .eyebrow .num{background:var(--navy);color:#fff;}
-.svc h2{font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
-.svc .lead{font-size:16px;color:var(--muted);margin-top:16px;line-height:1.6;}
 
-/* CARDS */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px;}
-.card{background:#fff;border-radius:18px;padding:30px 24px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 10px 28px rgba(13,27,42,0.06);transition:transform .2s,box-shadow .2s;}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 38px rgba(13,27,42,0.1);}
-.card.rec{border:2px solid var(--green);transform:scale(1.035);box-shadow:0 10px 34px rgba(74,222,128,0.18);position:relative;}
-.card.rec:hover{transform:scale(1.035) translateY(-4px);}
-.rec-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 16px;border-radius:50px;}
-.badge{display:inline-block;padding:5px 14px;border-radius:50px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
-.b-start{background:#DCFCE7;color:#166534;} .b-perf{background:#FEF3C7;color:#92400E;} .b-ultra{background:#DBEAFE;color:#1E40AF;}
-.price{font-size:34px;font-weight:900;letter-spacing:-1.5px;color:var(--navy);line-height:1;}
-.price small{font-size:15px;font-weight:700;color:var(--muted);}
-.price-label{font-size:12px;font-weight:600;color:#9ca3af;margin-bottom:8px;}
-.sep{width:38px;height:1px;background:var(--line);margin:8px 0;}
-.detail{font-size:13.5px;font-weight:500;color:#374151;line-height:1.5;}
-.detail strong{font-weight:800;color:var(--navy);}
-.time{font-size:12px;font-weight:600;color:var(--green-deep);margin-top:8px;}
-.iva{font-size:10.5px;font-weight:500;color:#9ca3af;margin-top:2px;}
-.audience{font-size:12px;font-style:italic;color:#9ca3af;margin-top:8px;line-height:1.4;}
-
-/* ADDON + COMBO */
-.addon{background:var(--navy);color:#fff;border-radius:18px;padding:28px 32px;margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;}
-.addon-price{text-align:center;flex-shrink:0;}
-.addon-price .big{font-size:42px;font-weight:900;color:var(--green);letter-spacing:-2px;line-height:1;}
-.addon-price .big small{font-size:17px;}
-.addon-price .lbl{font-size:11px;color:#94A3B8;font-weight:600;margin-top:6px;letter-spacing:1px;text-transform:uppercase;}
-.addon-body h3{font-size:19px;font-weight:800;letter-spacing:-0.5px;margin-bottom:5px;}
-.addon-body p{font-size:13.5px;color:#94A3B8;line-height:1.55;}
-.addon-chips{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap;}
-.addon-chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:8px 14px;font-size:12.5px;color:#cbd5e1;}
-.addon-chip strong{color:var(--green);font-weight:800;}
-.combo{margin-top:16px;background:#fff;border:2px solid var(--green);border-radius:18px;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;position:relative;box-shadow:0 10px 30px rgba(74,222,128,0.12);}
-.combo .left h3{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:4px;}
-.combo .left p{font-size:13px;color:var(--muted);line-height:1.5;max-width:62ch;}
-.combo .right{text-align:right;flex-shrink:0;}
-.combo .right .pf{font-size:38px;font-weight:900;color:var(--navy);letter-spacing:-2px;line-height:1;}
-.combo .right .pf small{font-size:17px;}
-.combo .right .ivb{font-size:11px;color:#9ca3af;font-weight:500;margin-top:3px;}
-.combo-tag{position:absolute;top:-12px;left:32px;background:var(--green);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 16px;border-radius:50px;}
-
-/* WHY US — TEAL BAND */
-.why{background:var(--teal);color:var(--navy);position:relative;z-index:2;}
-.why .inner{padding:84px 0;}
-.why .eyebrow{color:var(--navy);opacity:.65;}
-.why h2{font-weight:800;font-size:clamp(28px,4.2vw,46px);letter-spacing:-1.5px;line-height:1.05;}
-.why .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;}
-.why .w .n{font-weight:900;font-size:clamp(40px,5.5vw,60px);letter-spacing:-3px;line-height:.95;}
-.why .w .l{font-size:15px;font-weight:600;margin-top:10px;opacity:.85;line-height:1.4;}
-.why .values{display:flex;flex-wrap:wrap;gap:10px;margin-top:46px;}
-.why .values span{background:rgba(13,27,42,0.08);border:1.5px solid rgba(13,27,42,0.18);border-radius:50px;padding:9px 18px;font-size:13.5px;font-weight:700;}
-
-/* TESTIMONIOS */
-.tst{padding:90px 0;position:relative;z-index:2;}
-.tst .eyebrow{color:var(--teal);}
-.tst h2{font-weight:800;font-size:clamp(28px,4.2vw,46px);letter-spacing:-1.5px;color:#fff;line-height:1.05;}
-.tst .hl{color:rgba(255,255,255,0.62);font-size:16px;margin-top:14px;margin-bottom:40px;font-weight:500;}
-.tst .hl b{color:var(--green);font-weight:800;}
-.tst .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.quote{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:30px 30px;}
-.quote .stars{color:var(--green);font-size:14px;letter-spacing:3px;margin-bottom:14px;}
-.quote p{font-size:16px;line-height:1.62;color:rgba(255,255,255,0.9);font-weight:400;}
-.quote .who{margin-top:18px;font-size:14px;font-weight:800;color:#fff;}
-.quote .who span{color:var(--teal);font-weight:600;}
-@media (max-width:900px){.tst .grid{grid-template-columns:1fr;gap:16px;}}
-
-/* FEATS + OFFER */
-.feats{list-style:none;text-align:left;width:100%;margin:10px 0 2px;}
-.feats li{font-size:13px;color:#374151;line-height:1.45;padding-left:22px;position:relative;margin-bottom:7px;font-weight:500;}
-.feats li::before{content:'\2713';position:absolute;left:0;top:0;color:var(--green-deep);font-weight:900;font-size:13px;}
-.feats-note{font-size:11.5px;font-style:italic;color:#9ca3af;text-align:left;width:100%;margin-top:6px;line-height:1.4;}
-.offer{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 32px;margin-top:16px;box-shadow:0 8px 22px rgba(13,27,42,0.05);}
-.offer-body .feats{margin:0;}
-.offer-body .feats li{font-size:14.5px;margin-bottom:11px;padding-left:26px;}
-.offer-body .feats li::before{font-size:14px;}
-.offer-price{text-align:right;flex-shrink:0;border-left:1px solid var(--line);padding-left:34px;}
-.offer-price .op{font-size:38px;font-weight:900;color:var(--navy);letter-spacing:-2px;line-height:1;}
-.offer-price .op small{font-size:17px;}
-.offer-price .op-iva{font-size:11px;color:#9ca3af;font-weight:500;margin-top:4px;}
-.offer-price .op-tag{display:inline-block;margin-top:10px;background:#DCFCE7;color:#166534;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:50px;}
-@media (max-width:760px){.offer{grid-template-columns:1fr;gap:18px;}.offer-price{text-align:left;border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:18px;}}
-.offer-body h4{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-0.3px;margin-bottom:6px;}
-.offer-body p{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:14px;}
-.also{margin-top:46px;padding-top:30px;border-top:1px solid var(--line);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green-deep);}
-
-/* WORK */
-.work{padding:88px 0;}
-.work .eyebrow{color:var(--green-deep);}
-.work h2{font-weight:800;font-size:clamp(28px,4.2vw,46px);color:var(--navy);letter-spacing:-1.5px;}
-.work .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px;}
-.role{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 30px;box-shadow:0 8px 24px rgba(13,27,42,0.05);}
-.role h3{font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green-deep);margin-bottom:18px;}
-.role ul{list-style:none;}
-.role li{font-size:15px;font-weight:500;color:#374151;line-height:1.5;padding-left:22px;position:relative;margin-bottom:13px;}
-.role li:last-child{margin-bottom:0;}
-.role li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--green);}
-
-/* FINAL */
-.final{padding:104px 0;text-align:center;position:relative;z-index:2;}
-.final h2{font-weight:800;font-size:clamp(34px,5.5vw,64px);color:#fff;letter-spacing:-2px;line-height:1.04;max-width:18ch;margin:0 auto;}
-.final h2 .g{color:var(--green);}
-.final p{color:rgba(255,255,255,0.7);font-size:17px;margin-top:20px;max-width:50ch;margin-left:auto;margin-right:auto;}
-.final .cta-row{display:flex;gap:13px;justify-content:center;margin-top:34px;flex-wrap:wrap;}
-.final .mini{margin-top:24px;font-size:12.5px;color:rgba(255,255,255,0.5);display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-weight:500;}
+/* SERVICE CARDS */
+.scards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.scard{background:#fff;border-radius:18px;padding:32px 32px 28px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 10px 28px rgba(13,27,42,0.06);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.scard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--svc,var(--green));opacity:.85;}
+.scard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,27,42,0.12);}
+.scard .top{display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.scard .num{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--muted);}
+.scard .badge{display:inline-block;padding:5px 14px;border-radius:50px;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:color-mix(in srgb,var(--svc,var(--green)) 16%,transparent);color:var(--svc,var(--green-deep));}
+.scard h3{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-0.8px;color:var(--navy);line-height:1.1;margin-top:6px;}
+.scard p{font-size:14.5px;color:#374151;line-height:1.55;font-weight:500;}
+.scard .more{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--svc,var(--green-deep));}
+.scard .more .arr{transition:transform .2s;}
+.scard:hover .more .arr{transform:translateX(4px);}
 
 /* FOOTER */
 footer{background:var(--navy-2);color:rgba(255,255,255,0.55);padding:40px 0 96px;border-top:1px solid rgba(255,255,255,0.07);position:relative;z-index:2;}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;}
+footer .logo .iso{width:24px;height:24px;}
+footer .logo .word{font-size:16px;}
+.foot-meta{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+.foot-meta a:hover{color:var(--green);}
 
 /* STICKY BOTTOM BAR */
 .bottombar{position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--navy);border-top:2px solid var(--green);transform:translateY(110%);transition:transform .3s ease;}
@@ -226,28 +129,28 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 .bottombar .txt span{color:var(--green);}
 .bottombar .txt small{display:block;color:rgba(255,255,255,0.55);font-size:12px;font-weight:500;margin-top:2px;}
 
+/* FLOATING WHATSAPP */
+.wa{position:fixed;z-index:80;right:22px;bottom:96px;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:#25D366;color:#07130b;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .15s;}
+.wa:hover{transform:translateY(-2px) scale(1.03);}
+.wa svg{width:22px;height:22px;}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:none;}
 
 /* responsive */
 @media (max-width:900px){
-  .cards{grid-template-columns:1fr;gap:24px;}
-  .card.rec{transform:none;} .card.rec:hover{transform:translateY(-4px);}
-  .bf .grid{grid-template-columns:1fr 1fr;gap:24px 16px;}
-  .why .grid{grid-template-columns:repeat(2,1fr);gap:28px 18px;}
-  .work .grid{grid-template-columns:1fr;}
-  .addon{grid-template-columns:1fr;gap:18px;text-align:center;}
-  .addon-chips{justify-content:center;}
-  .combo{flex-direction:column;text-align:center;}.combo .right{text-align:center;}
-  .nav-links a:not(.btn){display:none;}
+  .scards{grid-template-columns:1fr;gap:16px;}
+  .nav-links a:not(.btn):not(.lang span){display:none;}
+  .lang{display:none;}
   .bottombar .txt small{display:none;}
+  .wa .wa-label{display:none;}
+  .wa{padding:14px;}
 }
 @media (max-width:480px){
   .wrap{padding:0 18px;}
   .hero{padding:64px 0 64px;}
   .hero-stats{gap:22px;}
-  .bf .grid{grid-template-columns:1fr;}
   .bottombar .txt{font-size:13px;}
 }
 @media (prefers-reduced-motion:reduce){
@@ -255,387 +158,142 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
   .reveal{opacity:1;transform:none;transition:none;}
   .marquee-track{animation:none;}
   .announce .dot{animation:none;}
-  .card:hover,.btn:hover{transform:none;}
+  .scard:hover,.btn:hover{transform:none;}
 }
 </style>
 </head>
 <body>
 
 <div class="announce" id="announce">
-  <span class="dot"></span><a href="#servicios">Cupos de temporada abiertos — arma tu plan antes de Black Friday →</a>
+  <span class="dot"></span><a href="#servicios">Socios de crecimiento de +200 marcas en +5 países — hablemos de la tuya →</a>
   <span class="x" onclick="document.getElementById('announce').style.display='none'">✕</span>
 </div>
 
 <nav>
   <div class="wrap">
-    <div class="logo"><img src="data:image/png;base64,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" alt="LA REAL"><span class="word">LA REAL</span></div>
+    <a href="#" class="logo">
+      <span class="iso" aria-hidden="true"></span>
+      <span class="word">LA REAL<span class="pt">.</span></span>
+    </a>
     <div class="nav-links">
-      <a href="#resultados">Resultados</a>
       <a href="#servicios">Servicios</a>
-      <a href="#testimonios">Clientes</a>
-      <a href="#trabajamos">Cómo trabajamos</a>
-      <a class="btn btn-green btn-sm" href="https://wa.me/573043148428?text=Hola%20LA%20REAL%2C%20quiero%20info%20de%20contenido%20y%20dise%C3%B1o">Aplicar ahora <span class="arr">→</span></a>
+      <div class="lang">
+        <span class="on">ES</span>
+        <span>EN</span>
+      </div>
+      <a class="btn btn-green btn-sm" href="#servicios">Ver servicios <span class="arr">→</span></a>
     </div>
   </div>
 </nav>
 
 <header class="dark grain">
   <div class="hero wrap reveal">
-    <div class="eyebrow">Contenido &amp; Diseño · LA REAL</div>
-    <h1>Contenido y diseño que ponen a
-      <span class="u">vender
+    <div class="eyebrow">Growth Partners para e-commerce · est. 2018</div>
+    <h1>Hacemos crecer las marcas que ya están listas para
+      <span class="u">escalar digitalmente.
         <svg viewBox="0 0 220 14" preserveAspectRatio="none"><path d="M3 9 C 55 3, 120 3, 217 7" stroke="#4ADE80" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
-      </span> a tu marca.</h1>
-    <p class="sub"><b>Growth partners para e-commerce.</b> Somos el equipo detrás de +120 marcas y de un Black Friday de $610 millones. Ese mismo músculo ahora produce tu email, tus imágenes con IA y el diseño de tu tienda — sin tanto enredo.</p>
+      </span></h1>
+    <p class="sub"><b>Somos socios estratégicos de +200 marcas en Latinoamérica.</b> Operamos el embudo end-to-end con la disciplina de un CFO y la sensibilidad de un estudio editorial.</p>
     <div class="cta-row">
-      <a class="btn btn-green" href="https://wa.me/573043148428?text=Hola%20LA%20REAL%2C%20quiero%20info%20de%20contenido%20y%20dise%C3%B1o">Aplicar ahora <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#servicios">Ver servicios <span class="arr">→</span></a>
+      <a class="btn btn-green" href="#servicios">Ver servicios <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20LA%20REAL" target="_blank" rel="noopener">Escríbenos <span class="arr">→</span></a>
     </div>
     <div class="hero-stats">
-      <div class="s"><div class="n">+120</div><div class="l">marcas a nivel mundial</div></div>
-      <div class="s"><div class="n">+10 años</div><div class="l">en ecommerce</div></div>
-      <div class="s"><div class="n">+$150M</div><div class="l">en pauta cada mes</div></div>
-      <div class="s"><div class="n">9,95</div><div class="l">ROAS promedio</div></div>
+      <div class="s"><div class="n">+200</div><div class="l">marcas en Latinoamérica</div></div>
+      <div class="s"><div class="n">+5</div><div class="l">países</div></div>
+      <div class="s"><div class="n">est. 2018</div><div class="l">creciendo e-commerce</div></div>
     </div>
   </div>
 </header>
 
 <div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Email Marketing</span><span>Producción con IA</span><span>Diseño para Ecommerce</span><span>Diagnóstico web</span><span>Landings que convierten</span><span>+120 marcas</span><span>ROAS 9,95</span><span>$610M en Black Friday</span><span>95% de retención</span>
-    <span>Email Marketing</span><span>Producción con IA</span><span>Diseño para Ecommerce</span><span>Diagnóstico web</span><span>Landings que convierten</span><span>+120 marcas</span><span>ROAS 9,95</span><span>$610M en Black Friday</span><span>95% de retención</span>
-  </div>
+  <div class="marquee-track" id="mq-track"></div>
 </div>
-
-<!-- BLACK FRIDAY RESULTS -->
-<section class="dark grain" id="resultados">
-  <div class="bf wrap reveal">
-    <div class="eyebrow">Lo que hemos hecho</div>
-    <h2>Así se vio nuestro último Black Friday.</h2>
-    <p class="kick">Cuatro días. Estos son los números reales que movimos para nuestras marcas.</p>
-    <div class="grid">
-      <div class="bfcard">
-        <span class="note">en 4 días !!</span>
-        <div class="big">$610M</div>
-        <div class="lbl">en ventas para las marcas que acompañamos.</div>
-      </div>
-      <div class="bfcard">
-        <span class="note">casi 10x ⚡</span>
-        <div class="big">9,95</div>
-        <div class="lbl">de ROAS promedio en la temporada.</div>
-      </div>
-      <div class="bfcard">
-        <span class="note">1 cada 90 seg</span>
-        <div class="big">3.812</div>
-        <div class="lbl">pedidos procesados, sin parar.</div>
-      </div>
-      <div class="bfcard">
-        <span class="note">33K por día</span>
-        <div class="big">132K</div>
-        <div class="lbl">personas llevadas a tienda en 4 días.</div>
-      </div>
-    </div>
-    <p class="closing"><span>$1.766</span> en ventas cada segundo, durante cuatro días seguidos.</p>
-  </div>
-</section>
 
 <!-- SERVICIOS -->
 <main class="light" id="servicios">
   <div class="wrap intro reveal">
-    <div class="eyebrow" style="color:var(--green-deep)">Servicios</div>
-    <h2>Todo lo que tu marca necesita para vender más.</h2>
-    <p class="lead">Cada servicio funciona solo o en conjunto. Tú decides qué necesitas hoy; nosotros lo dejamos andando.</p>
+    <div class="eyebrow"><span class="num">02</span> Servicios</div>
+    <h2>Así podemos <span class="g">ayudarte.</span></h2>
+    <p class="lead">Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
   </div>
 
-  <section class="svc wrap reveal" id="email">
-    <div class="eyebrow"><span class="num">01</span> Email Marketing</div>
-    <h2>Convertimos tu lista de correos en ventas que se repiten.</h2>
-    <p class="lead">Diseñamos los flows y las campañas que recuperan carritos, fidelizan y venden mientras tú te enfocas en tu negocio. Estrategia, copy y diseño en un solo lugar, medido en ventas reales.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="badge b-start">Setup</div>
-        <div class="price">$2.2<small>M</small></div>
-        <div class="price-label">proyecto único</div>
-        <div class="sep"></div>
-        <div class="detail">Montamos los <strong>4 flows que más venden</strong> —bienvenida, carrito abandonado, post-compra y reactivación— sobre una <strong>plantilla lista para crecer contigo</strong>.</div>
-        <div class="time">Entrega: 10–12 días hábiles</div>
-        <div class="iva">desde $2.200.000 + IVA</div>
-        <div class="audience">Para marcas que aún no le sacan ventas a su lista.</div>
-      </div>
-      <div class="card rec">
-        <div class="rec-tag">Mejor valor</div>
-        <div class="badge b-perf">Temporada</div>
-        <div class="price">$950<small>K</small></div>
-        <div class="price-label">por temporada</div>
-        <div class="sep"></div>
-        <div class="detail">Creamos la campaña de tu fecha clave —<strong>Madre, Black Friday, Navidad</strong>— con concepto, copy, diseño y segmentación para que vendas más en los días que importan.</div>
-        <div class="time">Entrega: 5–7 días hábiles</div>
-        <div class="iva">desde $950.000 + IVA</div>
-        <div class="audience">Para marcas que se la juegan en cada temporada.</div>
-      </div>
-      <div class="card">
-        <div class="badge b-ultra">Mensual</div>
-        <div class="price">$1.5<small>M</small></div>
-        <div class="price-label">/ mes</div>
-        <div class="sep"></div>
-        <div class="detail">Llevamos tu canal mes a mes: <strong>calendario, diseño, envíos y optimización</strong>, con reportes claros de lo que vendiste.</div>
-        <div class="time">Operación continua</div>
-        <div class="iva">desde $1.500.000 + IVA / mes</div>
-        <div class="audience">Para marcas con catálogo activo que venden todo el año.</div>
-      </div>
-    </div>
-  </section>
+  <section class="svc wrap reveal">
+    <div class="scards">
 
-  <section class="svc wrap reveal" id="ia">
-    <div class="eyebrow"><span class="num">02</span> Producción Visual con IA</div>
-    <h2>Creamos tus imágenes con IA y las intervenimos en tu lenguaje visual.</h2>
-    <p class="lead">Generamos las imágenes de tu marca con IA y las intervenimos para que hablen tu lenguaje visual. Tú eliges cuáles llevar al acabado final; el resto, volumen de contenido listo para publicar.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="badge b-start">Start · 15</div>
-        <div class="price">$750<small>K</small></div>
-        <div class="price-label">paquete · 15 imágenes</div>
-        <div class="sep"></div>
-        <div class="detail"><strong>15 imágenes</strong> creadas con IA a partir del brief de tu marca, listas para usar.</div>
-        <div class="time">Entrega: 7 días hábiles</div>
-        <div class="iva">Total desde $750.000 + IVA</div>
-        <div class="audience">Para empezar a probar contenido con volumen.</div>
-      </div>
-      <div class="card rec">
-        <div class="rec-tag">Mejor valor</div>
-        <div class="badge b-perf">Performance · 30</div>
-        <div class="price">$1.29<small>M</small></div>
-        <div class="price-label">paquete · 30 imágenes</div>
-        <div class="sep"></div>
-        <div class="detail"><strong>30 imágenes</strong> creadas con IA con la mirada de tu marca. Un mes de contenido resuelto.</div>
-        <div class="time">Entrega: 10 días hábiles</div>
-        <div class="iva">Total desde $1.290.000 + IVA</div>
-        <div class="audience">El volumen que mantiene tu feed y catálogo al día.</div>
-      </div>
-      <div class="card">
-        <div class="badge b-ultra">Ultra · 40</div>
-        <div class="price">$1.6<small>M</small></div>
-        <div class="price-label">paquete · 40 imágenes</div>
-        <div class="sep"></div>
-        <div class="detail"><strong>40 imágenes</strong> creadas con IA para marcas que publican sin parar.</div>
-        <div class="time">Entrega: 12 días hábiles</div>
-        <div class="iva">Total desde $1.600.000 + IVA</div>
-        <div class="audience">Para marcas con mucho movimiento o varias líneas.</div>
-      </div>
-    </div>
-    <div class="addon">
-      <div class="addon-price"><div class="big">$85<small>K</small></div><div class="lbl">por imagen intervenida</div></div>
-      <div class="addon-body">
-        <h3>+ Intervención gráfica — el sello de tu marca</h3>
-        <p>Intervenimos las imágenes generadas para que hablen el lenguaje visual de tu marca: composición, textura, color y retoque. Es lo que convierte un render de IA en una pieza con tu firma. Se suma sobre cualquier plan, solo donde tu marca lo necesita.</p>
-        <div class="addon-chips">
-          <div class="addon-chip">Bloque de 5: <strong>$400.000</strong></div>
-          <div class="addon-chip">Bloque de 10: <strong>$750.000</strong></div>
-          <div class="addon-chip">Bloque de 20: <strong>$1.400.000</strong></div>
+      <a class="scard" href="/growth-advisor" style="--svc:#16a34a">
+        <div class="top">
+          <span class="num">01 / Servicio</span>
+          <span class="badge">Growth Advisor</span>
         </div>
-      </div>
-    </div>
-    <div class="combo">
-      <div class="combo-tag">Plan completo</div>
-      <div class="left">
-        <h3>Ultra 40 + 20 intervenidas</h3>
-        <p>40 imágenes creadas y 20 llevadas al acabado final con el lenguaje de tu marca. La producción más completa: catálogo, campaña y editorial en una sola entrega.</p>
-      </div>
-      <div class="right"><div class="pf">$3<small>M</small></div><div class="ivb">desde $3.000.000 + IVA</div></div>
+        <h3>Para marcas que están arrancando.</h3>
+        <p>Tu socio estratégico, mes a mes. Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online — tú y tu equipo ejecutan, nosotros guiamos.</p>
+        <span class="more">Ver más <span class="arr">→</span></span>
+      </a>
+
+      <a class="scard" href="/call-me" style="--svc:#C8881F">
+        <div class="top">
+          <span class="num">02 / Servicio</span>
+          <span class="badge">Sesión estratégica</span>
+        </div>
+        <h3>Una sesión 1:1 con Juanfe.</h3>
+        <p>Resuelve un reto específico de tu marca en digital: estrategia, contenido, pauta o comercial. Sales con un plan ejecutable, grabación y 15 días de acompañamiento.</p>
+        <span class="more">Ver más <span class="arr">→</span></span>
+      </a>
+
+      <a class="scard" href="/metodologia-real" style="--svc:#7B5BC9">
+        <div class="top">
+          <span class="num">03 / Servicio</span>
+          <span class="badge">Metodología REAL</span>
+        </div>
+        <h3>Programa intensivo de 5 semanas.</h3>
+        <p>Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses.</p>
+        <span class="more">Ver más <span class="arr">→</span></span>
+      </a>
+
+      <a class="scard" href="/growth-partner" style="--svc:#2563CA">
+        <div class="top">
+          <span class="num">04 / Servicio</span>
+          <span class="badge">Growth Partner</span>
+        </div>
+        <h3>Para marcas que ya venden y quieren escalar.</h3>
+        <p>Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Nuestro verdadero negocio es que tú vendas más.</p>
+        <span class="more">Ver más <span class="arr">→</span></span>
+      </a>
+
     </div>
   </section>
-
-  <section class="svc wrap reveal" id="diseno">
-    <div class="eyebrow"><span class="num">03</span> Diseño para Ecommerce</div>
-    <h2>Diseñamos cada rincón de tu tienda para que venda más.</h2>
-    <p class="lead">Banners, fichas y carruseles que no solo se ven bien: guían a tu cliente hacia la compra. Un sistema visual coherente, con jerarquía clara y mensajes que mueven a la acción.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="badge b-start">Lanzamiento</div>
-        <div class="price">$750<small>K</small></div>
-        <div class="price-label">por producto / colección</div>
-        <div class="sep"></div>
-        <div class="detail">Todo lo que tu producto nuevo necesita para salir bien parado:</div>
-        <ul class="feats">
-          <li>Banner PC y mobile, montado en tu sitio</li>
-          <li>Carrusel de producto</li>
-          <li>Labels en el producto</li>
-          <li>Barra de anuncios (1 producto)</li>
-          <li>Visibilidad en el home</li>
-          <li>Producto creado y agregado a colecciones</li>
-        </ul>
-        <div class="feats-note">Lo montamos nosotros o lo dejamos listo para que tú lo montes.</div>
-        <div class="time">Entrega: 5 días hábiles</div>
-        <div class="iva">desde $750.000 + IVA</div>
-        <div class="audience">Para estrenar producto o colección con todo listo.</div>
-      </div>
-      <div class="card rec">
-        <div class="rec-tag">Mejor valor</div>
-        <div class="badge b-perf">Temporada</div>
-        <div class="price">$1.4<small>M</small></div>
-        <div class="price-label">por campaña</div>
-        <div class="sep"></div>
-        <div class="detail">El operativo visual completo de tu temporada:</div>
-        <ul class="feats">
-          <li>Creación de la colección</li>
-          <li>Organización de descuentos</li>
-          <li>Barra de anuncios + labels de descuento</li>
-          <li>Banners de campaña</li>
-          <li>Mayor visibilidad en el home</li>
-          <li>Mensajes en carrito y página de producto</li>
-        </ul>
-        <div class="time">Entrega: 7–8 días hábiles</div>
-        <div class="iva">desde $1.400.000 + IVA</div>
-        <div class="audience">Para activar tu temporada sin dejar cabos sueltos.</div>
-      </div>
-      <div class="card">
-        <div class="badge b-ultra">Mensual</div>
-        <div class="price">$1.3<small>M</small></div>
-        <div class="price-label">/ mes</div>
-        <div class="sep"></div>
-        <div class="detail">Tu tienda siempre fresca, mes a mes:</div>
-        <ul class="feats">
-          <li>Banners del mes</li>
-          <li>Montaje de productos nuevos</li>
-          <li>Optimización web continua</li>
-        </ul>
-        <div class="time">Operación continua</div>
-        <div class="iva">desde $1.300.000 + IVA / mes</div>
-        <div class="audience">Para tiendas que publican y se renuevan seguido.</div>
-      </div>
-    </div>
-
-    <h3 class="also">Y dentro de tu tienda, también:</h3>
-    <div class="offer">
-      <div class="offer-body">
-        <h4>Diagnóstico &amp; Optimización Web</h4>
-        <p>Revisamos tu tienda a fondo y la dejamos vendiendo mejor: el mejor punto de partida antes de invertir en pauta o entrar a una temporada fuerte.</p>
-        <ul class="feats">
-          <li>Diagnóstico completo: velocidad, fichas, navegación y conversión</li>
-          <li>Asesoría con hallazgos priorizados y plan de acción</li>
-          <li>Optimización aplicada sobre tu sitio web existente</li>
-        </ul>
-      </div>
-      <div class="offer-price">
-        <div class="op">desde $1.5<small>M</small></div>
-        <div class="op-iva">desde $1.500.000 + IVA</div>
-        <div class="op-tag">proyecto único</div>
-      </div>
-    </div>
-    <div class="offer">
-      <div class="offer-body">
-        <h4>Creación de Landing</h4>
-        <p>Una página hecha para un solo objetivo: convertir. Para cuando una página de producto normal no basta.</p>
-        <ul class="feats">
-          <li>Landing de producto nuevo o combo especializado</li>
-          <li>Landing para productos descargables</li>
-          <li>Landing informativa para soportar tus estrategias</li>
-        </ul>
-      </div>
-      <div class="offer-price">
-        <div class="op">desde $1.2<small>M</small></div>
-        <div class="op-iva">desde $1.200.000 + IVA por landing</div>
-        <div class="op-tag">a la medida</div>
-      </div>
-    </div>
-  </section>
-
 </main>
-
-<!-- WHY US (TEAL) -->
-<section class="why" id="porque">
-  <div class="inner wrap reveal">
-    <div class="eyebrow">Por qué nosotros</div>
-    <h2>No improvisamos. Lo hemos hecho cientos de veces.</h2>
-    <div class="grid">
-      <div class="w"><div class="n">+120</div><div class="l">marcas a nivel mundial con estrategias comprobadas.</div></div>
-      <div class="w"><div class="n">+10 años</div><div class="l">aprendiendo qué vende de verdad en e-commerce.</div></div>
-      <div class="w"><div class="n">+$150M</div><div class="l">invertidos en pauta cada mes, con cabeza.</div></div>
-      <div class="w"><div class="n">95%</div><div class="l">de nuestras marcas siguen con nosotros +16 meses.</div></div>
-    </div>
-    <div class="values">
-      <span>Honestidad</span><span>Claridad</span><span>Hipercomunicación</span><span>Acompañamiento</span>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="dark grain" id="testimonios">
-  <div class="tst wrap reveal">
-    <div class="eyebrow">Lo que dicen de nosotros</div>
-    <h2>Más que una agencia, un aliado.</h2>
-    <p class="hl"><b>95%</b> de nuestras marcas siguen con nosotros más de 16 meses consecutivos.</p>
-    <div class="grid">
-      <div class="quote">
-        <div class="stars">★★★★★</div>
-        <p>“Pasamos de tener un canal digital sin relevancia a uno de los que más venden. Nos ayudaron a ordenar el equipo y la pauta, y el crecimiento fue enorme.”</p>
-        <div class="who">Miguel · <span>Cíclico</span></div>
-      </div>
-      <div class="quote">
-        <div class="stars">★★★★★</div>
-        <p>“Más que una agencia, un aliado que entiende la marca, nos reta y nos acompaña en cada decisión clave. Campañas que conectan y dan resultados reales.”</p>
-        <div class="who">Santiago · <span>Barba Roja</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMO TRABAJAMOS -->
-<section class="light" id="trabajamos">
-  <div class="work wrap reveal">
-    <div class="eyebrow" style="color:var(--green-deep)">Cómo trabajamos</div>
-    <h2>Claro desde el primer día: cada quien sabe qué pone.</h2>
-    <div class="grid">
-      <div class="role">
-        <h3>→ Tu papel</h3>
-        <ul>
-          <li>Acceso a tus plataformas (email, tienda) y tu catálogo.</li>
-          <li>Fotos o material de producto en alta resolución.</li>
-          <li>Tu manual de marca: paleta, tono y referentes.</li>
-          <li>Estar pendiente de las entregas y los ajustes.</li>
-        </ul>
-      </div>
-      <div class="role">
-        <h3>← Nuestro papel</h3>
-        <ul>
-          <li>Estrategia, diseño y producción listos para publicar.</li>
-          <li>Dos rondas de ajuste incluidas en cada entrega.</li>
-          <li>Tiempos de entrega claros y cumplidos.</li>
-          <li>Reportes y acompañamiento en cada paso.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="dark grain">
-  <div class="final wrap reveal">
-    <h2>¿Quieres estos números <span class="g">en tu marca?</span></h2>
-    <p>Cuéntanos en qué estás y armamos el plan de contenido y diseño que tu marca necesita para esta temporada.</p>
-    <div class="cta-row">
-      <a class="btn btn-green" href="https://wa.me/573043148428?text=Hola%20LA%20REAL%2C%20quiero%20info%20de%20contenido%20y%20dise%C3%B1o">Aplicar ahora <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#servicios">Ver servicios <span class="arr">→</span></a>
-    </div>
-    <div class="mini"><span>Paquetes cerrados</span><span>2 rondas de ajuste incluidas</span><span>Tiempos claros</span></div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
-    <div class="logo"><img src="data:image/png;base64,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" alt="LA REAL"><span class="word">LA REAL</span></div>
-    <div>© 2025 LA REAL · Growth partners para e-commerce · Medellín, Colombia</div>
+    <a href="#" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="foot-meta">
+      <a href="mailto:hola@lareal.co">hola@lareal.co</a>
+      <span>Medellín · Remoto</span>
+      <a href="https://instagram.com/larealmarketing" target="_blank" rel="noopener">@larealmarketing</a>
+      <span>© 2026 LA REAL</span>
+    </div>
   </div>
 </footer>
 
 <div class="bottombar" id="bottombar">
   <div class="wrap">
-    <div class="txt"><span>Contenido &amp; Diseño LA REAL</span><small>Arma tu plan para esta temporada</small></div>
-    <a class="btn btn-green btn-sm" href="https://wa.me/573043148428?text=Hola%20LA%20REAL%2C%20quiero%20info%20de%20contenido%20y%20dise%C3%B1o">Aplicar ahora <span class="arr">→</span></a>
+    <div class="txt"><span>Growth Partners</span> para e-commerce<small>Hablemos del crecimiento de tu marca</small></div>
+    <a class="btn btn-green btn-sm" href="#servicios">Ver servicios <span class="arr">→</span></a>
   </div>
 </div>
 
+<a class="wa" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20LA%20REAL" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3 0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4.1.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3a8.2 8.2 0 1 1 7 4z"/></svg>
+  <span class="wa-label">Escríbenos</span>
+</a>
+
 <script>
+const BRANDS = ['Cacao Hunters','Dulcey','Kryolan','Panavayu','Barba Roja','Leonisa','Parchita','Once','Pachha','Zorro y Jaguar','Estruendo','Ukelele','Sandra Botero','Cíclico','IFW','Adriza','Atratus','Gratu','Natnack'];
+const mqHTML = BRANDS.map(b => `<span>${b}</span>`).join('');
+document.getElementById('mq-track').innerHTML = mqHTML + mqHTML;
+
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const bar=document.getElementById('bottombar');
