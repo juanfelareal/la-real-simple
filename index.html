@@ -130,7 +130,7 @@ footer .logo .word{font-size:16px;}
 .bottombar .txt small{display:block;color:rgba(255,255,255,0.55);font-size:12px;font-weight:500;margin-top:2px;}
 
 /* FLOATING WHATSAPP */
-.wa{position:fixed;z-index:80;right:22px;bottom:96px;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:#25D366;color:#07130b;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .15s;}
+.wa{position:fixed;z-index:80;right:22px;bottom:96px;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:#25D366;color:#07130b;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .15s,opacity .25s,visibility .25s;}
 .wa:hover{transform:translateY(-2px) scale(1.03);}
 .wa svg{width:22px;height:22px;}
 
@@ -145,12 +145,20 @@ footer .logo .word{font-size:16px;}
   .lang{display:none;}
   .bottombar .txt small{display:none;}
   .wa .wa-label{display:none;}
-  .wa{padding:14px;}
+  .wa{padding:14px;opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;}
+  .wa.show{opacity:1;visibility:visible;transform:none;pointer-events:auto;}
 }
-@media (max-width:480px){
+@media (max-width:600px){
   .wrap{padding:0 18px;}
-  .hero{padding:64px 0 64px;}
-  .hero-stats{gap:22px;}
+  .hero{padding:60px 0 60px;}
+  .hero h1{font-size:clamp(28px,8vw,46px);letter-spacing:-1.2px;line-height:1.02;}
+  .hero h1 .u svg{height:0.2em;bottom:-0.06em;}
+  .hero .sub{margin-top:20px;}
+  .hero .cta-row{margin-top:28px;}
+  .hero-stats{flex-direction:column;gap:24px;margin-top:44px;align-items:center;}
+  .hero-stats .s{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .hero-stats .s .n{font-size:clamp(44px,13vw,58px);letter-spacing:-2px;}
+  .hero-stats .s .l{margin-top:5px;}
   .bottombar .txt{font-size:13px;}
 }
 @media (prefers-reduced-motion:reduce){
@@ -313,7 +321,8 @@ function countUp(el){
 const statObs = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){countUp(e.target);statObs.unobserve(e.target);}});},{threshold:0.6});
 document.querySelectorAll('.n[data-count]').forEach(el=>{el.textContent=(el.dataset.prefix||'')+'0'+(el.dataset.suffix||'');statObs.observe(el);});
 const bar=document.getElementById('bottombar');
-const onScroll=()=>{bar.classList.toggle('show',window.scrollY>640);};
+const wa=document.querySelector('.wa');
+const onScroll=()=>{const past=window.scrollY>640;bar.classList.toggle('show',past);wa.classList.toggle('show',past);};
 onScroll();window.addEventListener('scroll',onScroll,{passive:true});
 </script>
 </body>
