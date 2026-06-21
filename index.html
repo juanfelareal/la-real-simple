@@ -100,18 +100,41 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .svc .eyebrow .num{background:var(--navy);color:#fff;}
 
 /* SERVICE CARDS */
-.scards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-.scard{background:#fff;border-radius:18px;padding:32px 32px 28px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 10px 28px rgba(13,27,42,0.06);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.scards{display:flex;flex-direction:column;gap:18px;}
+.scard{background:#fff;border-radius:18px;padding:30px 38px;display:flex;flex-direction:row;align-items:center;gap:36px;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 10px 28px rgba(13,27,42,0.06);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
 .scard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--svc,var(--green));opacity:.85;}
 .scard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,27,42,0.12);}
+.scard-icon{flex:0 0 auto;width:124px;height:124px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--svc,var(--green)) 9%,#fff);}
+.scard-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px;}
 .scard .top{display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .scard .num{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--muted);}
 .scard .badge{display:inline-block;padding:5px 14px;border-radius:50px;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:color-mix(in srgb,var(--svc,var(--green)) 16%,transparent);color:var(--svc,var(--green-deep));}
-.scard h3{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-0.8px;color:var(--navy);line-height:1.1;margin-top:6px;}
+.scard h3{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-0.8px;color:var(--navy);line-height:1.1;margin-top:4px;}
 .scard p{font-size:14.5px;color:#374151;line-height:1.55;font-weight:500;}
-.scard .more{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--svc,var(--green-deep));}
+.scard .more{margin-top:6px;display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--svc,var(--green-deep));}
 .scard .more .arr{transition:transform .2s;}
 .scard:hover .more .arr{transform:translateX(4px);}
+
+/* animated brand vectors (from service pages) */
+.lr-vector{width:80px;height:80px;color:var(--svc,var(--green));display:block;animation:lr-vec-float 5s ease-in-out infinite;}
+@keyframes lr-vec-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+.lr-vector .draw{stroke-dasharray:240;stroke-dashoffset:240;animation:lr-vec-draw 3s ease-in-out infinite;}
+@keyframes lr-vec-draw{0%{stroke-dashoffset:240;}45%{stroke-dashoffset:0;}80%,100%{stroke-dashoffset:0;}}
+.lr-vector .tip{animation:lr-vec-tip 3s ease-in-out infinite;transform-origin:center;}
+@keyframes lr-vec-tip{0%,40%{opacity:0;transform:scale(0);}55%{opacity:1;transform:scale(1.3);}70%,100%{opacity:1;transform:scale(1);}}
+.lr-vector .ring{transform-origin:60px 60px;transform-box:fill-box;animation:lr-vec-ring 3s ease-out infinite;}
+.lr-vector .ring.r2{animation-delay:1s;}
+.lr-vector .ring.r3{animation-delay:2s;}
+@keyframes lr-vec-ring{0%{transform:scale(.45);opacity:0;}30%{opacity:.8;}100%{transform:scale(1.15);opacity:0;}}
+.lr-vector .node{animation:lr-vec-node 2.6s ease-in-out infinite;}
+.lr-vector .node.n2{animation-delay:.25s;}
+.lr-vector .node.n3{animation-delay:.5s;}
+.lr-vector .node.n4{animation-delay:.75s;}
+.lr-vector .node.n5{animation-delay:1s;}
+@keyframes lr-vec-node{0%,100%{opacity:.25;}50%{opacity:1;}}
+.lr-vector .orbit{transform-origin:60px 60px;transform-box:fill-box;animation:lr-vec-spin 9s linear infinite;}
+.lr-vector .orbit.rev{animation-duration:13s;animation-direction:reverse;}
+@keyframes lr-vec-spin{to{transform:rotate(360deg);}}
 
 /* FOOTER */
 footer{background:var(--navy-2);color:rgba(255,255,255,0.55);padding:40px 0 96px;border-top:1px solid rgba(255,255,255,0.07);position:relative;z-index:2;}
@@ -139,8 +162,13 @@ footer .logo .word{font-size:16px;}
 .reveal.in{opacity:1;transform:none;}
 
 /* responsive */
+@media (max-width:760px){
+  .scard{flex-direction:column;align-items:flex-start;gap:20px;padding:28px 26px;}
+  .scard-icon{width:88px;height:88px;}
+  .lr-vector{width:60px;height:60px;}
+}
 @media (max-width:900px){
-  .scards{grid-template-columns:1fr;gap:16px;}
+  .scards{gap:16px;}
   .nav-links a:not(.btn):not(.lang span){display:none;}
   .lang{display:none;}
   .bottombar .txt small{display:none;}
@@ -167,6 +195,8 @@ footer .logo .word{font-size:16px;}
   .marquee-track{animation:none;}
   .announce .dot{animation:none;}
   .scard:hover,.btn:hover{transform:none;}
+  .lr-vector,.lr-vector *{animation:none !important;}
+  .lr-vector .draw{stroke-dashoffset:0;}
 }
 </style>
 </head>
@@ -223,47 +253,118 @@ footer .logo .word{font-size:16px;}
     <p class="lead">Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
   </div>
 
-  <section class="svc wrap reveal">
+  <section class="svc wrap">
     <div class="scards">
 
-      <a class="scard" href="/growth-advisor" style="--svc:#16a34a">
-        <div class="top">
-          <span class="num">01 / Servicio</span>
-          <span class="badge">Growth Advisor</span>
+      <a class="scard reveal" href="/growth-advisor" style="--svc:#16a34a">
+        <div class="scard-icon">
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <path d="M16 98 H104" stroke="currentColor" stroke-opacity=".22" stroke-width="2.5" stroke-linecap="round"/>
+            <path class="draw" d="M20 90 L42 68 L62 78 L84 40 L102 24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="draw" d="M88 24 H102 V38" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle class="tip" cx="102" cy="24" r="5.5" fill="currentColor"/>
+          </svg>
         </div>
-        <h3>Para marcas que están arrancando.</h3>
-        <p>Tu socio estratégico, mes a mes. Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online — tú y tu equipo ejecutan, nosotros guiamos.</p>
-        <span class="more">Ver más <span class="arr">→</span></span>
+        <div class="scard-body">
+          <div class="top">
+            <span class="num">01 / Servicio</span>
+            <span class="badge">Growth Advisor</span>
+          </div>
+          <h3>Para marcas que están arrancando.</h3>
+          <p>Tu socio estratégico, mes a mes. Diseñamos juntos la estrategia que tu empresa necesita para despegar sus ventas online — tú y tu equipo ejecutan, nosotros guiamos.</p>
+          <span class="more">Ver más <span class="arr">→</span></span>
+        </div>
       </a>
 
-      <a class="scard" href="/call-me" style="--svc:#C8881F">
-        <div class="top">
-          <span class="num">02 / Servicio</span>
-          <span class="badge">Sesión estratégica</span>
+      <a class="scard reveal" href="/call-me" style="--svc:#C8881F">
+        <div class="scard-icon">
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle class="ring r3" cx="60" cy="60" r="46" stroke="currentColor" stroke-width="2.5"/>
+            <circle class="ring r2" cx="60" cy="60" r="46" stroke="currentColor" stroke-width="2.5"/>
+            <circle class="ring r1" cx="60" cy="60" r="46" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="60" cy="60" r="26" stroke="currentColor" stroke-opacity=".3" stroke-width="2.5"/>
+            <circle cx="60" cy="60" r="9" fill="currentColor"/>
+          </svg>
         </div>
-        <h3>Una sesión 1:1 con Juanfe.</h3>
-        <p>Resuelve un reto específico de tu marca en digital: estrategia, contenido, pauta o comercial. Sales con un plan ejecutable, grabación y 15 días de acompañamiento.</p>
-        <span class="more">Ver más <span class="arr">→</span></span>
+        <div class="scard-body">
+          <div class="top">
+            <span class="num">02 / Servicio</span>
+            <span class="badge">Sesión estratégica</span>
+          </div>
+          <h3>Una sesión 1:1 con Juanfe.</h3>
+          <p>Resuelve un reto específico de tu marca en digital: estrategia, contenido, pauta o comercial. Sales con un plan ejecutable, grabación y 15 días de acompañamiento.</p>
+          <span class="more">Ver más <span class="arr">→</span></span>
+        </div>
       </a>
 
-      <a class="scard" href="/metodologia-real" style="--svc:#7B5BC9">
-        <div class="top">
-          <span class="num">03 / Servicio</span>
-          <span class="badge">Metodología REAL</span>
+      <a class="scard reveal" href="/metodologia-real" style="--svc:#7B5BC9">
+        <div class="scard-icon">
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <path d="M18 92 L40 52 L60 72 L82 32 L102 58" stroke="currentColor" stroke-opacity=".28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle class="node n1" cx="18" cy="92" r="6" fill="currentColor"/>
+            <circle class="node n2" cx="40" cy="52" r="6" fill="currentColor"/>
+            <circle class="node n3" cx="60" cy="72" r="6" fill="currentColor"/>
+            <circle class="node n4" cx="82" cy="32" r="6" fill="currentColor"/>
+            <circle class="node n5" cx="102" cy="58" r="6" fill="currentColor"/>
+          </svg>
         </div>
-        <h3>Programa intensivo de 5 semanas.</h3>
-        <p>Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses.</p>
-        <span class="more">Ver más <span class="arr">→</span></span>
+        <div class="scard-body">
+          <div class="top">
+            <span class="num">03 / Servicio</span>
+            <span class="badge">Metodología REAL</span>
+          </div>
+          <h3>Programa intensivo de 5 semanas.</h3>
+          <p>Te enseñamos a ti y a tu equipo de manera personalizada todo lo que necesitas para triunfar en e-commerce. Además, diseñamos juntos la estrategia y el plan para los próximos meses.</p>
+          <span class="more">Ver más <span class="arr">→</span></span>
+        </div>
       </a>
 
-      <a class="scard" href="/growth-partner" style="--svc:#2563CA">
-        <div class="top">
-          <span class="num">04 / Servicio</span>
-          <span class="badge">Growth Partner</span>
+      <a class="scard reveal" href="/growth-partner" style="--svc:#2563CA">
+        <div class="scard-icon">
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle cx="60" cy="60" r="9" fill="currentColor"/>
+            <g class="orbit">
+              <circle cx="60" cy="60" r="38" stroke="currentColor" stroke-opacity=".22" stroke-width="2.5"/>
+              <circle cx="98" cy="60" r="5.5" fill="currentColor"/>
+            </g>
+            <g class="orbit rev">
+              <ellipse cx="60" cy="60" rx="50" ry="24" stroke="currentColor" stroke-opacity=".22" stroke-width="2.5"/>
+              <circle cx="110" cy="60" r="4.5" fill="currentColor"/>
+            </g>
+          </svg>
         </div>
-        <h3>Para marcas que ya venden y quieren escalar.</h3>
-        <p>Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Nuestro verdadero negocio es que tú vendas más.</p>
-        <span class="more">Ver más <span class="arr">→</span></span>
+        <div class="scard-body">
+          <div class="top">
+            <span class="num">04 / Servicio</span>
+            <span class="badge">Growth Partner</span>
+          </div>
+          <h3>Para marcas que ya venden y quieren escalar.</h3>
+          <p>Entramos como tu socio de crecimiento y operamos el embudo end-to-end: paid media, email, contenido y data. Nuestro verdadero negocio es que tú vendas más.</p>
+          <span class="more">Ver más <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a class="scard reveal" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20informaci%C3%B3n%20sobre%20Dise%C3%B1o%20para%20e-commerce" target="_blank" rel="noopener" style="--svc:#DB2777">
+        <div class="scard-icon">
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <path class="draw" d="M30 34 H90 V86 H30 Z" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30 50 H90" stroke="currentColor" stroke-opacity=".3" stroke-width="2.5"/>
+            <circle class="node n1" cx="38" cy="42" r="3" fill="currentColor"/>
+            <circle class="node n2" cx="48" cy="42" r="3" fill="currentColor"/>
+            <rect class="node n3" x="38" y="60" width="40" height="6" rx="3" fill="currentColor"/>
+            <rect class="node n4" x="38" y="72" width="26" height="6" rx="3" fill="currentColor"/>
+            <circle class="tip" cx="90" cy="34" r="5" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="scard-body">
+          <div class="top">
+            <span class="num">05 / Servicio</span>
+            <span class="badge">Diseño e-commerce</span>
+          </div>
+          <h3>Diseñamos cada rincón de tu tienda para que venda más.</h3>
+          <p>Banners, fichas, carruseles y landing pages con un sistema visual coherente — más imágenes creadas con IA e intervenidas en el lenguaje de tu marca. Diseño que no solo se ve bien: guía a tu cliente hacia la compra.</p>
+          <span class="more">Cotiza tu diseño <span class="arr">→</span></span>
+        </div>
       </a>
 
     </div>
