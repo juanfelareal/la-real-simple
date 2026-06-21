@@ -16,7 +16,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.5;}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:28px;}
 section{scroll-margin-top:120px;}
 h1,h2,h3{font-family:'Inter',sans-serif;}
 
@@ -66,7 +66,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 .eyebrow .num{background:var(--green);color:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;letter-spacing:0;}
 
 /* HERO */
-.hero{padding:90px 0 84px;position:relative;z-index:2;text-align:center;}
+.hero{padding-block:90px 84px;position:relative;z-index:2;text-align:center;}
 .hero h1{font-weight:800;font-size:clamp(46px,7.4vw,88px);line-height:1.06;letter-spacing:-2.5px;color:#fff;margin:0 auto;}
 .hero h1 .u{position:relative;white-space:nowrap;}
 .hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.1em;width:100%;height:0.2em;}
@@ -90,7 +90,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 @keyframes scroll{to{transform:translateX(-50%);}}
 
 /* BLACK FRIDAY RESULTS */
-.bf{padding:96px 0;position:relative;z-index:2;}
+.bf{padding-block:96px;position:relative;z-index:2;}
 .bf .eyebrow{color:var(--teal);}
 .bf h2{font-weight:800;font-size:clamp(30px,4.6vw,54px);letter-spacing:-2px;color:#fff;line-height:1.03;}
 .bf .kick{color:rgba(255,255,255,0.6);font-size:16px;margin-top:14px;font-weight:500;}
@@ -107,10 +107,10 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 
 /* LIGHT / SERVICES */
 .light{background:var(--cream);color:var(--ink);position:relative;}
-.intro{padding:84px 0 8px;}
+.intro{padding-block:84px 8px;}
 .intro h2{font-weight:800;font-size:clamp(30px,4.4vw,50px);letter-spacing:-1.5px;color:var(--navy);line-height:1.05;}
 .intro .lead{font-size:16.5px;color:var(--muted);margin-top:16px;line-height:1.6;}
-.svc{padding:72px 0;border-bottom:1px solid var(--line);}
+.svc{padding-block:72px;border-bottom:1px solid var(--line);}
 .svc:last-of-type{border-bottom:none;padding-bottom:90px;}
 .svc .eyebrow{background:var(--green);color:var(--navy);padding:6px 20px 6px 6px;border-radius:50px;gap:11px;letter-spacing:2.5px;box-shadow:0 8px 20px rgba(127,185,187,0.28);}
 .svc .eyebrow .num{background:var(--navy);color:#fff;width:26px;height:26px;font-size:11.5px;}
@@ -165,7 +165,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 
 /* WHY US — TEAL BAND */
 .why{background:var(--teal);color:var(--navy);position:relative;z-index:2;}
-.why .inner{padding:84px 0;text-align:center;}
+.why .inner{padding-block:84px;text-align:center;}
 .why .eyebrow{color:var(--navy);opacity:.65;}
 .why h2{font-weight:800;font-size:clamp(28px,4.2vw,46px);letter-spacing:-1.5px;line-height:1.05;max-width:22ch;margin:0 auto;}
 .why .why-lead{font-size:17px;font-weight:500;max-width:60ch;margin:16px auto 0;opacity:.9;line-height:1.6;}
@@ -176,7 +176,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 .why .values span{background:rgba(13,27,42,0.08);border:1.5px solid rgba(13,27,42,0.18);border-radius:50px;padding:9px 18px;font-size:13.5px;font-weight:700;}
 
 /* TESTIMONIOS */
-.tst{padding:90px 0;position:relative;z-index:2;}
+.tst{padding-block:90px;position:relative;z-index:2;}
 .tst .eyebrow{color:var(--teal);}
 .tst h2{font-weight:800;font-size:clamp(28px,4.2vw,46px);letter-spacing:-1.5px;color:#fff;line-height:1.05;}
 .tst .hl{color:rgba(255,255,255,0.62);font-size:16px;margin-top:14px;margin-bottom:40px;font-weight:500;}
@@ -211,7 +211,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 .also{margin-top:46px;padding-top:30px;border-top:1px solid var(--line);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green-deep);}
 
 /* WORK */
-.work{padding:88px 0;}
+.work{padding-block:88px;}
 .work .eyebrow{color:var(--green-deep);}
 .work h2{font-weight:800;font-size:clamp(28px,4.2vw,46px);color:var(--navy);letter-spacing:-1.5px;}
 .work .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px;}
@@ -223,7 +223,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 .role li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--green);}
 
 /* FINAL */
-.final{padding:104px 0;text-align:center;position:relative;z-index:2;}
+.final{padding-block:104px;text-align:center;position:relative;z-index:2;}
 .final h2{font-weight:800;font-size:clamp(34px,5.5vw,64px);color:#fff;letter-spacing:-2px;line-height:1.04;max-width:18ch;margin:0 auto;}
 .final h2 .g{color:var(--green);}
 .final p{color:rgba(255,255,255,0.7);font-size:17px;margin-top:20px;max-width:50ch;margin-left:auto;margin-right:auto;}
@@ -237,7 +237,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 /* STICKY BOTTOM BAR */
 .bottombar{position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--navy);border-top:2px solid var(--green);transform:translateY(110%);transition:transform .3s ease;}
 .bottombar.show{transform:translateY(0);}
-.bottombar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:13px;padding-bottom:13px;}
+.bottombar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:20px;}
 .bottombar .txt{color:#fff;font-size:14.5px;font-weight:700;}
 .bottombar .txt span{color:var(--green);}
 .bottombar .txt small{display:block;color:rgba(255,255,255,0.55);font-size:12px;font-weight:500;margin-top:2px;}
@@ -249,7 +249,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 /* DESKTOP — banners a todo el ancho */
 @media (min-width:901px){
   /* HERO */
-  .hero{text-align:left;padding:104px 0 92px;}
+  .hero{text-align:left;padding-block:104px 92px;}
   .hero h1{margin:0;}
   .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-top:42px;}
   .hero .sub{margin:0;max-width:44ch;}
@@ -284,7 +284,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
   .announce{overflow:hidden;white-space:nowrap;padding:9px 14px;}
   .announce .dot{display:none;}
   .announce a{display:inline-block;padding-left:100%;animation:ann-marq 16s linear infinite;}
-  .wrap{padding:0 24px;}
+  .wrap{padding-inline:24px;}
   .hero h1{font-size:34px;letter-spacing:-1.4px;}
   .hero .sub{font-size:15.5px;}
   .intro h2{font-size:26px;letter-spacing:-1px;}
@@ -296,10 +296,18 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
   .tst h2{font-size:25px;} .tst .hl{font-size:14px;}
   .work h2{font-size:25px;}
   .final h2{font-size:30px;letter-spacing:-1.2px;} .final p{font-size:15px;}
+  .hero{padding-block:54px 50px;}
+  .intro{padding-block:58px 4px;}
+  .svc{padding-block:54px;}
+  .bf{padding-block:62px;}
+  .why .inner{padding-block:58px;}
+  .tst{padding-block:60px;}
+  .work{padding-block:60px;}
+  .final{padding-block:72px;}
 }
 @keyframes ann-marq{to{transform:translateX(-100%);}}
 @media (max-width:480px){
-  .wrap{padding:0 22px;}
+  .wrap{padding-inline:22px;}
   .hero{padding:64px 0 64px;}
   .hero-stats{gap:22px;}
   .bf .grid{grid-template-columns:1fr;}
@@ -318,7 +326,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 .nav-svc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);flex:0 0 auto;}
 
 /* PORTAFOLIO / CARRUSEL */
-.pf-section{padding:44px 0 88px;}
+.pf-section{padding-block:44px 88px;}
 .pf-head{margin-bottom:30px;}
 .pf-eyebrow{background:var(--green);color:var(--navy);padding:6px 20px 6px 6px;border-radius:50px;gap:11px;letter-spacing:2.5px;box-shadow:0 8px 20px rgba(127,185,187,0.28);}
 .pf-eyebrow .num{background:var(--navy);color:#fff;width:26px;height:26px;font-size:13px;}
