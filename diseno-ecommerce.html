@@ -31,12 +31,14 @@ h1,h2,h3{font-family:'Inter',sans-serif;}
 /* NAV */
 nav{position:sticky;top:0;z-index:90;background:rgba(13,27,42,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:11px;padding-bottom:11px;}
-.logo{display:flex;align-items:center;gap:9px;}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit;}
 .logo .iso{width:32px;height:32px;display:block;background:#4ADE80;-webkit-mask:url(assets/brand/iso.png) center/contain no-repeat;mask:url(assets/brand/iso.png) center/contain no-repeat;}
 .logo .word{color:#fff;font-weight:900;font-size:19px;letter-spacing:-0.5px;}
-.nav-links{display:flex;align-items:center;gap:28px;}
+.logo .word .pt{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:22px;}
 .nav-links a:not(.btn){color:rgba(255,255,255,0.78);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
 .nav-links a:not(.btn):hover{color:#fff;}
+.nav-links a:not(.btn).active{color:var(--green);font-weight:700;}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:800;font-size:15px;border-radius:50px;padding:14px 26px;text-decoration:none;border:none;cursor:pointer;transition:transform .16s,background .2s,box-shadow .2s,border-color .2s;white-space:nowrap;}
@@ -44,6 +46,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .btn:hover .arr{transform:translateX(4px);}
 .btn-green{background:var(--green);color:var(--navy);box-shadow:0 8px 24px rgba(127,185,187,0.32);}
 .btn-green:hover{background:#6aa9ab;transform:translateY(-2px);box-shadow:0 12px 30px rgba(127,185,187,0.42);}
+.btn-brand{background:#4ADE80;color:var(--navy);box-shadow:0 8px 24px rgba(74,222,128,0.32);}
+.btn-brand:hover{background:#3fce72;transform:translateY(-2px);box-shadow:0 12px 30px rgba(74,222,128,0.42);}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.28);}
 .btn-ghost:hover{border-color:#fff;transform:translateY(-2px);}
 .btn-sm{padding:10px 20px;font-size:14px;}
@@ -262,8 +266,15 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
   .addon-chips{justify-content:center;}
   .combo{flex-direction:column;text-align:center;}.combo .right{text-align:center;}
   .nav-links a:not(.btn){display:none;}
+  .nav-svc{display:none;}
   .bottombar .txt small{display:none;}
 }
+@media (max-width:600px){
+  .announce{overflow:hidden;white-space:nowrap;padding:9px 14px;}
+  .announce .dot{display:none;}
+  .announce a{display:inline-block;padding-left:100%;animation:ann-marq 16s linear infinite;}
+}
+@keyframes ann-marq{to{transform:translateX(-100%);}}
 @media (max-width:480px){
   .wrap{padding:0 18px;}
   .hero{padding:64px 0 64px;}
@@ -276,8 +287,12 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
   .reveal{opacity:1;transform:none;transition:none;}
   .marquee-track{animation:none;}
   .announce .dot{animation:none;}
+  .announce{white-space:normal;}
+  .announce a{animation:none;padding-left:0;}
   .card:hover,.btn:hover{transform:none;}
 }
+.nav-svc{display:inline-flex;align-items:center;gap:9px;color:rgba(255,255,255,0.6);font-size:13px;font-weight:700;letter-spacing:.3px;}
+.nav-svc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);flex:0 0 auto;}
 
 /* PORTAFOLIO / CARRUSEL */
 .pf-section{padding:44px 0 88px;}
@@ -333,13 +348,14 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 
 <nav>
   <div class="wrap">
-    <div class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL</span></div>
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
     <div class="nav-links">
-      <a href="#resultados">Resultados</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#testimonios">Clientes</a>
-      <a href="#trabajamos">Cómo trabajamos</a>
-      <a class="btn btn-green btn-sm" href="https://wa.link/6mxmmy" target="_blank" rel="noopener">Cotiza aquí <span class="arr">→</span></a>
+      <a href="/growth-advisor">Advisor</a>
+      <a href="/call-me">Sesión 1:1</a>
+      <a href="/metodologia-real">Metodología</a>
+      <a href="/growth-partner">Partner</a>
+      <a href="/diseno-ecommerce" class="active">Diseño</a>
+      <a class="btn btn-brand btn-sm" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">Escríbenos →</a>
     </div>
   </div>
 </nav>
@@ -746,7 +762,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 
 <footer>
   <div class="wrap">
-    <div class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL</span></div>
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL</span></a>
     <div>© 2025 LA REAL · Growth partners para e‑commerce · Medellín, Colombia</div>
   </div>
 </footer>
