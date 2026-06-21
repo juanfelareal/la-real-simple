@@ -33,6 +33,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .nav-links{display:flex;align-items:center;gap:24px;}
 .nav-links a:not(.btn){color:rgba(255,255,255,0.78);font-size:14px;font-weight:500;transition:color .2s;}
 .nav-links a:not(.btn):hover{color:#fff;}
+.nav-links a:not(.btn).active{color:var(--svc);font-weight:700;}
 .nav-svc{display:inline-flex;align-items:center;gap:9px;color:rgba(255,255,255,0.6);font-size:13px;font-weight:700;letter-spacing:.3px;}
 .nav-svc::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--svc);flex:0 0 auto;}
 
