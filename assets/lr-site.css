@@ -205,6 +205,10 @@ footer .logo .word{font-size:16px;}
 @media (max-width:600px){
   .wrap{padding:0 18px;}
   .hero{padding:58px 0 58px;}
+  .hero h1{font-size:clamp(28px,7vw,40px);}
+  .hero h1 .u{font-size:clamp(33px,8.6vw,60px);letter-spacing:-1.6px;}
+  .sec-head h2{font-size:clamp(30px,7.4vw,46px);}
+  .final h2{font-size:clamp(32px,8vw,50px);}
   .section{padding:64px 0;}
   .offer-body{padding:30px 26px;}
   .offer-aside{padding:30px 26px;}
