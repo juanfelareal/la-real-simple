@@ -46,6 +46,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .nav-links a:not(.btn){color:rgba(255,255,255,0.78);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
 .nav-links a:not(.btn):hover{color:#fff;}
 .nav-links a:not(.btn).active{color:var(--green);font-weight:700;}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:transparent;cursor:pointer;padding:0;}
+.nav-toggle span{display:block;height:2px;width:22px;background:#fff;border-radius:2px;margin:0 auto;transition:transform .2s,opacity .2s;}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.open .nav-toggle span:nth-child(2){opacity:0;}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 .lang{display:inline-flex;gap:0;font-size:12px;font-weight:700;letter-spacing:1px;}
 .lang span{padding:6px 9px;cursor:pointer;color:rgba(255,255,255,0.5);transition:color .15s;}
 .lang span.on{color:var(--green);}
@@ -195,7 +201,12 @@ footer .logo .word{font-size:16px;}
 }
 @media (max-width:900px){
   .scards{gap:16px;}
-  .nav-links a:not(.btn){display:none;}
+  .nav-toggle{display:inline-flex;}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:6px 22px 14px;border-bottom:1px solid rgba(255,255,255,0.08);display:none;}
+  nav.open .nav-links{display:flex;}
+  .nav-links a:not(.btn){display:block;padding:13px 2px;font-size:16px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links a:not(.btn):last-child{border-bottom:none;}
+  .nav-actions .btn{padding:8px 16px;font-size:13px;}
   .lang{display:none;}
   .bottombar .txt small{display:none;}
   .wa .wa-label{display:none;}
@@ -252,7 +263,10 @@ footer .logo .word{font-size:16px;}
       <a href="/metodologia-real">Metodología</a>
       <a href="/growth-partner">Partner</a>
       <a href="/diseno-ecommerce">Diseño</a>
+    </div>
+    <div class="nav-actions">
       <a class="btn btn-brand btn-sm" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">Escríbenos →</a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
