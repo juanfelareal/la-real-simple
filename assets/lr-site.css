@@ -31,6 +31,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .logo .word{color:#fff;font-weight:900;font-size:19px;letter-spacing:-0.5px;}
 .logo .word .pt{color:var(--svc);}
 .nav-links{display:flex;align-items:center;gap:24px;}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:transparent;cursor:pointer;padding:0;}
+.nav-toggle span{display:block;height:2px;width:22px;background:#fff;border-radius:2px;margin:0 auto;transition:transform .2s,opacity .2s;}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.open .nav-toggle span:nth-child(2){opacity:0;}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 .nav-links a:not(.btn){color:rgba(255,255,255,0.78);font-size:14px;font-weight:500;transition:color .2s;}
 .nav-links a:not(.btn):hover{color:#fff;}
 .nav-links a:not(.btn).active{color:var(--svc);font-weight:700;}
@@ -207,7 +213,12 @@ footer .logo .word{font-size:16px;}
 
 /* RESPONSIVE */
 @media (max-width:900px){
-  .nav-links a:not(.btn){display:none;}
+  .nav-toggle{display:inline-flex;}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:6px 22px 14px;border-bottom:1px solid rgba(255,255,255,0.08);display:none;}
+  nav.open .nav-links{display:flex;}
+  .nav-links a:not(.btn){display:block;padding:13px 2px;font-size:16px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links a:not(.btn):last-child{border-bottom:none;}
+  .nav-actions .btn{padding:8px 16px;font-size:13px;}
   .pcards{grid-template-columns:1fr;gap:16px;}
   .steps{grid-template-columns:1fr;gap:14px;}
   .offer{grid-template-columns:1fr;}
@@ -226,7 +237,7 @@ footer .logo .word{font-size:16px;}
   .sec-head .lead{font-size:15px;}
   .final h2{font-size:clamp(28px,7vw,46px);}
   .final p{font-size:15px;}
-  .section{padding:64px 0;}
+  .section,.section.tight{padding:80px 0 54px;}
   .offer-body{padding:30px 26px;}
   .offer-aside{padding:30px 26px;}
   .announce{overflow:hidden;white-space:nowrap;padding:9px 14px;}
