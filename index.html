@@ -66,6 +66,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .grain::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:20px;}
 .eyebrow .num{background:var(--green);color:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;letter-spacing:0;}
+.eyebrow.pill{background:var(--green);color:var(--navy);padding:6px 22px 6px 6px;border-radius:50px;letter-spacing:2.5px;box-shadow:0 8px 20px rgba(74,222,128,0.28);}
+.eyebrow.pill .num{background:var(--navy);color:var(--green);}
 
 /* HERO */
 .hero{padding:96px 0 90px;position:relative;z-index:2;text-align:center;}
@@ -92,9 +94,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 /* LIGHT / SERVICES */
 .light{background:var(--cream);color:var(--ink);position:relative;}
 .intro{padding:84px 0 8px;}
-.intro h2{font-weight:800;font-size:clamp(30px,4.4vw,50px);letter-spacing:-1.5px;color:var(--navy);line-height:1.05;}
+.intro-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px 64px;flex-wrap:wrap;}
+.intro-lead{flex:1 1 480px;min-width:0;}
+.intro .eyebrow{margin-bottom:18px;}
+.intro h2{font-weight:800;font-size:clamp(32px,5vw,58px);letter-spacing:-1.5px;color:var(--navy);line-height:1.03;}
 .intro h2 .g{color:var(--green-deep);}
-.intro .lead{font-size:16.5px;color:var(--muted);margin-top:16px;line-height:1.6;max-width:52ch;}
+.intro .lead{flex:1 1 300px;max-width:44ch;font-size:17px;color:var(--muted);line-height:1.6;padding-bottom:10px;}
 .svc{padding:46px 0 90px;}
 .svc .eyebrow{color:var(--green-deep);}
 .svc .eyebrow .num{background:var(--navy);color:#fff;}
@@ -251,9 +256,13 @@ footer .logo .word{font-size:16px;}
 <!-- SERVICIOS -->
 <main class="light" id="servicios">
   <div class="wrap intro reveal">
-    <div class="eyebrow"><span class="num">02</span> Servicios</div>
-    <h2>Así podemos <span class="g">ayudarte.</span></h2>
-    <p class="lead">Cuatro formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
+    <div class="intro-head">
+      <div class="intro-lead">
+        <div class="eyebrow pill"><span class="num">02</span> Servicios</div>
+        <h2>Así podemos <span class="g">ayudarte.</span></h2>
+      </div>
+      <p class="lead">Cinco formas de trabajar con LA REAL, según en qué momento esté tu marca.</p>
+    </div>
   </div>
 
   <section class="svc wrap">
