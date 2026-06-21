@@ -87,7 +87,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .sec-head{max-width:none;}
 .sec-head .eyebrow{margin-bottom:18px;}
 .sec-head h2{font-weight:800;font-size:clamp(30px,5vw,60px);letter-spacing:-1.5px;color:var(--navy);line-height:1.04;max-width:none;}
-.sec-head h2 .g{color:var(--svc-deep);}
+.sec-head h2 .g{color:var(--svc);}
 .sec-head .lead{font-size:17px;color:var(--muted);margin-top:16px;line-height:1.6;max-width:74ch;}
 
 /* PILLAR CARDS */
