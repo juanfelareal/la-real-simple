@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "mkdir -p public && cp index.html growth-advisor.html call-me.html metodologia-real.html growth-partner.html public/ && cp -r src assets public/",
+  "buildCommand": "mkdir -p public && cp index.html growth-advisor.html call-me.html metodologia-real.html growth-partner.html diseno-ecommerce.html public/ && cp -r src assets public/",
   "outputDirectory": "public",
   "cleanUrls": true
 }
