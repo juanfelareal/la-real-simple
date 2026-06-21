@@ -62,7 +62,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .hero{padding:84px 0 80px;position:relative;z-index:2;text-align:center;}
 .hero .lr-vector{margin:0 auto 28px;}
 .hero .eyebrow{margin-bottom:30px;}
-.hero h1{font-weight:800;font-size:clamp(22px,3.3vw,40px);line-height:1.14;letter-spacing:-0.6px;color:#fff;max-width:none;margin:0 auto;}
+.hero h1{font-weight:800;font-size:clamp(26px,4vw,50px);line-height:1.12;letter-spacing:-0.8px;color:#fff;max-width:none;margin:0 auto;}
 .hero h1 .u{display:table;margin:.16em auto 0;position:relative;white-space:nowrap;color:var(--svc);font-weight:900;font-size:clamp(30px,6.4vw,82px);letter-spacing:-2.5px;line-height:0.98;}
 .hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.08em;width:100%;height:0.2em;}
 .hero .sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.74);max-width:none;margin:24px auto 0;line-height:1.6;}
@@ -205,7 +205,7 @@ footer .logo .word{font-size:16px;}
 @media (max-width:600px){
   .wrap{padding:0 18px;}
   .hero{padding:58px 0 58px;}
-  .hero h1{font-size:clamp(28px,7vw,40px);}
+  .hero h1{font-size:clamp(30px,7.6vw,44px);}
   .hero h1 .u{font-size:clamp(33px,8.6vw,60px);letter-spacing:-1.6px;}
   .sec-head h2{font-size:clamp(30px,7.4vw,46px);}
   .final h2{font-size:clamp(32px,8vw,50px);}
