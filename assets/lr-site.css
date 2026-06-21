@@ -72,6 +72,16 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .hero .meta .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:50px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.85);}
 .hero .meta .pill .d{width:6px;height:6px;border-radius:50%;background:var(--svc);}
 
+/* HERO — layout izquierda en desktop (como landing de diseño) */
+@media (min-width:901px){
+  .hero{text-align:left;padding:96px 0 88px;}
+  .hero .lr-vector{margin:0 0 26px;}
+  .hero h1{margin:0;max-width:20ch;}
+  .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-top:42px;}
+  .hero .sub{margin:0;max-width:46ch;}
+  .hero .cta-row{justify-content:flex-end;margin-top:0;flex-shrink:0;}
+}
+
 /* MARQUEE */
 .marquee{background:var(--green);overflow:hidden;position:relative;z-index:2;padding:13px 0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);}
 .marquee-track{display:flex;width:max-content;animation:scroll 30s linear infinite;}
