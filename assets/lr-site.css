@@ -60,7 +60,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 
 /* HERO */
 .hero{padding:84px 0 80px;position:relative;z-index:2;text-align:center;}
-.hero .lr-vector{margin:0 auto 26px;}
+.hero .lr-vector{margin:0 auto 28px;}
+.hero .eyebrow{margin-bottom:30px;}
 .hero h1{font-weight:900;font-size:clamp(36px,5.8vw,76px);line-height:1.02;letter-spacing:-2.2px;color:#fff;max-width:22ch;margin:0 auto;}
 .hero h1 .u{display:inline-block;position:relative;white-space:nowrap;color:var(--svc);}
 .hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.1em;width:100%;height:0.22em;}
