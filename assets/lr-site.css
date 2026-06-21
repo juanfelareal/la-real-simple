@@ -62,9 +62,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .hero{padding:84px 0 80px;position:relative;z-index:2;text-align:center;}
 .hero .lr-vector{margin:0 auto 28px;}
 .hero .eyebrow{margin-bottom:30px;}
-.hero h1{font-weight:900;font-size:clamp(36px,5.8vw,76px);line-height:1.02;letter-spacing:-2.2px;color:#fff;max-width:22ch;margin:0 auto;}
-.hero h1 .u{display:inline-block;position:relative;white-space:nowrap;color:var(--svc);}
-.hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.1em;width:100%;height:0.22em;}
+.hero h1{font-weight:800;font-size:clamp(22px,3.3vw,40px);line-height:1.14;letter-spacing:-0.6px;color:#fff;max-width:none;margin:0 auto;}
+.hero h1 .u{display:block;position:relative;white-space:nowrap;color:var(--svc);font-weight:900;font-size:clamp(30px,6.4vw,82px);letter-spacing:-2.5px;line-height:0.98;margin-top:.16em;}
+.hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.08em;width:100%;height:0.2em;}
 .hero .sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.74);max-width:60ch;margin:24px auto 0;line-height:1.6;}
 .hero .sub b{color:#fff;font-weight:700;}
 .hero .cta-row{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap;align-items:center;justify-content:center;}
@@ -84,11 +84,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .light{background:var(--cream);color:var(--ink);position:relative;}
 .section{padding:84px 0;}
 .section.tight{padding:70px 0;}
-.sec-head{max-width:760px;}
+.sec-head{max-width:none;}
 .sec-head .eyebrow{margin-bottom:18px;}
-.sec-head h2{font-weight:800;font-size:clamp(28px,4.2vw,48px);letter-spacing:-1.5px;color:var(--navy);line-height:1.05;}
+.sec-head h2{font-weight:800;font-size:clamp(30px,5vw,60px);letter-spacing:-1.5px;color:var(--navy);line-height:1.04;max-width:none;}
 .sec-head h2 .g{color:var(--svc-deep);}
-.sec-head .lead{font-size:16.5px;color:var(--muted);margin-top:16px;line-height:1.6;max-width:60ch;}
+.sec-head .lead{font-size:17px;color:var(--muted);margin-top:16px;line-height:1.6;max-width:74ch;}
 
 /* PILLAR CARDS */
 .pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;}
