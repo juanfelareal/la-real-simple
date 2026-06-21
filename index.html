@@ -142,6 +142,18 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .lr-vector .orbit.rev{animation-duration:13s;animation-direction:reverse;}
 @keyframes lr-vec-spin{to{transform:rotate(360deg);}}
 
+/* CTA BANNER */
+.cta-banner{position:relative;z-index:2;background:var(--navy);color:#fff;padding:104px 0;border-top:1px solid rgba(255,255,255,0.06);}
+.cta-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.cta-banner .eyebrow.pill{margin-bottom:22px;}
+.cta-banner h2{font-weight:900;font-size:clamp(34px,5.6vw,68px);letter-spacing:-2.5px;line-height:1.02;color:#fff;max-width:18ch;}
+.cta-banner h2 .u{display:inline-block;position:relative;white-space:nowrap;color:var(--green);}
+.cta-banner h2 .u svg{position:absolute;left:0;right:0;bottom:-0.1em;width:100%;height:0.22em;}
+.cta-banner p{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,0.72);max-width:54ch;margin:24px auto 0;line-height:1.6;}
+.cta-banner .cta-row{display:flex;gap:13px;margin-top:38px;flex-wrap:wrap;justify-content:center;align-items:center;}
+.cta-banner .micro{margin-top:20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);display:inline-flex;align-items:center;gap:8px;}
+.cta-banner .micro .d{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite;}
+
 /* FOOTER */
 footer{background:var(--navy-2);color:rgba(255,255,255,0.55);padding:40px 0 96px;border-top:1px solid rgba(255,255,255,0.07);position:relative;z-index:2;}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;}
@@ -381,6 +393,19 @@ footer .logo .word{font-size:16px;}
     </div>
   </section>
 </main>
+
+<section class="cta-banner dark grain">
+  <div class="wrap cta-inner reveal">
+    <div class="eyebrow pill"><span class="num">✦</span> Hablemos</div>
+    <h2>¿Listo para hacer crecer <span class="u">tu marca?<svg viewBox="0 0 220 14" preserveAspectRatio="none"><path d="M3 9 C 55 3, 120 3, 217 7" stroke="#4ADE80" stroke-width="6" fill="none" stroke-linecap="round"/></svg></span></h2>
+    <p>Cuéntanos en qué estás y armamos el plan de crecimiento que tu marca necesita para esta temporada. Sin compromiso.</p>
+    <div class="cta-row">
+      <a class="btn btn-green" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20hacer%20crecer%20mi%20marca%20con%20LA%20REAL" target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="#servicios">Ver servicios <span class="arr">→</span></a>
+    </div>
+    <span class="micro"><span class="d"></span> Respuesta el mismo día · Medellín &amp; remoto</span>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
