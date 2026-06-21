@@ -43,6 +43,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .btn:hover .arr{transform:translateX(4px);}
 .btn-green{background:var(--svc);color:#fff;box-shadow:0 8px 24px color-mix(in srgb,var(--svc) 34%,transparent);}
 .btn-green:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 12px 30px color-mix(in srgb,var(--svc) 48%,transparent);}
+.btn-brand{background:var(--green);color:var(--navy);box-shadow:0 8px 24px rgba(74,222,128,0.32);}
+.btn-brand:hover{background:#3fce72;transform:translateY(-2px);box-shadow:0 12px 30px rgba(74,222,128,0.42);}
 .btn-svc{background:var(--svc);color:var(--navy);box-shadow:0 8px 24px color-mix(in srgb,var(--svc) 32%,transparent);}
 .btn-svc:hover{transform:translateY(-2px);box-shadow:0 12px 30px color-mix(in srgb,var(--svc) 45%,transparent);}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.28);}
