@@ -114,6 +114,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .scard .more{margin-top:6px;display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--svc,var(--green-deep));}
 .scard .more .arr{transition:transform .2s;}
 .scard:hover .more .arr{transform:translateX(4px);}
+.scard-incl{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.scard-incl span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--navy);background:color-mix(in srgb,var(--svc,var(--green)) 9%,#fff);border:1px solid color-mix(in srgb,var(--svc,var(--green)) 24%,transparent);padding:6px 13px;border-radius:50px;}
+.scard-incl span::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--svc,var(--green));flex:0 0 auto;}
 
 /* animated brand vectors (from service pages) */
 .lr-vector{width:80px;height:80px;color:var(--svc,var(--green));display:block;animation:lr-vec-float 5s ease-in-out infinite;}
@@ -362,7 +365,12 @@ footer .logo .word{font-size:16px;}
             <span class="badge">Diseño e-commerce</span>
           </div>
           <h3>Diseñamos cada rincón de tu tienda para que venda más.</h3>
-          <p>Banners, fichas, carruseles y landing pages con un sistema visual coherente — más imágenes creadas con IA e intervenidas en el lenguaje de tu marca. Diseño que no solo se ve bien: guía a tu cliente hacia la compra.</p>
+          <p>Tres frentes en uno: <b>email marketing</b> (flows y campañas que recuperan carritos y fidelizan), <b>creación de imágenes con IA</b> intervenidas en el lenguaje de tu marca, y todo el <b>diseño de tu e-commerce</b> — banners, fichas, carruseles y landings que guían a la compra.</p>
+          <div class="scard-incl">
+            <span>Email marketing</span>
+            <span>Imágenes con IA</span>
+            <span>Diseño e-commerce</span>
+          </div>
           <span class="more">Cotiza tu diseño <span class="arr">→</span></span>
         </div>
       </a>
