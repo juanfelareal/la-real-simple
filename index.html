@@ -164,6 +164,15 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)
 @keyframes lr-vec-typ{0%,100%{opacity:.3;transform:translateY(0);}50%{opacity:1;transform:translateY(-3px);}}
 .lr-vector .pulse{transform-box:fill-box;transform-origin:center;animation:lr-vec-pulse 2.4s ease-in-out infinite;}
 @keyframes lr-vec-pulse{0%,100%{transform:scale(.82);opacity:.85;}50%{transform:scale(1.15);opacity:1;}}
+.lr-vector .climb{animation:lr-vec-climb 4.2s ease-in-out infinite;}
+@keyframes lr-vec-climb{0%,4%{transform:translate(0,0);}13%{transform:translate(20px,0);}24%{transform:translate(20px,-18px);}35%{transform:translate(40px,-18px);}46%{transform:translate(40px,-36px);}57%{transform:translate(60px,-36px);}68%{transform:translate(60px,-54px);}79%,100%{transform:translate(80px,-54px);}}
+.lr-vector .flow{animation:lr-vec-flow-c 2.6s ease-in-out infinite;}
+.lr-vector .flow.f1{animation-name:lr-vec-flow-l;}
+.lr-vector .flow.f2{animation-delay:.5s;}
+.lr-vector .flow.f3{animation-name:lr-vec-flow-r;animation-delay:1s;}
+@keyframes lr-vec-flow-c{0%{transform:translate(0,-12px);opacity:0;}18%{opacity:1;}58%{opacity:1;}78%,100%{transform:translate(0,56px);opacity:0;}}
+@keyframes lr-vec-flow-l{0%{transform:translate(0,-12px);opacity:0;}18%{opacity:1;}58%{opacity:1;}78%,100%{transform:translate(20px,56px);opacity:0;}}
+@keyframes lr-vec-flow-r{0%{transform:translate(0,-12px);opacity:0;}18%{opacity:1;}58%{opacity:1;}78%,100%{transform:translate(-20px,56px);opacity:0;}}
 
 /* CTA BANNER */
 .cta-banner{position:relative;z-index:2;background:var(--navy);color:#fff;padding:104px 0;border-top:1px solid rgba(255,255,255,0.06);}
@@ -350,7 +359,7 @@ footer .logo .word{font-size:16px;}
 
       <a class="scard reveal" href="/metodologia-real" style="--svc:#0E9488">
         <div class="scard-icon">
-          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path class="draw" d="M60 60 L28 32" stroke="currentColor" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round"/><path class="draw" d="M60 60 L94 30" stroke="currentColor" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round"/><path class="draw" d="M60 60 L24 88" stroke="currentColor" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round"/><path class="draw" d="M60 60 L96 86" stroke="currentColor" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round"/><circle class="ring r2" cx="60" cy="60" r="15" stroke="currentColor" stroke-width="2"/><circle class="node n1" cx="28" cy="32" r="6.5" fill="currentColor"/><circle class="node n2" cx="94" cy="30" r="6.5" fill="currentColor"/><circle class="node n3" cx="24" cy="88" r="6.5" fill="currentColor"/><circle class="node n4" cx="96" cy="86" r="6.5" fill="currentColor"/><circle class="pulse" cx="60" cy="60" r="10" fill="currentColor"/></svg>
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path class="draw" d="M18 98 H38 V80 H58 V62 H78 V44 H98" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".5"/><path d="M98 44 V22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path class="pop" d="M98 24 L112 28 L98 33 Z" fill="currentColor"/><circle class="climb" cx="18" cy="98" r="6.5" fill="currentColor"/></svg>
         </div>
         <div class="scard-body">
           <div class="top">
@@ -365,7 +374,7 @@ footer .logo .word{font-size:16px;}
 
       <a class="scard reveal" href="/growth-partner" style="--svc:#2563CA">
         <div class="scard-icon">
-          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle class="ring r2" cx="60" cy="60" r="15" stroke="currentColor" stroke-width="2"/><circle class="ring r3" cx="60" cy="60" r="15" stroke="currentColor" stroke-width="2"/><circle class="pulse" cx="60" cy="60" r="9" fill="currentColor"/><g class="orbit"><ellipse cx="60" cy="60" rx="48" ry="18" stroke="currentColor" stroke-opacity=".25" stroke-width="2.5"/><circle cx="108" cy="60" r="5" fill="currentColor"/></g><g class="orbit rev"><ellipse cx="60" cy="60" rx="18" ry="48" stroke="currentColor" stroke-opacity=".25" stroke-width="2.5"/><circle cx="60" cy="12" r="4.5" fill="currentColor"/></g><g class="orbit" style="animation-duration:6.5s"><circle cx="60" cy="60" r="38" stroke="currentColor" stroke-opacity=".16" stroke-width="2"/><circle cx="98" cy="60" r="3.5" fill="currentColor"/></g></svg>
+          <svg class="lr-vector" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path class="draw" d="M20 36 H100 L66 72 V92 H54 V72 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle class="flow f1" cx="42" cy="30" r="5" fill="currentColor"/><circle class="flow f2" cx="60" cy="28" r="5.5" fill="currentColor"/><circle class="flow f3" cx="78" cy="30" r="5" fill="currentColor"/><circle class="pulse" cx="60" cy="104" r="5.5" fill="currentColor"/></svg>
         </div>
         <div class="scard-body">
           <div class="top">
