@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contenido UGC · LA REAL</title>
+<meta name="description" content="Creamos el contenido que tu negocio necesita para vender sin parar. Contenido UGC que convierte 6-7x más que cualquier otro formato." />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#0D1B2A; --navy-2:#0a1622; --cream:#F5F0EB; --cream-2:#EFE8DF;
+  --green:#4ADE80; --green-deep:#16a34a; --teal:#7FB9BB; --teal-deep:#5a9da0;
+  --ink:#0D1B2A; --muted:#5b6573; --white:#ffffff; --line:rgba(13,27,42,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.5;}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:28px;}
+section{scroll-margin-top:120px;}
+h1,h2,h3{font-family:'Inter',sans-serif;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:90;background:rgba(13,27,42,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:11px;padding-bottom:11px;}
+.logo{display:flex;align-items:center;gap:9px;}
+.logo .iso{width:30px;height:30px;display:block;background:var(--green);-webkit-mask:url(assets/brand/iso.png) center/contain no-repeat;mask:url(assets/brand/iso.png) center/contain no-repeat;}
+.logo .word{color:#fff;font-weight:900;font-size:19px;letter-spacing:-0.5px;}
+.logo .word .pt{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a:not(.btn){color:rgba(255,255,255,0.78);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+.nav-links a:not(.btn):hover{color:#fff;}
+.nav-links a:not(.btn).active{color:var(--green);font-weight:700;}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:transparent;cursor:pointer;padding:0;}
+.nav-toggle span{display:block;height:2px;width:22px;background:#fff;border-radius:2px;margin:0 auto;transition:transform .2s,opacity .2s;}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.open .nav-toggle span:nth-child(2){opacity:0;}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:800;font-size:15px;border-radius:50px;padding:14px 26px;text-decoration:none;border:none;cursor:pointer;transition:transform .16s,background .2s,box-shadow .2s,border-color .2s;white-space:nowrap;}
+.btn .arr{transition:transform .2s;}
+.btn:hover .arr{transform:translateX(4px);}
+.btn-green{background:var(--green);color:var(--navy);box-shadow:0 8px 24px rgba(74,222,128,0.32);}
+.btn-green:hover{background:#3fce72;transform:translateY(-2px);box-shadow:0 12px 30px rgba(74,222,128,0.42);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.28);}
+.btn-ghost:hover{border-color:#fff;transform:translateY(-2px);}
+.btn-ghost-dark{background:transparent;color:var(--navy);border:1.5px solid rgba(13,27,42,0.28);}
+.btn-ghost-dark:hover{border-color:var(--navy);transform:translateY(-2px);}
+.btn-sm{padding:10px 20px;font-size:14px;}
+
+/* atmosphere */
+.dark{position:relative;background:var(--navy);color:#fff;overflow:hidden;}
+.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 82% 4%,rgba(74,222,128,0.14) 0%,transparent 58%),radial-gradient(ellipse 65% 55% at 6% 96%,rgba(127,185,187,0.16) 0%,transparent 55%);pointer-events:none;}
+.grain::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:20px;}
+.eyebrow .num{background:var(--green);color:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;letter-spacing:0;}
+.eyebrow.pill{background:var(--green);color:var(--navy);padding:6px 22px 6px 6px;border-radius:50px;letter-spacing:2.5px;box-shadow:0 8px 20px rgba(74,222,128,0.28);}
+.eyebrow.pill .num{background:var(--navy);color:var(--green);}
+
+/* HERO */
+.hero{padding-block:96px 90px;position:relative;z-index:2;text-align:center;}
+.hero h1{font-weight:900;font-size:clamp(38px,5.6vw,74px);line-height:1.02;letter-spacing:-2.5px;color:#fff;max-width:none;margin:0 auto;}
+.hero h1 .u{display:inline-block;position:relative;white-space:nowrap;font-weight:900;color:var(--green);padding-bottom:.04em;}
+.hero h1 .u svg{position:absolute;left:0;right:0;bottom:-0.12em;width:100%;height:0.24em;}
+.hero .sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.74);max-width:62ch;margin:26px auto 0;font-weight:400;line-height:1.6;}
+.hero .sub b{color:#fff;font-weight:700;}
+.hero .cta-row{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap;align-items:center;justify-content:center;}
+
+/* SOCIAL PROOF / LOGOS */
+.proof{background:var(--cream);padding:60px 0 70px;text-align:center;}
+.proof .logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 48px;margin-bottom:32px;opacity:0.7;}
+.proof .logos img{height:34px;width:auto;filter:grayscale(100%);opacity:0.6;transition:opacity .2s,filter .2s;}
+.proof .logos img:hover{filter:grayscale(0%);opacity:1;}
+.proof .stat{display:inline-flex;align-items:center;gap:14px;background:rgba(13,27,42,0.05);border-radius:50px;padding:12px 28px 12px 16px;font-size:15px;font-weight:600;color:var(--navy);}
+.proof .stat .icon{width:38px;height:38px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.proof .stat .icon svg{width:20px;height:20px;color:var(--navy);}
+.proof .stat .n{font-weight:900;font-size:22px;color:var(--green-deep);}
+
+/* DIFERENCIADOR */
+.diff{background:var(--cream);padding:0 0 80px;text-align:center;}
+.diff h2{font-weight:800;font-size:clamp(24px,4vw,40px);letter-spacing:-1px;color:var(--navy);line-height:1.15;max-width:700px;margin:0 auto;}
+.diff h2 .g{color:var(--green-deep);}
+
+/* PROCESO */
+.proceso{background:var(--cream-2);padding:80px 0 90px;}
+.proceso .eyebrow{color:var(--green-deep);justify-content:center;width:100%;margin-bottom:28px;}
+.proceso .eyebrow .num{background:var(--navy);color:#fff;}
+.proceso h2{font-weight:800;font-size:clamp(28px,4.5vw,48px);letter-spacing:-1.5px;color:var(--navy);line-height:1.08;text-align:center;margin-bottom:56px;}
+.proceso h2 .g{color:var(--green-deep);}
+
+.timeline{display:flex;justify-content:space-between;position:relative;max-width:900px;margin:0 auto;}
+.timeline::before{content:'';position:absolute;top:28px;left:60px;right:60px;height:3px;background:linear-gradient(90deg,var(--green),var(--teal));border-radius:3px;z-index:0;}
+.step{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;text-align:center;padding:0 8px;}
+.step .dot{width:56px;height:56px;border-radius:50%;background:#fff;border:4px solid var(--green);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:var(--green-deep);margin-bottom:18px;box-shadow:0 4px 16px rgba(74,222,128,0.25);}
+.step h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-0.3px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.45;}
+
+/* PLANES */
+.planes{background:var(--cream);padding:80px 0 100px;}
+.planes .eyebrow{color:var(--green-deep);justify-content:center;width:100%;margin-bottom:18px;}
+.planes .eyebrow .num{background:var(--navy);color:#fff;}
+.planes h2{font-weight:800;font-size:clamp(28px,4.5vw,48px);letter-spacing:-1.5px;color:var(--navy);line-height:1.08;text-align:center;margin-bottom:16px;}
+.planes h2 .g{color:var(--green-deep);}
+.planes .lead{text-align:center;font-size:16px;color:var(--muted);margin-bottom:48px;max-width:600px;margin-inline:auto;}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto;}
+.plan{background:#fff;border-radius:20px;padding:32px 28px;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 12px 32px rgba(13,27,42,0.06);position:relative;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.plan:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,27,42,0.1);}
+.plan.featured{border:3px solid var(--green);transform:scale(1.04);z-index:2;}
+.plan.featured:hover{transform:scale(1.04) translateY(-4px);}
+.plan .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--navy);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;}
+.plan .name{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
+.plan .videos{font-size:clamp(36px,4vw,48px);font-weight:900;color:var(--navy);letter-spacing:-2px;line-height:1;}
+.plan .videos span{font-size:18px;font-weight:600;color:var(--muted);letter-spacing:0;}
+.plan .creators{font-size:14px;color:var(--muted);margin-top:8px;margin-bottom:24px;}
+.plan .price{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.plan .price .amount{font-size:32px;font-weight:900;color:var(--green-deep);letter-spacing:-1px;}
+.plan .unit{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.plan .audience{font-size:12.5px;color:var(--muted);font-style:italic;line-height:1.45;padding-top:16px;border-top:1px solid var(--line);margin-top:auto;}
+
+/* CTA BANNER */
+.cta-banner{position:relative;z-index:2;background:var(--navy);color:#fff;padding:104px 0;border-top:1px solid rgba(255,255,255,0.06);}
+.cta-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.cta-banner .eyebrow.pill{margin-bottom:22px;}
+.cta-banner h2{font-weight:900;font-size:clamp(32px,5.3vw,62px);letter-spacing:-2px;line-height:1.04;color:#fff;max-width:18ch;}
+.cta-banner h2 .u{display:inline-block;position:relative;white-space:nowrap;color:var(--green);}
+.cta-banner h2 .u svg{position:absolute;left:0;right:0;bottom:-0.1em;width:100%;height:0.22em;}
+.cta-banner p{font-size:clamp(15px,1.35vw,16.5px);color:rgba(255,255,255,0.72);max-width:54ch;margin:24px auto 0;line-height:1.6;}
+.cta-banner .cta-row{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center;align-items:center;}
+.cta-banner .micro{margin-top:20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);display:inline-flex;align-items:center;gap:8px;}
+.cta-banner .micro .d{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* FOOTER */
+footer{background:var(--navy-2);color:rgba(255,255,255,0.55);padding:40px 0 96px;border-top:1px solid rgba(255,255,255,0.07);position:relative;z-index:2;}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;}
+footer .logo .iso{width:24px;height:24px;}
+footer .logo .word{font-size:16px;}
+.foot-meta{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+.foot-meta a:hover{color:var(--green);}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(13,27,42,0.85);backdrop-filter:blur(6px);z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+.modal-overlay.open{opacity:1;visibility:visible;}
+.modal{background:#fff;border-radius:24px;padding:48px 40px;max-width:460px;width:90%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.25);transform:translateY(20px);transition:transform .3s;}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal .close{position:absolute;top:18px;right:18px;width:36px;height:36px;border:none;background:rgba(13,27,42,0.06);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);transition:background .2s;}
+.modal .close:hover{background:rgba(13,27,42,0.12);}
+.modal h3{font-size:24px;font-weight:900;color:var(--navy);letter-spacing:-0.5px;margin-bottom:8px;}
+.modal .sub{font-size:14px;color:var(--muted);margin-bottom:28px;}
+.modal label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.modal input,.modal select{width:100%;padding:14px 16px;border:1.5px solid rgba(13,27,42,0.12);border-radius:12px;font-size:15px;font-family:inherit;margin-bottom:18px;transition:border-color .2s;}
+.modal input:focus,.modal select:focus{outline:none;border-color:var(--green);}
+.modal .btn{width:100%;justify-content:center;padding:16px 28px;font-size:16px;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* responsive */
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:6px 22px 14px;border-bottom:1px solid rgba(255,255,255,0.08);display:none;}
+  nav.open .nav-links{display:flex;}
+  .nav-links a:not(.btn){display:block;padding:13px 2px;font-size:16px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links a:not(.btn):last-child{border-bottom:none;}
+  .nav-actions .btn{padding:8px 16px;font-size:13px;}
+  .pricing-grid{grid-template-columns:1fr;max-width:380px;}
+  .plan.featured{transform:none;}
+  .plan.featured:hover{transform:translateY(-4px);}
+  .timeline{flex-direction:column;gap:32px;}
+  .timeline::before{display:none;}
+  .step{flex-direction:row;text-align:left;gap:18px;padding:0;}
+  .step .dot{flex:0 0 auto;margin-bottom:0;}
+  .step .content{flex:1;}
+}
+@media (max-width:600px){
+  .wrap{padding-inline:22px;}
+  .hero{padding-block:60px;}
+  .hero h1{font-size:clamp(28px,8vw,44px);letter-spacing:-1.2px;line-height:1.02;}
+  .hero .sub{margin-top:20px;font-size:15.5px;}
+  .hero .cta-row{margin-top:28px;flex-direction:column;}
+  .proof .logos{gap:20px 32px;}
+  .proof .logos img{height:26px;}
+  .modal{padding:36px 28px;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="nav-links">
+      <a href="/growth-advisor">Advisor</a>
+      <a href="/metodologia-real">Metodología</a>
+      <a href="/growth-partner">Partner</a>
+      <a href="/ugc-creators" class="active">UGC</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-green btn-sm" href="#" onclick="openModal();return false;">Agendar llamada <span class="arr">→</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="dark grain">
+  <div class="hero wrap reveal">
+    <div class="eyebrow">UGC Creators · Contenido que vende</div>
+    <h1>Creamos el contenido que<br>tu negocio necesita para<br><span class="u">vender sin parar.<svg viewBox="0 0 220 14" preserveAspectRatio="none"><path d="M3 9 C 55 3, 120 3, 217 7" stroke="#4ADE80" stroke-width="6" fill="none" stroke-linecap="round"/></svg></span></h1>
+    <p class="sub"><b>UGC = User Generated Content.</b> El formato que domina las redes sociales y que convierte entre 6 y 7 veces más que cualquier otro tipo de contenido publicitario.</p>
+    <div class="cta-row">
+      <a class="btn btn-green" href="#" onclick="openModal();return false;">Agendar llamada de descubrimiento <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="#proceso">Ver metodología <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="logos reveal">
+      <img src="assets/logos/bam.png" alt="BAM" onerror="this.style.display='none'">
+      <img src="assets/logos/snint.png" alt="Snint" onerror="this.style.display='none'">
+      <img src="assets/logos/minco.png" alt="Minco" onerror="this.style.display='none'">
+      <img src="assets/logos/dulcey.png" alt="Dulcey" onerror="this.style.display='none'">
+      <img src="assets/logos/leonisa.png" alt="Leonisa" onerror="this.style.display='none'">
+    </div>
+    <div class="stat reveal">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </span>
+      El contenido UGC convierte <span class="n">6-7x</span> más que otro tipo de contenido
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIADOR -->
+<section class="diff">
+  <div class="wrap reveal">
+    <h2>Trabajamos con los <span class="g">mejores modelos</span> y las <span class="g">mejores marcas</span> de e-commerce en Colombia.</h2>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">01</span> Metodología</div>
+    <h2 class="reveal">Así <span class="g">lo hacemos.</span></h2>
+
+    <div class="timeline reveal">
+      <div class="step">
+        <div class="dot">1</div>
+        <div class="content">
+          <h3>Entendemos tu negocio</h3>
+          <p>Analizamos tu marca, audiencia y objetivos de venta.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">2</div>
+        <div class="content">
+          <h3>Seleccionamos creadores</h3>
+          <p>Elegimos los perfiles más apropiados para tu marca.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">3</div>
+        <div class="content">
+          <h3>Creamos el brief</h3>
+          <p>Diseñamos el guion y dirección creativa del proyecto.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">4</div>
+        <div class="content">
+          <h3>Producimos el contenido</h3>
+          <p>Grabamos, editamos y entregamos los videos listos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">5</div>
+        <div class="content">
+          <h3>Medimos y mejoramos</h3>
+          <p>Publicamos, analizamos y optimizamos para el siguiente ciclo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="planes" id="planes">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="num">02</span> Planes</div>
+    <h2 class="reveal">Planes <span class="g">disponibles.</span></h2>
+    <p class="lead reveal">Elige el plan que mejor se ajuste a tus necesidades de contenido. Todos incluyen dirección creativa, producción y edición.</p>
+
+    <div class="pricing-grid">
+      <div class="plan reveal">
+        <div class="name">Plan Inicial</div>
+        <div class="videos">10 <span>videos</span></div>
+        <div class="creators">Hasta 5 creadores</div>
+        <div class="price">Total: <span class="amount">$3'000.000</span></div>
+        <div class="unit">$300.000 por video</div>
+        <div class="audience">Para marcas que están empezando a testear UGC y quieren ver resultados antes de escalar.</div>
+      </div>
+
+      <div class="plan featured reveal">
+        <div class="tag">Mejor valor</div>
+        <div class="name">Plan Val</div>
+        <div class="videos">20 <span>videos</span></div>
+        <div class="creators">Hasta 12 creadores</div>
+        <div class="price">Total: <span class="amount">$5'300.000</span></div>
+        <div class="unit">$265.000 por video</div>
+        <div class="audience">Para marcas con pauta activa que necesitan variedad de contenido para testear ángulos.</div>
+      </div>
+
+      <div class="plan reveal">
+        <div class="name">Plan Plus</div>
+        <div class="videos">80+ <span>videos</span></div>
+        <div class="creators">Creadores a convenir</div>
+        <div class="price">Valor por video: <span class="amount">$250.000</span></div>
+        <div class="unit">Descuento por volumen</div>
+        <div class="audience">Para marcas con alto volumen de ads que necesitan contenido constante mes a mes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner dark grain">
+  <div class="wrap cta-inner reveal">
+    <div class="eyebrow pill"><span class="num">✦</span> Hablemos</div>
+    <h2>¿Listo para crear <span class="u">contenido que vende?<svg viewBox="0 0 220 14" preserveAspectRatio="none"><path d="M3 9 C 55 3, 120 3, 217 7" stroke="#4ADE80" stroke-width="6" fill="none" stroke-linecap="round"/></svg></span></h2>
+    <p>Agenda una llamada de descubrimiento de 15 minutos. Sin compromiso. Te contamos cómo podemos ayudarte.</p>
+    <div class="cta-row">
+      <a class="btn btn-green" href="#" onclick="openModal();return false;">Agendar llamada <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20contenido%20UGC" target="_blank" rel="noopener">Escríbenos por WhatsApp <span class="arr">→</span></a>
+    </div>
+    <span class="micro"><span class="d"></span> Respuesta el mismo día · Medellín &amp; remoto</span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="foot-meta">
+      <a href="mailto:hola@lareal.co">hola@lareal.co</a>
+      <span>Medellín · Remoto</span>
+      <a href="https://instagram.com/larealmarketing" target="_blank" rel="noopener">@larealmarketing</a>
+      <span>© 2026 LA REAL</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">✕</button>
+    <h3>Agenda tu llamada</h3>
+    <p class="sub">Cuéntanos sobre tu negocio y te contactamos en menos de 24 horas.</p>
+    <form id="contact-form" onsubmit="submitForm(event)">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+      <label for="negocio">Negocio</label>
+      <input type="text" id="negocio" name="negocio" placeholder="Nombre de tu marca o empresa" required>
+
+      <label for="ugc">¿Ya estás creando contenido UGC?</label>
+      <select id="ugc" name="ugc" required>
+        <option value="">Selecciona una opción</option>
+        <option value="no">No, es mi primera vez</option>
+        <option value="poco">Sí, pero muy poco</option>
+        <option value="si">Sí, regularmente</option>
+      </select>
+
+      <label for="plan">¿Cuál plan te interesa?</label>
+      <select id="plan" name="plan" required>
+        <option value="">Selecciona una opción</option>
+        <option value="inicial">Plan Inicial (10 videos)</option>
+        <option value="val">Plan Val (20 videos)</option>
+        <option value="plus">Plan Plus (80+ videos)</option>
+        <option value="no-se">Aún no lo sé</option>
+      </select>
+
+      <button type="submit" class="btn btn-green">Enviar solicitud <span class="arr">→</span></button>
+    </form>
+  </div>
+</div>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+function openModal(){
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeModal();
+});
+
+function submitForm(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const nombre = data.get('nombre');
+  const negocio = data.get('negocio');
+  const ugc = data.get('ugc');
+  const plan = data.get('plan');
+
+  // Construir mensaje de WhatsApp
+  const msg = `Hola Juanfe, quiero agendar una llamada para hablar de contenido UGC.%0A%0A*Nombre:* ${encodeURIComponent(nombre)}%0A*Negocio:* ${encodeURIComponent(negocio)}%0A*¿Ya creo UGC?:* ${encodeURIComponent(ugc)}%0A*Plan de interés:* ${encodeURIComponent(plan)}`;
+
+  window.open(`https://wa.me/573043148428?text=${msg}`, '_blank');
+  closeModal();
+  form.reset();
+}
+</script>
+</body>
+</html>
