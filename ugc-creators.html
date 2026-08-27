@@ -30,6 +30,15 @@ src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<!-- Cal.com Embed -->
+<script>
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", {origin:"https://cal.com"});
+
+// Config - reemplaza con tu link de Cal.com cuando lo tengas
+const CAL_LINK = ''; // Ej: juanfe-lareal/discovery
+</script>
 <style>
 :root{
   --navy:#0D1B2A; --navy-2:#0a1622; --cream:#F5F0EB; --cream-2:#EFE8DF;
@@ -441,6 +450,13 @@ const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.t
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 function openModal(){
+  // Si Cal.com está configurado, usar popup
+  if (typeof CAL_LINK !== 'undefined' && CAL_LINK) {
+    if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: 'ugc-creators' });
+    Cal("ui", { calLink: CAL_LINK });
+    return;
+  }
+  // Fallback al modal existente
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
