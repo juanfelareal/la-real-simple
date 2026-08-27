@@ -59,6 +59,9 @@ function doPost(e) {
     const fecha = Utilities.formatDate(colombiaTime, 'America/Bogota', 'yyyy-MM-dd');
     const hora = Utilities.formatDate(colombiaTime, 'America/Bogota', 'HH:mm:ss');
 
+    // Formatear WhatsApp como texto (evita que Sheets interprete "+" como fórmula)
+    const whatsappText = data.whatsapp ? "'" + data.whatsapp : '';
+
     // Agregar fila con los datos
     sheet.appendRow([
       fecha,
@@ -66,7 +69,7 @@ function doPost(e) {
       data.diagnostico || '',
       data.nombre || '',
       data.marca || '',
-      data.whatsapp || '',
+      whatsappText,
       data.email || '',
       data.url || '',
       data.ventas || '',
