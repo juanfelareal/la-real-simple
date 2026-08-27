@@ -35,9 +35,6 @@ src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
 <script>
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", {origin:"https://cal.com"});
-
-// Config - reemplaza con tu link de Cal.com cuando lo tengas
-const CAL_LINK = 'juanfe-lareal/diagnostico';
 </script>
 <style>
 :root{
@@ -442,6 +439,8 @@ footer .logo .word{font-size:16px;}
 </div>
 
 <script>
+const CAL_LINK = 'juanfe-lareal/diagnostico';
+
 const BRANDS = ['Cacao Hunters','Dulcey','Kryolan','Panavayu','Barba Roja','Leonisa','Parchita','Once','Pachha','Zorro y Jaguar','Estruendo','Ukelele','Sandra Botero','Cíclico','IFW','Adriza','Atratus','Gratu','Natnack'];
 const mqHTML = BRANDS.map(b => `<span>${b}</span>`).join('');
 document.getElementById('mq-track').innerHTML = mqHTML + mqHTML;
@@ -450,15 +449,8 @@ const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.t
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 function openModal(){
-  // Si Cal.com está configurado, usar popup
-  if (typeof CAL_LINK !== 'undefined' && CAL_LINK) {
-    if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: 'ugc-creators' });
-    Cal("ui", { calLink: CAL_LINK });
-    return;
-  }
-  // Fallback al modal existente
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: 'ugc-creators' });
+  Cal("ui", { calLink: CAL_LINK });
 }
 function closeModal(){
   document.getElementById('modal').classList.remove('open');
