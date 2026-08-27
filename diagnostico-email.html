@@ -35,6 +35,12 @@ src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<!-- Cal.com Embed -->
+<script>
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", {origin:"https://cal.com"});
+</script>
 <style>
 :root{
   --navy:#0D1B2A; --navy-2:#0a1622; --cream:#F5F0EB; --cream-2:#EFE8DF;
@@ -347,10 +353,16 @@ footer .logo .word{font-size:16px;}
           <div class="teaser">
             <div class="score-big" id="teaser-score">--</div>
             <div class="score-label">Tu Score de Lealtad</div>
-            <div class="blurred">Captación: ██/100 · Automatización: ██/100 · Campañas: ██/100<br>Brecha estimada: $█.███.███ al mes</div>
+            <div class="level-badge" id="teaser-level" style="margin-top:12px;">Calculando...</div>
+          </div>
+          <div class="teaser-dims" id="teaser-dims" style="margin:24px 0;padding:20px;background:var(--cream);border-radius:14px;"></div>
+          <div class="teaser-locked" style="text-align:center;padding:20px;background:rgba(13,27,42,0.03);border-radius:14px;margin-bottom:24px;">
+            <div style="font-size:32px;margin-bottom:8px;">🔒</div>
+            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">Hallazgos + Plan de acción</div>
+            <div style="font-size:13px;color:var(--muted);">Descubre qué arreglar primero y cuánto podrías estar facturando</div>
           </div>
           <h3>Desbloquea tu diagnóstico completo</h3>
-          <p class="gate-sub">Recíbelo aquí mismo y una copia en tu correo. Sin spam.</p>
+          <p class="gate-sub">Recíbelo aquí mismo. Te contactamos solo si lo pides.</p>
           <form id="gate-form" onsubmit="submitGate(event)">
             <div class="gate-row">
               <div>
@@ -448,6 +460,12 @@ footer .logo .word{font-size:16px;}
 
 <script>
 // ============ CONFIG ============
+// IMPORTANTE: Reemplaza con tu URL de Google Apps Script
+const WEBHOOK_URL = ''; // Ej: https://script.google.com/macros/s/AKfyc.../exec
+
+// IMPORTANTE: Reemplaza con tu link de Cal.com (usuario/evento)
+const CAL_LINK = ''; // Ej: juanfe-lareal/discovery
+
 const CONFIG = {
   id: "email",
   pilar: "Lealtad",
@@ -607,8 +625,35 @@ function getLevel(score) {
 }
 
 function showGate() {
-  const { score } = calculateScore();
+  const { score, dimScores } = calculateScore();
+  const level = getLevel(score);
+
+  // Score
   document.getElementById('teaser-score').textContent = score;
+  document.getElementById('teaser-score').className = 'score-big level-' + level.id;
+
+  // Level badge
+  const levelEl = document.getElementById('teaser-level');
+  levelEl.textContent = level.name;
+  levelEl.className = 'level-badge level-' + level.id;
+
+  // Dimension bars (real data, no blur)
+  const dimsEl = document.getElementById('teaser-dims');
+  dimsEl.innerHTML = '<div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;">Tu desempeño por dimensión</div>';
+  for (const dim in dimScores) {
+    const dscore = dimScores[dim];
+    const levelClass = dscore < 40 ? 'low' : dscore < 70 ? 'mid' : 'high';
+    dimsEl.innerHTML += `
+      <div class="dim-bar">
+        <div class="dim-label">
+          <span class="dim-name">${CONFIG.dimensions[dim]}</span>
+          <span class="dim-score">${dscore}/100</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill ${levelClass}" style="width:${dscore}%"></div></div>
+      </div>
+    `;
+  }
+
   document.getElementById('quiz-gate').classList.add('active');
 }
 
@@ -740,39 +785,60 @@ function showResult(score, dimScores, level, brechaMensual, planLevel) {
   document.getElementById('plan-price').innerHTML = `${planLevel.price} <span>${planLevel.priceNote}</span>`;
   document.getElementById('plan-desc').textContent = CONFIG.planDescs[planLevel.plan];
 
-  // CTA
-  const ctaMsg = encodeURIComponent(`Hola Juanfe, hice el diagnóstico de email marketing para ${gateData.marca}, saqué ${score}/100 y quiero agendar una llamada.`);
-  document.getElementById('cta-agendar').href = `https://wa.me/${CONFIG.whatsapp}?text=${ctaMsg}`;
-  document.getElementById('cta-agendar').onclick = function() {
-    if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: CONFIG.id });
-  };
+  // CTA - Cal.com popup o WhatsApp fallback
+  const ctaBtn = document.getElementById('cta-agendar');
+
+  if (CAL_LINK) {
+    // Usar Cal.com popup
+    ctaBtn.href = '#';
+    ctaBtn.onclick = function(e) {
+      e.preventDefault();
+      if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: CONFIG.id });
+      Cal("ui", {
+        calLink: CAL_LINK,
+        config: {
+          name: gateData.nombre,
+          email: gateData.email,
+          notes: `Diagnóstico: ${CONFIG.id}\nMarca: ${gateData.marca}\nScore: ${score}/100\nNivel: ${planLevel.name}\nWhatsApp: ${gateData.whatsapp}`
+        }
+      });
+    };
+  } else {
+    // Fallback a WhatsApp
+    const ctaMsg = encodeURIComponent(`Hola Juanfe, hice el diagnóstico de email marketing para ${gateData.marca}, saqué ${score}/100 y quiero agendar una llamada.`);
+    ctaBtn.href = `https://wa.me/${CONFIG.whatsapp}?text=${ctaMsg}`;
+    ctaBtn.onclick = function() {
+      if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: CONFIG.id });
+    };
+  }
 }
 
 function sendToBackend(score, dimScores, levelId, brechaMensual) {
+  const level = getLevel(score);
   const payload = {
-    linea: CONFIG.id,
-    ts: new Date().toISOString(),
-    ...gateData,
-    score,
-    nivel: levelId,
-    dimScores,
-    answers,
-    derived: { pctActual, platform, brechaMensualCOP: brechaMensual },
-    utm: utms,
-    page: window.location.pathname,
-    userAgent: navigator.userAgent
+    diagnostico: CONFIG.id,
+    nombre: gateData.nombre,
+    marca: gateData.marca,
+    whatsapp: gateData.whatsapp,
+    email: gateData.email,
+    url: gateData.url,
+    ventas: gateData.ventas,
+    puntaje: score,
+    nivel: level.name,
+    plan: level.plan
   };
 
-  // TODO: Replace with actual Apps Script endpoint
   console.log('Lead payload:', payload);
 
-  // Example fetch (uncomment when endpoint is ready):
-  // fetch('https://script.google.com/macros/s/.../exec', {
-  //   method: 'POST',
-  //   mode: 'no-cors',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(payload)
-  // }).catch(err => console.error('Backend error:', err));
+  // Send to Google Apps Script webhook
+  if (WEBHOOK_URL) {
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(err => console.error('Webhook error:', err));
+  }
 }
 </script>
 </body>
