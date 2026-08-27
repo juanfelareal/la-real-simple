@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1382774486651868');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnóstico de Contenido UGC · LA REAL</title>
+<meta name="description" content="Descubre en 2 minutos si tu estrategia de contenido UGC está lista para escalar tu pauta. Test gratuito + plan de acción." />
+
+<meta property="og:title" content="Diagnóstico de Contenido UGC · LA REAL" />
+<meta property="og:description" content="Descubre en 2 minutos si tu estrategia de contenido UGC está lista para escalar tu pauta." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://landing.larealmarketing.com/diagnostico-ugc" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#0D1B2A; --navy-2:#0a1622; --cream:#F5F0EB; --cream-2:#EFE8DF;
+  --green:#4ADE80; --green-deep:#16a34a; --teal:#7FB9BB; --teal-deep:#5a9da0;
+  --ink:#0D1B2A; --muted:#5b6573; --white:#ffffff; --line:rgba(13,27,42,0.08);
+  --red:#EF4444; --yellow:#F59E0B; --blue:#3B82F6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.5;}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:28px;}
+section{scroll-margin-top:120px;}
+h1,h2,h3{font-family:'Inter',sans-serif;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:90;background:rgba(13,27,42,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:11px;padding-bottom:11px;}
+.logo{display:flex;align-items:center;gap:9px;}
+.logo .iso{width:30px;height:30px;display:block;background:var(--green);-webkit-mask:url(assets/brand/iso.png) center/contain no-repeat;mask:url(assets/brand/iso.png) center/contain no-repeat;}
+.logo .word{color:#fff;font-weight:900;font-size:19px;letter-spacing:-0.5px;}
+.logo .word .pt{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a:not(.btn){color:rgba(255,255,255,0.78);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+.nav-links a:not(.btn):hover{color:#fff;}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:transparent;cursor:pointer;padding:0;}
+.nav-toggle span{display:block;height:2px;width:22px;background:#fff;border-radius:2px;margin:0 auto;transition:transform .2s,opacity .2s;}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.open .nav-toggle span:nth-child(2){opacity:0;}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:800;font-size:15px;border-radius:50px;padding:14px 26px;text-decoration:none;border:none;cursor:pointer;transition:transform .16s,background .2s,box-shadow .2s;white-space:nowrap;}
+.btn .arr{transition:transform .2s;}
+.btn:hover .arr{transform:translateX(4px);}
+.btn-green{background:var(--green);color:var(--navy);box-shadow:0 8px 24px rgba(74,222,128,0.32);}
+.btn-green:hover{background:#3fce72;transform:translateY(-2px);box-shadow:0 12px 30px rgba(74,222,128,0.42);}
+.btn-ghost{background:transparent;color:var(--navy);border:1.5px solid rgba(13,27,42,0.28);}
+.btn-ghost:hover{border-color:var(--navy);transform:translateY(-2px);}
+.btn-sm{padding:10px 20px;font-size:14px;}
+.btn:disabled{opacity:0.5;cursor:not-allowed;transform:none !important;}
+
+/* HERO + QUIZ SECTION */
+.hero-quiz{background:var(--cream);padding:60px 0 80px;min-height:calc(100vh - 60px);}
+.hero-quiz .wrap{max-width:720px;}
+.hero-content{text-align:center;margin-bottom:40px;}
+.hero-content .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-deep);margin-bottom:16px;}
+.hero-content .eyebrow .icon{width:28px;height:28px;background:var(--green-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.hero-content .eyebrow .icon svg{width:14px;height:14px;color:#fff;}
+.hero-content h1{font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.1;letter-spacing:-1.5px;color:var(--navy);margin-bottom:16px;}
+.hero-content h1 .g{color:var(--green-deep);}
+.hero-content .sub{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto;}
+.hero-content .sub b{color:var(--navy);font-weight:600;}
+.hero-content .time{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);margin-top:12px;background:rgba(13,27,42,0.05);padding:6px 14px;border-radius:50px;}
+.hero-content .time svg{width:16px;height:16px;}
+
+/* QUIZ CARD */
+.quiz-card{background:#fff;border-radius:24px;box-shadow:0 4px 20px rgba(13,27,42,0.08);overflow:hidden;}
+.quiz-progress{height:6px;background:rgba(13,27,42,0.06);}
+.quiz-progress-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--teal));transition:width .3s ease;width:0%;}
+.quiz-body{padding:36px 32px 40px;}
+
+/* QUIZ INTRO */
+.quiz-intro{text-align:center;}
+.quiz-intro h2{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-0.5px;}
+.quiz-intro p{font-size:15px;color:var(--muted);margin-bottom:28px;}
+.quiz-intro .btn{width:100%;justify-content:center;font-size:17px;padding:18px 32px;}
+
+/* QUIZ QUESTION */
+.quiz-question{display:none;}
+.quiz-question.active{display:block;}
+.quiz-question .q-number{font-size:12px;font-weight:700;color:var(--green-deep);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.quiz-question h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:24px;letter-spacing:-0.3px;line-height:1.3;}
+.quiz-options{display:flex;flex-direction:column;gap:12px;}
+.quiz-option{background:var(--cream);border:2px solid transparent;border-radius:14px;padding:18px 20px;font-size:15px;font-weight:500;color:var(--navy);cursor:pointer;transition:all .2s;text-align:left;display:flex;align-items:center;gap:14px;}
+.quiz-option:hover{border-color:var(--green);background:#fff;}
+.quiz-option.selected{border-color:var(--green);background:rgba(74,222,128,0.1);}
+.quiz-option .check{width:24px;height:24px;border-radius:50%;border:2px solid rgba(13,27,42,0.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.quiz-option.selected .check{background:var(--green);border-color:var(--green);}
+.quiz-option.selected .check::after{content:'✓';color:#fff;font-size:14px;font-weight:700;}
+.quiz-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);margin-top:20px;cursor:pointer;transition:color .2s;}
+.quiz-back:hover{color:var(--navy);}
+.quiz-back svg{width:16px;height:16px;}
+
+/* QUIZ GATE */
+.quiz-gate{display:none;}
+.quiz-gate.active{display:block;}
+.quiz-gate .teaser{text-align:center;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line);}
+.quiz-gate .teaser .score-big{font-size:72px;font-weight:900;color:var(--navy);letter-spacing:-3px;line-height:1;}
+.quiz-gate .teaser .score-label{font-size:14px;color:var(--muted);margin-top:4px;}
+.quiz-gate .teaser .blurred{filter:blur(8px);user-select:none;margin-top:16px;font-size:14px;color:var(--muted);}
+.quiz-gate h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;text-align:center;}
+.quiz-gate .gate-sub{font-size:14px;color:var(--muted);text-align:center;margin-bottom:24px;}
+.quiz-gate label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.quiz-gate input,.quiz-gate select{width:100%;padding:14px 16px;border:1.5px solid rgba(13,27,42,0.12);border-radius:12px;font-size:15px;font-family:inherit;margin-bottom:16px;transition:border-color .2s;}
+.quiz-gate input:focus,.quiz-gate select:focus{outline:none;border-color:var(--green);}
+.quiz-gate .btn{width:100%;justify-content:center;margin-top:8px;}
+.quiz-gate .legal{font-size:11px;color:var(--muted);text-align:center;margin-top:16px;line-height:1.5;}
+.quiz-gate .legal a{color:var(--green-deep);text-decoration:underline;}
+.gate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+/* QUIZ RESULT */
+.quiz-result{display:none;}
+.quiz-result.active{display:block;}
+.result-header{text-align:center;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:28px;}
+.result-header .brand-name{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;}
+.result-header .score-big{font-size:80px;font-weight:900;letter-spacing:-4px;line-height:1;}
+.result-header .score-big.level-principiante{color:var(--red);}
+.result-header .score-big.level-practicante{color:var(--yellow);}
+.result-header .score-big.level-experto{color:var(--green-deep);}
+.result-header .level-badge{display:inline-block;padding:8px 20px;border-radius:50px;font-size:13px;font-weight:700;margin-top:12px;}
+.result-header .level-badge.level-principiante{background:#FEE2E2;color:#991B1B;}
+.result-header .level-badge.level-practicante{background:#FEF3C7;color:#92400E;}
+.result-header .level-badge.level-experto{background:#DCFCE7;color:#166534;}
+
+.result-hook{background:var(--navy);color:#fff;border-radius:16px;padding:24px;text-align:center;margin-bottom:28px;}
+.result-hook .hook-label{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.result-hook .hook-value{font-size:36px;font-weight:900;letter-spacing:-1px;}
+.result-hook .hook-sub{font-size:14px;color:rgba(255,255,255,0.7);margin-top:4px;}
+
+.result-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+.result-intro b{color:var(--navy);font-weight:600;}
+
+.result-dimensions{margin-bottom:28px;}
+.result-dimensions h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.dim-bar{margin-bottom:14px;}
+.dim-bar .dim-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;}
+.dim-bar .dim-name{font-weight:600;color:var(--navy);}
+.dim-bar .dim-score{font-weight:700;color:var(--muted);}
+.dim-bar .bar-track{height:8px;background:rgba(13,27,42,0.08);border-radius:8px;overflow:hidden;}
+.dim-bar .bar-fill{height:100%;border-radius:8px;transition:width .5s ease;}
+.dim-bar .bar-fill.low{background:var(--red);}
+.dim-bar .bar-fill.mid{background:var(--yellow);}
+.dim-bar .bar-fill.high{background:var(--green-deep);}
+
+.result-findings{margin-bottom:28px;}
+.result-findings h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.finding{background:var(--cream);border-radius:12px;padding:18px;margin-bottom:12px;}
+.finding .finding-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.finding .finding-title .icon{color:var(--yellow);}
+.finding .finding-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:8px;}
+.finding .finding-action{font-size:13px;color:var(--green-deep);font-weight:600;}
+
+.result-plan{background:linear-gradient(135deg,var(--navy) 0%,#1a3a52 100%);border-radius:16px;padding:28px;color:#fff;margin-bottom:28px;}
+.result-plan .plan-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.result-plan .plan-name{font-size:22px;font-weight:900;margin-bottom:6px;}
+.result-plan .plan-price{font-size:28px;font-weight:900;color:var(--green);}
+.result-plan .plan-price span{font-size:14px;font-weight:500;color:rgba(255,255,255,0.6);}
+.result-plan .plan-desc{font-size:14px;color:rgba(255,255,255,0.7);margin-top:12px;line-height:1.5;}
+
+.result-cta{display:flex;flex-direction:column;gap:12px;}
+.result-cta .btn{justify-content:center;}
+
+/* FOOTER */
+footer{background:var(--navy-2);color:rgba(255,255,255,0.55);padding:40px 0 60px;border-top:1px solid rgba(255,255,255,0.07);}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;}
+footer .logo .iso{width:24px;height:24px;}
+footer .logo .word{font-size:16px;}
+.foot-meta{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+.foot-meta a:hover{color:var(--green);}
+
+/* PRINT */
+@media print{
+  nav,footer,.hero-content,.quiz-intro,.quiz-question,.quiz-gate,.result-cta{display:none !important;}
+  body{background:#fff !important;}
+  .quiz-card{box-shadow:none !important;border:1px solid #ddd;}
+  .quiz-result{display:block !important;}
+  .result-hook{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @page{size:A4;margin:18mm;}
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:12px 22px 18px;display:none;}
+  nav.open .nav-links{display:flex;}
+  .nav-links a:not(.btn){padding:12px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,0.08);}
+}
+@media (max-width:600px){
+  .wrap{padding-inline:20px;}
+  .hero-quiz{padding:40px 0 60px;}
+  .quiz-body{padding:28px 22px 32px;}
+  .hero-content h1{font-size:26px;}
+  .quiz-question h3{font-size:18px;}
+  .result-header .score-big{font-size:64px;}
+  .result-hook .hook-value{font-size:28px;}
+  .gate-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="nav-links">
+      <a href="/growth-advisor">Advisor</a>
+      <a href="/metodologia-real">Metodología</a>
+      <a href="/growth-partner">Partner</a>
+      <a href="/ugc-creators">UGC</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-green btn-sm" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20informaci%C3%B3n%20sobre%20UGC" target="_blank" rel="noopener">Escríbenos <span class="arr">→</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-quiz">
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+        Diagnóstico gratuito
+      </div>
+      <h1>¿Tu contenido UGC está <span class="g">listo para escalar?</span></h1>
+      <p class="sub">Responde <b>6 preguntas</b> y descubre tu Score de Amplificación, qué te falta para escalar tu pauta con contenido ganador y cómo lograrlo.</p>
+      <div class="time">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        2 minutos
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="progress-bar"></div></div>
+      <div class="quiz-body">
+
+        <!-- INTRO -->
+        <div class="quiz-intro" id="quiz-intro">
+          <h2>Descubre tu potencial en UGC</h2>
+          <p>Este diagnóstico te mostrará si tu estrategia de contenido está lista para escalar tu inversión en pauta digital.</p>
+          <button class="btn btn-green" onclick="startQuiz()">Empezar el diagnóstico <span class="arr">→</span></button>
+        </div>
+
+        <!-- QUESTIONS -->
+        <div class="quiz-question" id="q1" data-dim="volumen">
+          <div class="q-number">Pregunta 1 de 6</div>
+          <h3>¿Cuántos videos/piezas de contenido nuevas produces al mes para ads?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Más de 20 piezas al mes</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Entre 10 y 20 piezas</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Menos de 10 piezas</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>No produzco contenido regularmente</div>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="q2" data-dim="volumen">
+          <div class="q-number">Pregunta 2 de 6</div>
+          <h3>¿Tienes creadores UGC trabajando con tu marca?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Sí, más de 3 creadores activos</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Sí, 1 o 2 creadores</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Usamos contenido del equipo interno</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>No tenemos creadores ni contenido propio</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q3" data-dim="eficiencia">
+          <div class="q-number">Pregunta 3 de 6</div>
+          <h3>¿Cómo es tu proceso de producción de contenido?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Proceso documentado con briefs, entregas y edición</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Tenemos un proceso pero no está estandarizado</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Es improvisado según las necesidades</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>No tenemos proceso definido</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q4" data-dim="testeo">
+          <div class="q-number">Pregunta 4 de 6</div>
+          <h3>¿Con qué frecuencia testeas nuevos hooks y formatos?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Cada semana probamos hooks nuevos</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Una o dos veces al mes</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Rara vez, usamos lo que ya funciona</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>No hacemos testing de creativos</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q5" data-dim="resultado">
+          <div class="q-number">Pregunta 5 de 6</div>
+          <h3>¿Cómo es el rendimiento de tu contenido actual en ads?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" data-roas="high" onclick="selectOption(this)"><span class="check"></span>Excelente, ROAS consistente sobre 3x</div>
+            <div class="quiz-option" data-points="2" data-roas="mid" onclick="selectOption(this)"><span class="check"></span>Bueno, pero variable (entre 2x y 3x)</div>
+            <div class="quiz-option" data-points="1" data-roas="low" onclick="selectOption(this)"><span class="check"></span>Bajo o inconsistente (menos de 2x)</div>
+            <div class="quiz-option" data-points="0" data-roas="none" onclick="selectOption(this)"><span class="check"></span>No mido el rendimiento del contenido</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q6" data-dim="none" data-scored="false">
+          <div class="q-number">Pregunta 6 de 6</div>
+          <h3>¿Cuánto inviertes en pauta digital al mes?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="0-5" onclick="selectOption(this)"><span class="check"></span>Menos de $5M al mes</div>
+            <div class="quiz-option" data-value="5-15" onclick="selectOption(this)"><span class="check"></span>Entre $5M y $15M al mes</div>
+            <div class="quiz-option" data-value="15-50" onclick="selectOption(this)"><span class="check"></span>Entre $15M y $50M al mes</div>
+            <div class="quiz-option" data-value="50+" onclick="selectOption(this)"><span class="check"></span>Más de $50M al mes</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <!-- GATE -->
+        <div class="quiz-gate" id="quiz-gate">
+          <div class="teaser">
+            <div class="score-big" id="teaser-score">--</div>
+            <div class="score-label">Tu Score de Amplificación</div>
+            <div class="blurred">Volumen: ██/100 · Eficiencia: ██/100 · Testeo: ██/100<br>Oportunidad: █ piezas de contenido al mes</div>
+          </div>
+          <h3>Desbloquea tu diagnóstico completo</h3>
+          <p class="gate-sub">Recíbelo aquí mismo y una copia en tu correo. Sin spam.</p>
+          <form id="gate-form" onsubmit="submitGate(event)">
+            <div class="gate-row">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div>
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca" placeholder="Nombre de tu marca" required>
+              </div>
+            </div>
+            <div class="gate-row">
+              <div>
+                <label for="whatsapp">WhatsApp</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 123 4567" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@marca.com" required>
+              </div>
+            </div>
+            <label for="url">URL de tu tienda (opcional)</label>
+            <input type="url" id="url" name="url" placeholder="tumarca.com">
+            <label for="ventas">Ventas mensuales</label>
+            <select id="ventas" name="ventas" required>
+              <option value="">Selecciona un rango</option>
+              <option value="0-10">Menos de $10M</option>
+              <option value="10-30">$10M – $30M</option>
+              <option value="30-100">$30M – $100M</option>
+              <option value="100+">Más de $100M</option>
+            </select>
+            <button type="submit" class="btn btn-green" id="gate-btn">Ver mi diagnóstico <span class="arr">→</span></button>
+          </form>
+          <p class="legal">Al enviar aceptas nuestra <a href="/assets/politica-datos.pdf" target="_blank">política de datos</a>. Recibes el diagnóstico completo aquí mismo.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="quiz-result" id="quiz-result">
+          <div class="result-header">
+            <div class="brand-name">Diagnóstico de Contenido UGC para <span id="result-marca">Tu Marca</span></div>
+            <div class="score-big" id="result-score">58</div>
+            <div class="level-badge" id="result-level">Practicante</div>
+          </div>
+
+          <div class="result-hook">
+            <div class="hook-label">Tu oportunidad</div>
+            <div class="hook-value" id="result-brecha">15 piezas/mes</div>
+            <div class="hook-sub">de contenido para escalar tu pauta</div>
+          </div>
+
+          <div class="result-intro" id="result-intro">
+            Tienes algo de contenido pero no el volumen necesario para escalar. <b>Para una inversión en pauta saludable, necesitas al menos 15-20 piezas nuevas al mes</b> para testear hooks, formatos y mantener la frescura de tus ads.
+          </div>
+
+          <div class="result-dimensions">
+            <h4>Tu desempeño por dimensión</h4>
+            <div id="dim-bars"></div>
+          </div>
+
+          <div class="result-findings">
+            <h4>Hallazgos prioritarios</h4>
+            <div id="findings-list"></div>
+          </div>
+
+          <div class="result-plan">
+            <div class="plan-label">Plan recomendado</div>
+            <div class="plan-name" id="plan-name">Paquete Intermedio</div>
+            <div class="plan-price" id="plan-price">$3.000.000 <span>+IVA</span></div>
+            <div class="plan-desc" id="plan-desc">15 piezas de contenido UGC al mes: videos, fotos y variaciones. Incluye casting de creadores, briefs, revisión y entrega lista para ads.</div>
+          </div>
+
+          <div class="result-cta">
+            <a class="btn btn-green" id="cta-agendar" href="#" target="_blank" rel="noopener">Agendar llamada <span class="arr">→</span></a>
+            <button class="btn btn-ghost" onclick="window.print()">Descargar mi diagnóstico (PDF)</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="foot-meta">
+      <a href="mailto:hola@lareal.co">hola@lareal.co</a>
+      <span>Medellín · Remoto</span>
+      <a href="https://instagram.com/larealmarketing" target="_blank" rel="noopener">@larealmarketing</a>
+      <span>© 2026 LA REAL</span>
+      <a href="/assets/politica-datos.pdf" target="_blank" rel="noopener">Política de datos</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============ CONFIG ============
+const CONFIG = {
+  id: "ugc",
+  pilar: "Amplificación",
+  whatsapp: "573043148428",
+  dimensions: {
+    volumen: "Volumen de producción",
+    eficiencia: "Eficiencia del proceso",
+    testeo: "Testing de creativos",
+    resultado: "Resultado actual"
+  },
+  levels: [
+    { min: 0, max: 39, id: "principiante", name: "Principiante", plan: "Paquete Inicial", price: "$1.500.000", priceNote: "+IVA", piezas: 8 },
+    { min: 40, max: 69, id: "practicante", name: "Practicante", plan: "Paquete Intermedio", price: "$3.000.000", priceNote: "+IVA", piezas: 15 },
+    { min: 70, max: 100, id: "experto", name: "Experto", plan: "Paquete Pro", price: "$5.000.000", priceNote: "+IVA", piezas: 25 }
+  ],
+  pautaMid: { "0-5": 3000000, "5-15": 10000000, "15-50": 30000000, "50+": 75000000 },
+  ventasValue: { "0-10": 7000000, "10-30": 20000000, "30-100": 60000000, "100+": 150000000 },
+  findings: {
+    volumen: {
+      low: { title: "No produces suficiente contenido", desc: "Sin volumen de contenido nuevo, tus ads se fatigan rápidamente y el costo por resultado sube. Meta recomienda refrescar creativos cada 7-14 días.", action: "Implementaríamos un pipeline de 15-25 piezas mensuales con creadores UGC." },
+      mid: { title: "Podrías producir más contenido", desc: "Tienes algo de contenido pero no el volumen necesario para testear múltiples ángulos y escalar tu inversión con confianza.", action: "Aumentaríamos el volumen con más creadores y variaciones de hooks." },
+      high: { title: "Buen volumen de producción", desc: "Tu pipeline de contenido es saludable. El foco ahora es optimizar la calidad y el testing de hooks.", action: "Nos enfocaríamos en testing estructurado y análisis de ganadores." }
+    },
+    eficiencia: {
+      low: { title: "Tu proceso es ineficiente", desc: "Sin un proceso documentado, pierdes tiempo, dinero y calidad. Cada video que no tiene brief claro es un riesgo.", action: "Crearíamos un sistema de briefs, entregas y revisiones estandarizado." },
+      mid: { title: "Tu proceso puede mejorar", desc: "Tienes algo de estructura pero hay oportunidad de estandarizar y acelerar la producción.", action: "Documentaríamos y optimizaríamos el flujo de producción." },
+      high: { title: "Proceso bien estructurado", desc: "Tu sistema de producción funciona. Ahora es cuestión de escalar con más creadores manteniendo la calidad.", action: "Escalaríamos el equipo de creadores manteniendo los estándares." }
+    },
+    testeo: {
+      low: { title: "No estás testeando creativos", desc: "Sin testing de hooks y formatos, no sabes qué funciona realmente. Estás dejando dinero en la mesa.", action: "Implementaríamos un framework de testing semanal con análisis de resultados." },
+      mid: { title: "Podrías testear más", desc: "Haces algo de testing pero no con la frecuencia necesaria para encontrar ganadores consistentemente.", action: "Aumentaríamos la frecuencia de tests y estructuraríamos el análisis." },
+      high: { title: "Testing bien implementado", desc: "Testeas regularmente y entiendes qué funciona. El siguiente paso es escalar los ganadores.", action: "Crearíamos variaciones de los mejores performers para maximizar ROI." }
+    },
+    resultado: {
+      low: { title: "El contenido no está rindiendo", desc: "Si tu ROAS es bajo, probablemente el problema está en el contenido. Los mejores ads son los que no parecen ads.", action: "Revisaríamos toda la estrategia creativa: hooks, ángulos y CTAs." },
+      mid: { title: "El contenido rinde pero es variable", desc: "Tienes algunos ganadores pero no los suficientes. Necesitas más volumen de tests para encontrar consistencia.", action: "Aumentaríamos el volumen de tests para encontrar más ganadores." },
+      high: { title: "El contenido está rindiendo bien", desc: "Tu contenido genera resultados. El siguiente paso es escalar manteniendo el rendimiento.", action: "Crearíamos más variaciones de tus mejores performers." }
+    }
+  },
+  planDescs: {
+    "Paquete Inicial": "8 piezas de contenido UGC al mes: videos cortos, fotos de producto y lifestyle. Incluye 2 creadores, briefs y revisión.",
+    "Paquete Intermedio": "15 piezas de contenido UGC al mes: videos, fotos y variaciones de hooks. Incluye 3-4 creadores, briefs personalizados y entrega lista para ads.",
+    "Paquete Pro": "25+ piezas de contenido UGC al mes: videos en múltiples formatos, fotos y variaciones. Incluye 5+ creadores, testing de hooks y análisis de rendimiento."
+  }
+};
+
+// ============ STATE ============
+let currentQ = 0;
+let answers = {};
+let gateData = {};
+let roasLevel = "low";
+let pautaRange = "5-15";
+
+// ============ UTM CAPTURE ============
+const urlParams = new URLSearchParams(window.location.search);
+const utms = {
+  source: urlParams.get('utm_source') || '',
+  medium: urlParams.get('utm_medium') || '',
+  campaign: urlParams.get('utm_campaign') || '',
+  content: urlParams.get('utm_content') || '',
+  term: urlParams.get('utm_term') || '',
+  fbclid: urlParams.get('fbclid') || '',
+  gclid: urlParams.get('gclid') || ''
+};
+
+// ============ FUNCTIONS ============
+function updateProgress() {
+  const pct = (currentQ / 7) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+}
+
+function startQuiz() {
+  document.getElementById('quiz-intro').style.display = 'none';
+  currentQ = 1;
+  document.getElementById('q1').classList.add('active');
+  updateProgress();
+
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'diag_start', { linea: CONFIG.id });
+}
+
+function selectOption(el) {
+  el.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+
+  const qEl = el.closest('.quiz-question');
+  const qId = qEl.id;
+  const points = parseInt(el.dataset.points) || 0;
+  const value = el.dataset.value || null;
+  const roas = el.dataset.roas || null;
+
+  answers[qId] = { points, value, roas };
+
+  if (roas) roasLevel = roas;
+  if (value && qId === 'q6') pautaRange = value;
+
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'diag_q' + currentQ, { linea: CONFIG.id });
+
+  setTimeout(() => {
+    qEl.classList.remove('active');
+    currentQ++;
+
+    if (currentQ <= 6) {
+      document.getElementById('q' + currentQ).classList.add('active');
+    } else {
+      showGate();
+      if (typeof fbq !== 'undefined') fbq('trackCustom', 'diag_complete', { linea: CONFIG.id });
+    }
+    updateProgress();
+  }, 250);
+}
+
+function goBack() {
+  if (currentQ <= 1) return;
+  document.getElementById('q' + currentQ).classList.remove('active');
+  currentQ--;
+  document.getElementById('q' + currentQ).classList.add('active');
+  updateProgress();
+}
+
+function calculateScore() {
+  let total = 0;
+  let max = 0;
+  let dimTotals = {};
+  let dimMaxes = {};
+
+  for (let i = 1; i <= 5; i++) {
+    const q = document.getElementById('q' + i);
+    const dim = q.dataset.dim;
+    const pts = answers['q' + i]?.points || 0;
+
+    total += pts;
+    max += 3;
+
+    if (!dimTotals[dim]) dimTotals[dim] = 0;
+    if (!dimMaxes[dim]) dimMaxes[dim] = 0;
+    dimTotals[dim] += pts;
+    dimMaxes[dim] += 3;
+  }
+
+  const score = Math.round((total / max) * 100);
+  const dimScores = {};
+  for (const dim in dimTotals) {
+    dimScores[dim] = Math.round((dimTotals[dim] / dimMaxes[dim]) * 100);
+  }
+
+  return { score, dimScores };
+}
+
+function getLevel(score) {
+  return CONFIG.levels.find(l => score >= l.min && score <= l.max);
+}
+
+function showGate() {
+  const { score } = calculateScore();
+  document.getElementById('teaser-score').textContent = score;
+  document.getElementById('quiz-gate').classList.add('active');
+}
+
+function submitGate(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const btn = document.getElementById('gate-btn');
+  btn.disabled = true;
+  btn.innerHTML = 'Procesando...';
+
+  gateData = {
+    nombre: form.nombre.value,
+    marca: form.marca.value,
+    whatsapp: form.whatsapp.value,
+    email: form.email.value,
+    url: form.url.value,
+    ventas: form.ventas.value
+  };
+
+  const { score, dimScores } = calculateScore();
+  const level = getLevel(score);
+
+  const leadValue = CONFIG.ventasValue[gateData.ventas] || 20000000;
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: CONFIG.id, value: leadValue, currency: 'COP' });
+  }
+
+  showResult(score, dimScores, level);
+  sendToBackend(score, dimScores, level.id);
+}
+
+function showResult(score, dimScores, level) {
+  document.getElementById('quiz-gate').classList.remove('active');
+  document.getElementById('quiz-result').classList.add('active');
+  document.getElementById('progress-bar').style.width = '100%';
+
+  document.getElementById('result-marca').textContent = gateData.marca;
+  const scoreEl = document.getElementById('result-score');
+  scoreEl.textContent = score;
+  scoreEl.className = 'score-big level-' + level.id;
+
+  const levelBadge = document.getElementById('result-level');
+  levelBadge.textContent = level.name;
+  levelBadge.className = 'level-badge level-' + level.id;
+
+  document.getElementById('result-brecha').textContent = level.piezas + ' piezas/mes';
+
+  let introText = '';
+  if (level.id === 'principiante') {
+    introText = `Tu estrategia de contenido UGC está en etapa inicial. <b>Para escalar tu pauta necesitas mínimo ${level.piezas} piezas nuevas al mes</b> para testear hooks y mantener tus ads frescos.`;
+  } else if (level.id === 'practicante') {
+    introText = `Tienes algo de contenido pero no el volumen necesario para escalar. <b>Para una inversión en pauta saludable, necesitas al menos ${level.piezas} piezas nuevas al mes</b> para testear hooks, formatos y mantener la frescura de tus ads.`;
+  } else {
+    introText = `Tu estrategia de contenido UGC está en buen camino. <b>Para maximizar tu ROAS, el siguiente paso es ${level.piezas}+ piezas al mes</b> con testing estructurado de hooks y formatos.`;
+  }
+  document.getElementById('result-intro').innerHTML = introText;
+
+  const dimBarsEl = document.getElementById('dim-bars');
+  dimBarsEl.innerHTML = '';
+  for (const dim in dimScores) {
+    const dscore = dimScores[dim];
+    const levelClass = dscore < 40 ? 'low' : dscore < 70 ? 'mid' : 'high';
+    dimBarsEl.innerHTML += `
+      <div class="dim-bar">
+        <div class="dim-label">
+          <span class="dim-name">${CONFIG.dimensions[dim]}</span>
+          <span class="dim-score">${dscore}/100</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill ${levelClass}" style="width:${dscore}%"></div></div>
+      </div>
+    `;
+  }
+
+  const sortedDims = Object.entries(dimScores).sort((a,b) => a[1] - b[1]).slice(0, 3);
+  const findingsEl = document.getElementById('findings-list');
+  findingsEl.innerHTML = '';
+  for (const [dim, dscore] of sortedDims) {
+    const state = dscore < 40 ? 'low' : dscore < 70 ? 'mid' : 'high';
+    const finding = CONFIG.findings[dim][state];
+    findingsEl.innerHTML += `
+      <div class="finding">
+        <div class="finding-title"><span class="icon">⚠️</span> ${finding.title}</div>
+        <div class="finding-desc">${finding.desc}</div>
+        <div class="finding-action">→ ${finding.action}</div>
+      </div>
+    `;
+  }
+
+  document.getElementById('plan-name').textContent = level.plan;
+  document.getElementById('plan-price').innerHTML = `${level.price} <span>${level.priceNote}</span>`;
+  document.getElementById('plan-desc').textContent = CONFIG.planDescs[level.plan];
+
+  const ctaMsg = encodeURIComponent(`Hola Juanfe, hice el diagnóstico de UGC para ${gateData.marca}, saqué ${score}/100 y quiero agendar una llamada.`);
+  document.getElementById('cta-agendar').href = `https://wa.me/${CONFIG.whatsapp}?text=${ctaMsg}`;
+  document.getElementById('cta-agendar').onclick = function() {
+    if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: CONFIG.id });
+  };
+}
+
+function sendToBackend(score, dimScores, levelId) {
+  const payload = {
+    linea: CONFIG.id,
+    ts: new Date().toISOString(),
+    ...gateData,
+    score,
+    nivel: levelId,
+    dimScores,
+    answers,
+    derived: { roasLevel, pautaRange },
+    utm: utms,
+    page: window.location.pathname,
+    userAgent: navigator.userAgent
+  };
+
+  console.log('Lead payload:', payload);
+}
+</script>
+</body>
+</html>

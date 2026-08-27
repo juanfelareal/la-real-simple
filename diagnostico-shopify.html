@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1382774486651868');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnóstico de Shopify · LA REAL</title>
+<meta name="description" content="Descubre en 2 minutos si tu tienda Shopify está optimizada para vender más o si es hora de migrar. Test gratuito + plan de acción." />
+
+<meta property="og:title" content="Diagnóstico de Shopify · LA REAL" />
+<meta property="og:description" content="Descubre en 2 minutos si tu tienda Shopify está optimizada para vender más." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://landing.larealmarketing.com/diagnostico-shopify" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#0D1B2A; --navy-2:#0a1622; --cream:#F5F0EB; --cream-2:#EFE8DF;
+  --green:#4ADE80; --green-deep:#16a34a; --teal:#7FB9BB; --teal-deep:#5a9da0;
+  --ink:#0D1B2A; --muted:#5b6573; --white:#ffffff; --line:rgba(13,27,42,0.08);
+  --red:#EF4444; --yellow:#F59E0B; --blue:#3B82F6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.5;}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:28px;}
+section{scroll-margin-top:120px;}
+h1,h2,h3{font-family:'Inter',sans-serif;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:90;background:rgba(13,27,42,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:11px;padding-bottom:11px;}
+.logo{display:flex;align-items:center;gap:9px;}
+.logo .iso{width:30px;height:30px;display:block;background:var(--green);-webkit-mask:url(assets/brand/iso.png) center/contain no-repeat;mask:url(assets/brand/iso.png) center/contain no-repeat;}
+.logo .word{color:#fff;font-weight:900;font-size:19px;letter-spacing:-0.5px;}
+.logo .word .pt{color:var(--green);}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a:not(.btn){color:rgba(255,255,255,0.78);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+.nav-links a:not(.btn):hover{color:#fff;}
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:none;background:transparent;cursor:pointer;padding:0;}
+.nav-toggle span{display:block;height:2px;width:22px;background:#fff;border-radius:2px;margin:0 auto;transition:transform .2s,opacity .2s;}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+nav.open .nav-toggle span:nth-child(2){opacity:0;}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:800;font-size:15px;border-radius:50px;padding:14px 26px;text-decoration:none;border:none;cursor:pointer;transition:transform .16s,background .2s,box-shadow .2s;white-space:nowrap;}
+.btn .arr{transition:transform .2s;}
+.btn:hover .arr{transform:translateX(4px);}
+.btn-green{background:var(--green);color:var(--navy);box-shadow:0 8px 24px rgba(74,222,128,0.32);}
+.btn-green:hover{background:#3fce72;transform:translateY(-2px);box-shadow:0 12px 30px rgba(74,222,128,0.42);}
+.btn-ghost{background:transparent;color:var(--navy);border:1.5px solid rgba(13,27,42,0.28);}
+.btn-ghost:hover{border-color:var(--navy);transform:translateY(-2px);}
+.btn-sm{padding:10px 20px;font-size:14px;}
+.btn:disabled{opacity:0.5;cursor:not-allowed;transform:none !important;}
+
+/* HERO + QUIZ SECTION */
+.hero-quiz{background:var(--cream);padding:60px 0 80px;min-height:calc(100vh - 60px);}
+.hero-quiz .wrap{max-width:720px;}
+.hero-content{text-align:center;margin-bottom:40px;}
+.hero-content .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-deep);margin-bottom:16px;}
+.hero-content .eyebrow .icon{width:28px;height:28px;background:var(--green-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.hero-content .eyebrow .icon svg{width:14px;height:14px;color:#fff;}
+.hero-content h1{font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.1;letter-spacing:-1.5px;color:var(--navy);margin-bottom:16px;}
+.hero-content h1 .g{color:var(--green-deep);}
+.hero-content .sub{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto;}
+.hero-content .sub b{color:var(--navy);font-weight:600;}
+.hero-content .time{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);margin-top:12px;background:rgba(13,27,42,0.05);padding:6px 14px;border-radius:50px;}
+.hero-content .time svg{width:16px;height:16px;}
+
+/* QUIZ CARD */
+.quiz-card{background:#fff;border-radius:24px;box-shadow:0 4px 20px rgba(13,27,42,0.08);overflow:hidden;}
+.quiz-progress{height:6px;background:rgba(13,27,42,0.06);}
+.quiz-progress-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--teal));transition:width .3s ease;width:0%;}
+.quiz-body{padding:36px 32px 40px;}
+
+/* QUIZ INTRO */
+.quiz-intro{text-align:center;}
+.quiz-intro h2{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-0.5px;}
+.quiz-intro p{font-size:15px;color:var(--muted);margin-bottom:28px;}
+.quiz-intro .btn{width:100%;justify-content:center;font-size:17px;padding:18px 32px;}
+
+/* QUIZ QUESTION */
+.quiz-question{display:none;}
+.quiz-question.active{display:block;}
+.quiz-question .q-number{font-size:12px;font-weight:700;color:var(--green-deep);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.quiz-question h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:24px;letter-spacing:-0.3px;line-height:1.3;}
+.quiz-options{display:flex;flex-direction:column;gap:12px;}
+.quiz-option{background:var(--cream);border:2px solid transparent;border-radius:14px;padding:18px 20px;font-size:15px;font-weight:500;color:var(--navy);cursor:pointer;transition:all .2s;text-align:left;display:flex;align-items:center;gap:14px;}
+.quiz-option:hover{border-color:var(--green);background:#fff;}
+.quiz-option.selected{border-color:var(--green);background:rgba(74,222,128,0.1);}
+.quiz-option .check{width:24px;height:24px;border-radius:50%;border:2px solid rgba(13,27,42,0.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.quiz-option.selected .check{background:var(--green);border-color:var(--green);}
+.quiz-option.selected .check::after{content:'✓';color:#fff;font-size:14px;font-weight:700;}
+.quiz-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);margin-top:20px;cursor:pointer;transition:color .2s;}
+.quiz-back:hover{color:var(--navy);}
+.quiz-back svg{width:16px;height:16px;}
+
+/* QUIZ GATE */
+.quiz-gate{display:none;}
+.quiz-gate.active{display:block;}
+.quiz-gate .teaser{text-align:center;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line);}
+.quiz-gate .teaser .score-big{font-size:72px;font-weight:900;color:var(--navy);letter-spacing:-3px;line-height:1;}
+.quiz-gate .teaser .score-label{font-size:14px;color:var(--muted);margin-top:4px;}
+.quiz-gate .teaser .blurred{filter:blur(8px);user-select:none;margin-top:16px;font-size:14px;color:var(--muted);}
+.quiz-gate h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;text-align:center;}
+.quiz-gate .gate-sub{font-size:14px;color:var(--muted);text-align:center;margin-bottom:24px;}
+.quiz-gate label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.quiz-gate input,.quiz-gate select{width:100%;padding:14px 16px;border:1.5px solid rgba(13,27,42,0.12);border-radius:12px;font-size:15px;font-family:inherit;margin-bottom:16px;transition:border-color .2s;}
+.quiz-gate input:focus,.quiz-gate select:focus{outline:none;border-color:var(--green);}
+.quiz-gate .btn{width:100%;justify-content:center;margin-top:8px;}
+.quiz-gate .legal{font-size:11px;color:var(--muted);text-align:center;margin-top:16px;line-height:1.5;}
+.quiz-gate .legal a{color:var(--green-deep);text-decoration:underline;}
+.gate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+/* QUIZ RESULT */
+.quiz-result{display:none;}
+.quiz-result.active{display:block;}
+.result-header{text-align:center;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:28px;}
+.result-header .brand-name{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;}
+.result-header .score-big{font-size:80px;font-weight:900;letter-spacing:-4px;line-height:1;}
+.result-header .score-big.level-critico{color:var(--red);}
+.result-header .score-big.level-mejorable{color:var(--yellow);}
+.result-header .score-big.level-optimizado{color:var(--green-deep);}
+.result-header .level-badge{display:inline-block;padding:8px 20px;border-radius:50px;font-size:13px;font-weight:700;margin-top:12px;}
+.result-header .level-badge.level-critico{background:#FEE2E2;color:#991B1B;}
+.result-header .level-badge.level-mejorable{background:#FEF3C7;color:#92400E;}
+.result-header .level-badge.level-optimizado{background:#DCFCE7;color:#166534;}
+
+.result-hook{background:var(--navy);color:#fff;border-radius:16px;padding:24px;text-align:center;margin-bottom:28px;}
+.result-hook .hook-label{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.result-hook .hook-value{font-size:36px;font-weight:900;letter-spacing:-1px;}
+.result-hook .hook-sub{font-size:14px;color:rgba(255,255,255,0.7);margin-top:4px;}
+
+.result-intro{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+.result-intro b{color:var(--navy);font-weight:600;}
+
+.result-dimensions{margin-bottom:28px;}
+.result-dimensions h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.dim-bar{margin-bottom:14px;}
+.dim-bar .dim-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;}
+.dim-bar .dim-name{font-weight:600;color:var(--navy);}
+.dim-bar .dim-score{font-weight:700;color:var(--muted);}
+.dim-bar .bar-track{height:8px;background:rgba(13,27,42,0.08);border-radius:8px;overflow:hidden;}
+.dim-bar .bar-fill{height:100%;border-radius:8px;transition:width .5s ease;}
+.dim-bar .bar-fill.low{background:var(--red);}
+.dim-bar .bar-fill.mid{background:var(--yellow);}
+.dim-bar .bar-fill.high{background:var(--green-deep);}
+
+.result-findings{margin-bottom:28px;}
+.result-findings h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.finding{background:var(--cream);border-radius:12px;padding:18px;margin-bottom:12px;}
+.finding .finding-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.finding .finding-title .icon{color:var(--yellow);}
+.finding .finding-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:8px;}
+.finding .finding-action{font-size:13px;color:var(--green-deep);font-weight:600;}
+
+.result-plan{background:linear-gradient(135deg,var(--navy) 0%,#1a3a52 100%);border-radius:16px;padding:28px;color:#fff;margin-bottom:28px;}
+.result-plan .plan-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.result-plan .plan-name{font-size:22px;font-weight:900;margin-bottom:6px;}
+.result-plan .plan-price{font-size:28px;font-weight:900;color:var(--green);}
+.result-plan .plan-price span{font-size:14px;font-weight:500;color:rgba(255,255,255,0.6);}
+.result-plan .plan-desc{font-size:14px;color:rgba(255,255,255,0.7);margin-top:12px;line-height:1.5;}
+
+.result-cta{display:flex;flex-direction:column;gap:12px;}
+.result-cta .btn{justify-content:center;}
+
+/* FOOTER */
+footer{background:var(--navy-2);color:rgba(255,255,255,0.55);padding:40px 0 60px;border-top:1px solid rgba(255,255,255,0.07);}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;}
+footer .logo .iso{width:24px;height:24px;}
+footer .logo .word{font-size:16px;}
+.foot-meta{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+.foot-meta a:hover{color:var(--green);}
+
+/* PRINT */
+@media print{
+  nav,footer,.hero-content,.quiz-intro,.quiz-question,.quiz-gate,.result-cta{display:none !important;}
+  body{background:#fff !important;}
+  .quiz-card{box-shadow:none !important;border:1px solid #ddd;}
+  .quiz-result{display:block !important;}
+  .result-hook{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @page{size:A4;margin:18mm;}
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:12px 22px 18px;display:none;}
+  nav.open .nav-links{display:flex;}
+  .nav-links a:not(.btn){padding:12px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,0.08);}
+}
+@media (max-width:600px){
+  .wrap{padding-inline:20px;}
+  .hero-quiz{padding:40px 0 60px;}
+  .quiz-body{padding:28px 22px 32px;}
+  .hero-content h1{font-size:26px;}
+  .quiz-question h3{font-size:18px;}
+  .result-header .score-big{font-size:64px;}
+  .result-hook .hook-value{font-size:28px;}
+  .gate-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="nav-links">
+      <a href="/growth-advisor">Advisor</a>
+      <a href="/metodologia-real">Metodología</a>
+      <a href="/growth-partner">Partner</a>
+      <a href="/diseno-ecommerce">Diseño</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-green btn-sm" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20quiero%20informaci%C3%B3n%20sobre%20Shopify" target="_blank" rel="noopener">Escríbenos <span class="arr">→</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-quiz">
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+        Diagnóstico gratuito
+      </div>
+      <h1>¿Tu tienda Shopify está <span class="g">optimizada para vender?</span></h1>
+      <p class="sub">Responde <b>6 preguntas</b> y descubre tu Score de Eficiencia, qué te falta para convertir más y cómo lograrlo.</p>
+      <div class="time">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        2 minutos
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="progress-bar"></div></div>
+      <div class="quiz-body">
+
+        <!-- INTRO -->
+        <div class="quiz-intro" id="quiz-intro">
+          <h2>Descubre el potencial de tu tienda</h2>
+          <p>Este diagnóstico te mostrará si tu Shopify está optimizado para convertir visitantes en clientes, o si estás perdiendo ventas por problemas técnicos.</p>
+          <button class="btn btn-green" onclick="startQuiz()">Empezar el diagnóstico <span class="arr">→</span></button>
+        </div>
+
+        <!-- QUESTIONS -->
+        <div class="quiz-question" id="q1" data-dim="plataforma">
+          <div class="q-number">Pregunta 1 de 6</div>
+          <h3>¿En qué plataforma tienes tu tienda actualmente?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" data-branch="shopify" onclick="selectOption(this)"><span class="check"></span>Ya estoy en Shopify</div>
+            <div class="quiz-option" data-points="1" data-branch="otra" onclick="selectOption(this)"><span class="check"></span>WooCommerce, PrestaShop u otra</div>
+            <div class="quiz-option" data-points="0" data-branch="marketplace" onclick="selectOption(this)"><span class="check"></span>Solo vendo en marketplace (MercadoLibre, etc.)</div>
+            <div class="quiz-option" data-points="0" data-branch="ninguna" onclick="selectOption(this)"><span class="check"></span>No tengo tienda online</div>
+          </div>
+        </div>
+
+        <!-- Branch: Ya en Shopify -->
+        <div class="quiz-question" id="q2-shopify" data-dim="velocidad">
+          <div class="q-number">Pregunta 2 de 6</div>
+          <h3>¿Cómo calificarías la velocidad de carga de tu tienda?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Excelente, carga en menos de 2 segundos</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Buena, pero podría ser mejor</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Lenta, tarda más de 4 segundos</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>No lo sé / No lo he medido</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q3-shopify" data-dim="conversion">
+          <div class="q-number">Pregunta 3 de 6</div>
+          <h3>¿Cuál es tu tasa de conversión actual?</h3>
+          <p style="font-size:13px;color:var(--muted);margin:-12px 0 20px;">(Porcentaje de visitantes que compran)</p>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" data-cvr="3" onclick="selectOption(this)"><span class="check"></span>Más de 2.5%</div>
+            <div class="quiz-option" data-points="2" data-cvr="1.5" onclick="selectOption(this)"><span class="check"></span>Entre 1% y 2.5%</div>
+            <div class="quiz-option" data-points="1" data-cvr="0.8" onclick="selectOption(this)"><span class="check"></span>Menos de 1%</div>
+            <div class="quiz-option" data-points="0" data-cvr="1" onclick="selectOption(this)"><span class="check"></span>No lo sé</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q4-shopify" data-dim="checkout">
+          <div class="q-number">Pregunta 4 de 6</div>
+          <h3>¿Tienes optimizado el checkout y métodos de pago?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Sí, checkout express + múltiples medios de pago</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Tengo varios métodos pero checkout estándar</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Solo PSE y tarjetas básicas</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>No lo he revisado / No sé qué es checkout express</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q5-shopify" data-dim="mobile">
+          <div class="q-number">Pregunta 5 de 6</div>
+          <h3>¿Cómo se ve y funciona tu tienda en móvil?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Perfecta, diseñada mobile-first</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Bien, pero hay cosas por mejorar</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Regular, se ve apretada o difícil de navegar</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>Mal, casi toda la gente compra en desktop</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <!-- Branch: Migración (WooCommerce, otra, marketplace, ninguna) -->
+        <div class="quiz-question" id="q2-migracion" data-dim="dolor">
+          <div class="q-number">Pregunta 2 de 6</div>
+          <h3>¿Cuál es tu mayor dolor con tu plataforma actual?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="0" data-dolor="lenta" onclick="selectOption(this)"><span class="check"></span>Es lenta y difícil de manejar</div>
+            <div class="quiz-option" data-points="0" data-dolor="limitada" onclick="selectOption(this)"><span class="check"></span>Está limitada, no puedo crecer</div>
+            <div class="quiz-option" data-points="1" data-dolor="costos" onclick="selectOption(this)"><span class="check"></span>Los costos de mantenimiento son altos</div>
+            <div class="quiz-option" data-points="2" data-dolor="ninguno" onclick="selectOption(this)"><span class="check"></span>Ninguno, solo quiero explorar opciones</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q3-migracion" data-dim="productos">
+          <div class="q-number">Pregunta 3 de 6</div>
+          <h3>¿Cuántos productos tienes en tu catálogo?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" data-prods="small" onclick="selectOption(this)"><span class="check"></span>Menos de 50 productos</div>
+            <div class="quiz-option" data-points="2" data-prods="medium" onclick="selectOption(this)"><span class="check"></span>Entre 50 y 200 productos</div>
+            <div class="quiz-option" data-points="1" data-prods="large" onclick="selectOption(this)"><span class="check"></span>Más de 200 productos</div>
+            <div class="quiz-option" data-points="0" data-prods="none" onclick="selectOption(this)"><span class="check"></span>No tengo catálogo armado todavía</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q4-migracion" data-dim="urgencia">
+          <div class="q-number">Pregunta 4 de 6</div>
+          <h3>¿Para cuándo necesitas tener tu tienda lista?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="0" data-urgencia="ya" onclick="selectOption(this)"><span class="check"></span>Lo antes posible (menos de 2 semanas)</div>
+            <div class="quiz-option" data-points="1" data-urgencia="pronto" onclick="selectOption(this)"><span class="check"></span>En el próximo mes</div>
+            <div class="quiz-option" data-points="2" data-urgencia="planificado" onclick="selectOption(this)"><span class="check"></span>En los próximos 2-3 meses</div>
+            <div class="quiz-option" data-points="3" data-urgencia="explorando" onclick="selectOption(this)"><span class="check"></span>Solo estoy explorando, sin prisa</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <div class="quiz-question" id="q5-migracion" data-dim="conocimiento">
+          <div class="q-number">Pregunta 5 de 6</div>
+          <h3>¿Qué tanto conoces de e-commerce y Shopify?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-points="3" onclick="selectOption(this)"><span class="check"></span>Mucho, he manejado tiendas antes</div>
+            <div class="quiz-option" data-points="2" onclick="selectOption(this)"><span class="check"></span>Algo, conozco lo básico</div>
+            <div class="quiz-option" data-points="1" onclick="selectOption(this)"><span class="check"></span>Poco, estoy empezando</div>
+            <div class="quiz-option" data-points="0" onclick="selectOption(this)"><span class="check"></span>Nada, necesito que me guíen de cero</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <!-- Shared Q6 -->
+        <div class="quiz-question" id="q6" data-dim="none" data-scored="false">
+          <div class="q-number">Pregunta 6 de 6</div>
+          <h3>¿Cuál es tu rango de ventas mensuales actual?</h3>
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="0-10" onclick="selectOption(this)"><span class="check"></span>Menos de $10M al mes</div>
+            <div class="quiz-option" data-value="10-30" onclick="selectOption(this)"><span class="check"></span>Entre $10M y $30M al mes</div>
+            <div class="quiz-option" data-value="30-100" onclick="selectOption(this)"><span class="check"></span>Entre $30M y $100M al mes</div>
+            <div class="quiz-option" data-value="100+" onclick="selectOption(this)"><span class="check"></span>Más de $100M al mes</div>
+          </div>
+          <div class="quiz-back" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</div>
+        </div>
+
+        <!-- GATE -->
+        <div class="quiz-gate" id="quiz-gate">
+          <div class="teaser">
+            <div class="score-big" id="teaser-score">--</div>
+            <div class="score-label">Tu Score de Eficiencia</div>
+            <div class="blurred">Velocidad: ██/100 · Conversión: ██/100 · Checkout: ██/100<br>Oportunidad: $█.███.███ en ventas perdidas</div>
+          </div>
+          <h3>Desbloquea tu diagnóstico completo</h3>
+          <p class="gate-sub">Recíbelo aquí mismo y una copia en tu correo. Sin spam.</p>
+          <form id="gate-form" onsubmit="submitGate(event)">
+            <div class="gate-row">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div>
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca" placeholder="Nombre de tu marca" required>
+              </div>
+            </div>
+            <div class="gate-row">
+              <div>
+                <label for="whatsapp">WhatsApp</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 123 4567" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@marca.com" required>
+              </div>
+            </div>
+            <label for="url">URL de tu tienda actual (opcional)</label>
+            <input type="url" id="url" name="url" placeholder="tumarca.com">
+            <label for="ventas">Ventas mensuales</label>
+            <select id="ventas" name="ventas" required>
+              <option value="">Selecciona un rango</option>
+              <option value="0-10">Menos de $10M</option>
+              <option value="10-30">$10M – $30M</option>
+              <option value="30-100">$30M – $100M</option>
+              <option value="100+">Más de $100M</option>
+            </select>
+            <button type="submit" class="btn btn-green" id="gate-btn">Ver mi diagnóstico <span class="arr">→</span></button>
+          </form>
+          <p class="legal">Al enviar aceptas nuestra <a href="/assets/politica-datos.pdf" target="_blank">política de datos</a>. Recibes el diagnóstico completo aquí mismo.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="quiz-result" id="quiz-result">
+          <div class="result-header">
+            <div class="brand-name">Diagnóstico de Shopify para <span id="result-marca">Tu Marca</span></div>
+            <div class="score-big" id="result-score">58</div>
+            <div class="level-badge" id="result-level">Mejorable</div>
+          </div>
+
+          <div class="result-hook">
+            <div class="hook-label" id="hook-label">Oportunidad de mejora</div>
+            <div class="hook-value" id="result-brecha">$4.500.000</div>
+            <div class="hook-sub" id="hook-sub">en ventas perdidas por mes</div>
+          </div>
+
+          <div class="result-intro" id="result-intro">
+            Tu tienda Shopify tiene oportunidades claras de optimización. <b>Con una tasa de conversión mejorada, podrías estar generando $4.500.000 adicionales al mes</b> sin aumentar tu inversión en pauta.
+          </div>
+
+          <div class="result-dimensions">
+            <h4>Tu desempeño por dimensión</h4>
+            <div id="dim-bars"></div>
+          </div>
+
+          <div class="result-findings">
+            <h4>Hallazgos prioritarios</h4>
+            <div id="findings-list"></div>
+          </div>
+
+          <div class="result-plan">
+            <div class="plan-label">Plan recomendado</div>
+            <div class="plan-name" id="plan-name">Optimización Shopify</div>
+            <div class="plan-price" id="plan-price">$3.500.000 <span>+IVA único</span></div>
+            <div class="plan-desc" id="plan-desc">Optimizamos tu tienda Shopify: velocidad, checkout, experiencia mobile y páginas de producto para maximizar conversiones.</div>
+          </div>
+
+          <div class="result-cta">
+            <a class="btn btn-green" id="cta-agendar" href="#" target="_blank" rel="noopener">Agendar llamada <span class="arr">→</span></a>
+            <button class="btn btn-ghost" onclick="window.print()">Descargar mi diagnóstico (PDF)</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="/" class="logo"><span class="iso" aria-hidden="true"></span><span class="word">LA REAL<span class="pt">.</span></span></a>
+    <div class="foot-meta">
+      <a href="mailto:hola@lareal.co">hola@lareal.co</a>
+      <span>Medellín · Remoto</span>
+      <a href="https://instagram.com/larealmarketing" target="_blank" rel="noopener">@larealmarketing</a>
+      <span>© 2026 LA REAL</span>
+      <a href="/assets/politica-datos.pdf" target="_blank" rel="noopener">Política de datos</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============ CONFIG ============
+const CONFIG = {
+  id: "shopify",
+  pilar: "Eficiencia",
+  whatsapp: "573043148428",
+  dimensionsShopify: {
+    velocidad: "Velocidad de carga",
+    conversion: "Tasa de conversión",
+    checkout: "Checkout y pagos",
+    mobile: "Experiencia mobile"
+  },
+  dimensionsMigracion: {
+    dolor: "Urgencia de cambio",
+    productos: "Complejidad del catálogo",
+    urgencia: "Timeline",
+    conocimiento: "Experiencia previa"
+  },
+  levels: [
+    { min: 0, max: 39, id: "critico", name: "Crítico", plan: "Rediseño completo", price: "$8.000.000", priceNote: "+IVA" },
+    { min: 40, max: 69, id: "mejorable", name: "Mejorable", plan: "Optimización", price: "$3.500.000", priceNote: "+IVA" },
+    { min: 70, max: 100, id: "optimizado", name: "Optimizado", plan: "Mantenimiento", price: "$800.000", priceNote: "/mes +IVA" }
+  ],
+  levelsMigracion: [
+    { min: 0, max: 39, id: "critico", name: "Necesitas migrar ya", plan: "Migración Express", price: "$6.000.000", priceNote: "+IVA" },
+    { min: 40, max: 69, id: "mejorable", name: "Migración recomendada", plan: "Migración Estándar", price: "$4.500.000", priceNote: "+IVA" },
+    { min: 70, max: 100, id: "optimizado", name: "Migración opcional", plan: "Asesoría de migración", price: "$1.500.000", priceNote: "+IVA" }
+  ],
+  ventasMid: { "0-10": 7000000, "10-30": 20000000, "30-100": 60000000, "100+": 150000000 },
+  ventasValue: { "0-10": 7000000, "10-30": 20000000, "30-100": 60000000, "100+": 150000000 },
+  findingsShopify: {
+    velocidad: {
+      low: { title: "Tu tienda carga lento", desc: "Cada segundo adicional de carga reduce las conversiones un 7%. Una tienda lenta pierde ventas antes de que el cliente vea el producto.", action: "Optimizaríamos imágenes, apps y código para bajar a menos de 2 segundos." },
+      mid: { title: "La velocidad puede mejorar", desc: "Tu tienda carga en tiempo aceptable pero hay oportunidad de mejora. Los usuarios esperan menos de 2 segundos.", action: "Haríamos fine-tuning de imágenes y apps para mejorar el score." },
+      high: { title: "Buena velocidad de carga", desc: "Tu tienda carga rápido. Esto es una ventaja competitiva importante.", action: "Nos enfocaríamos en otras áreas de optimización." }
+    },
+    conversion: {
+      low: { title: "Tu conversión está por debajo del benchmark", desc: "El promedio en e-commerce es 1.5-2.5%. Si estás por debajo, hay fugas importantes en tu funnel.", action: "Auditaríamos todo el journey: páginas de producto, checkout, trust signals." },
+      mid: { title: "Tu conversión es promedio", desc: "Estás en el rango normal pero hay espacio para crecer. Cada 0.5% adicional es dinero real.", action: "Implementaríamos A/B tests en páginas clave para subir conversión." },
+      high: { title: "Excelente conversión", desc: "Tu tienda convierte bien. El foco ahora es escalar tráfico manteniendo el ratio.", action: "Documentaríamos qué funciona para replicar en otras páginas." }
+    },
+    checkout: {
+      low: { title: "Tu checkout está frenando ventas", desc: "Sin checkout express y medios de pago locales (Nequi, Daviplata, contraentrega), pierdes un % importante de carritos.", action: "Configuraríamos Shop Pay, agregaríamos medios de pago locales y simplificaríamos el proceso." },
+      mid: { title: "El checkout puede mejorar", desc: "Tienes lo básico pero faltan optimizaciones que reducen fricción significativamente.", action: "Agregaríamos checkout express y más opciones de pago." },
+      high: { title: "Checkout bien optimizado", desc: "Tu checkout está configurado para minimizar fricción. Buen trabajo.", action: "Revisaríamos métricas de abandono para afinar detalles." }
+    },
+    mobile: {
+      low: { title: "La experiencia mobile es mala", desc: "El 70%+ del tráfico viene de móvil. Si tu tienda no está optimizada para celular, pierdes la mayoría de tus ventas potenciales.", action: "Rediseñaríamos la experiencia mobile-first." },
+      mid: { title: "La experiencia mobile es regular", desc: "Funciona pero no está optimizada. Hay oportunidad de mejorar navegación y velocidad en móvil.", action: "Optimizaríamos menús, botones y flujo de compra en móvil." },
+      high: { title: "Buena experiencia mobile", desc: "Tu tienda funciona bien en móvil. Esto es clave para el éxito en e-commerce.", action: "Haríamos testing de usabilidad para afinar detalles." }
+    }
+  },
+  findingsMigracion: {
+    dolor: {
+      low: { title: "Tu plataforma actual te está frenando", desc: "Los problemas que describes son típicos de plataformas legacy. Shopify resuelve todo esto de forma nativa.", action: "Te ayudaríamos a migrar a Shopify sin perder datos ni SEO." },
+      mid: { title: "Hay dolores que Shopify resuelve", desc: "Los costos y limitaciones que mencionas son comunes en otras plataformas. Shopify es más eficiente.", action: "Analizaríamos el costo-beneficio de migrar vs quedarte." },
+      high: { title: "Exploras por crecimiento", desc: "No tienes problemas urgentes pero Shopify tiene ventajas para escalar.", action: "Te mostraríamos las ventajas para cuando decidas crecer." }
+    },
+    productos: {
+      low: { title: "La migración será sencilla", desc: "Con menos de 50 productos, la migración es rápida y el riesgo es mínimo.", action: "Podríamos tener tu tienda lista en 2-3 semanas." },
+      mid: { title: "Migración de complejidad media", desc: "Entre 50 y 200 productos requiere planificación pero es manejable.", action: "Haríamos un plan de migración por fases." },
+      high: { title: "Migración compleja pero factible", desc: "Con más de 200 productos necesitamos un proceso estructurado para no perder nada.", action: "Usaríamos herramientas de migración masiva + validación manual." }
+    },
+    urgencia: {
+      low: { title: "Necesitas moverte rápido", desc: "Con tu timeline, priorizaríamos lo esencial para salir rápido y optimizar después.", action: "Haríamos un MVP funcional y luego iteraríamos." },
+      mid: { title: "Timeline razonable", desc: "Un mes es tiempo suficiente para hacer las cosas bien sin prisas.", action: "Planearíamos una migración completa y ordenada." },
+      high: { title: "Tienes tiempo para hacerlo bien", desc: "Sin prisa podemos hacer un trabajo más detallado y capacitarte.", action: "Haríamos una migración premium con capacitación incluida." }
+    },
+    conocimiento: {
+      low: { title: "Necesitas acompañamiento", desc: "Sin experiencia previa, el acompañamiento es clave para que no te frustres.", action: "Incluiríamos capacitación y soporte post-lanzamiento." },
+      mid: { title: "Tienes base para aprender rápido", desc: "Con conocimientos básicos, te adaptarás rápido a Shopify.", action: "Te daríamos recursos y capacitación enfocada." },
+      high: { title: "Ya conoces el terreno", desc: "Con experiencia previa, la transición será fluida.", action: "Nos enfocaríamos en optimización y mejores prácticas." }
+    }
+  },
+  planDescsShopify: {
+    "Rediseño completo": "Rediseñamos tu tienda Shopify de cero: nuevo tema optimizado, páginas de producto, checkout y experiencia mobile. Incluye migración de contenido.",
+    "Optimización": "Optimizamos tu tienda existente: velocidad, checkout, páginas de producto y experiencia mobile. Sin cambiar de tema, mejoramos conversiones.",
+    "Mantenimiento": "Mantenimiento mensual: actualizaciones, optimización continua, soporte técnico y recomendaciones basadas en datos."
+  },
+  planDescsMigracion: {
+    "Migración Express": "Migración rápida a Shopify en 2 semanas: setup de tienda, importación de productos, configuración de pagos y envíos. Lo esencial para salir.",
+    "Migración Estándar": "Migración completa a Shopify: diseño personalizado, importación de productos y clientes, SEO, integraciones y capacitación.",
+    "Asesoría de migración": "Te acompañamos en la decisión: análisis de tu situación actual, roadmap de migración y recomendaciones."
+  }
+};
+
+// ============ STATE ============
+let currentQ = 0;
+let answers = {};
+let gateData = {};
+let branch = "shopify"; // shopify or migracion
+let currentCVR = 1;
+let questionSequence = [];
+
+// ============ UTM CAPTURE ============
+const urlParams = new URLSearchParams(window.location.search);
+const utms = {
+  source: urlParams.get('utm_source') || '',
+  medium: urlParams.get('utm_medium') || '',
+  campaign: urlParams.get('utm_campaign') || '',
+  content: urlParams.get('utm_content') || '',
+  term: urlParams.get('utm_term') || '',
+  fbclid: urlParams.get('fbclid') || '',
+  gclid: urlParams.get('gclid') || ''
+};
+
+// ============ FUNCTIONS ============
+function updateProgress() {
+  const pct = (currentQ / 7) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+}
+
+function startQuiz() {
+  document.getElementById('quiz-intro').style.display = 'none';
+  currentQ = 1;
+  questionSequence = ['q1'];
+  document.getElementById('q1').classList.add('active');
+  updateProgress();
+
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'diag_start', { linea: CONFIG.id });
+}
+
+function selectOption(el) {
+  el.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+
+  const qEl = el.closest('.quiz-question');
+  const qId = qEl.id;
+  const points = parseInt(el.dataset.points) || 0;
+  const value = el.dataset.value || null;
+  const branchValue = el.dataset.branch || null;
+  const cvr = el.dataset.cvr ? parseFloat(el.dataset.cvr) : null;
+
+  answers[qId] = { points, value, branch: branchValue, cvr };
+
+  // Handle branching on Q1
+  if (qId === 'q1' && branchValue) {
+    branch = branchValue === 'shopify' ? 'shopify' : 'migracion';
+  }
+
+  if (cvr) currentCVR = cvr;
+
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'diag_q' + currentQ, { linea: CONFIG.id, branch });
+
+  setTimeout(() => {
+    qEl.classList.remove('active');
+    currentQ++;
+
+    let nextQ = getNextQuestion();
+    if (nextQ) {
+      questionSequence.push(nextQ);
+      document.getElementById(nextQ).classList.add('active');
+    } else {
+      showGate();
+      if (typeof fbq !== 'undefined') fbq('trackCustom', 'diag_complete', { linea: CONFIG.id });
+    }
+    updateProgress();
+  }, 250);
+}
+
+function getNextQuestion() {
+  const qNum = currentQ;
+
+  if (qNum === 2) {
+    return branch === 'shopify' ? 'q2-shopify' : 'q2-migracion';
+  } else if (qNum === 3) {
+    return branch === 'shopify' ? 'q3-shopify' : 'q3-migracion';
+  } else if (qNum === 4) {
+    return branch === 'shopify' ? 'q4-shopify' : 'q4-migracion';
+  } else if (qNum === 5) {
+    return branch === 'shopify' ? 'q5-shopify' : 'q5-migracion';
+  } else if (qNum === 6) {
+    return 'q6';
+  }
+  return null;
+}
+
+function goBack() {
+  if (currentQ <= 1) return;
+
+  const currentQId = questionSequence.pop();
+  document.getElementById(currentQId).classList.remove('active');
+  currentQ--;
+
+  const prevQId = questionSequence[questionSequence.length - 1];
+  document.getElementById(prevQId).classList.add('active');
+  updateProgress();
+}
+
+function calculateScore() {
+  let total = 0;
+  let max = 0;
+  let dimTotals = {};
+  let dimMaxes = {};
+
+  const dims = branch === 'shopify' ? CONFIG.dimensionsShopify : CONFIG.dimensionsMigracion;
+  const qIds = questionSequence.filter(q => q !== 'q6');
+
+  for (const qId of qIds) {
+    const q = document.getElementById(qId);
+    const dim = q.dataset.dim;
+    if (!dim || dim === 'none') continue;
+
+    const pts = answers[qId]?.points || 0;
+    total += pts;
+    max += 3;
+
+    if (!dimTotals[dim]) dimTotals[dim] = 0;
+    if (!dimMaxes[dim]) dimMaxes[dim] = 0;
+    dimTotals[dim] += pts;
+    dimMaxes[dim] += 3;
+  }
+
+  const score = max > 0 ? Math.round((total / max) * 100) : 50;
+  const dimScores = {};
+  for (const dim in dimTotals) {
+    dimScores[dim] = Math.round((dimTotals[dim] / dimMaxes[dim]) * 100);
+  }
+
+  return { score, dimScores };
+}
+
+function getLevel(score) {
+  const levels = branch === 'shopify' ? CONFIG.levels : CONFIG.levelsMigracion;
+  return levels.find(l => score >= l.min && score <= l.max);
+}
+
+function showGate() {
+  const { score } = calculateScore();
+  document.getElementById('teaser-score').textContent = score;
+  document.getElementById('quiz-gate').classList.add('active');
+}
+
+function formatCurrency(num) {
+  return '$' + num.toLocaleString('es-CO');
+}
+
+function submitGate(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const btn = document.getElementById('gate-btn');
+  btn.disabled = true;
+  btn.innerHTML = 'Procesando...';
+
+  gateData = {
+    nombre: form.nombre.value,
+    marca: form.marca.value,
+    whatsapp: form.whatsapp.value,
+    email: form.email.value,
+    url: form.url.value,
+    ventas: form.ventas.value
+  };
+
+  const { score, dimScores } = calculateScore();
+  const level = getLevel(score);
+
+  // Calculate brecha for Shopify optimization
+  const ventasMid = CONFIG.ventasMid[gateData.ventas] || 20000000;
+  let brechaMensual = 0;
+  if (branch === 'shopify') {
+    // If current CVR is below 2.5%, calculate potential gain
+    const targetCVR = 2.5;
+    if (currentCVR < targetCVR) {
+      const improvementFactor = (targetCVR - currentCVR) / currentCVR;
+      brechaMensual = Math.round(ventasMid * improvementFactor * 0.5); // Conservative estimate
+    }
+  }
+
+  const leadValue = CONFIG.ventasValue[gateData.ventas] || 20000000;
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: CONFIG.id, value: leadValue, currency: 'COP' });
+  }
+
+  showResult(score, dimScores, level, brechaMensual);
+  sendToBackend(score, dimScores, level.id, brechaMensual);
+}
+
+function showResult(score, dimScores, level, brechaMensual) {
+  document.getElementById('quiz-gate').classList.remove('active');
+  document.getElementById('quiz-result').classList.add('active');
+  document.getElementById('progress-bar').style.width = '100%';
+
+  document.getElementById('result-marca').textContent = gateData.marca;
+  const scoreEl = document.getElementById('result-score');
+  scoreEl.textContent = score;
+  scoreEl.className = 'score-big level-' + level.id;
+
+  const levelBadge = document.getElementById('result-level');
+  levelBadge.textContent = level.name;
+  levelBadge.className = 'level-badge level-' + level.id;
+
+  // Hook
+  if (branch === 'shopify' && brechaMensual > 0) {
+    document.getElementById('hook-label').textContent = 'Estás dejando en la mesa';
+    document.getElementById('result-brecha').textContent = formatCurrency(brechaMensual);
+    document.getElementById('hook-sub').textContent = 'en ventas perdidas por mes';
+  } else if (branch === 'migracion') {
+    document.getElementById('hook-label').textContent = 'Tu tienda puede estar lista en';
+    document.getElementById('result-brecha').textContent = level.id === 'critico' ? '2 semanas' : level.id === 'mejorable' ? '4 semanas' : '6 semanas';
+    document.getElementById('hook-sub').textContent = 'con el plan adecuado';
+  } else {
+    document.getElementById('hook-label').textContent = 'Tu tienda está';
+    document.getElementById('result-brecha').textContent = 'bien optimizada';
+    document.getElementById('hook-sub').textContent = 'sigue mejorando con datos';
+  }
+
+  // Intro text
+  let introText = '';
+  if (branch === 'shopify') {
+    if (level.id === 'critico') {
+      introText = `Tu tienda Shopify tiene problemas críticos que están frenando tus ventas. <b>Con las optimizaciones correctas, podrías estar generando ${formatCurrency(brechaMensual)} adicionales al mes</b> sin aumentar tu inversión en pauta.`;
+    } else if (level.id === 'mejorable') {
+      introText = `Tu tienda Shopify tiene oportunidades claras de optimización. <b>Con una tasa de conversión mejorada, podrías estar generando ${formatCurrency(brechaMensual)} adicionales al mes</b> sin aumentar tu inversión en pauta.`;
+    } else {
+      introText = `Tu tienda Shopify está bien optimizada. <b>El siguiente paso es mantener y seguir mejorando con datos</b>, testeando continuamente para maximizar conversiones.`;
+    }
+  } else {
+    if (level.id === 'critico') {
+      introText = `Tu situación actual justifica una migración urgente a Shopify. <b>Los problemas que describes se resuelven de forma nativa en Shopify</b> y podrías estar vendiendo más en pocas semanas.`;
+    } else if (level.id === 'mejorable') {
+      introText = `Migrar a Shopify tiene sentido para tu caso. <b>Resolverías los dolores actuales y tendrías una plataforma lista para escalar</b> con menos fricciones.`;
+    } else {
+      introText = `No tienes urgencia de migrar, pero <b>Shopify tiene ventajas claras cuando decidas escalar</b>. Te conviene entender las opciones para tomar la mejor decisión.`;
+    }
+  }
+  document.getElementById('result-intro').innerHTML = introText;
+
+  // Dimension bars
+  const dims = branch === 'shopify' ? CONFIG.dimensionsShopify : CONFIG.dimensionsMigracion;
+  const dimBarsEl = document.getElementById('dim-bars');
+  dimBarsEl.innerHTML = '';
+  for (const dim in dimScores) {
+    if (!dims[dim]) continue;
+    const dscore = dimScores[dim];
+    const levelClass = dscore < 40 ? 'low' : dscore < 70 ? 'mid' : 'high';
+    dimBarsEl.innerHTML += `
+      <div class="dim-bar">
+        <div class="dim-label">
+          <span class="dim-name">${dims[dim]}</span>
+          <span class="dim-score">${dscore}/100</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill ${levelClass}" style="width:${dscore}%"></div></div>
+      </div>
+    `;
+  }
+
+  // Findings
+  const findings = branch === 'shopify' ? CONFIG.findingsShopify : CONFIG.findingsMigracion;
+  const sortedDims = Object.entries(dimScores).sort((a,b) => a[1] - b[1]).slice(0, 3);
+  const findingsEl = document.getElementById('findings-list');
+  findingsEl.innerHTML = '';
+  for (const [dim, dscore] of sortedDims) {
+    if (!findings[dim]) continue;
+    const state = dscore < 40 ? 'low' : dscore < 70 ? 'mid' : 'high';
+    const finding = findings[dim][state];
+    findingsEl.innerHTML += `
+      <div class="finding">
+        <div class="finding-title"><span class="icon">⚠️</span> ${finding.title}</div>
+        <div class="finding-desc">${finding.desc}</div>
+        <div class="finding-action">→ ${finding.action}</div>
+      </div>
+    `;
+  }
+
+  // Plan
+  const planDescs = branch === 'shopify' ? CONFIG.planDescsShopify : CONFIG.planDescsMigracion;
+  document.getElementById('plan-name').textContent = level.plan;
+  document.getElementById('plan-price').innerHTML = `${level.price} <span>${level.priceNote}</span>`;
+  document.getElementById('plan-desc').textContent = planDescs[level.plan];
+
+  // CTA
+  const ctaMsg = encodeURIComponent(`Hola Juanfe, hice el diagnóstico de Shopify para ${gateData.marca}, saqué ${score}/100 y quiero agendar una llamada.`);
+  document.getElementById('cta-agendar').href = `https://wa.me/${CONFIG.whatsapp}?text=${ctaMsg}`;
+  document.getElementById('cta-agendar').onclick = function() {
+    if (typeof fbq !== 'undefined') fbq('track', 'Schedule', { content_name: CONFIG.id });
+  };
+}
+
+function sendToBackend(score, dimScores, levelId, brechaMensual) {
+  const payload = {
+    linea: CONFIG.id,
+    ts: new Date().toISOString(),
+    ...gateData,
+    score,
+    nivel: levelId,
+    branch,
+    dimScores,
+    answers,
+    derived: { currentCVR, brechaMensualCOP: brechaMensual },
+    utm: utms,
+    page: window.location.pathname,
+    userAgent: navigator.userAgent
+  };
+
+  console.log('Lead payload:', payload);
+}
+</script>
+</body>
+</html>
