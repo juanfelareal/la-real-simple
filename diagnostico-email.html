@@ -461,7 +461,7 @@ footer .logo .word{font-size:16px;}
 <script>
 // ============ CONFIG ============
 // IMPORTANTE: Reemplaza con tu URL de Google Apps Script
-const WEBHOOK_URL = ''; // Ej: https://script.google.com/macros/s/AKfyc.../exec
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbymfoyZKeZqWiuj0nwpvV9mCBveH3qfN5GPWuH6c9dt0YrrOM5PLLwO-rF-gc9apy2I/exec';
 
 // IMPORTANTE: Reemplaza con tu link de Cal.com (usuario/evento)
 const CAL_LINK = ''; // Ej: juanfe-lareal/discovery
@@ -500,7 +500,7 @@ const CONFIG = {
       high: { title: "Buena frecuencia de campañas", desc: "Estás activo con tu lista. El siguiente paso es optimizar open rates y conversiones.", action: "Optimizaríamos asuntos, contenido y segmentación para mejorar resultados." }
     },
     resultado: {
-      low: { title: "El email no pesa en tus ventas", desc: "Si el email representa menos del 10% de tus ventas, hay un problema grave. El benchmark es 20-30%.", action: "Con el setup completo, el objetivo es llegar a 20% en 90 días." },
+      low: { title: "El email no pesa en tus ventas", desc: "Si el email representa menos del 10% de tus ventas, hay una oportunidad grande. El benchmark es 10-20%.", action: "Con el setup completo, el objetivo es llegar a ese rango en 90 días." },
       mid: { title: "El email está empezando a rendir", desc: "Vas por buen camino pero todavía hay mucho por ganar. Cada punto porcentual es dinero real.", action: "Optimizaríamos todo el funnel para maximizar conversiones." },
       high: { title: "El email ya es un canal fuerte", desc: "Tu email está en el rango ideal. Ahora es cuestión de mantener y seguir creciendo.", action: "Implementaríamos estrategias avanzadas de segmentación y personalización." }
     }
@@ -629,7 +629,7 @@ function showGate() {
   const level = getLevel(score);
 
   // Score
-  document.getElementById('teaser-score').textContent = score;
+  document.getElementById('teaser-score').innerHTML = score + '<span style="font-size:0.5em;opacity:0.7">/100</span>';
   document.getElementById('teaser-score').className = 'score-big level-' + level.id;
 
   // Level badge
@@ -730,7 +730,7 @@ function showResult(score, dimScores, level, brechaMensual, planLevel) {
   if (level.id === 'frenada') {
     introText = `Tu email marketing está frenado. Con las ventas que tienes, <b>deberías estar generando al menos ${formatCurrency(brechaMensual)} adicionales al mes</b> solo con email. Eso es dinero que hoy se está quedando en la mesa.`;
   } else if (level.id === 'transicion') {
-    introText = `Tienes lista y algo de automatización, pero el email hoy pesa poco en tus ventas. <b>El objetivo realista a 90 días es que el email pase de ~${pctActual}% a 20% de tus ventas</b>. Eso son ${formatCurrency(brechaMensual)} al mes que hoy no estás cobrando.`;
+    introText = `Tienes lista y algo de automatización, pero el email hoy pesa poco en tus ventas. <b>El objetivo realista a 90 días es que el email represente entre 10% y 20% de tus ventas</b>. Eso son ${formatCurrency(brechaMensual)} al mes que hoy no estás cobrando.`;
   } else {
     introText = `Tu email marketing está en buen camino. Con optimización y campañas más agresivas, <b>podrías sumar ${formatCurrency(brechaMensual)} adicionales al mes</b>. El benchmark es que el email represente 25-30% de tus ventas.`;
   }
