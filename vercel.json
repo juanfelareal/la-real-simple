@@ -4,6 +4,6 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/alejandra-otelo", "destination": "/assets/alejandra-otelo.html" }
+    { "source": "/alejandra-otelo", "destination": "/assets/alejandra-otelo" }
   ]
 }
