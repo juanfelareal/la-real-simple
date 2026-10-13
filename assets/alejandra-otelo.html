@@ -1843,17 +1843,17 @@ h1, h2, h3, h4 {
   /* flex: 1 hace que la caja ocupe todo el alto sobrante de su columna;
      como las columnas ya miden lo mismo, las tres cajas quedan parejas. */
   flex: 1;
-  padding: clamp(1.5rem, 3vw, 2.35rem) clamp(1.35rem, 2.5vw, 2rem);
+  padding: clamp(1.1rem, 2.2vw, 1.6rem) clamp(1rem, 1.8vw, 1.35rem);
   border-radius: 1.35rem;
-  background: var(--blanco);
-  border: 1px solid rgba(94, 30, 44, .1);
-  transition: background-color .32s ease, border-color .32s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background-color .32s ease, border-color .32s ease, box-shadow .32s ease;
 }
 
 .diferencial h3 {
   color: var(--vino);
   text-align: center;
-  font-size: clamp(1.3rem, 1.1rem + .75vw, 1.7rem);
+  font-size: clamp(1.1rem, .98rem + .4vw, 1.3rem);
   margin-bottom: 1rem;
   text-wrap: balance;
 }
@@ -1872,7 +1872,11 @@ h1, h2, h3, h4 {
 .diferencial:hover,
 .diferencial:focus-within { transform: translateY(-4px); }
 .diferencial:hover .diferencial__caja,
-.diferencial:focus-within .diferencial__caja { border-color: var(--oro-hairline); }
+.diferencial:focus-within .diferencial__caja {
+  background: var(--blanco);
+  border-color: rgba(94, 30, 44, .12);
+  box-shadow: 0 14px 34px rgba(69, 22, 31, .08);
+}
 
 @media (max-width: 54rem) {
   .diferenciales { grid-template-columns: 1fr; }
@@ -2405,14 +2409,6 @@ h1, h2, h3, h4 {
   object-fit: cover;
   object-position: center 28%;
 }
-/* Marco en azul, corrido detras de la foto */
-.formacion__sello {
-  position: absolute;
-  inset: clamp(1rem, 2vw, 1.6rem) clamp(1rem, 2vw, 1.6rem) clamp(-1rem, -2vw, -1.6rem) clamp(-1rem, -2vw, -1.6rem);
-  border: 1px solid var(--azul-noche);
-  z-index: -1;
-}
-.formacion__foto { isolation: isolate; }
 .formacion__texto .flor { margin: 0 0 1.4rem; }
 .formacion__texto .t-seccion {
   text-align: left;
@@ -2426,6 +2422,13 @@ h1, h2, h3, h4 {
   line-height: 1.5;
   color: var(--azul-noche);
 }
+.formacion__texto .diferenciales {
+  margin-top: clamp(2.25rem, 4vw, 3.25rem);
+  gap: clamp(.4rem, 1vw, .9rem);
+}
+/* En columna angosta el justificado abre huecos: aqui va en bandera */
+.formacion__texto .diferencial p { text-align: left; }
+.formacion__texto .diferencial h3 { text-wrap: balance; }
 .formacion__texto .prosa {
   max-width: none;
   margin-top: 1.6rem;
@@ -2437,7 +2440,6 @@ h1, h2, h3, h4 {
   .formacion { grid-template-columns: 1fr; gap: clamp(2rem, 6vw, 3rem); }
   .formacion__foto { min-height: 0; }
   .formacion__foto img { min-height: 0; aspect-ratio: 4 / 3; height: auto; }
-  .formacion__sello { inset: .9rem .9rem -.9rem -.9rem; }
 }
 
 /* Cierre: la cara de Alejandra al lado del ultimo llamado */
@@ -2451,7 +2453,10 @@ h1, h2, h3, h4 {
 .cierre__foto img {
   display: block;
   width: 100%;
-  height: auto;
+  /* La foto viene cuadrada: se recorta a vertical y se encuadra sobre ella */
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 40% 55%;
   border-radius: 1.35rem;
 }
 .cierre .flor--grande { margin-left: 0; }
@@ -2737,39 +2742,38 @@ h1, h2, h3, h4 {
       <div class="formacion__foto">
         <img width="429" height="571" src="../assets/alejandra-otelo/alejandra-otelo-caminando-hacia-una-ceremonia.jpg"
              alt="Alejandra Otelo caminando hacia una ceremonia." loading="lazy">
-        <span class="formacion__sello" aria-hidden="true"></span>
       </div>
 
       <div class="formacion__texto">
-        <span class="flor" aria-hidden="true"></span>
         <h2 class="t-seccion">Mi manera de hacer este trabajo viene de lugares distintos</h2>
         <p class="formacion__lema">Filosofía, Derecho y Dirección de Arte.</p>
         <div class="prosa">
           <p>Soy filósofa y abogada de la Universidad de los Andes y cursé un Máster en Dirección de Arte en ELISAVA, Escuela de Diseño e Ingeniería de Barcelona. Con el tiempo entendí que las tres cosas estaban presentes en mi manera de construir una ceremonia. Esa mezcla terminó dándome una manera muy particular de trabajar: escuchar, interpretar, escribir y encontrar una forma para lo que cada pareja quiere expresar.</p>
         </div>
+
+      <ul class="diferenciales">
+        <li class="diferencial">
+          <div class="diferencial__caja">
+          <h3>Filosofía</h3>
+          <p>Aparece en las preguntas y en la forma de pensar una unión.</p>
+          </div>
+        </li>
+        <li class="diferencial">
+          <div class="diferencial__caja">
+          <h3>Derecho</h3>
+          <p>Aparece en el rigor con el lenguaje y con la estructura.</p>
+          </div>
+        </li>
+        <li class="diferencial">
+          <div class="diferencial__caja">
+          <h3>Dirección de arte</h3>
+          <p>Aparece cuando una idea necesita convertirse en un objeto, un gesto o una experiencia.</p>
+          </div>
+        </li>
+      </ul>
       </div>
     </div>
 
-    <ul class="diferenciales">
-      <li class="diferencial">
-        <div class="diferencial__caja">
-        <h3>Filosofía</h3>
-        <p>Aparece en las preguntas y en la forma de pensar una unión.</p>
-        </div>
-      </li>
-      <li class="diferencial">
-        <div class="diferencial__caja">
-        <h3>Derecho</h3>
-        <p>Aparece en el rigor con el lenguaje y con la estructura.</p>
-        </div>
-      </li>
-      <li class="diferencial">
-        <div class="diferencial__caja">
-        <h3>Dirección de arte</h3>
-        <p>Aparece cuando una idea necesita convertirse en un objeto, un gesto o una experiencia.</p>
-        </div>
-      </li>
-    </ul>
   </div>
 </section>
 
@@ -3118,9 +3122,6 @@ h1, h2, h3, h4 {
         <img width="1000" height="1000" src="../assets/alejandra-otelo/ceremonia-en-un-bosque-de-pinos-bajo-un-arco-de-gyps.jpg" alt="Ceremonia en un bosque de pinos bajo un arco de gypsophila." loading="lazy">
       </button>
       <button class="foto" type="button" data-visor="">
-        <img width="1000" height="1000" src="../assets/alejandra-otelo/alejandra-oficiando-con-la-ciudad-de-fondo.jpg" alt="Alejandra oficiando con la ciudad de fondo." loading="lazy">
-      </button>
-      <button class="foto" type="button" data-visor="">
         <img width="1000" height="1000" src="../assets/alejandra-otelo/la-novia-leyendo-sus-votos-al-novio-en-un-bosque-de.jpg" alt="La novia leyendo sus votos al novio en un bosque de pinos." loading="lazy">
       </button>
       <button class="foto" type="button" data-visor="">
@@ -3359,8 +3360,8 @@ h1, h2, h3, h4 {
   <div class="envoltura cierre">
 
     <div class="cierre__foto">
-      <img src="../assets/alejandra-otelo/retrato-de-alejandra-otelo.jpg"
-           alt="Retrato de Alejandra Otelo." width="1126" height="1500" loading="lazy">
+      <img src="../assets/alejandra-otelo/alejandra-oficiando-con-la-ciudad-de-fondo.jpg"
+           alt="Alejandra Otelo oficiando una ceremonia con la ciudad de fondo." width="1000" height="1000" loading="lazy">
     </div>
 
     <div class="cierre__texto">
