@@ -12,3 +12,8 @@ node_modules/
 .design-canvas.state.json
 .vercel
 .env*.local
+
+# Copias de revision que arma scripts/alejandra-otelo-un-archivo.py
+# (la pagina con todo incrustado: son megas y se regeneran cuando se necesiten)
+alejandra-otelo-NUEVA.html
+alejandra-otelo-un-archivo.html
