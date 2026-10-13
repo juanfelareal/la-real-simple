@@ -2602,6 +2602,45 @@ h1, h2, h3, h4 {
 }
 .voz blockquote p { text-align: left; }
 
+/* «Leer completo»: en el telefono los testimonios largos se recortan para
+   que la tarjeta no se vuelva una columna interminable. El texto sigue
+   completo, a un toque. En escritorio no hace falta: caben enteros. */
+.voz__mas {
+  display: none;
+  margin-top: 1.1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--sans);
+  font-size: .84rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--vino);
+  cursor: pointer;
+}
+.voz__mas::after { content: " ↓"; }
+.voz--abierta .voz__mas::after { content: " ↑"; }
+
+@media (max-width: 62rem) {
+  .voz blockquote {
+    position: relative;
+    max-height: 18em;
+    overflow: hidden;
+  }
+  .voz--recortada blockquote::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 5em;
+    background: linear-gradient(to bottom, rgba(253, 251, 250, 0), var(--blanco) 85%);
+    pointer-events: none;
+  }
+  .voz--abierta blockquote { max-height: none; }
+  .voz--abierta blockquote::after { content: none; }
+  .voz__mas:not([hidden]) { display: inline-block; }
+}
+
 /* Flechas al costado del carrusel de testimonios */
 .carrusel--voces { position: relative; }
 .carrusel__flecha--lado {
@@ -3343,6 +3382,8 @@ h1, h2, h3, h4 {
           <p>Cuando decidimos casarnos lo único claro que teníamos era que nos casara Alejandra. La encontré con la ilusión de tener un matrimonio emotivo, diferente, que enalteciera nuestro amor, y efectivamente lo hizo posible. Alejandra nació con un don, que lo describo como el de conectar; no sé si será por ser mujer, filósofa, abogada, madre, o quizás simplemente por lograr transmitir todas esas cosas bonitas que habitan en su corazón a través de las palabras.</p>
           <p>Alejandra conectó a todos nuestros invitados con nuestro amor, y al escuchar cómo nos describía a Alejandro y a mí, me hizo sentir escuchada, más enamorada y conmovida por la decisión que habíamos tomado. Si piensan que su amor merece ser celebrado de una forma especial, no duden en que ella lo hará posible: te escucha, los celebra y conecta de una manera demasiado hermosa y auténtica. Si la vida me permite renovar mis votos, no dudaría en tenerla de nuevo como nuestra oficiante.</p>
         </blockquote>
+        <button class="voz__mas" type="button" hidden>Leer completo</button>
+
         <figcaption>Johanna y Alejandro<span>Ceremonia del nido</span></figcaption>
       </figure>
 
@@ -3352,6 +3393,8 @@ h1, h2, h3, h4 {
           <p>El proceso consistió en unas entrevistas individuales con cada uno de nosotros y luego un encuentro conjunto, dedicando tiempo a conocer nuestras historias, nuestros valores y el significado que queríamos darle a nuestra unión. Gracias a ese proceso, la ceremonia fue completamente personalizada y auténtica.</p>
           <p>Fue una celebración íntima, pero nunca pequeña: estuvo llena de detalles, emociones y momentos significativos. Alejandra construyó un discurso cuidadoso, profundamente conectado con nuestra historia, que logró emocionarnos a nosotros y a todos los presentes. Cada palabra reflejaba quiénes somos y lo que representaba ese día para nuestra familia y amigos. Salimos con el corazón llenísimo de amor.</p>
         </blockquote>
+        <button class="voz__mas" type="button" hidden>Leer completo</button>
+
         <figcaption>@20mlopez<span>Ceremonia en Casa Terma</span></figcaption>
       </figure>
 
@@ -3361,6 +3404,8 @@ h1, h2, h3, h4 {
           <p>Aleja no solo tomó cada fragmento para hilar de inicio a fin la ceremonia, sino que rompió cualquier estereotipo que pudiese presentarse por la unión de dos personas del mismo sexo: resaltó de una manera tan conmovedora cada aspecto positivo de nuestros seres que, para el final, conmovió a todos los asistentes, incluidos nosotros.</p>
           <p>Siempre estaremos agradecidos con el cielo por el maravilloso don que tienes. Sin duda, este proceso no hubiese sido igual de especial sin tu compañía. Gracias por ser nuestra oficiante y nuestra amiga.</p>
         </blockquote>
+        <button class="voz__mas" type="button" hidden>Leer completo</button>
+
         <figcaption>@dcamilov<span>Siete años juntos</span></figcaption>
       </figure>
 
@@ -3369,6 +3414,8 @@ h1, h2, h3, h4 {
           <p>Al principio no sabíamos dónde encontrar a una persona que oficiara una boda hecha a nuestra medida y con nuestros gustos. Mi esposa encontró a Alejandra por redes sociales y desde ese momento terminamos de encajar todas las piezas que nos faltaban para planear nuestra ceremonia.</p>
           <p>Alejandra hizo un excelente trabajo conociéndonos y adaptando nuestras historias e intereses para construir un ritual especialmente significativo. Esperamos seguir contando con ella para futuros rituales familiares.</p>
         </blockquote>
+        <button class="voz__mas" type="button" hidden>Leer completo</button>
+
         <figcaption>@juanalberto1995<span>Ceremonia simbólica</span></figcaption>
       </figure>
       </div>
@@ -3627,6 +3674,39 @@ h1, h2, h3, h4 {
 
 (function () {
   "use strict";
+
+  /* ---- Testimonios: «leer completo» cuando la cita no cabe ---- */
+
+  (function () {
+    var voces = Array.prototype.slice.call(document.querySelectorAll(".voz"));
+    if (!voces.length) return;
+
+    function revisar() {
+      voces.forEach(function (voz) {
+        var cita = voz.querySelector("blockquote");
+        var boton = voz.querySelector(".voz__mas");
+        if (!cita || !boton) return;
+        if (voz.classList.contains("voz--abierta")) return;
+        /* El boton y el velo solo aparecen si de verdad hay texto escondido. */
+        var recortada = cita.scrollHeight > cita.clientHeight + 2;
+        boton.hidden = !recortada;
+        voz.classList.toggle("voz--recortada", recortada);
+      });
+    }
+
+    voces.forEach(function (voz) {
+      var boton = voz.querySelector(".voz__mas");
+      if (!boton) return;
+      boton.addEventListener("click", function () {
+        var abierta = voz.classList.toggle("voz--abierta");
+        boton.textContent = abierta ? "Leer menos" : "Leer completo";
+      });
+    });
+
+    revisar();
+    window.addEventListener("resize", revisar);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(revisar);
+  })();
 
   /* Año del pie */
   var anio = document.getElementById("anio");
