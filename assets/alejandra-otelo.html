@@ -56,6 +56,7 @@
   /* Derivados de trabajo */
   --noche-alto:   #5A2029;
   --vino-alto:    #6E2635;
+  --azul-noche:   #212330;  /* el azul del manual, ahora solo como acento */
   --tinta:        #2A1A1E;
   --crema-tenue:  rgba(232, 224, 217, 0.62);
   --oro-hairline: rgba(182, 116, 3, 0.42);
@@ -140,7 +141,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   text-wrap: balance;
 }
-.t-display .script { font-size: 1.5em; margin-inline: .06em; }
+.t-display .script { font-size: 1.22em; margin-inline: .06em; }
 
 .t-seccion {
   font-size: clamp(1.45rem, .9rem + 1.9vw, 2.65rem);
@@ -418,6 +419,16 @@ h1, h2, h3, h4 {
   aspect-ratio: 760 / 328;
 }
 
+/* En el hero el acento no es dorado sino el rosado del titular */
+.hero .t-display {
+  /* Sin «balance»: las primeras lineas se llenan y la palabra en cursiva deja
+     de sobresalir por la derecha. */
+  text-wrap: wrap;
+}
+.hero .boton--oro { background: var(--terracota); color: var(--tinta); }
+.hero .boton--oro:hover { background: #d78b7a; color: var(--tinta); }
+.hero__nota { color: var(--crema-tenue); }
+
 /* Filete dorado */
 .filete {
   border: 0;
@@ -588,12 +599,14 @@ h1, h2, h3, h4 {
 .hero__bajada {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.05rem, 1rem + .4vw, 1.28rem);
-  line-height: 1.6;
+  font-size: clamp(.95rem, .9rem + .25vw, 1.08rem);
+  line-height: 1.7;
   color: var(--crema-tenue);
-  max-width: 40rem;
-  text-wrap: balance;
-  margin: 0 0 2.4rem;
+  max-width: 34rem;
+  text-wrap: pretty;
+  margin: 0 0 2.6rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(204, 121, 103, .4);
 }
 
 .credenciales {
@@ -1701,6 +1714,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
 }
 .pie .marca { width: clamp(11rem, 22vw, 15rem); color: var(--crema); }
+.pie .marca .flor { width: 3.2rem; margin-bottom: 1.1rem; }
 
 /* ------------------------------------------------------- whatsapp fijo --- */
 
@@ -2354,6 +2368,36 @@ h1, h2, h3, h4 {
   color: var(--crema-tenue);
 }
 
+/* Panel azul noche: la pieza donde vuelve el azul del manual */
+.panel-azul {
+  background: var(--azul-noche);
+  color: var(--crema);
+  border-radius: 1.35rem;
+  padding: clamp(2rem, 4vw, 3.1rem);
+}
+.panel-azul__frase {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 1.05rem + .85vw, 1.9rem);
+  line-height: 1.35;
+  color: var(--blanco);
+}
+.panel-azul__pie {
+  margin: clamp(1.6rem, 3vw, 2.3rem) 0 0;
+  padding-top: clamp(1.25rem, 2.5vw, 1.8rem);
+  border-top: 1px solid var(--oro-hairline);
+  font-size: .95rem;
+  line-height: 1.75;
+  color: rgba(232, 224, 217, .8);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* El bloque partido de «Como trabajo» deja aire antes del cierre */
+#proceso .cta-bloque { margin-top: clamp(3rem, 7vw, 4.5rem); }
+
 /* Conversacion sin link todavia: misma ficha, sin interaccion */
 .enlace--pendiente { opacity: .6; }
 .enlace--pendiente .enlace__ir { color: var(--vino-suave); }
@@ -2406,10 +2450,6 @@ h1, h2, h3, h4 {
       <h1 class="t-display">Una ceremonia que no podría pertenecerle a <span class="script">nadie más</span></h1>
 
       <p class="hero__bajada">Construyo cada ceremonia a partir de su historia, de sus vínculos y de lo que significa para ustedes decidir casarse. La escribo y la diseño desde cero.</p>
-
-      <ul class="credenciales">
-        <li>Ceremonias simbólicas de boda</li>
-      </ul>
 
     </div>
   </div>
@@ -2567,21 +2607,18 @@ h1, h2, h3, h4 {
 
     <ul class="diferenciales">
       <li class="diferencial">
-        <span class="diferencial__icono" aria-hidden="true"><span class="icono icono--libro"></span></span>
         <div class="diferencial__caja">
         <h3>Filosofía</h3>
         <p>Aparece en las preguntas y en la forma de pensar una unión.</p>
         </div>
       </li>
       <li class="diferencial">
-        <span class="diferencial__icono" aria-hidden="true"><span class="icono icono--anillos"></span></span>
         <div class="diferencial__caja">
         <h3>Derecho</h3>
         <p>Aparece en el rigor con el lenguaje y con la estructura.</p>
         </div>
       </li>
       <li class="diferencial">
-        <span class="diferencial__icono" aria-hidden="true"><span class="flor" aria-hidden="true"></span></span>
         <div class="diferencial__caja">
         <h3>Dirección de arte</h3>
         <p>Aparece cuando una idea necesita convertirse en un objeto, un gesto o una experiencia.</p>
@@ -2808,17 +2845,25 @@ h1, h2, h3, h4 {
 
 <!-- =========================================================== PROCESO -->
 <section class="seccion seccion--blanco" id="proceso">
-  <div class="envoltura">
-    <div class="cabecera-seccion">
+  <div class="envoltura bloque-partido">
+
+    <div class="bloque-partido__intro">
       <span class="flor" aria-hidden="true"></span>
       <h2 class="t-seccion">¿Cómo trabajo?</h2>
       <div class="prosa">
         <p>Cada ceremonia parte de conversaciones con ustedes y de un proceso de escucha, escritura y diseño. No trabajo sobre un guion ya escrito ni necesitan llegar sabiendo cómo quieren que sea la ceremonia.</p>
-        <p class="destacado">Primero necesito entender. Después empiezo a construir.</p>
-        <p>La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.</p>
       </div>
     </div>
 
+    <!-- El azul del manual vuelve aquí, en una sola pieza. -->
+    <div class="panel-azul">
+      <p class="panel-azul__frase">Primero necesito entender.<br>Después empiezo a construir.</p>
+      <p class="panel-azul__pie">La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.</p>
+    </div>
+
+  </div>
+
+  <div class="envoltura">
     <div class="cta-bloque">
       <p>En nuestra primera asesoría les cuento con detalle cómo funciona el proceso y qué pueden esperar de él.</p>
       <a class="boton boton--oro" href="#conversemos">Conversemos sobre su boda</a>
@@ -3040,6 +3085,7 @@ h1, h2, h3, h4 {
     <div class="pie__columnas">
       <div>
         <p class="marca" style="margin:0">
+          <span class="flor" aria-hidden="true"></span>
           <span class="logotipo logotipo--completo" aria-hidden="true"></span>
           <span class="oculto-visual">Alejandra Otelo — Ceremonias simbólicas de boda</span>
         </p>
