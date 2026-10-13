@@ -56,12 +56,12 @@
   --vino:         #5E1E2C;
   --vino-suave:   #714248;
   --oliva:        #70602F;
-  --oro:          #B67403;
+  --oro:          #B4584A;  /* antes dorado: ahora el rosado, en su tono hondo */
   --crema:        #E8E0D9;
 
   /* Paleta secundaria */
   --terracota:    #CC7967;
-  --oro-claro:    #D9A13B;
+  --oro-claro:    #CC7967;  /* el rosado de la marca, el mismo del titular del hero */
   --blanco:       #FDFBFA;
 
   /* Derivados de trabajo */
@@ -70,7 +70,9 @@
   --azul-noche:   #212330;  /* el azul del manual, ahora solo como acento */
   --tinta:        #2A1A1E;
   --crema-tenue:  rgba(232, 224, 217, 0.62);
-  --oro-hairline: rgba(182, 116, 3, 0.42);
+  --filete:       rgba(33, 35, 48, 0.26);   /* filete azul, para los fondos claros */
+  --filete-claro: rgba(232, 224, 217, 0.3);  /* y su version para los fondos oscuros */
+  --oro-hairline: var(--filete);
 
   /* Tipografía */
   --serif:  "Noto Serif", "Iowan Old Style", Georgia, serif;
@@ -192,6 +194,10 @@ h1, h2, h3, h4 {
 .seccion--crema  { background: var(--crema);  color: var(--tinta); }
 .seccion--blanco { background: var(--blanco); color: var(--tinta); }
 .seccion--vino   { background: var(--vino);   color: var(--crema); }
+
+/* Sobre fondo oscuro el filete azul no se ve: ahi vale el crema */
+.hero, .barra, .seccion--noche, .seccion--vino, .pie, .franja,
+.panel-azul, .ficha, .modal__caja, .visor, .panel { --oro-hairline: var(--filete-claro); }
 .seccion--noche  { background: var(--noche);  color: var(--crema); }
 
 .seccion--vino .script,
@@ -436,11 +442,9 @@ h1, h2, h3, h4 {
      de sobresalir por la derecha. */
   text-wrap: wrap;
 }
-.hero .boton--oro { background: var(--terracota); color: var(--tinta); }
-.hero .boton--oro:hover { background: #d78b7a; color: var(--tinta); }
 .hero__nota { color: var(--crema-tenue); }
 
-/* Filete dorado */
+/* Filete fino */
 .filete {
   border: 0;
   height: 1px;
