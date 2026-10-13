@@ -2492,17 +2492,19 @@ h1, h2, h3, h4 {
   border-radius: 1.35rem;
 }
 .cierre .t-seccion { max-width: none; margin-inline: 0; text-align: left; }
-.cierre .prosa { margin-inline: 0; text-align: justify; }
-.cierre__accion {
-  grid-column: 1 / -1;
-  margin-top: clamp(.5rem, 2vw, 1.5rem);
+.cierre .prosa {
+  margin-inline: 0;
+  text-align: left;
+  /* .cta .prosa centra la ultima linea; aqui no, que va en bandera */
+  text-align-last: auto;
 }
-.cierre .grupo-botones { justify-content: center; }
+.cierre .grupo-botones { justify-content: flex-start; margin-top: clamp(2rem, 4vw, 2.75rem); }
 @media (max-width: 62rem) {
   .cierre { grid-template-columns: 1fr; text-align: center; }
   .cierre__foto { max-width: 22rem; margin-inline: auto; }
   .cierre .t-seccion { text-align: center; }
   .cierre .prosa { text-align: center; }
+  .cierre .grupo-botones { justify-content: center; }
   .cierre .grupo-botones { justify-content: center; }
 }
 
@@ -3479,18 +3481,14 @@ h1, h2, h3, h4 {
       <p>Al agendar, les pediré la fecha y el lugar de la boda para revisar disponibilidad antes de nuestra videollamada.</p>
     </div>
 
-    </div>
-
-    <!-- El llamado cierra la seccion, centrado bajo la foto y el texto. -->
-    <div class="cierre__accion">
-      <div class="grupo-botones">
+    <div class="grupo-botones">
       <a class="boton boton--oro"
          href="https://wa.me/573125073235?text=Hola%20Alejandra%2C%20queremos%20agendar%20la%20primera%20asesor%C3%ADa.%20Nuestra%20boda%20ser%C3%ADa%20el%3A%20"
          target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.8.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.2-.2-.4-.3zM12 21.5c-1.7 0-3.3-.4-4.7-1.3l-3.3.9.9-3.2A9.4 9.4 0 0 1 2.5 12C2.5 6.8 6.8 2.5 12 2.5S21.5 6.8 21.5 12 17.2 21.5 12 21.5zM12 .5C5.7.5.5 5.7.5 12c0 2 .5 3.9 1.5 5.6L0 24l6.6-1.8c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.5-5.2 11.5-11.5S18.3.5 12 .5z"/></svg>
         Agendar una videollamada
       </a>
-      </div>
+    </div>
     </div>
 
   </div>
