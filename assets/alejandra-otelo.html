@@ -2491,19 +2491,19 @@ h1, h2, h3, h4 {
   object-position: 40% 55%;
   border-radius: 1.35rem;
 }
-.cierre .flor--grande { margin-left: 0; }
 .cierre .t-seccion { max-width: none; margin-inline: 0; text-align: left; }
 .cierre .prosa { margin-inline: 0; text-align: justify; }
-.cierre .grupo-botones { justify-content: flex-start; }
-.cierre .contacto-directo { justify-content: flex-start; }
+.cierre__accion {
+  grid-column: 1 / -1;
+  margin-top: clamp(.5rem, 2vw, 1.5rem);
+}
+.cierre .grupo-botones { justify-content: center; }
 @media (max-width: 62rem) {
   .cierre { grid-template-columns: 1fr; text-align: center; }
   .cierre__foto { max-width: 22rem; margin-inline: auto; }
-  .cierre .flor--grande { margin-inline: auto; }
   .cierre .t-seccion { text-align: center; }
   .cierre .prosa { text-align: center; }
-  .cierre .grupo-botones,
-  .cierre .contacto-directo { justify-content: center; }
+  .cierre .grupo-botones { justify-content: center; }
 }
 
 /* «Como trabajo»: titulo y entrada alineados a la izquierda, y debajo una
@@ -2574,59 +2574,34 @@ h1, h2, h3, h4 {
   .panel-claro__pie { text-align: center; }
   /* La tarjeta del testimonio ya no vive en el carrusel horizontal viejo:
      aqui ocupa todo el ancho de la ficha, no los 26 rem de antes. */
-  .fichero--voces .voz { width: auto; }
 }
 
-/* Los testimonios pasan de a uno: usan el mecanismo de las fichas, pero
-   conservan su tarjeta blanca y su texto en bandera. */
-.fichero--voces { max-width: 56rem; margin-inline: auto; }
-.fichero--voces .voz {
-  display: block;
-  text-align: left;
-  padding: clamp(2rem, 4vw, 3.25rem) clamp(1.75rem, 3.5vw, 3rem);
-  border-radius: 1.35rem;
+/* Los testimonios se deslizan: el siguiente asoma al lado, para que se vea
+   que hay mas. Antes era una masonry de dos columnas. */
+.voces {
+  columns: auto;
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: .35rem;
+}
+.voces::-webkit-scrollbar { display: none; }
+.voz {
+  flex: none;
+  width: min(72%, 36rem);
+  scroll-snap-align: start;
   margin: 0;
-  gap: 0;
+  border-radius: 1.35rem;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
 }
-.fichero--voces .voz {
-  /* la ficha trae fondo vinotinto y texto centrado: aqui manda la tarjeta */
-  background: var(--blanco);
-  color: var(--tinta);
-}
-.fichero--voces .voz blockquote { font-size: 1.02rem; line-height: 1.8; }
-.fichero--voces .voz blockquote p {
-  /* la ficha acorta y aclara su parrafo; el testimonio lo quiere entero */
-  text-align: left;
-  text-align-last: left;
-  max-width: none;
-  color: var(--tinta);
-}
-/* cada tarjeta mide lo suyo: el alto del bloque lo marca la mas larga */
-.fichero--voces .ficha { align-self: start; }
-.fichero--voces .voz figcaption { text-align: left; }
-.fichero--voces .voz figcaption { margin-top: 1.6rem; }
-.fichero--voces .fichero__contador { color: var(--crema-tenue); }
-.fichero--voces .fichero__contador b { color: var(--crema); }
-.fichero--voces .fichero__flecha { color: var(--crema); border-color: var(--filete-claro); }
-.fichero--voces .fichero__flecha:hover {
-  background: var(--crema);
-  color: var(--vino);
-  border-color: var(--crema);
-}
-.fichero--voces .fichero__punto { border-color: var(--filete-claro); }
-.fichero--voces .fichero__punto[aria-current="true"] {
-  background: var(--terracota);
-  border-color: var(--terracota);
-}
+.voz blockquote p { text-align: left; }
 @media (max-width: 62rem) {
-  /* En movil el boton es solo el area tactil y el punto visible es el ::before:
-     si se le pinta el fondo al boton queda un cuadro de 2,5 rem. */
-  .fichero--voces .fichero__punto[aria-current="true"] { background: none; }
-  .fichero--voces .fichero__punto::before { border-color: var(--filete-claro); }
-  .fichero--voces .fichero__punto[aria-current="true"]::before {
-    background: var(--terracota);
-    border-color: var(--terracota);
-  }
+  /* en el telefono la tarjeta vuelve a la medida que ya estaba afinada */
+  .voz { width: min(86vw, 26rem); }
 }
 
 .panel-claro {
@@ -2638,7 +2613,7 @@ h1, h2, h3, h4 {
   background: var(--crema);
   color: var(--tinta);
   border-radius: 1.35rem;
-  padding: clamp(2rem, 4vw, 3.4rem);
+  padding: clamp(1.5rem, 2.8vw, 2.25rem) clamp(1.75rem, 3.5vw, 3rem);
 }
 .panel-claro__frase {
   margin: 0;
@@ -2669,7 +2644,11 @@ h1, h2, h3, h4 {
   }
 }
 
-#proceso .cta-bloque { margin-top: clamp(2.75rem, 6vw, 4rem); }
+#proceso .cta-bloque {
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-top: 0;
+  border-top: 0;
+}
 
 /* Conversacion sin link todavia: misma ficha, sin interaccion */
 .enlace--pendiente { opacity: .6; }
@@ -3315,10 +3294,9 @@ h1, h2, h3, h4 {
       <h2 class="t-seccion">Lo que dicen las <span class="script">parejas</span></h2>
     </div>
 
-    <div class="fichero fichero--voces" data-fichero aria-label="Testimonios de parejas">
-      <div class="fichero__pista">
-      <figure class="ficha voz es-activa"
-               role="group" aria-roledescription="testimonio" aria-label="1 de 4">
+    <div class="carrusel carrusel--voces">
+      <div class="voces" data-pista tabindex="0" role="group" aria-label="Testimonios de parejas">
+      <figure class="voz">
         <blockquote>
           <p>Cuando decidimos casarnos lo único claro que teníamos era que nos casara Alejandra. La encontré con la ilusión de tener un matrimonio emotivo, diferente, que enalteciera nuestro amor, y efectivamente lo hizo posible. Alejandra nació con un don, que lo describo como el de conectar; no sé si será por ser mujer, filósofa, abogada, madre, o quizás simplemente por lograr transmitir todas esas cosas bonitas que habitan en su corazón a través de las palabras.</p>
           <p>Alejandra conectó a todos nuestros invitados con nuestro amor, y al escuchar cómo nos describía a Alejandro y a mí, me hizo sentir escuchada, más enamorada y conmovida por la decisión que habíamos tomado. Si piensan que su amor merece ser celebrado de una forma especial, no duden en que ella lo hará posible: te escucha, los celebra y conecta de una manera demasiado hermosa y auténtica. Si la vida me permite renovar mis votos, no dudaría en tenerla de nuevo como nuestra oficiante.</p>
@@ -3326,8 +3304,7 @@ h1, h2, h3, h4 {
         <figcaption>Johanna y Alejandro<span>Ceremonia del nido</span></figcaption>
       </figure>
 
-      <figure class="ficha voz"
-               role="group" aria-roledescription="testimonio" aria-label="2 de 4" aria-hidden="true">
+      <figure class="voz">
         <blockquote>
           <p>Alejandra fue una de esas casualidades afortunadas que terminan siendo parte esencial de la historia. La conocimos inicialmente a través de Casa Terma, buscando un lugar especial para celebrar nuestra boda, y descubrimos que además ella misma oficiaba ceremonias.</p>
           <p>El proceso consistió en unas entrevistas individuales con cada uno de nosotros y luego un encuentro conjunto, dedicando tiempo a conocer nuestras historias, nuestros valores y el significado que queríamos darle a nuestra unión. Gracias a ese proceso, la ceremonia fue completamente personalizada y auténtica.</p>
@@ -3336,8 +3313,7 @@ h1, h2, h3, h4 {
         <figcaption>@20mlopez<span>Ceremonia en Casa Terma</span></figcaption>
       </figure>
 
-      <figure class="ficha voz"
-               role="group" aria-roledescription="testimonio" aria-label="3 de 4" aria-hidden="true">
+      <figure class="voz">
         <blockquote>
           <p>Las palabras se quedan cortas para describir lo maravilloso que fue estar acompañados por Alejandra en el proceso, porque no fue solo un día: fueron meses en los que, a través de reuniones programadas, le hacíamos conocedora de nuestra historia, de los momentos que nos definen como pareja y del recorrido que por siete años hemos realizado tomados de la mano.</p>
           <p>Aleja no solo tomó cada fragmento para hilar de inicio a fin la ceremonia, sino que rompió cualquier estereotipo que pudiese presentarse por la unión de dos personas del mismo sexo: resaltó de una manera tan conmovedora cada aspecto positivo de nuestros seres que, para el final, conmovió a todos los asistentes, incluidos nosotros.</p>
@@ -3346,8 +3322,7 @@ h1, h2, h3, h4 {
         <figcaption>@dcamilov<span>Siete años juntos</span></figcaption>
       </figure>
 
-      <figure class="ficha voz"
-               role="group" aria-roledescription="testimonio" aria-label="4 de 4" aria-hidden="true">
+      <figure class="voz">
         <blockquote>
           <p>Al principio no sabíamos dónde encontrar a una persona que oficiara una boda hecha a nuestra medida y con nuestros gustos. Mi esposa encontró a Alejandra por redes sociales y desde ese momento terminamos de encajar todas las piezas que nos faltaban para planear nuestra ceremonia.</p>
           <p>Alejandra hizo un excelente trabajo conociéndonos y adaptando nuestras historias e intereses para construir un ritual especialmente significativo. Esperamos seguir contando con ella para futuros rituales familiares.</p>
@@ -3356,25 +3331,13 @@ h1, h2, h3, h4 {
       </figure>
       </div>
 
-      <div class="fichero__mando">
-        <p class="fichero__contador" aria-hidden="true"><b data-fichero-actual>01</b> / 04</p>
-
-        <ul class="fichero__puntos">
-            <li><button class="fichero__punto" type="button" data-fichero-punto="0"
-                        aria-label="Ver testimonio 1" aria-current="true"></button></li>
-            <li><button class="fichero__punto" type="button" data-fichero-punto="1"
-                        aria-label="Ver testimonio 2"></button></li>
-            <li><button class="fichero__punto" type="button" data-fichero-punto="2"
-                        aria-label="Ver testimonio 3"></button></li>
-            <li><button class="fichero__punto" type="button" data-fichero-punto="3"
-                        aria-label="Ver testimonio 4"></button></li>
-        </ul>
-
-        <div class="fichero__flechas">
-          <button class="fichero__flecha" type="button" data-fichero-ir="-1" aria-label="Testimonio anterior">
+      <div class="carrusel__mando">
+        <p class="carrusel__nota">Las flechas llevan a los demás testimonios.</p>
+        <div class="carrusel__flechas">
+          <button class="carrusel__flecha" type="button" data-pista-ir="-1" aria-label="Testimonio anterior">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
           </button>
-          <button class="fichero__flecha" type="button" data-fichero-ir="1" aria-label="Testimonio siguiente">
+          <button class="carrusel__flecha" type="button" data-pista-ir="1" aria-label="Testimonio siguiente">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
           </button>
         </div>
@@ -3509,8 +3472,6 @@ h1, h2, h3, h4 {
     </div>
 
     <div class="cierre__texto">
-    <span class="flor flor--grande" aria-hidden="true"></span>
-
     <h2 class="t-seccion">Conversemos sobre su <span class="script">boda</span></h2>
 
     <div class="prosa" style="margin-top:1.8rem">
@@ -3518,20 +3479,18 @@ h1, h2, h3, h4 {
       <p>Al agendar, les pediré la fecha y el lugar de la boda para revisar disponibilidad antes de nuestra videollamada.</p>
     </div>
 
-    <div class="grupo-botones">
+    </div>
+
+    <!-- El llamado cierra la seccion, centrado bajo la foto y el texto. -->
+    <div class="cierre__accion">
+      <div class="grupo-botones">
       <a class="boton boton--oro"
          href="https://wa.me/573125073235?text=Hola%20Alejandra%2C%20queremos%20agendar%20la%20primera%20asesor%C3%ADa.%20Nuestra%20boda%20ser%C3%ADa%20el%3A%20"
          target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.3-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.8.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.2-.2-.4-.3zM12 21.5c-1.7 0-3.3-.4-4.7-1.3l-3.3.9.9-3.2A9.4 9.4 0 0 1 2.5 12C2.5 6.8 6.8 2.5 12 2.5S21.5 6.8 21.5 12 17.2 21.5 12 21.5zM12 .5C5.7.5.5 5.7.5 12c0 2 .5 3.9 1.5 5.6L0 24l6.6-1.8c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.5-5.2 11.5-11.5S18.3.5 12 .5z"/></svg>
         Agendar una videollamada
       </a>
-    </div>
-
-    <ul class="contacto-directo">
-      <li><a href="tel:+573125073235">+57 312 507 3235</a></li>
-      <li><a href="https://www.instagram.com/alejandraotelo/" target="_blank" rel="noopener">@alejandraotelo</a></li>
-      <li>Bucaramanga · Colombia y otros países</li>
-    </ul>
+      </div>
     </div>
 
   </div>
