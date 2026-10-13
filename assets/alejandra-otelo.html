@@ -2422,13 +2422,41 @@ h1, h2, h3, h4 {
   line-height: 1.5;
   color: var(--azul-noche);
 }
+/* Las tres disciplinas, una sobre otra y a lo ancho de la columna */
 .formacion__texto .diferenciales {
   margin-top: clamp(2.25rem, 4vw, 3.25rem);
-  gap: clamp(.4rem, 1vw, .9rem);
+  grid-template-columns: 1fr;
+  gap: clamp(.6rem, 1.2vw, .9rem);
 }
-/* En columna angosta el justificado abre huecos: aqui va en bandera */
+.formacion__texto .diferencial { align-items: stretch; }
+.formacion__texto .diferencial:hover,
+.formacion__texto .diferencial:focus-within { transform: none; }
+.formacion__texto .diferencial__caja {
+  display: grid;
+  /* ancho fijo para el titulo: asi los tres parrafos arrancan en la misma linea */
+  grid-template-columns: clamp(8.5rem, 26%, 11.5rem) minmax(0, 1fr);
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+  align-items: center;
+  padding: clamp(1rem, 2vw, 1.4rem) clamp(1.1rem, 2.2vw, 1.6rem);
+  border-radius: 1rem;
+  border-color: rgba(94, 30, 44, .18);
+}
+.formacion__texto .diferencial h3 {
+  margin-bottom: 0;
+  text-align: left;
+  text-wrap: balance;
+}
 .formacion__texto .diferencial p { text-align: left; }
-.formacion__texto .diferencial h3 { text-wrap: balance; }
+/* Al pasar el cursor la ficha se tiñe */
+.formacion__texto .diferencial:hover .diferencial__caja,
+.formacion__texto .diferencial:focus-within .diferencial__caja {
+  background: var(--blanco);
+  border-color: var(--oro-hairline);
+  box-shadow: none;
+}
+@media (max-width: 40rem) {
+  .formacion__texto .diferencial__caja { grid-template-columns: 1fr; gap: .5rem; }
+}
 .formacion__texto .prosa {
   max-width: none;
   margin-top: 1.6rem;
