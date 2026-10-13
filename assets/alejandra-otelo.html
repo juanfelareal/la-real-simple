@@ -2584,18 +2584,18 @@ h1, h2, h3, h4 {
   border-color: var(--terracota);
 }
 
-.panel-rosa {
+.panel-claro {
   margin-top: clamp(2.5rem, 5vw, 3.75rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 3.5rem);
   align-items: center;
-  background: var(--terracota);
+  background: var(--crema);
   color: var(--tinta);
   border-radius: 1.35rem;
   padding: clamp(2rem, 4vw, 3.4rem);
 }
-.panel-rosa__frase {
+.panel-claro__frase {
   margin: 0;
   font-family: var(--serif);
   font-style: italic;
@@ -2603,24 +2603,24 @@ h1, h2, h3, h4 {
   line-height: 1.35;
   color: var(--tinta);
 }
-.panel-rosa__pie {
+.panel-claro__pie {
   margin: 0;
   padding-left: clamp(1.75rem, 4vw, 3.5rem);
-  border-left: 1px solid rgba(42, 26, 30, .28);
+  border-left: 1px solid rgba(94, 30, 44, .22);
   font-size: .97rem;
   line-height: 1.8;
-  color: rgba(42, 26, 30, .82);
+  color: var(--vino-suave);
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 @media (max-width: 54rem) {
-  .panel-rosa { grid-template-columns: 1fr; gap: 0; }
-  .panel-rosa__pie {
+  .panel-claro { grid-template-columns: 1fr; gap: 0; }
+  .panel-claro__pie {
     margin-top: clamp(1.5rem, 4vw, 2rem);
     padding: clamp(1.25rem, 3vw, 1.6rem) 0 0;
     border-left: 0;
-    border-top: 1px solid rgba(42, 26, 30, .28);
+    border-top: 1px solid rgba(94, 30, 44, .22);
   }
 }
 
@@ -3246,11 +3246,12 @@ h1, h2, h3, h4 {
       </div>
     </div>
 
-    <!-- Banda en el rosado de la marca: la frase que sostiene el bloque y, al
-         lado, lo que conviene saber antes de escribir. -->
-    <div class="panel-rosa">
-      <p class="panel-rosa__frase">Primero necesito entender.<br>Después empiezo a construir.</p>
-      <p class="panel-rosa__pie">La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.</p>
+    <!-- Banda en crema: la frase que sostiene el bloque y, al lado, lo que
+         conviene saber antes de escribir. Es la unica pieza solida de la
+         entrada, y anticipa la tarjeta de los testimonios. -->
+    <div class="panel-claro">
+      <p class="panel-claro__frase">Primero necesito entender.<br>Después empiezo a construir.</p>
+      <p class="panel-claro__pie">La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.</p>
     </div>
 
     <div class="cta-bloque">
