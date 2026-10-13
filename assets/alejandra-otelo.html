@@ -2087,9 +2087,13 @@ h1, h2, h3, h4 {
 .pie__legal p { margin: 0; }
 
 @media (max-width: 54rem) {
-  /* En una sola columna el texto en bandera queda descolgado contra el borde:
-     con el logotipo arriba y los enlaces debajo, centrado se lee mejor. */
-  .pie__columnas { grid-template-columns: 1fr; gap: 2.25rem; text-align: center; }
+  .pie__columnas { grid-template-columns: 1fr; gap: 2.25rem; }
+}
+
+/* En el telefono se centran el logotipo y la linea de abajo, que son piezas
+   sueltas y quedaban descolgadas contra el borde. Los enlaces se quedan en
+   bandera: una lista se lee mejor con todas las entradas arrancando igual. */
+@media (max-width: 48rem) {
   .pie .marca { margin-inline: auto; }
   .pie__legal { justify-content: center; text-align: center; }
 }
