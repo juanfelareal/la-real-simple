@@ -2601,9 +2601,37 @@ h1, h2, h3, h4 {
   padding: clamp(1.75rem, 3.5vw, 2.75rem);
 }
 .voz blockquote p { text-align: left; }
+
+/* Flechas al costado del carrusel de testimonios */
+.carrusel--voces { position: relative; }
+.carrusel__flecha--lado {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  z-index: 4;
+  /* vinotinto solido: se lee tanto sobre la tarjeta blanca como sobre el fondo */
+  background: var(--vino-alto);
+  color: var(--crema);
+  border-color: var(--vino-alto);
+  box-shadow: 0 8px 22px rgba(42, 26, 30, .3);
+}
+.carrusel__flecha--lado:hover {
+  background: var(--terracota);
+  color: var(--tinta);
+  border-color: var(--terracota);
+}
+.carrusel__flecha--lado[disabled] { opacity: .35; box-shadow: none; }
+.carrusel__flecha--izq { left: clamp(-1.4rem, -1.5vw, -.9rem); }
+.carrusel__flecha--der { right: clamp(-1.4rem, -1.5vw, -.9rem); }
+
 @media (max-width: 62rem) {
-  /* en el telefono la tarjeta vuelve a la medida que ya estaba afinada */
+  /* en el telefono la tarjeta ocupa casi toda la pantalla: las flechas al
+     costado la taparian, asi que mandan las de abajo */
+  .carrusel__flecha--lado { display: none; }
   .voz { width: min(86vw, 26rem); }
+}
+@media (min-width: 62.01rem) {
+  .carrusel--voces .carrusel__mando .carrusel__flechas { display: none; }
+  .carrusel--voces .carrusel__mando { justify-content: flex-start; }
 }
 
 .panel-claro {
@@ -3297,6 +3325,18 @@ h1, h2, h3, h4 {
     </div>
 
     <div class="carrusel carrusel--voces">
+      <!-- Flechas al costado para escritorio. En el telefono se esconden y
+           mandan las de abajo, que no tapan la tarjeta ni chocan con el
+           boton fijo de WhatsApp. -->
+      <button class="carrusel__flecha carrusel__flecha--lado carrusel__flecha--izq"
+              type="button" data-pista-ir="-1" aria-label="Testimonio anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="carrusel__flecha carrusel__flecha--lado carrusel__flecha--der"
+              type="button" data-pista-ir="1" aria-label="Testimonio siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+
       <div class="voces" data-pista tabindex="0" role="group" aria-label="Testimonios de parejas">
       <figure class="voz">
         <blockquote>
