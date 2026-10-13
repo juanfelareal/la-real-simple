@@ -2541,6 +2541,42 @@ h1, h2, h3, h4 {
   color: var(--oro-claro);
 }
 
+/* --------------------------------------------------------------------------
+   Movil: se respeta la regla de la pagina —en pantalla angosta todo se
+   centra y nada va justificado, porque el justificado abre huecos. Los
+   testimonios son la excepcion, como ya lo eran: parrafos largos, en bandera.
+   -------------------------------------------------------------------------- */
+@media (max-width: 62rem) {
+  /* Formacion */
+  .formacion__texto { text-align: center; }
+  .formacion__texto .t-seccion { text-align: center; }
+  .formacion__texto .prosa { text-align: center; }
+  .formacion__texto .diferencial p { text-align: center; }
+  .formacion__texto .diferencial h3 { text-align: center; }
+  .formacion__texto .diferencial__caja { justify-items: center; }
+
+  /* «¿Como trabajo?» */
+  .trabajo__intro { text-align: center; }
+  .trabajo__intro .t-seccion { text-align: center; }
+  .trabajo__intro .prosa { text-align: center; }
+
+  /* Cabeceras de seccion, manifiesto y cierre */
+  .cabecera-seccion .prosa,
+  .manifiesto .prosa { text-align: center; text-align-last: auto; }
+
+  /* Las respuestas del FAQ no se centran: son largas. Solo pierden el
+     justificado, que es lo que abre huecos. */
+  .faq__respuesta { text-align: left; }
+}
+
+@media (max-width: 54rem) {
+  .panel-claro { text-align: center; }
+  .panel-claro__pie { text-align: center; }
+  /* La tarjeta del testimonio ya no vive en el carrusel horizontal viejo:
+     aqui ocupa todo el ancho de la ficha, no los 26 rem de antes. */
+  .fichero--voces .voz { width: auto; }
+}
+
 /* Los testimonios pasan de a uno: usan el mecanismo de las fichas, pero
    conservan su tarjeta blanca y su texto en bandera. */
 .fichero--voces { max-width: 56rem; margin-inline: auto; }
@@ -2578,10 +2614,19 @@ h1, h2, h3, h4 {
   border-color: var(--crema);
 }
 .fichero--voces .fichero__punto { border-color: var(--filete-claro); }
-.fichero--voces .fichero__punto[aria-current="true"],
-.fichero--voces .fichero__punto[aria-current="true"]::before {
+.fichero--voces .fichero__punto[aria-current="true"] {
   background: var(--terracota);
   border-color: var(--terracota);
+}
+@media (max-width: 62rem) {
+  /* En movil el boton es solo el area tactil y el punto visible es el ::before:
+     si se le pinta el fondo al boton queda un cuadro de 2,5 rem. */
+  .fichero--voces .fichero__punto[aria-current="true"] { background: none; }
+  .fichero--voces .fichero__punto::before { border-color: var(--filete-claro); }
+  .fichero--voces .fichero__punto[aria-current="true"]::before {
+    background: var(--terracota);
+    border-color: var(--terracota);
+  }
 }
 
 .panel-claro {
