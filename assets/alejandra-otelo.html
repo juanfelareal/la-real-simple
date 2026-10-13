@@ -1735,7 +1735,7 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: space-between;
 }
-.pie .marca { width: clamp(11rem, 22vw, 15rem); color: var(--crema); }
+.pie .marca { width: clamp(11rem, 22vw, 15rem); margin: 0; color: var(--crema); }
 .pie .marca .flor { width: 3.2rem; margin-bottom: 1.1rem; }
 
 /* ------------------------------------------------------- whatsapp fijo --- */
@@ -2087,7 +2087,11 @@ h1, h2, h3, h4 {
 .pie__legal p { margin: 0; }
 
 @media (max-width: 54rem) {
-  .pie__columnas { grid-template-columns: 1fr; gap: 2.25rem; }
+  /* En una sola columna el texto en bandera queda descolgado contra el borde:
+     con el logotipo arriba y los enlaces debajo, centrado se lee mejor. */
+  .pie__columnas { grid-template-columns: 1fr; gap: 2.25rem; text-align: center; }
+  .pie .marca { margin-inline: auto; }
+  .pie__legal { justify-content: center; text-align: center; }
 }
 
 /* ==========================================================================
@@ -2461,6 +2465,15 @@ h1, h2, h3, h4 {
   background: var(--blanco);
   border-color: var(--oro-hairline);
   box-shadow: none;
+}
+/* En el telefono no hay cursor: la ficha se tiñe sola cuando va pasando por
+   el centro de la pantalla. Es la misma tinta del hover, encendida por el
+   scroll (la clase la pone el JS con un IntersectionObserver). */
+@media (max-width: 62rem) {
+  .formacion__texto .diferencial--cerca .diferencial__caja {
+    background: var(--blanco);
+    border-color: var(--oro-hairline);
+  }
 }
 @media (max-width: 40rem) {
   .formacion__texto .diferencial__caja { grid-template-columns: 1fr; gap: .5rem; }
@@ -3592,7 +3605,7 @@ h1, h2, h3, h4 {
   <div class="envoltura">
     <div class="pie__columnas">
       <div>
-        <p class="marca" style="margin:0">
+        <p class="marca">
           <span class="flor" aria-hidden="true"></span>
           <span class="logotipo logotipo--completo" aria-hidden="true"></span>
           <span class="oculto-visual">Alejandra Otelo — Ceremonias simbólicas de boda</span>
@@ -3710,6 +3723,43 @@ h1, h2, h3, h4 {
     revisar();
     window.addEventListener("resize", revisar);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(revisar);
+  })();
+
+  /* ---- Las tres disciplinas se encienden al pasar por el centro ---- */
+
+  (function () {
+    var fichas = Array.prototype.slice.call(
+      document.querySelectorAll(".formacion__texto .diferencial"));
+    if (!fichas.length || !window.matchMedia) return;
+
+    var telefono = window.matchMedia("(max-width: 62rem)");
+    var pedido = null;
+
+    /* En el telefono no hay cursor: se enciende la ficha que esta cruzando la
+       mitad de la pantalla, una sola a la vez, como si el cursor fuera bajando
+       con la pagina. Se mira a mano en vez de con un IntersectionObserver
+       porque el observador enciende varias a la vez: su franja es mas alta que
+       el espacio entre fichas. */
+    function marcar() {
+      pedido = null;
+      var linea = telefono.matches ? window.innerHeight / 2 : -1;
+      var viva = null;
+      fichas.forEach(function (f) {
+        var r = f.getBoundingClientRect();
+        if (linea >= 0 && r.top <= linea && r.bottom >= linea) viva = f;
+      });
+      fichas.forEach(function (f) {
+        f.classList.toggle("diferencial--cerca", f === viva);
+      });
+    }
+
+    function pedir() {
+      if (pedido === null) pedido = requestAnimationFrame(marcar);
+    }
+
+    window.addEventListener("scroll", pedir, { passive: true });
+    window.addEventListener("resize", pedir);
+    marcar();
   })();
 
   /* Año del pie */
