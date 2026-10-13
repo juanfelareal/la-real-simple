@@ -197,7 +197,7 @@ h1, h2, h3, h4 {
 
 /* Sobre fondo oscuro el filete azul no se ve: ahi vale el crema */
 .hero, .barra, .seccion--noche, .seccion--vino, .pie, .franja,
-.panel-azul, .ficha, .modal__caja, .visor, .panel { --oro-hairline: var(--filete-claro); }
+.ficha, .modal__caja, .visor, .panel { --oro-hairline: var(--filete-claro); }
 .seccion--noche  { background: var(--noche);  color: var(--crema); }
 
 .seccion--vino .script,
@@ -2541,43 +2541,86 @@ h1, h2, h3, h4 {
   color: var(--oro-claro);
 }
 
-.panel-azul {
+/* Los testimonios pasan de a uno: usan el mecanismo de las fichas, pero
+   conservan su tarjeta blanca y su texto en bandera. */
+.fichero--voces { max-width: 56rem; margin-inline: auto; }
+.fichero--voces .voz {
+  display: block;
+  text-align: left;
+  padding: clamp(2rem, 4vw, 3.25rem) clamp(1.75rem, 3.5vw, 3rem);
+  border-radius: 1.35rem;
+  margin: 0;
+  gap: 0;
+}
+.fichero--voces .voz {
+  /* la ficha trae fondo vinotinto y texto centrado: aqui manda la tarjeta */
+  background: var(--blanco);
+  color: var(--tinta);
+}
+.fichero--voces .voz blockquote { font-size: 1.02rem; line-height: 1.8; }
+.fichero--voces .voz blockquote p {
+  /* la ficha acorta y aclara su parrafo; el testimonio lo quiere entero */
+  text-align: left;
+  text-align-last: left;
+  max-width: none;
+  color: var(--tinta);
+}
+/* cada tarjeta mide lo suyo: el alto del bloque lo marca la mas larga */
+.fichero--voces .ficha { align-self: start; }
+.fichero--voces .voz figcaption { text-align: left; }
+.fichero--voces .voz figcaption { margin-top: 1.6rem; }
+.fichero--voces .fichero__contador { color: var(--crema-tenue); }
+.fichero--voces .fichero__contador b { color: var(--crema); }
+.fichero--voces .fichero__flecha { color: var(--crema); border-color: var(--filete-claro); }
+.fichero--voces .fichero__flecha:hover {
+  background: var(--crema);
+  color: var(--vino);
+  border-color: var(--crema);
+}
+.fichero--voces .fichero__punto { border-color: var(--filete-claro); }
+.fichero--voces .fichero__punto[aria-current="true"],
+.fichero--voces .fichero__punto[aria-current="true"]::before {
+  background: var(--terracota);
+  border-color: var(--terracota);
+}
+
+.panel-rosa {
   margin-top: clamp(2.5rem, 5vw, 3.75rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 3.5rem);
   align-items: center;
-  background: var(--azul-noche);
-  color: var(--crema);
+  background: var(--terracota);
+  color: var(--tinta);
   border-radius: 1.35rem;
   padding: clamp(2rem, 4vw, 3.4rem);
 }
-.panel-azul__frase {
+.panel-rosa__frase {
   margin: 0;
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(1.3rem, 1.05rem + .85vw, 1.9rem);
   line-height: 1.35;
-  color: var(--blanco);
+  color: var(--tinta);
 }
-.panel-azul__pie {
+.panel-rosa__pie {
   margin: 0;
   padding-left: clamp(1.75rem, 4vw, 3.5rem);
-  border-left: 1px solid var(--oro-hairline);
+  border-left: 1px solid rgba(42, 26, 30, .28);
   font-size: .97rem;
   line-height: 1.8;
-  color: rgba(232, 224, 217, .82);
+  color: rgba(42, 26, 30, .82);
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 @media (max-width: 54rem) {
-  .panel-azul { grid-template-columns: 1fr; gap: 0; }
-  .panel-azul__pie {
+  .panel-rosa { grid-template-columns: 1fr; gap: 0; }
+  .panel-rosa__pie {
     margin-top: clamp(1.5rem, 4vw, 2rem);
     padding: clamp(1.25rem, 3vw, 1.6rem) 0 0;
     border-left: 0;
-    border-top: 1px solid var(--oro-hairline);
+    border-top: 1px solid rgba(42, 26, 30, .28);
   }
 }
 
@@ -3203,11 +3246,11 @@ h1, h2, h3, h4 {
       </div>
     </div>
 
-    <!-- Banda azul: la frase que sostiene el bloque y, al lado, lo que
-         conviene saber antes de escribir. El azul del manual vuelve aquí. -->
-    <div class="panel-azul">
-      <p class="panel-azul__frase">Primero necesito entender.<br>Después empiezo a construir.</p>
-      <p class="panel-azul__pie">La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.</p>
+    <!-- Banda en el rosado de la marca: la frase que sostiene el bloque y, al
+         lado, lo que conviene saber antes de escribir. -->
+    <div class="panel-rosa">
+      <p class="panel-rosa__frase">Primero necesito entender.<br>Después empiezo a construir.</p>
+      <p class="panel-rosa__pie">La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.</p>
     </div>
 
     <div class="cta-bloque">
@@ -3226,9 +3269,10 @@ h1, h2, h3, h4 {
       <h2 class="t-seccion">Lo que dicen las <span class="script">parejas</span></h2>
     </div>
 
-    <div class="carrusel carrusel--voces">
-    <div class="voces" data-pista tabindex="0" role="group" aria-label="Testimonios de parejas">
-      <figure class="voz">
+    <div class="fichero fichero--voces" data-fichero aria-label="Testimonios de parejas">
+      <div class="fichero__pista">
+      <figure class="ficha voz es-activa"
+               role="group" aria-roledescription="testimonio" aria-label="1 de 4">
         <blockquote>
           <p>Cuando decidimos casarnos lo único claro que teníamos era que nos casara Alejandra. La encontré con la ilusión de tener un matrimonio emotivo, diferente, que enalteciera nuestro amor, y efectivamente lo hizo posible. Alejandra nació con un don, que lo describo como el de conectar; no sé si será por ser mujer, filósofa, abogada, madre, o quizás simplemente por lograr transmitir todas esas cosas bonitas que habitan en su corazón a través de las palabras.</p>
           <p>Alejandra conectó a todos nuestros invitados con nuestro amor, y al escuchar cómo nos describía a Alejandro y a mí, me hizo sentir escuchada, más enamorada y conmovida por la decisión que habíamos tomado. Si piensan que su amor merece ser celebrado de una forma especial, no duden en que ella lo hará posible: te escucha, los celebra y conecta de una manera demasiado hermosa y auténtica. Si la vida me permite renovar mis votos, no dudaría en tenerla de nuevo como nuestra oficiante.</p>
@@ -3236,7 +3280,8 @@ h1, h2, h3, h4 {
         <figcaption>Johanna y Alejandro<span>Ceremonia del nido</span></figcaption>
       </figure>
 
-      <figure class="voz">
+      <figure class="ficha voz"
+               role="group" aria-roledescription="testimonio" aria-label="2 de 4" aria-hidden="true">
         <blockquote>
           <p>Alejandra fue una de esas casualidades afortunadas que terminan siendo parte esencial de la historia. La conocimos inicialmente a través de Casa Terma, buscando un lugar especial para celebrar nuestra boda, y descubrimos que además ella misma oficiaba ceremonias.</p>
           <p>El proceso consistió en unas entrevistas individuales con cada uno de nosotros y luego un encuentro conjunto, dedicando tiempo a conocer nuestras historias, nuestros valores y el significado que queríamos darle a nuestra unión. Gracias a ese proceso, la ceremonia fue completamente personalizada y auténtica.</p>
@@ -3245,7 +3290,8 @@ h1, h2, h3, h4 {
         <figcaption>@20mlopez<span>Ceremonia en Casa Terma</span></figcaption>
       </figure>
 
-      <figure class="voz">
+      <figure class="ficha voz"
+               role="group" aria-roledescription="testimonio" aria-label="3 de 4" aria-hidden="true">
         <blockquote>
           <p>Las palabras se quedan cortas para describir lo maravilloso que fue estar acompañados por Alejandra en el proceso, porque no fue solo un día: fueron meses en los que, a través de reuniones programadas, le hacíamos conocedora de nuestra historia, de los momentos que nos definen como pareja y del recorrido que por siete años hemos realizado tomados de la mano.</p>
           <p>Aleja no solo tomó cada fragmento para hilar de inicio a fin la ceremonia, sino que rompió cualquier estereotipo que pudiese presentarse por la unión de dos personas del mismo sexo: resaltó de una manera tan conmovedora cada aspecto positivo de nuestros seres que, para el final, conmovió a todos los asistentes, incluidos nosotros.</p>
@@ -3254,22 +3300,35 @@ h1, h2, h3, h4 {
         <figcaption>@dcamilov<span>Siete años juntos</span></figcaption>
       </figure>
 
-      <figure class="voz">
+      <figure class="ficha voz"
+               role="group" aria-roledescription="testimonio" aria-label="4 de 4" aria-hidden="true">
         <blockquote>
           <p>Al principio no sabíamos dónde encontrar a una persona que oficiara una boda hecha a nuestra medida y con nuestros gustos. Mi esposa encontró a Alejandra por redes sociales y desde ese momento terminamos de encajar todas las piezas que nos faltaban para planear nuestra ceremonia.</p>
           <p>Alejandra hizo un excelente trabajo conociéndonos y adaptando nuestras historias e intereses para construir un ritual especialmente significativo. Esperamos seguir contando con ella para futuros rituales familiares.</p>
         </blockquote>
         <figcaption>@juanalberto1995<span>Ceremonia simbólica</span></figcaption>
       </figure>
-    </div>
+      </div>
 
-      <div class="carrusel__mando">
-        <p class="carrusel__nota">Las flechas llevan a los demás testimonios.</p>
-        <div class="carrusel__flechas">
-          <button class="carrusel__flecha" type="button" data-pista-ir="-1" aria-label="Testimonios anteriores">
+      <div class="fichero__mando">
+        <p class="fichero__contador" aria-hidden="true"><b data-fichero-actual>01</b> / 04</p>
+
+        <ul class="fichero__puntos">
+            <li><button class="fichero__punto" type="button" data-fichero-punto="0"
+                        aria-label="Ver testimonio 1" aria-current="true"></button></li>
+            <li><button class="fichero__punto" type="button" data-fichero-punto="1"
+                        aria-label="Ver testimonio 2"></button></li>
+            <li><button class="fichero__punto" type="button" data-fichero-punto="2"
+                        aria-label="Ver testimonio 3"></button></li>
+            <li><button class="fichero__punto" type="button" data-fichero-punto="3"
+                        aria-label="Ver testimonio 4"></button></li>
+        </ul>
+
+        <div class="fichero__flechas">
+          <button class="fichero__flecha" type="button" data-fichero-ir="-1" aria-label="Testimonio anterior">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
           </button>
-          <button class="carrusel__flecha" type="button" data-pista-ir="1" aria-label="Testimonios siguientes">
+          <button class="fichero__flecha" type="button" data-fichero-ir="1" aria-label="Testimonio siguiente">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
           </button>
         </div>
