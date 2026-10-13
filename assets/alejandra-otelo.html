@@ -2510,6 +2510,17 @@ h1, h2, h3, h4 {
    banda azul a todo el ancho. Es la pieza donde vuelve el azul del manual. */
 .trabajo__intro { max-width: 62rem; }
 .trabajo__intro .t-seccion { text-align: left; }
+.trabajo__intro .prosa { color: var(--crema-tenue); }
+
+/* La bisagra entre «¿Como trabajo?» y los testimonios: un respiro largo,
+   un filete a todo el ancho y el titulo centrado debajo. */
+.voces-cabecera {
+  margin: clamp(4rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+  padding-top: clamp(3rem, 7vw, 5rem);
+  border-top: 1px solid var(--oro-hairline);
+  text-align: center;
+}
+.voces-cabecera .flor { margin-bottom: 1.4rem; }
 .trabajo__intro .prosa {
   max-width: none;
   margin-top: 1.5rem;
@@ -2570,7 +2581,7 @@ h1, h2, h3, h4 {
   }
 }
 
-#proceso .cta-bloque { margin-top: clamp(3rem, 7vw, 4.5rem); }
+#proceso .cta-bloque { margin-top: clamp(2.75rem, 6vw, 4rem); }
 
 /* Conversacion sin link todavia: misma ficha, sin interaccion */
 .enlace--pendiente { opacity: .6; }
@@ -3179,8 +3190,10 @@ h1, h2, h3, h4 {
   </div>
 </section>
 
-<!-- =========================================================== PROCESO -->
-<section class="seccion seccion--blanco" id="proceso">
+<!-- ============================================== BLOQUE 5: COMO TRABAJO,
+     PRUEBA SOCIAL Y CONVERSACIONES. En el documento es un solo bloque, asi
+     que «¿Como trabajo?» abre la seccion y los testimonios la sostienen. -->
+<section class="seccion seccion--noche manchas" id="proceso">
   <div class="envoltura">
 
     <div class="trabajo__intro">
@@ -3202,19 +3215,13 @@ h1, h2, h3, h4 {
       <a class="boton boton--oro" href="#conversemos">Conversemos sobre su boda</a>
     </div>
 
-  </div>
-</section>
-
-<!-- ============================================================= VOCES -->
-<!-- Testimonios tomados de los comentarios del post de Instagram. Firman con
-     el usuario, que es verificable: cualquiera puede ir al post y encontrar el
-     comentario. La excepcion son Johanna y Alejandro, los del nido (cuarto
-     simbolo del carrusel): su nombre esta confirmado por el documento de
-     simbolos y por el propio comentario. Si alguna pareja autoriza su nombre,
-     se reemplaza el usuario. -->
-<section class="seccion seccion--noche manchas" id="voces">
-  <div class="envoltura">
-    <div class="cabecera-seccion">
+    <!-- Testimonios tomados de los comentarios del post de Instagram. Firman
+         con el usuario, que es verificable: cualquiera puede ir al post y
+         encontrar el comentario. La excepcion son Johanna y Alejandro, los del
+         nido (cuarto simbolo del carrusel): su nombre esta confirmado por el
+         documento de simbolos y por el propio comentario. Si alguna pareja
+         autoriza su nombre, se reemplaza el usuario. -->
+    <div class="voces-cabecera" id="voces">
       <span class="flor" aria-hidden="true"></span>
       <h2 class="t-seccion">Lo que dicen las <span class="script">parejas</span></h2>
     </div>
