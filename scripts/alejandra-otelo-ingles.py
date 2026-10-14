@@ -357,7 +357,6 @@ TEXTOS.update({
 "Testimonio siguiente": "Next testimonial",
 "Testimonios de parejas": "Testimonials from couples",
 "Fotografía ampliada": "Enlarged photograph",
-"Escribir a Alejandra por WhatsApp": "Message Alejandra on WhatsApp",
 
 "Alejandra Otelo oficiando una ceremonia simbólica al aire libre frente a los novios.":
   "Alejandra Otelo officiating an outdoor symbolic ceremony in front of the couple.",
