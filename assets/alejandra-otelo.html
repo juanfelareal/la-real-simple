@@ -1231,6 +1231,12 @@ h1, h2, h3, h4 {
   font-size: .98rem;
   line-height: 1.75;
   color: var(--crema-tenue);
+  /* Justificado con particion de palabras, como el resto de los textos
+     largos de la pagina: en una columna angosta, sin la particion quedan
+     huecos enormes entre palabras. */
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 .modal__info dd:last-child { margin-bottom: 0; }
 
