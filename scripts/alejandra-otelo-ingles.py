@@ -439,12 +439,8 @@ TEXTOS.update({
   "Daniela and Néstor holding up the instant portraits they took to close their album.",
 "Tablero de Scrabble con las palabras que Kenzo y María Luisa eligieron durante su ceremonia.":
   "The Scrabble board with the words Kenzo and María Luisa chose during their ceremony.",
-"Pareja sentada bajo un arco de flores blancas durante su ceremonia.":
-  "A couple seated beneath an arch of white flowers during their ceremony.",
 "Ceremonia simbólica en una terraza con vista a la montaña.":
   "A symbolic ceremony on a terrace looking out over the mountains.",
-"Ceremonia simbólica al aire libre rodeada de flores de colores.":
-  "An outdoor symbolic ceremony surrounded by colourful flowers.",
 "Dos novios sentados frente a Alejandra bajo un arco floral con vista a la montaña.":
   "Two grooms seated in front of Alejandra beneath a floral arch with a mountain view.",
 "Ceremonia al aire libre con los invitados entre plumas de pampa.":
@@ -457,6 +453,26 @@ TEXTOS.update({
   "Two brides leaving the ceremony through falling petals.",
 "Los novios soltando un globo al final de la ceremonia.":
   "The couple releasing a balloon at the end of the ceremony.",
+"Las manos de la pareja atando el lazo tejido durante la ceremonia.":
+  "The couple's hands tying the woven cord during their ceremony.",
+"Alejandra con los novios bajo un arco de rosas blancas y rosadas.":
+  "Alejandra with the couple beneath an arch of white and pink roses.",
+"Los novios besándose al final de la ceremonia.":
+  "The couple kissing at the end of the ceremony.",
+"La ceremonia al aire libre, con los invitados al borde del cañón.":
+  "The outdoor ceremony, with the guests at the edge of the canyon.",
+"La pintura del árbol sobre el caballete, al final de la ceremonia.":
+  "The painting of the tree on its easel, at the end of the ceremony.",
+"Alejandra oficiando junto al atril con la pieza tejida, frente a un telón de hojas.":
+  "Alejandra officiating beside the lectern with the woven piece, against a backdrop of leaves.",
+"La novia leyendo sus votos con el micrófono en la mano.":
+  "The bride reading her vows with the microphone in her hand.",
+"Los novios preparando el café de su ritual sobre la mesa blanca.":
+  "The couple brewing the coffee for their ritual on the white table.",
+"Los novios y Alejandra entre el humo de colores al final de la ceremonia.":
+  "The couple and Alejandra among the coloured smoke at the end of the ceremony.",
+"Los libros de votos junto a las figuras pintadas y las flores.":
+  "The vow books beside the painted figures and the flowers.",
 "Alejandra en una ceremonia frente al mar.": "Alejandra at a ceremony by the sea.",
 "Alejandra Otelo oficiando una ceremonia con la ciudad de fondo.":
   "Alejandra Otelo officiating a ceremony with the city behind her.",
