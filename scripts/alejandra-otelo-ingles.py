@@ -98,8 +98,10 @@ TEXTOS = {
   "Every ceremony starts from conversations with you and from a process of listening, writing and design. I don't work from a script that's already written, and you don't need to arrive knowing what you want the ceremony to be.",
 "Primero necesito entender.": "First I need to understand.",
 "Después empiezo a construir.": "Then I start to build.",
-"La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes. Por eso acompaño un número limitado de fechas.":
-  "The ceremony lasts around 45 to 50 minutes, but the work begins long before. That's why I take on a limited number of dates.",
+"La ceremonia dura alrededor de 45 a 50 minutos, pero el trabajo empieza mucho antes.":
+  "The ceremony lasts around 45 to 50 minutes, but the work begins long before.",
+"Por eso acompaño un número limitado de fechas.":
+  "That's why I take on a limited number of dates.",
 "En nuestra primera asesoría les cuento con detalle cómo funciona el proceso y qué pueden esperar de él.":
   "In our first consultation I'll walk you through exactly how the process works and what you can expect from it.",
 
@@ -136,6 +138,39 @@ TEXTOS = {
 "Ceremonia simbólica": "Symbolic ceremony",
 "Leer completo": "Read in full",
 "Leer menos": "Read less",
+"@evelinduran01": "@evelinduran01",
+"Ceremonia del móvil de grullas": "The crane mobile ceremony",
+"Cuando Jhon y yo decidimos casarnos teníamos una sola cosa clara, al principio: queríamos una ceremonia que conectara con los nuestros. Desde esa premisa tuve la casualidad y la fortuna de encontrarme a Aleja en redes, y de que alguien muy cercano, nuestro fotógrafo y amigo, nos recomendara su gran talento y su trabajo.":
+  "When Jhon and I decided to get married we only had one thing clear, at first: we wanted a ceremony that would connect with our people. From that starting point I had the chance and the good fortune of coming across Aleja on social media, and of having someone very close to us \u2014 our photographer and friend \u2014 recommend her talent and her work.",
+"Cuando empezamos toda la preparación de la boda, Aleja nos dio esa confianza y esa seguridad de crear el momento más inolvidable de nuestra historia con Jhon. Ella hizo magia con nuestra historia y la transmitió a nuestra familia y amigos de una manera cálida, abrazando con tranquilidad cada palabra y cada una de nuestras perspectivas para construir una ceremonia mágica. Todo fluyó y todo salió perfecto.":
+  "Once we started getting the wedding ready, Aleja gave us the confidence and the certainty that we would create the most unforgettable moment of our story with Jhon. She worked magic with our story and passed it on to our family and friends with real warmth, holding every word and every one of our perspectives calmly to build a magical ceremony. Everything flowed and everything came out perfectly.",
+"Aleja es sin duda una oficiante talentosa, que transmite calma y conecta con todos. Si buscan de verdad vivir un momento diferente al tradicional, emocionante, emotivo, inolvidable y que deje una huella para siempre, Aleja es la persona perfecta. Además, Aleja es una gran maestra: no solo te crea un momento mágico, sino que sin darte cuenta aprendes un montón de ella, de su calma, de su serenidad, de su sabiduría y de su amor. Mil gracias, Aleja, porque nuestra boda fue más hermosa de lo imaginado. Tuviste en cuenta cada detalle.":
+  "Aleja is without doubt a gifted officiant, one who radiates calm and connects with everyone. If you genuinely want to live something other than the traditional \u2014 moving, heartfelt, unforgettable, something that leaves a mark for good \u2014 Aleja is the right person. And Aleja is a great teacher too: she doesn't only create a magical moment for you, you also learn an enormous amount from her without realising it \u2014 from her calm, her serenity, her wisdom and her love. Thank you so much, Aleja, because our wedding was more beautiful than we had imagined. You thought of every single detail.",
+
+"@angiemurillo0311": "@angiemurillo0311",
+"Para nosotras fue una experiencia que siempre hemos definido como mágica. Nuestro matrimonio implicaba algo un poco más complejo de lo normal; sin embargo, nuestra conexión con Aleja permitió que ese momento representara todo lo que somos.":
+  "For us it was an experience we have always described as magical. Our marriage involved something a little more complex than usual; even so, our connection with Aleja meant that the moment came to stand for everything we are.",
+"Aleja nos acompañó en cada momento y construyó un espacio en el que conectamos desde el amor y la espiritualidad, con ella y con cada una de las personas que estuvo presente. Sin duda alguna, fue la oportunidad en la cual el amor ganó por encima de todo. Gracias infinitas, Aleja, por haber logrado que nuestra esencia estuviera en cada detalle y que ese momento continúe grabado en nuestra mente y nuestro corazón.":
+  "Aleja was with us at every step and built a space where we connected through love and spirituality \u2014 with her and with every person who was there. It was, without any doubt, the occasion on which love won above everything else. Endless thanks, Aleja, for making sure our essence was in every detail, and that the moment stays engraved in our minds and our hearts.",
+
+"@pililanegrita": "@pililanegrita",
+"Fue la mejor decisión. Siempre quisimos algo diferente, íntimo y especial; no queríamos una ceremonia y ya. Ale se tomó el tiempo de conocernos como personas y de conocer nuestra historia, de saber qué nos había enamorado, y acompañarnos a literalmente crear un espacio sagrado que respetara esa unión fue maravilloso. Siempre vamos a estar agradecidos por ese proceso y por ese momento tan hermoso.":
+  "It was the best decision. We always wanted something different, intimate and special; we didn't want just a ceremony and that was that. Ale took the time to get to know us as people and to know our story, to find out what had made us fall in love \u2014 and having her walk us through literally creating a sacred space that honoured that union was wonderful. We will always be grateful for that process and for a moment that beautiful.",
+
+"@violeta_____vio": "@violeta_____vio",
+"Nuestro proceso con Ale fue maravilloso: ella nos ayudó a construir un momento único que recordaremos para siempre. Queríamos celebrar con nuestra familia colombiana lo que significó apostar por un proyecto común, y deseábamos que fuera la confirmación de la red que somos. ¡Y así fue! Gracias, Ale, por todo tu trabajo, por tu escucha sincera, por tus palabras y por tu guía.":
+  "Our process with Ale was wonderful: she helped us build a moment we will remember for the rest of our lives. We wanted to celebrate with our Colombian family what it meant to commit to something together, and we wanted it to confirm the network that we are. And that is exactly what it was. Thank you, Ale, for all your work, for listening so honestly, for your words and for your guidance.",
+
+"@mafesabe": "@mafesabe",
+"Describir con palabras la lluvia de sentimientos y emociones vividas es definitivamente tarea de Aleja. Sin embargo, honrando su inmensa dedicación y la fortuna de haberla conocido, aquí vamos.":
+  "Putting into words the downpour of feelings and emotions we lived is definitely Aleja's job, not mine. Still, in honour of her immense dedication and of how lucky we were to meet her, here goes.",
+"Una boda simbólica, a grandes rasgos, es personalizar la boda a tu antojo; pero hacerlo dirigido por Aleja es llevarlo al siguiente nivel. Es su don, su pasión. Se siente desde el momento cero: cuando interiorizas lo que realmente quieres y no tienes idea de cómo decirlo, ella se conecta y lo ejecuta. Hace lo imposible posible, porque su idea no es vender un servicio de oficiante; es sin duda el paquete completo, premium, VIP, ajustado a ti y a tu pareja.":
+  "A symbolic wedding, broadly speaking, means tailoring the wedding exactly to your liking; but doing it led by Aleja takes it to another level. It is her gift, her passion. You feel it from moment zero: when you work out what you really want and have no idea how to say it, she tunes in and makes it happen. She makes the impossible possible, because her idea isn't to sell you an officiant's service; it is, without doubt, the complete package \u2014 premium, VIP, fitted to you and your partner.",
+"Lo especial no tiene valor monetario, ni mucho menos las lágrimas de alegría que inevitablemente saldrán escuchando cómo una persona puede describirte y describir tu relación como si llevara años de conocer el detrás de cámaras de tu vida. Aleja no es simplemente una oficiante de bodas: Aleja es una amiga indispensable en el día más soñado.":
+  "What is special has no price tag, and still less do the tears of joy that will inevitably come as you listen to someone describe you and describe your relationship as though she had spent years knowing the behind-the-scenes of your life. Aleja isn't simply a wedding officiant: Aleja is an indispensable friend on the day you have dreamed of most.",
+"Sin dar más spoiler: háganse un favor y cásense con Aleja. Prometo que lo agradecerán y no se arrepentirán.":
+  "Without giving away any more: do yourselves a favour and get married with Aleja. I promise you will be grateful, and you will not regret it.",
+
 "Las flechas llevan a los demás testimonios.": "The arrows take you to the other testimonials.",
 
 # --------------------------------------------------------------- conversaciones
