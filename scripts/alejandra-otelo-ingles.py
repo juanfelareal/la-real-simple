@@ -43,28 +43,28 @@ TEXTOS = {
 # -------------------------------------------------------------------- partida
 "Antes de escribir, necesito": "Before I write, I need to",
 "conocerlos": "know you",
-"No me interesa solamente reconstruir la historia de la relación. Me interesa entender qué la sostiene.":
-  "I'm not only interested in piecing together the story of your relationship. I want to understand what holds it up.",
-"Por eso hablamos de mucho más que de cómo se conocieron o cuánto tiempo llevan juntos.":
-  "That's why we talk about far more than how you met or how long you've been together.",
+"Cuando converso con una pareja, quiero conocer su historia, pero también entender cómo es su relación, qué los une, qué admiran el uno del otro y qué han aprendido a construir juntos.":
+  "When I sit down with a couple, I want to know their story, but also to understand what their relationship is like, what binds them, what they admire in one another and what they have learnt to build together.",
 "Alejandra Otelo — Bucaramanga, Colombia": "Alejandra Otelo — Bucaramanga, Colombia",
 
 # ------------------------------------------------------------------ para quien
-"Escucho, pregunto y tomo muchas notas": "I listen, I ask, and I take a lot of notes",
-"Después viene una parte menos visible: ordenar, interpretar y entender qué es simplemente una anécdota y qué revela algo importante de su relación.":
-  "Then comes a less visible part: sorting, interpreting and working out what is simply an anecdote and what reveals something essential about your relationship.",
-"Hablamos de mucho más que de cómo se conocieron": "We talk about far more than how you met",
-"Hablamos de sus familias, de las personas importantes, de lo que admiran del otro, de lo que les ha costado, de cómo se cuidan, de lo que ha cambiado y de la manera en que cada uno entiende el compromiso.":
-  "We talk about your families, the people who matter, what you admire in each other, what has been hard, how you look after one another, what has changed, and what commitment means to each of you.",
-"De ahí empieza a salir la ceremonia": "That's where the ceremony starts to appear",
-"A veces eso aparece en una historia que parecía pequeña, en una costumbre o en algo que uno dice sobre el otro casi sin darse cuenta.":
-  "Sometimes it shows up in a story that seemed small, in a habit, or in something one of you says about the other almost without noticing.",
-"Qué significan para ustedes": "What these mean to you",
-"La familia, el compromiso, el matrimonio y, si hace parte de su historia, Dios o la espiritualidad.":
-  "Family, commitment, marriage and — if it's part of your story — God or spirituality.",
+"Escucho con atención, cuestiono y encuentro sentido en los detalles":
+  "I listen closely, I question, and I find meaning in the details",
+"Después viene una parte menos visible: ordenar lo que escuché, encontrar conexiones e interpretar lo que cada historia revela sobre su manera de amar.":
+  "Then comes a less visible part: ordering what I heard, finding the connections, and interpreting what each story reveals about the way you love.",
+"El arte también es una manera de contar su historia": "Art is another way of telling your story",
+"Me interesa explorar materiales, técnicas artísticas y procesos hechos a mano para crear símbolos que representen algo verdadero de cada pareja. Me gusta pensar que esos objetos pueden encontrar un lugar en sus hogares y, con los años, seguir recordándoles lo que decidieron construir juntos.":
+  "I like exploring materials, artistic techniques and hand-made processes to create symbols that stand for something true about each couple. I like to think those objects can find a place in your home and, years from now, go on reminding you of what you decided to build together.",
+"Antes de conocerlos como pareja, quiero conocerlos como individuos":
+  "Before I know you as a couple, I want to know you as individuals",
+"Cada uno llega a la relación con su propia historia, sus experiencias, sus valores y su manera de entender el amor. Por eso, parte de mi proceso consiste en conversar con cada uno por separado. Me interesa conocer quiénes son individualmente para comprender mejor lo que han elegido construir juntos.":
+  "Each of you comes to the relationship with your own story, your own experiences, your own values and your own way of understanding love. That's why part of my process is talking with each of you separately. I want to know who you are on your own, so I can better understand what you have chosen to build together.",
 "No parto de una visión determinada": "I don't start from a fixed view",
-"Para algunas parejas, Dios es una parte importante de su historia y quieren que esté presente. Otras viven la espiritualidad de una manera distinta. Y para otras, ese lenguaje simplemente no hace parte de su relación. Necesito conocer la de ustedes y trabajar desde ahí.":
-  "For some couples God is an important part of their story and they want that present. Others live their spirituality in a different way. And for others, that language simply isn't part of their relationship. I need to know yours and work from there.",
+"Para algunas parejas, Dios ocupa un lugar importante en su historia. Otras entienden la espiritualidad de otra manera, y algunas no se identifican con ninguna de esas creencias. Me interesa conocer cómo ven el mundo, en qué creen y qué sentido le dan al compromiso que están haciendo.":
+  "For some couples God holds an important place in their story. Others understand spirituality differently, and some don't identify with any of those beliefs. I want to know how you see the world, what you believe, and what meaning you give to the commitment you are making.",
+"Todo lo que sucede debe tener sentido": "Everything that happens has to mean something",
+"Cada palabra, cada símbolo y cada momento de la ceremonia tiene una razón de ser. Me gusta preguntarme por qué hacemos las cosas y qué significan para quienes las viven. Así, lo que construimos juntos tiene una intención que va más allá de lo estético o de la costumbre.":
+  "Every word, every symbol and every moment of the ceremony has a reason to be there. I like to ask myself why we do things and what they mean to the people living them. That way, what we build together carries an intention that goes beyond the aesthetic or the customary.",
 
 # ------------------------------------------------------------------- formacion
 "Mi manera de hacer este trabajo viene de lugares distintos":
@@ -85,8 +85,8 @@ TEXTOS = {
 # ------------------------------------------------------------------ ceremonias
 "La historia viene primero. El símbolo aparece": "The story comes first. The symbol comes",
 "después": "after",
-"No empiezo escogiendo un ritual. Primero necesito entender qué queremos expresar; después buscamos la forma que mejor pueda contener esa idea. A veces usamos un símbolo que ya existe y le damos un sentido propio a partir de su historia; otras veces diseñamos algo nuevo. Puede ser un objeto, una acción o una pieza creada especialmente para ese momento y, cuando hace falta, también trabajo con artistas o artesanos para materializarla. Lo importante es que el gesto no llegue antes que la idea.":
-  "I don't begin by choosing a ritual. First I need to understand what we want to express; then we look for the form that can best hold that idea. Sometimes we take a symbol that already exists and give it a meaning of your own, drawn from your story; other times we design something new. It can be an object, an action or a piece created especially for that moment — and when it's needed, I also work with artists and craftspeople to make it real. What matters is that the gesture never arrives before the idea.",
+"No empiezo escogiendo un ritual. Primero necesito entender qué queremos expresar; después buscamos la forma que mejor pueda contener esa idea. A veces usamos un símbolo que ya existe y le damos un sentido propio a partir de su historia; otras veces diseñamos algo nuevo. Puede ser un objeto, una acción o una pieza creada especialmente para ese momento y, cuando hace falta, también trabajo con artistas o artesanos para materializarla. Lo importante es que el gesto no llegue antes que la intención. No se trata de escoger un símbolo entre un listado.":
+  "I don't begin by choosing a ritual. First I need to understand what we want to express; then we look for the form that can best hold that idea. Sometimes we take a symbol that already exists and give it a meaning of your own, drawn from your story; other times we design something new. It can be an object, an action or a piece created especially for that moment — and when it's needed, I also work with artists and craftspeople to make it real. What matters is that the gesture never arrives before the intention. It isn't about picking a symbol from a list.",
 "Cada tarjeta abre la información del símbolo.": "Each card opens the story of its symbol.",
 "VER INFORMACIÓN": "SEE DETAILS",
 "Algunas historias han tomado esta forma": "Some stories have taken this shape",
@@ -337,7 +337,7 @@ TEXTOS.update({
 "Cerrar menú": "Close menu",
 "Cerrar": "Close",
 "Secciones": "Sections",
-"Cómo escucho antes de escribir": "How I listen before I write",
+"Los pilares de mi manera de trabajar": "The pillars of the way I work",
 "1 de 4": "1 of 4",
 "2 de 4": "2 of 4",
 "3 de 4": "3 of 4",
