@@ -473,9 +473,25 @@ TEXTOS.update({
   "The couple and Alejandra among the coloured smoke at the end of the ceremony.",
 "Los libros de votos junto a las figuras pintadas y las flores.":
   "The vow books beside the painted figures and the flowers.",
+"Alejandra oficiando bajo el arco de madera, con la ciudad abajo.":
+  "Alejandra officiating beneath the wooden arch, with the city below.",
+"La ceremonia al aire libre entre plumas de pampa, con el valle abajo.":
+  "The outdoor ceremony among pampas grass, with the valley below.",
+"Las tiras tejidas con las placas grabadas, colgadas durante la ceremonia.":
+  "The woven strands with their engraved tags, hung during the ceremony.",
+"Los novios junto al barco de madera de su ceremonia.":
+  "The couple beside the wooden boat from their ceremony.",
+"Los invitados riéndose durante la ceremonia.":
+  "The guests laughing during the ceremony.",
+"El castillo de LEGO terminado, dentro de su urna.":
+  "The finished LEGO castle inside its case.",
+"Los novios en la mesa con el árbol de los sueños, frente al valle.":
+  "The couple at the table with the tree of dreams, facing the valley.",
+"Alejandra oficiando bajo un dosel de tela, junto al atril de madera.":
+  "Alejandra officiating beneath a fabric canopy, beside the wooden lectern.",
+"La vasija de cerámica grabada con sus nombres y la fecha de la boda.":
+  "The ceramic vessel engraved with their names and their wedding date.",
 "Alejandra en una ceremonia frente al mar.": "Alejandra at a ceremony by the sea.",
-"Alejandra Otelo oficiando una ceremonia con la ciudad de fondo.":
-  "Alejandra Otelo officiating a ceremony with the city behind her.",
 })
 
 # ------------------------------------------ los mensajes que se abren en WhatsApp
