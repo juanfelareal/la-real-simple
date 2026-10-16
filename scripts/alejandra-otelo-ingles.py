@@ -396,7 +396,8 @@ TEXTOS.update({
 "Alejandra Otelo oficiando una ceremonia simbólica al aire libre frente a los novios.":
   "Alejandra Otelo officiating an outdoor symbolic ceremony in front of the couple.",
 "Retrato de Alejandra Otelo.": "Portrait of Alejandra Otelo.",
-"Alejandra Otelo caminando hacia una ceremonia.": "Alejandra Otelo walking towards a ceremony.",
+"Alejandra Otelo oficiando junto a un arco de flores, con el valle de fondo.":
+  "Alejandra Otelo officiating beside an arch of flowers, with the valley behind her.",
 "Corazones de madera con palabras escritas a mano, en las manos de la pareja.":
   "Wooden hearts with hand-written words, held by the couple.",
 "Aro de fibra con las argollas colgando sobre una tabla grabada con los nombres.":
@@ -442,8 +443,6 @@ TEXTOS.update({
   "A couple seated beneath an arch of white flowers during their ceremony.",
 "Ceremonia simbólica en una terraza con vista a la montaña.":
   "A symbolic ceremony on a terrace looking out over the mountains.",
-"Alejandra oficiando frente a los novios en un deck de madera.":
-  "Alejandra officiating in front of the couple on a wooden deck.",
 "Ceremonia simbólica al aire libre rodeada de flores de colores.":
   "An outdoor symbolic ceremony surrounded by colourful flowers.",
 "Dos novios sentados frente a Alejandra bajo un arco floral con vista a la montaña.":
