@@ -225,13 +225,14 @@ ORBIT = '''
   <section class="orbit" id="orbit">
     <div class="wrap">
       <div class="orbit-copy">
-        <p class="label rv">Orbit · dashboard en vivo</p>
-        <h2 class="h2 rv"><b>Tus números en tiempo real.</b> <span class="soft">No esperas al reporte.</span></h2>
-        <p class="rv">Cada cliente tiene acceso a Orbit, nuestro dashboard. Los datos de tu tienda y de tu pauta se actualizan solos cada 3 minutos, sin hojas de cálculo ni capturas de pantalla.</p>
+        <p class="label rv">Orbit · nuestra plataforma</p>
+        <h2 class="h2 rv"><b>Tus números y tu proyecto, en tiempo real.</b> <span class="soft">No esperas al reporte.</span></h2>
+        <p class="rv">Orbit es la plataforma que construimos en LA REAL. Ahí llevamos las tareas y los proyectos de tu marca, y tú ves cuánto estás vendiendo y cuánto estás invirtiendo, actualizado cada 3 minutos. Somos pioneros en herramientas integradas con inteligencia artificial: nos ayudan a leer tus datos y a decidir más rápido.</p>
         <ul class="orbit-points rv">
           <li>Ventas, pedidos y ticket promedio de Shopify</li>
           <li>Inversión y retorno de Meta, cruzados con tu venta real</li>
-          <li>Comparación contra el mes anterior y tus objetivos</li>
+          <li>Tareas y proyectos de tu marca, con su estado al día</li>
+          <li>Herramientas con inteligencia artificial integradas</li>
           <li>Desde el computador o el celular, cuando quieras</li>
         </ul>
       </div>
@@ -289,16 +290,17 @@ SERVICES = {
              bullets([('Diagnóstico de tu tienda actual', 'Analítica, recorrido de compra y referentes de tu categoría.'),
                       ('Arquitectura de la tienda', 'Menú, colecciones y fichas de producto pensadas para comprar.'),
                       ('Diseño a la medida', 'Sobre un tema de Shopify 2.0 que tu equipo puede editar sin programar.'),
+                      ('Piezas gráficas incluidas', 'Diseñamos los banners, la iconografía y todas las piezas que la tienda necesita para convertir. Tú solo apruebas.'),
                       ('Celular primero', 'La mayoría de tus clientes compra desde el teléfono; ahí empezamos.'),
                       ('Migración', 'Productos, clientes y redirecciones para no perder posicionamiento.'),
                       ('Configuración de la operación', 'Pagos, envíos, impuestos y las apps que de verdad necesitas.'),
                       ('Velocidad y SEO técnico', 'Imágenes optimizadas, estructura limpia y metadatos.'),
                       ('Capacitación grabada', 'Para que tu equipo administre la tienda desde el primer día.')])
-             + '<div class="sp-note rv"><b>Opcional · Optimización constante ($3.000.000 + IVA al mes):</b> si lo quieres, después del lanzamiento seguimos mejorando la tienda cada mes con base en sus datos: pruebas, landings de campaña y ajustes de conversión. No es obligatorio para hacer tu sitio.</div>',
+             + '<div class="sp-note rv"><b>Opcional · Optimización constante ($3.000.000 + IVA al mes · US$1.000):</b> si lo quieres, después del lanzamiento seguimos mejorando la tienda cada mes con base en sus datos: pruebas, landings de campaña y ajustes de conversión. No es obligatorio para hacer tu sitio.</div>',
              '', 'incluye'),
             ('Cómo trabajamos', 'Cuatro etapas, <b>en promedio 2 semanas.</b>',
              cards([('Diagnóstico', 'Revisamos tus números, tu tienda actual y lo que hace bien tu competencia.'),
-                    ('Diseño', 'Te mostramos la propuesta en computador y celular antes de construir.'),
+                    ('Diseño', 'Te mostramos la propuesta en computador y celular, con banners e iconografía, antes de construir.'),
                     ('Construcción', 'Desarrollo, carga de productos, configuración y pruebas de compra.'),
                     ('Lanzamiento y seguimiento', 'Publicamos y revisamos el comportamiento de la tienda las semanas siguientes.')], 'c4')),
             ('Trabajo', 'Tiendas que <b>hemos hecho y optimizado.</b>', cases_html, 'Así se ven hoy, en computador y en celular.', 'trabajo'),
@@ -308,6 +310,7 @@ SERVICES = {
             ('¿Qué pasa si tengo más de 50 productos, varios idiomas o varios países?', 'Lo cotizamos según lo que necesites. El precio estándar cubre hasta 50 productos, un idioma y un mercado.'),
             ('¿La suscripción de Shopify y las apps están incluidas?', 'No. El plan de Shopify y las apps los pagas directamente a cada proveedor, a nombre de tu marca.'),
             ('¿Cuánto se demora?', 'El tiempo promedio de entrega es de 2 semanas. La fecha exacta queda en el contrato y, si nos atrasamos por causa nuestra, te devolvemos el 10% por cada semana.'),
+            ('¿Tengo que entregar banners o diseños?', 'No. Nosotros diseñamos los banners, la iconografía y las piezas gráficas de la tienda. Tú solo apruebas.'),
             ('¿Qué diferencia hay entre rediseño y sitio desde cero?', 'En el rediseño partimos de tu tienda en Shopify y su contenido. Desde cero incluye montar la tienda completa o migrarla desde otra plataforma.'),
         ],
     },
@@ -316,7 +319,7 @@ SERVICES = {
         'meta': 'Gestión de pauta en Meta para ecommerce, medida contra tus ventas reales en Shopify.',
         'h1': 'Pauta en Meta <b>medida contra tus ventas reales.</b>',
         'lead': 'Gestionamos tus campañas con revisión diaria y reporte semanal. Medimos el retorno sobre tu venta neta en Shopify, no solo sobre lo que reporta Meta.',
-        'pills': ['Incluye una plataforma: Meta', 'Desde $3M de inversión al mes'],
+        'pills': ['Incluye una plataforma: Meta', '15 piezas gráficas al mes', 'Desde $3M de inversión al mes'],
         'sections': [
             ('Para quién es', 'Para marcas que ya venden <b>y quieren crecer con rentabilidad.</b>',
              cards([('Inviertes y no sabes si es rentable', 'Meta dice una cosa, tu cuenta bancaria dice otra.'),
@@ -327,11 +330,12 @@ SERVICES = {
                       ('Estructura de campañas', 'Prospección, remarketing y catálogo, cada una con su objetivo.'),
                       ('Sistema de pruebas', 'Ángulos de venta cruzados con formatos: estático, video y UGC.'),
                       ('Revisión diaria', 'Presupuestos, anuncios y frecuencia, todos los días hábiles.'),
-                      ('Dashboard en vivo en Orbit', 'Tus ventas y tu pauta actualizadas cada 3 minutos.'),
+                      ('Orbit, nuestra plataforma', 'Tus ventas y tu pauta actualizadas cada 3 minutos, y el estado de cada tarea.'),
+                      ('Inteligencia artificial integrada', 'Herramientas con IA para analizar tu cuenta y tus anuncios y decidir más rápido.'),
                       ('Reporte semanal', 'Qué pasó, qué cambiamos y por qué.'),
                       ('Reporte mensual en una página', 'Ventas, pauta, tienda y foco del siguiente mes. El análisis lo escribe el equipo.'),
-                      ('Recomendaciones de creativos', 'Qué producir según lo que está vendiendo.'),
-                      ('Plataformas adicionales', 'Google o TikTok por $1.000.000 + IVA al mes cada una.')]),
+                      ('15 piezas gráficas al mes', 'Diseñamos los anuncios gráficos de tus campañas según lo que está vendiendo. Tú solo apruebas.'),
+                      ('Plataformas adicionales', 'Google o TikTok por $1.000.000 + IVA (US$333) al mes cada una.')]),
              '', 'incluye'),
             ORBIT,
             ('Cómo trabajamos', 'Así decidimos <b>dónde va cada peso.</b>',
@@ -344,8 +348,8 @@ SERVICES = {
             ('¿La inversión en anuncios está incluida?', 'No. La inversión la pagas directamente a Meta con tu tarjeta. Nuestro valor es la gestión.'),
             ('¿Qué es el 4% de venta atribuida en Meta?', 'Aplica cuando inviertes más de $15M al mes: además del valor fijo, cobramos el 4% de las ventas que Meta atribuye a las campañas.'),
             ('¿Hay permanencia mínima?', 'No. Trabajamos mes a mes y las cuentas, audiencias y creativos son tuyos desde el primer día.'),
-            ('¿Quién hace los creativos?', 'Te decimos qué producir según los datos. Los puede hacer tu equipo o nuestro servicio de contenido UGC.'),
-            ('¿Manejan otras plataformas además de Meta?', 'Sí. Cada plataforma adicional, como Google o TikTok, cuesta $1.000.000 + IVA al mes.'),
+            ('¿Quién hace los creativos?', 'Las piezas gráficas las diseñamos nosotros: 15 al mes, incluidas en el servicio, y tú solo apruebas. Los videos con creadores los puede hacer tu equipo o nuestro servicio de contenido UGC.'),
+            ('¿Manejan otras plataformas además de Meta?', 'Sí. Cada plataforma adicional, como Google o TikTok, cuesta $1.000.000 + IVA (US$333) al mes.'),
         ],
     },
     'contenido-ugc': {
@@ -402,7 +406,8 @@ SERVICES = {
                       ('Carrito y pago abandonado', 'Recordatorio, prueba social y último llamado.'),
                       ('Post-compra', 'Productos que complementan lo que compró.'),
                       ('Recuperación de clientes', 'Tres correos para quienes dejaron de comprar.'),
-                      ('Campañas mensuales', 'Doce correos al mes con calendario, diseño de tu marca y segmentación.'),
+                      ('Campañas mensuales', 'Doce correos al mes con calendario y segmentación.'),
+                      ('Redacción y diseño incluidos', 'Escribimos y diseñamos cada correo y cada automatización con la línea gráfica de tu marca. Tú solo apruebas.'),
                       ('Reporte mensual', 'Cuánto vendió el correo y qué ajustamos.')]),
              '', 'incluye'),
             ('Cómo trabajamos', 'Primero lo que vende solo, <b>después las campañas.</b>',
@@ -415,7 +420,7 @@ SERVICES = {
         'faq': [
             ('¿Necesito tener Klaviyo?', 'Sí. El plan de Klaviyo lo pagas directamente; si no tienes cuenta, la creamos contigo.'),
             ('¿Puedo contratar solo el montaje?', 'Sí. El montaje de automatizaciones es un pago único y las campañas mensuales son opcionales.'),
-            ('¿Quién escribe los correos?', 'Nosotros: redacción y diseño con el tono de tu marca. Tú apruebas antes de enviar.'),
+            ('¿Quién escribe y diseña los correos?', 'Nosotros: redacción y diseño de todas las piezas gráficas, con el tono y la línea gráfica de tu marca. Tú solo apruebas antes de enviar.'),
             ('¿Cuándo están funcionando las automatizaciones?', 'En 15 días hábiles. Si no, te devolvemos el 20% del montaje.'),
         ],
     },
@@ -424,22 +429,24 @@ SERVICES = {
         'meta': 'Sitio, pauta, contenido y email operados por un solo equipo, con el pago atado a tus ventas.',
         'h1': 'Un solo equipo para crecer, <b>con nuestro pago atado a tus ventas.</b>',
         'lead': 'Sitio, pauta, contenido y email operados juntos, con una sola estrategia y un solo reporte. Parte de lo que cobramos depende de lo que vendes.',
-        'pills': ['Los cuatro servicios', '$7.000.000 al mes + 5% de la venta neta'],
+        'pills': ['Los cuatro servicios', 'Diseño gráfico incluido', '$7.000.000 (US$2.333) al mes + 5% de la venta neta'],
         'sections': [
             ('Para quién es', 'Para marcas que ya venden <b>y quieren un socio, no cuatro proveedores.</b>',
              cards([('Coordinas a varios proveedores', 'Cada uno ve su parte y nadie responde por el resultado completo.'),
                     ('Quieres crecer con orden', 'Necesitas que el anuncio, la tienda y el correo empujen en la misma dirección.'),
                     ('Buscas incentivos alineados', 'Prefieres que a tu agencia le vaya bien solo si a ti te va bien.')])),
             ('Qué incluye', 'Los cuatro servicios, <b>operados como uno.</b>',
-             bullets([('Optimización del sitio para conversión', 'Mejoras mensuales de la tienda con base en sus datos.'),
-                      ('Pauta enfocada en conversión', 'Gestión de Meta con revisión diaria y reporte semanal.'),
+             bullets([('Optimización del sitio para conversión', 'Mejoras mensuales de la tienda con base en sus datos, con los banners y piezas gráficas que necesite.'),
+                      ('Pauta enfocada en conversión', 'Gestión de Meta con revisión diaria, reporte semanal y 15 piezas gráficas al mes.'),
                       ('Contenido UGC', 'Diez videos al mes con estrategia, creadores y análisis.'),
-                      ('Email marketing', 'Automatizaciones y campañas mensuales en Klaviyo.'),
+                      ('Email marketing', 'Automatizaciones y campañas mensuales en Klaviyo, con redacción y diseño incluidos.'),
                       ('Sesión estratégica mensual', 'Revisamos números y definimos el foco del mes siguiente.'),
-                      ('Dashboard en vivo en Orbit', 'Ventas, pauta y correo actualizados cada 3 minutos.'),
+                      ('Orbit, nuestra plataforma', 'Ventas, pauta y correo actualizados cada 3 minutos, con las tareas y proyectos de tu marca.'),
+                      ('Inteligencia artificial integrada', 'Herramientas con IA en todo el proceso: análisis de datos, creativos y decisiones más rápidas.'),
                       ('Reporte mensual en una página', 'Ventas, pauta, tienda y correo en un solo lugar.'),
                       ('Análisis de unit economics', 'Cuánto te queda de verdad por cada venta, producto por producto.')]),
              '', 'incluye'),
+            ORBIT,
             ('Por qué junto', 'Una estrategia, <b>no cuatro.</b>',
              cards([('El mismo mensaje en todas partes', 'El anuncio, la página y el correo cuentan la misma historia.'),
                     ('Decisiones con todos los datos', 'Vemos la pauta, la tienda y el correo al mismo tiempo.'),
@@ -449,12 +456,18 @@ SERVICES = {
             ('¿Qué es la venta neta?', 'Las ventas de tu tienda menos descuentos y devoluciones. Sobre esa cifra se calcula el 5%.'),
             ('¿La inversión en anuncios está incluida?', 'No. La inversión la pagas directamente a Meta.'),
             ('¿Qué pasa si no se cumplen los objetivos?', 'Si a los 90 días no cumplimos los objetivos que acordamos al inicio, el siguiente mes no pagas el valor fijo.'),
+            ('¿Tengo que diseñar algo?', 'No. Las piezas gráficas de la tienda, los anuncios (15 al mes) y los correos las diseñamos nosotros. Tú solo apruebas.'),
             ('¿Puedo empezar con un solo servicio?', 'Sí. Cada servicio se puede tomar por separado y pasar a Growth Partner cuando tenga sentido.'),
         ],
     },
 }
 
 if __name__ == '__main__':
+    # El bloque de Orbit de la home es el mismo de las páginas de servicio
+    a, b = '<!-- Orbit -->', '<!-- /Orbit -->'
+    home = (ROOT / 'index.html').read_text()
+    home = home[:home.index(a) + len(a)] + ORBIT + '\n  ' + home[home.index(b):]
+    (ROOT / 'index.html').write_text(home)
     OUT.mkdir(exist_ok=True)
     for slug, s in SERVICES.items():
         (OUT / f'{slug}.html').write_text(page(s))
