@@ -225,13 +225,14 @@ ORBIT = '''
   <section class="orbit" id="orbit">
     <div class="wrap">
       <div class="orbit-copy">
-        <p class="label rv">Orbit · dashboard en vivo</p>
-        <h2 class="h2 rv"><b>Tus números en tiempo real.</b> <span class="soft">No esperas al reporte.</span></h2>
-        <p class="rv">Cada cliente tiene acceso a Orbit, nuestro dashboard. Los datos de tu tienda y de tu pauta se actualizan solos cada 3 minutos, sin hojas de cálculo ni capturas de pantalla.</p>
+        <p class="label rv">Orbit · nuestra plataforma</p>
+        <h2 class="h2 rv"><b>Tus números y tu proyecto, en tiempo real.</b> <span class="soft">No esperas al reporte.</span></h2>
+        <p class="rv">Orbit es la plataforma que construimos en LA REAL. Ahí llevamos las tareas y los proyectos de tu marca, y tú ves cuánto estás vendiendo y cuánto estás invirtiendo, actualizado cada 3 minutos. Somos pioneros en herramientas integradas con inteligencia artificial: nos ayudan a leer tus datos y a decidir más rápido.</p>
         <ul class="orbit-points rv">
           <li>Ventas, pedidos y ticket promedio de Shopify</li>
           <li>Inversión y retorno de Meta, cruzados con tu venta real</li>
-          <li>Comparación contra el mes anterior y tus objetivos</li>
+          <li>Tareas y proyectos de tu marca, con su estado al día</li>
+          <li>Herramientas con inteligencia artificial integradas</li>
           <li>Desde el computador o el celular, cuando quieras</li>
         </ul>
       </div>
@@ -329,7 +330,8 @@ SERVICES = {
                       ('Estructura de campañas', 'Prospección, remarketing y catálogo, cada una con su objetivo.'),
                       ('Sistema de pruebas', 'Ángulos de venta cruzados con formatos: estático, video y UGC.'),
                       ('Revisión diaria', 'Presupuestos, anuncios y frecuencia, todos los días hábiles.'),
-                      ('Dashboard en vivo en Orbit', 'Tus ventas y tu pauta actualizadas cada 3 minutos.'),
+                      ('Orbit, nuestra plataforma', 'Tus ventas y tu pauta actualizadas cada 3 minutos, y el estado de cada tarea.'),
+                      ('Inteligencia artificial integrada', 'Herramientas con IA para analizar tu cuenta y tus anuncios y decidir más rápido.'),
                       ('Reporte semanal', 'Qué pasó, qué cambiamos y por qué.'),
                       ('Reporte mensual en una página', 'Ventas, pauta, tienda y foco del siguiente mes. El análisis lo escribe el equipo.'),
                       ('15 piezas gráficas al mes', 'Diseñamos los anuncios gráficos de tus campañas según lo que está vendiendo. Tú solo apruebas.'),
@@ -439,10 +441,12 @@ SERVICES = {
                       ('Contenido UGC', 'Diez videos al mes con estrategia, creadores y análisis.'),
                       ('Email marketing', 'Automatizaciones y campañas mensuales en Klaviyo, con redacción y diseño incluidos.'),
                       ('Sesión estratégica mensual', 'Revisamos números y definimos el foco del mes siguiente.'),
-                      ('Dashboard en vivo en Orbit', 'Ventas, pauta y correo actualizados cada 3 minutos.'),
+                      ('Orbit, nuestra plataforma', 'Ventas, pauta y correo actualizados cada 3 minutos, con las tareas y proyectos de tu marca.'),
+                      ('Inteligencia artificial integrada', 'Herramientas con IA en todo el proceso: análisis de datos, creativos y decisiones más rápidas.'),
                       ('Reporte mensual en una página', 'Ventas, pauta, tienda y correo en un solo lugar.'),
                       ('Análisis de unit economics', 'Cuánto te queda de verdad por cada venta, producto por producto.')]),
              '', 'incluye'),
+            ORBIT,
             ('Por qué junto', 'Una estrategia, <b>no cuatro.</b>',
              cards([('El mismo mensaje en todas partes', 'El anuncio, la página y el correo cuentan la misma historia.'),
                     ('Decisiones con todos los datos', 'Vemos la pauta, la tienda y el correo al mismo tiempo.'),
@@ -459,6 +463,11 @@ SERVICES = {
 }
 
 if __name__ == '__main__':
+    # El bloque de Orbit de la home es el mismo de las páginas de servicio
+    a, b = '<!-- Orbit -->', '<!-- /Orbit -->'
+    home = (ROOT / 'index.html').read_text()
+    home = home[:home.index(a) + len(a)] + ORBIT + '\n  ' + home[home.index(b):]
+    (ROOT / 'index.html').write_text(home)
     OUT.mkdir(exist_ok=True)
     for slug, s in SERVICES.items():
         (OUT / f'{slug}.html').write_text(page(s))

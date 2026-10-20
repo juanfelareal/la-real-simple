@@ -98,6 +98,39 @@ src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <!-- Orbit -->
+  <section class="orbit" id="orbit">
+    <div class="wrap">
+      <div class="orbit-copy">
+        <p class="label rv">Orbit · nuestra plataforma</p>
+        <h2 class="h2 rv"><b>Tus números y tu proyecto, en tiempo real.</b> <span class="soft">No esperas al reporte.</span></h2>
+        <p class="rv">Orbit es la plataforma que construimos en LA REAL. Ahí llevamos las tareas y los proyectos de tu marca, y tú ves cuánto estás vendiendo y cuánto estás invirtiendo, actualizado cada 3 minutos. Somos pioneros en herramientas integradas con inteligencia artificial: nos ayudan a leer tus datos y a decidir más rápido.</p>
+        <ul class="orbit-points rv">
+          <li>Ventas, pedidos y ticket promedio de Shopify</li>
+          <li>Inversión y retorno de Meta, cruzados con tu venta real</li>
+          <li>Tareas y proyectos de tu marca, con su estado al día</li>
+          <li>Herramientas con inteligencia artificial integradas</li>
+          <li>Desde el computador o el celular, cuando quieras</li>
+        </ul>
+      </div>
+      <div class="rv">
+        <div class="dash" aria-label="Vista de ejemplo del dashboard Orbit">
+          <div class="dash-head"><div><b>Orbit</b><small>Tu marca · este mes</small></div><span class="live"><i></i>Actualizado hace <span id="orbit-min">2</span> min</span></div>
+          <div class="dash-kpis">
+            <div class="kpi"><small>Venta neta</small><b>$84,2M</b><em>↑ 12% vs mes ant.</em></div>
+            <div class="kpi"><small>Pedidos</small><b>612</b><em>↑ 9%</em></div>
+            <div class="kpi"><small>Inversión Meta</small><b>$18,6M</b><em>22% de la venta</em></div>
+            <div class="kpi"><small>Retorno</small><b>4,5x</b><em>sobre venta neta</em></div>
+          </div>
+          <div class="dash-chart"><div class="t"><span>Venta neta por día</span><span>■ Shopify &nbsp;<span style="color:#B5B1AA">■</span> Inversión</span></div>
+            <div class="bars"><span style="height:48%"></span><span class="m" style="height:14%"></span><span style="height:62%"></span><span class="m" style="height:15%"></span><span style="height:55%"></span><span class="m" style="height:13%"></span><span style="height:70%"></span><span class="m" style="height:16%"></span><span style="height:66%"></span><span class="m" style="height:15%"></span><span style="height:82%"></span><span class="m" style="height:18%"></span><span style="height:74%"></span><span class="m" style="height:17%"></span><span style="height:90%"></span><span class="m" style="height:19%"></span><span style="height:78%"></span><span class="m" style="height:18%"></span><span style="height:95%"></span><span class="m" style="height:20%"></span></div></div>
+        </div>
+        <p class="dash-note">Vista de ejemplo con datos ilustrativos.</p>
+      </div>
+    </div>
+  </section>
+  <!-- /Orbit -->
+
   <!-- Servicios -->
   <section class="services" id="servicios">
     <div class="wrap">
@@ -288,6 +321,11 @@ addEventListener('scroll', onScroll, {passive:true}); onScroll();
 // Revelado suave
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+<script>
+// Orbit (vista de ejemplo): el contador vuelve a 0 cada 3 minutos, como la sincronización real
+const om = document.getElementById('orbit-min');
+if (om) { let t = 2; setInterval(() => { t = (t + 1) % 3; om.textContent = t; }, 60000); }
 </script>
 <script src="assets/agenda.js" defer></script>
 </body>
