@@ -24,11 +24,12 @@ function busyCalendarIds() {
   return raw.split(',').map((s) => s.trim()).filter(Boolean);
 }
 
-// Calendarios donde se crea la cita. Si la cuenta de servicio no tiene permiso
-// de escritura en alguno, se omite y se registra en el log.
+// Calendarios donde se crea la cita. Por defecto solo el de LA REAL: la cuenta de Gmail
+// ya lo ve compartido, así que crearla en ambos la duplicaría. Si la cuenta de servicio
+// no tiene permiso de escritura en alguno, se omite y se registra en el log.
 function eventCalendarIds() {
-  const raw = process.env.GOOGLE_EVENT_CALENDAR_IDS;
-  return raw ? raw.split(',').map((s) => s.trim()).filter(Boolean) : busyCalendarIds();
+  const raw = process.env.GOOGLE_EVENT_CALENDAR_IDS || 'juanfe@larealmarketing.com';
+  return raw.split(',').map((s) => s.trim()).filter(Boolean);
 }
 
 function hasCredentials() {
