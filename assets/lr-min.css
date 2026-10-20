@@ -111,6 +111,8 @@ section{scroll-margin-top:80px;}
 .iva-in{font-style:normal;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:0;}
 .big .iva-in{font-size:14px;color:#C9C6C0;vertical-align:middle;}
 .price .v small{display:block;font-weight:400;font-size:12px;color:var(--muted);}
+.price .v small.usd,.big small.usd{font-size:13px;color:var(--ink-2);}
+.svc.featured .price .v small.usd,.svc.featured .big small.usd{color:#C9C6C0;}
 .fine{font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:12px;}
 .svc.featured .fine{color:var(--on-dark-muted);}
 .scope{display:inline-block;margin-top:12px;font-size:13px;color:var(--ink-2);padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;}

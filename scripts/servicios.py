@@ -295,7 +295,7 @@ SERVICES = {
                       ('Configuración de la operación', 'Pagos, envíos, impuestos y las apps que de verdad necesitas.'),
                       ('Velocidad y SEO técnico', 'Imágenes optimizadas, estructura limpia y metadatos.'),
                       ('Capacitación grabada', 'Para que tu equipo administre la tienda desde el primer día.')])
-             + '<div class="sp-note rv"><b>Opcional · Optimización constante ($3.000.000 + IVA al mes):</b> si lo quieres, después del lanzamiento seguimos mejorando la tienda cada mes con base en sus datos: pruebas, landings de campaña y ajustes de conversión. No es obligatorio para hacer tu sitio.</div>',
+             + '<div class="sp-note rv"><b>Opcional · Optimización constante ($3.000.000 + IVA al mes · US$1.000):</b> si lo quieres, después del lanzamiento seguimos mejorando la tienda cada mes con base en sus datos: pruebas, landings de campaña y ajustes de conversión. No es obligatorio para hacer tu sitio.</div>',
              '', 'incluye'),
             ('Cómo trabajamos', 'Cuatro etapas, <b>en promedio 2 semanas.</b>',
              cards([('Diagnóstico', 'Revisamos tus números, tu tienda actual y lo que hace bien tu competencia.'),
@@ -333,7 +333,7 @@ SERVICES = {
                       ('Reporte semanal', 'Qué pasó, qué cambiamos y por qué.'),
                       ('Reporte mensual en una página', 'Ventas, pauta, tienda y foco del siguiente mes. El análisis lo escribe el equipo.'),
                       ('15 piezas gráficas al mes', 'Diseñamos los anuncios gráficos de tus campañas según lo que está vendiendo. Tú solo apruebas.'),
-                      ('Plataformas adicionales', 'Google o TikTok por $1.000.000 + IVA al mes cada una.')]),
+                      ('Plataformas adicionales', 'Google o TikTok por $1.000.000 + IVA (US$333) al mes cada una.')]),
              '', 'incluye'),
             ORBIT,
             ('Cómo trabajamos', 'Así decidimos <b>dónde va cada peso.</b>',
@@ -347,7 +347,7 @@ SERVICES = {
             ('¿Qué es el 4% de venta atribuida en Meta?', 'Aplica cuando inviertes más de $15M al mes: además del valor fijo, cobramos el 4% de las ventas que Meta atribuye a las campañas.'),
             ('¿Hay permanencia mínima?', 'No. Trabajamos mes a mes y las cuentas, audiencias y creativos son tuyos desde el primer día.'),
             ('¿Quién hace los creativos?', 'Las piezas gráficas las diseñamos nosotros: 15 al mes, incluidas en el servicio, y tú solo apruebas. Los videos con creadores los puede hacer tu equipo o nuestro servicio de contenido UGC.'),
-            ('¿Manejan otras plataformas además de Meta?', 'Sí. Cada plataforma adicional, como Google o TikTok, cuesta $1.000.000 + IVA al mes.'),
+            ('¿Manejan otras plataformas además de Meta?', 'Sí. Cada plataforma adicional, como Google o TikTok, cuesta $1.000.000 + IVA (US$333) al mes.'),
         ],
     },
     'contenido-ugc': {
@@ -427,7 +427,7 @@ SERVICES = {
         'meta': 'Sitio, pauta, contenido y email operados por un solo equipo, con el pago atado a tus ventas.',
         'h1': 'Un solo equipo para crecer, <b>con nuestro pago atado a tus ventas.</b>',
         'lead': 'Sitio, pauta, contenido y email operados juntos, con una sola estrategia y un solo reporte. Parte de lo que cobramos depende de lo que vendes.',
-        'pills': ['Los cuatro servicios', 'Diseño gráfico incluido', '$7.000.000 al mes + 5% de la venta neta'],
+        'pills': ['Los cuatro servicios', 'Diseño gráfico incluido', '$7.000.000 (US$2.333) al mes + 5% de la venta neta'],
         'sections': [
             ('Para quién es', 'Para marcas que ya venden <b>y quieren un socio, no cuatro proveedores.</b>',
              cards([('Coordinas a varios proveedores', 'Cada uno ve su parte y nadie responde por el resultado completo.'),
