@@ -63,3 +63,11 @@
   .close__copy{padding:64px}
   .close h2{font-size:44px}
 }
+
+/* Escritorio: las dos tarjetas de "Por qué sí funciona" alineadas con el ancho del bloque de compra */
+@media(min-width:1024px){
+  .wrap.why{max-width:1240px;grid-template-columns:minmax(0,2.4fr) minmax(0,1fr)}
+  .why__card{padding:26px 32px}
+  .why__card h3{font-size:26px;margin-bottom:8px}
+  .why__guar{padding:22px 26px}
+}
