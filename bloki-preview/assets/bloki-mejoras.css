@@ -128,3 +128,8 @@
   .how__steps{grid-area:steps;align-self:start}
   .how>div:first-child{display:block}
 }
+
+/* Cómo funciona: mano con Bloki amarillo sin fondo, grande sobre una tarjeta suave.
+   La muñeca sale por abajo a la izquierda, así que la imagen se pega a esa esquina. */
+.how__img{background:var(--stage)}
+.how__img img{inset:6% 6% 0 0;width:94%;height:94%;object-fit:contain;object-position:left bottom}
