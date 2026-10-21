@@ -78,3 +78,13 @@
   .split .figure{position:relative;top:auto;height:100%}
   .split .figure img{aspect-ratio:auto;height:100%;object-position:center 60%}
 }
+
+/* Foto de la mano en "Cómo funciona" */
+.how__img{margin:0 0 24px;border-radius:var(--r);overflow:hidden;background:#fff;aspect-ratio:4/3}
+.how__img img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
+@media(min-width:1024px){
+  .how{align-items:stretch}
+  .how>div:first-child{display:flex;flex-direction:column}
+  .how__img{flex:1;margin:4px 0 0;aspect-ratio:auto;min-height:220px;position:relative}
+  .how__img img{position:absolute;inset:0}
+}
