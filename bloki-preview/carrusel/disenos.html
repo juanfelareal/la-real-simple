@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Bloki carrusel — piezas de diseño</title>
+<!-- Cada .slide se exporta a 1600×1600 con render.js -->
+<style>
+@font-face{font-family:"Space Mono";src:url(fonts/SpaceMono-Regular.ttf);font-weight:400}
+@font-face{font-family:"Space Mono";src:url(fonts/SpaceMono-Bold.ttf);font-weight:700}
+:root{--bg:#FAFAF8;--paper:#FFFFFF;--stage:#F1F0EC;--ink:#141414;--ink-soft:#6E6C67;--ink-muted:#A3A09A;--line:#E6E4DF;--yellow:#F4CB3B;--mint:#92E2C7;--lilac:#B78CD3;--coral:#FD998A;--sans:"Inter",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:#ccc;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+.slide{width:1600px;height:1600px;position:relative;overflow:hidden;margin:0 0 40px}
+.eyebrow{font-family:var(--mono);font-size:40px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 36px}
+h1{font-size:132px;line-height:1.02;font-weight:600;letter-spacing:-.045em;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--ink-muted)}
+
+/* 3 · Cómo funciona */
+.s-como{background:#F7F7F6;padding:130px 120px}
+.s-como .eyebrow{color:var(--ink-soft)}
+.steps{list-style:none;margin:150px 0 0;padding:0;display:flex;flex-direction:column;gap:96px;width:1360px;position:relative;z-index:1}
+.steps li{display:grid;grid-template-columns:150px 1fr;gap:44px;align-items:center}
+.n{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:72px}
+.steps h2{margin:0 0 6px;font-size:84px;line-height:1.05;font-weight:600;letter-spacing:-.035em}
+.steps p{margin:0;font-size:56px;line-height:1.2;color:var(--ink-soft);letter-spacing:-.015em}
+.s-como .toy{position:absolute;right:-30px;top:-10px;width:720px;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%);mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)}
+
+/* 5 · La app */
+.s-app{background:var(--lilac);padding:130px 120px}
+.s-app .eyebrow{color:rgba(20,20,20,.6)}
+.s-app h1{max-width:1300px}
+.phones{position:absolute;right:-70px;bottom:-200px;width:820px;height:1250px}
+.phones img{position:absolute;width:490px;border-radius:64px;box-shadow:0 40px 80px rgba(40,10,60,.35)}
+.phones .back{right:0;top:20px;transform:rotate(7deg)}
+.phones .front{left:0;top:110px;transform:rotate(-4deg)}
+.facts{position:absolute;left:120px;bottom:150px;display:flex;flex-direction:column;gap:28px;align-items:flex-start}
+.fact{background:var(--paper);border-radius:999px;padding:30px 48px;display:flex;align-items:baseline;gap:22px;box-shadow:0 14px 30px rgba(40,10,60,.18)}
+.fact b{font-size:76px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.fact span{font-family:var(--mono);font-size:32px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* 6 · Vs. lo demás */
+.s-vs{background:var(--ink);color:var(--bg);padding:130px 120px}
+.s-vs .eyebrow{color:var(--ink-muted)}
+.s-vs h1 em{color:#77756f}
+.rows{margin:100px 0 0;display:flex;flex-direction:column;gap:30px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:46px;align-items:center;padding:40px 48px;border-radius:40px;border:3px solid #2c2c2a}
+.row .m{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;font-size:76px;font-weight:600;border:4px solid #4a4946;color:#8c8a84}
+.row h2{margin:0 0 4px;font-size:72px;font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.row p{margin:0;font-size:52px;color:#9a978f;letter-spacing:-.01em;line-height:1.2}
+.row.us{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.row.us .m{background:var(--ink);border-color:var(--ink);color:var(--yellow)}
+.row.us p{color:rgba(20,20,20,.72)}
+</style>
+</head>
+<body>
+
+<section class="slide s-como" id="como-funciona">
+  <p class="eyebrow">Cómo funciona</p>
+  <h1>Un toque y<br>listo.</h1>
+  <ol class="steps">
+    <li><span class="n" style="background:var(--yellow)">1</span><div><h2>Eliges las apps</h2><p>8 modos listos para usar.</p></div></li>
+    <li><span class="n" style="background:var(--lilac)">2</span><div><h2>Acercas el celular</h2><p>NFC. Sin contraseña.</p></div></li>
+    <li><span class="n" style="background:var(--mint)">3</span><div><h2>Dejas a Bloki lejos</h2><p>Para desbloquear, vuelves a él.</p></div></li>
+  </ol>
+  <img class="toy" src="../assets/bloki-lila-tejido.jpg" alt="">
+</section>
+
+<section class="slide s-app" id="app">
+  <p class="eyebrow">La app de Bloki</p>
+  <h1>Ves cuánto le ganas al celular.</h1>
+  <div class="facts">
+    <div class="fact"><b>6</b><span>apps bloqueadas</span></div>
+    <div class="fact"><b>17</b><span>intentos frenados</span></div>
+    <div class="fact"><b>1 vs 1</b><span>retos</span></div>
+  </div>
+  <div class="phones">
+    <img class="back" src="../assets/app-retos.jpg" alt="">
+    <img class="front" src="../assets/app-session.jpg" alt="">
+  </div>
+</section>
+
+<section class="slide s-vs" id="vs">
+  <p class="eyebrow">La diferencia</p>
+  <h1>Lo demás se quita <em>desde el mismo celular.</em></h1>
+  <div class="rows">
+    <div class="row"><span class="m">✕</span><div><h2>Límite de pantalla</h2><p>Se apaga con “Ignorar límite”.</p></div></div>
+    <div class="row"><span class="m">✕</span><div><h2>Borrar las apps</h2><p>Las vuelves a bajar en 40 segundos.</p></div></div>
+    <div class="row us"><span class="m">✓</span><div><h2>Bloki</h2><p>Solo se quita con Bloki, donde lo dejaste.</p></div></div>
+  </div>
+</section>
+
+</body>
+</html>
