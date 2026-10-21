@@ -95,3 +95,12 @@
   .close__img{height:auto;aspect-ratio:1;max-height:520px;border-radius:20px}
   .close__copy{padding:0}
 }
+
+/* La foto de la mano se ve completa: cuadrada en celular; en escritorio se ajusta sin recortar
+   y el fondo toma el blanco de la foto. La muñeca sale por abajo a la izquierda, por eso se ancla ahí. */
+.how__img{aspect-ratio:1;background:#f8f8f8}
+.how__img img{object-fit:contain;object-position:left bottom}
+@media(min-width:1024px){
+  .how__img{flex:none;min-height:0}
+  .how>div:last-child{align-self:center}
+}
