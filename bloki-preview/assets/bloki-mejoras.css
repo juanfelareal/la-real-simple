@@ -115,3 +115,16 @@
 }
 /* Versión ancha de la foto: la parte agregada es solo fondo, así que se ancla a la izquierda y nunca corta la mano */
 .how__img img{object-fit:cover;object-position:left center}
+
+/* Cómo funciona, nuevo orden: título arriba a todo el ancho; abajo la foto al lado de los pasos, con su mismo alto */
+.how__head .how__lead{margin-bottom:24px}
+.how__img{aspect-ratio:1;position:relative}
+.how__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center}
+@media(min-width:1024px){
+  .how{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head head" "img steps";gap:8px 56px;align-items:stretch}
+  .how__head{grid-area:head;display:block}
+  .how__head .how__lead{margin-bottom:28px}
+  .how__img{grid-area:img;flex:none;align-self:stretch;width:100%;height:auto;min-height:0;aspect-ratio:auto;margin:0}
+  .how__steps{grid-area:steps;align-self:start}
+  .how>div:first-child{display:block}
+}
