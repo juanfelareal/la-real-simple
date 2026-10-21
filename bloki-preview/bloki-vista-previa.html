@@ -151,6 +151,9 @@
    La muñeca sale por abajo a la izquierda, así que la imagen se pega a esa esquina. */
 .how__img{background:var(--stage)}
 .how__img img{inset:6% 6% 0 0;width:94%;height:94%;object-fit:contain;object-position:left bottom}
+/* Mano más hacia el centro-derecha; el corte de la muñeca se desvanece para que no se vea una línea recta */
+.how__img img{inset:4% 0 0 0;width:100%;height:96%;object-position:62% bottom;-webkit-mask-image:linear-gradient(to right,transparent 18%,#000 34%);mask-image:linear-gradient(to right,transparent 18%,#000 34%)}
+@media(max-width:1023px){.how__img img{-webkit-mask-image:linear-gradient(to right,transparent 8%,#000 22%);mask-image:linear-gradient(to right,transparent 8%,#000 22%)}}
 
 :root{color-scheme:light}
 </style>
