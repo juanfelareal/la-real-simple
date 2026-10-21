@@ -24,7 +24,7 @@ html = (ROOT / "index.html").read_text()
 head, body = html.split("<body>", 1)
 body = body.split("</body>", 1)[0]
 
-css = "\n".join((ASSETS / f).read_text() for f in ("bloki-landing.css", "bloki-shopify.css"))
+css = "\n".join((ASSETS / f).read_text() for f in ("bloki-landing.css", "bloki-shopify.css", "bloki-mejoras.css"))
 js = (ASSETS / "bloki-landing.js").read_text()
 
 # Sin IDs de variante el botón de compra muestra el aviso de vista previa en vez de ir al carrito.

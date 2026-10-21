@@ -1,0 +1,63 @@
+/* Mejoras de la parte baja de la landing (vista previa). Usa los mismos tokens de bloki-landing.css. */
+
+/* Sello de garantía */
+.seal60{flex:0 0 auto;width:64px;height:64px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;align-content:center;text-align:center;font-weight:600;font-size:20px;line-height:1;letter-spacing:-.03em;transform:rotate(-8deg)}
+.seal60 small{display:block;font-family:var(--mono);font-weight:400;font-size:7.5px;letter-spacing:.12em;margin-top:3px}
+.why__guar{grid-template-columns:64px 1fr}
+
+/* Cómo funciona */
+.how__lead{color:var(--ink-soft);margin:0 0 28px;max-width:46ch}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.step{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.step__n{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:18px}
+.step h3{margin:0 0 2px;font-size:16px;font-weight:600;letter-spacing:-.015em}
+.step p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.45}
+.box{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin:20px 0 0;padding:14px;border-radius:var(--r);background:var(--stage)}
+.box img{width:120px;height:120px;object-fit:cover;border-radius:10px}
+.box__k{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px}
+.box ul{list-style:none;margin:0;padding:0;font-size:13.5px;display:flex;flex-direction:column;gap:6px}
+.box li{display:grid;grid-template-columns:16px 1fr;gap:8px;line-height:1.35}
+.box li:before{content:"\2713";font-size:12px}
+
+/* Íconos con color en "¿Te suena familiar?" */
+.pain__ic{width:40px;height:40px;border-radius:50%;display:grid !important;place-items:center;background:var(--c,var(--stage))}
+.pain__ic svg{width:20px !important;height:20px !important;stroke-width:1.6}
+.pain:nth-child(1){--c:var(--yellow)}
+.pain:nth-child(2){--c:var(--lilac)}
+.pain:nth-child(3){--c:var(--mint)}
+.pain:nth-child(4){--c:var(--coral)}
+.figure{position:relative}
+.figure figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:#ffffffeb;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.4}
+.figure figcaption b{display:block;color:var(--ink);font-weight:600;font-size:13px}
+
+/* Comparación: columna Bloki en amarillo */
+.cmp .us{background:#FBEDB5}
+.cmp th.us{background:var(--yellow)}
+.cmp td.us .yes{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--yellow);font-size:12px}
+.cmp tr:last-child td.us{border-radius:0 0 10px 10px}
+
+/* Cierre con botón */
+.close{padding:0;border-top:0;background:var(--lilac)}
+.close__in{display:grid;gap:0}
+.close__img{aspect-ratio:1;max-height:520px;width:100%;overflow:hidden;background:var(--stage)}
+.close__img img{width:100%;height:100%;object-fit:cover;object-position:center 70%}
+.close__copy{padding:32px 20px 40px}
+.close .eyebrow{color:#14141499;margin-bottom:12px}
+.close h2{font-size:30px;line-height:1.1;font-weight:600;letter-spacing:-.035em;margin:0 0 10px}
+.close h2 em{font-style:normal;color:#14141499}
+.close p{margin:0 0 22px;color:#141414b8}
+.close p b{color:var(--ink);font-weight:600}
+.close .btn{width:100%}
+.trust{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.trust li{background:#ffffff8c;border-radius:12px;padding:12px 8px;text-align:center;font-size:11.5px;line-height:1.3;color:var(--ink)}
+.trust svg{display:block;width:20px;height:20px;margin:0 auto 6px}
+.foot .pay{margin:0 0 18px}
+
+@media(min-width:1024px){
+  .how{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+  #como-funciona .wrap{max-width:var(--w)}
+  .close__in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-width:1240px;margin:0 auto;align-items:center}
+  .close__img{max-height:none;height:100%}
+  .close__copy{padding:64px}
+  .close h2{font-size:44px}
+}
