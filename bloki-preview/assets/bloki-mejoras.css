@@ -1,9 +1,11 @@
 /* Mejoras de la parte baja de la landing (vista previa). Usa los mismos tokens de bloki-landing.css. */
 
-/* Sello de garantía */
-.seal60{flex:0 0 auto;width:64px;height:64px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;align-content:center;text-align:center;font-weight:600;font-size:20px;line-height:1;letter-spacing:-.03em;transform:rotate(-8deg)}
-.seal60 small{display:block;font-family:var(--mono);font-weight:400;font-size:7.5px;letter-spacing:.12em;margin-top:3px}
-.why__guar{grid-template-columns:64px 1fr}
+/* Garantía: toda la tarjeta en amarillo */
+.why__guar{background:var(--yellow);border-color:var(--yellow)}
+.why__guar .why__icon{background:var(--ink)}
+.why__guar .why__icon svg{color:var(--yellow)}
+.why__guar p{color:#141414b8}
+.why__guar p b{color:var(--ink)}
 
 /* Cómo funciona */
 .how__lead{color:var(--ink-soft);margin:0 0 28px;max-width:46ch}
