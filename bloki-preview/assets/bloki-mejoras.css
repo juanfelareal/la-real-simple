@@ -140,3 +140,6 @@
 .how__img img{inset:6% 4% 0 0;width:96%;height:94%;object-fit:contain;object-position:left bottom;-webkit-mask-image:none;mask-image:none}
 @media(max-width:1023px){.how__img img{-webkit-mask-image:none;mask-image:none}}
 @media(max-width:1023px){.how__img{aspect-ratio:5/4}}
+/* Punto medio: el brazo continúa fuera del borde izquierdo y la mano queda más al centro */
+.how__img img{inset:5% auto 0 -16%;width:116%;height:95%}
+@media(max-width:1023px){.how__img img{inset:5% auto 0 -26%;width:126%;height:95%}}
