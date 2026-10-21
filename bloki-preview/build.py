@@ -32,6 +32,8 @@ cfg_re = re.compile(r'(<script type="application/json" id="bk-config">)(.*?)(</s
 cfg = json.loads(cfg_re.search(body).group(2))
 cfg["variants"] = {}
 body = cfg_re.sub(lambda m: m.group(1) + json.dumps(cfg, ensure_ascii=False) + m.group(3), body)
+body = body.replace('<script defer src="assets/bloki-mejoras.js"></script>',
+                    "<script>\n" + (ASSETS / "bloki-mejoras.js").read_text() + "\n</script>")
 body = body.replace('<script defer src="assets/bloki-landing.js"></script>',
                     "<script>\n" + js + "\n</script>")
 
