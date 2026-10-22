@@ -143,3 +143,8 @@
 /* Punto medio: el brazo continúa fuera del borde izquierdo y la mano queda más al centro */
 .how__img img{inset:5% auto 0 -16%;width:116%;height:95%}
 @media(max-width:1023px){.how__img img{inset:5% auto 0 -26%;width:126%;height:95%}}
+
+/* Etiqueta larga de la galería ("personalizables") cabe en el ancho de la columna */
+.chip--long{letter-spacing:0;font-size:7.5px}
+@media(min-width:1024px){.chip--long{font-size:8.5px}}
+@media(max-width:380px){.chip--long{font-size:6.2px}}
