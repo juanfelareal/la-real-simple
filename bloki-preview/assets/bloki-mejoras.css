@@ -160,3 +160,11 @@
 @media(min-width:1024px){
   .split .reel{margin:0;height:100%;width:auto;max-width:none;justify-self:center;align-self:stretch}
 }
+
+/* El reel ya no empuja la altura: en escritorio toma el alto del texto y su ancho sale de 9:16 */
+.reel{background:none}
+.reel__in{position:relative;width:100%;height:100%;border-radius:var(--r);overflow:hidden;background:#0f1a1c}
+@media(min-width:1024px){
+  .split .reel{position:relative;height:auto;width:100%;aspect-ratio:auto;align-self:stretch;overflow:visible;border-radius:0;min-height:0}
+  .split .reel .reel__in{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;aspect-ratio:9/16}
+}
