@@ -34,3 +34,17 @@
     btn.setAttribute('aria-label', v.muted ? 'Activar sonido' : 'Silenciar');
   });
 })();
+
+// Cierre: los Bloki caen cuando el bloque entra en pantalla (sin JS o con movimiento reducido se ven quietos)
+(function () {
+  var box = document.querySelector('.drop');
+  if (!box || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  box.classList.add('is-armed');
+  var io = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    box.classList.add('is-on');
+    io.disconnect();
+  }, { threshold: 0.45 });
+  io.observe(box);
+})();
