@@ -21,3 +21,16 @@
     if (on) showColor(on.dataset.color);
   });
 })();
+
+// Botón de sonido del reel
+(function () {
+  var btn = document.querySelector('.reel__sound');
+  if (!btn) return;
+  var v = btn.parentNode.querySelector('video');
+  btn.addEventListener('click', function () {
+    v.muted = !v.muted;
+    if (!v.muted) v.play();
+    btn.setAttribute('aria-pressed', String(!v.muted));
+    btn.setAttribute('aria-label', v.muted ? 'Activar sonido' : 'Silenciar');
+  });
+})();

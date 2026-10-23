@@ -47,7 +47,7 @@ out = f"""<title>Bloki vista previa</title>
 </style>
 {body.strip()}
 """
-out = re.sub(r'assets/([\w.-]+\.(?:jpg|png|svg|webp))', lambda m: data_uri(m.group(1)), out)
+out = re.sub(r'assets/([\w.-]+\.(?:jpg|png|svg|webp|mp4|webm))', lambda m: data_uri(m.group(1)), out)
 
 Path(sys.argv[1]).write_text(out)
 print(f"{sys.argv[1]}: {len(out) // 1024} KB")
