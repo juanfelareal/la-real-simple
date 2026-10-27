@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Bloki · portada animada post 3</title>
+<!-- Se graba a video con render-video.js. Misma composición que #p3-1 de posts.html. -->
+<style>
+@font-face{font-family:"Space Mono";src:url(../carrusel/fonts/SpaceMono-Regular.ttf);font-weight:400}
+@font-face{font-family:"Space Mono";src:url(../carrusel/fonts/SpaceMono-Bold.ttf);font-weight:700}
+:root{--ink:#141414;--ink-soft:#6E6C67;--yellow:#F4CB3B;--sans:"Inter",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+.ig{width:1080px;height:1350px;position:relative;overflow:hidden;padding:84px 88px;background:linear-gradient(180deg,#F4EAE0 0%,#F1E9DE 60%,#F6EDE4 100%)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px}
+.top img{height:34px;width:auto}
+.top span{font-family:var(--mono);font-size:24px;letter-spacing:.12em;color:var(--ink-soft)}
+h1{margin:0;font-size:92px;line-height:1.02;font-weight:600;letter-spacing:-.045em}
+h1 em{font-style:normal;color:#6a6862}
+.badge{display:inline-block;margin-top:36px;background:var(--ink);color:var(--yellow);font-family:var(--mono);font-weight:700;font-size:28px;letter-spacing:.07em;text-transform:uppercase;border-radius:999px;padding:18px 34px}
+.stage{position:absolute;left:170px;right:170px;bottom:30px;aspect-ratio:1}
+.stage img{position:absolute;height:auto;opacity:0}
+.go .stage img{animation:bk-drop 1s cubic-bezier(.35,0,.45,1) var(--d) both}
+.txt{opacity:0;transform:translateY(14px)}
+.go .txt{opacity:1;transform:none;transition:opacity .6s ease 1.9s,transform .6s ease 1.9s}
+.go .txt.b{transition-delay:2.3s}
+@keyframes bk-drop{
+  0%{opacity:0;transform:translateY(-170%)}
+  12%{opacity:1}
+  58%{transform:translateY(0)}
+  70%{transform:translateY(-9%)}
+  82%{transform:translateY(0)}
+  91%{transform:translateY(-2.5%)}
+  100%{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+<section class="ig" id="ig">
+  <div class="top"><img src="../assets/bloki-wordmark.png" alt="Bloki"><span>1/5</span></div>
+  <h1 class="txt">Uno para ti, <em>dos para regalar.</em></h1>
+  <span class="badge txt b">Combo x3 · ahorras $69.800 + envío gratis</span>
+  <div class="stage">
+    <img src="../assets/caida-amarillo.webp" alt="" style="left:3.76%;top:53.71%;width:29.39%;--d:.3s">
+    <img src="../assets/caida-morado.webp" alt="" style="left:33.2%;top:52.54%;width:30.18%;--d:.65s">
+    <img src="../assets/caida-negro.webp" alt="" style="left:63.62%;top:52.88%;width:30.81%;--d:1s">
+  </div>
+</section>
+</body>
+</html>
