@@ -1,0 +1,28 @@
+BLOKI · IMÁGENES BASE (sin textos)
+Todas las imágenes que usa la página, en su mejor resolución y sin textos encima.
+
+01-producto
+  bloki-amarillo-solo.jpg / bloki-morado-solo.jpg / bloki-negro-solo.jpg   2000×2000 · fotos de producto (enviadas por ustedes)
+  bloki-morado-fondo-blanco.jpg                                             1400×1400 · foto de la tienda actual
+  bloki-amarillo-en-la-mano.jpg                                             1200×1200 · foto de la tienda actual
+  bloki-amarillo-en-la-mano-brazo-completo.jpg                              2000×1116 · enviada por ustedes
+  bloki-tres-colores.jpg                                                    2048×2048 · GENERADA CON IA (Higgsfield)
+
+02-lifestyle
+  amigos-backgammon-con-bloki.jpg          2000×2000 · enviada por ustedes
+  celular-estadisticas-cafe.jpg            900×900   · del HTML que enviaron (la letra pequeña de la pantalla se ve rara de cerca)
+  bloki-negro-escritorio.jpg               1400×1400 · foto de la tienda actual
+  bloki-morado-con-la-app.jpg              1400×1400 · foto de la tienda actual
+  bloki-sobre-el-celular-toque.jpg         2048×2048 · GENERADA CON IA · Bloki sobre la parte de arriba del celular
+  bloki-junto-al-celular-bloqueado.jpg     2048×2048 · GENERADA CON IA
+
+03-sin-fondo  (PNG con fondo transparente, recortados de las fotos de arriba)
+  bloki-amarillo/morado/negro-sin-fondo.png    de bloki-tres-colores.jpg (generada con IA), con su sombra
+  bloki-negro-solo-sin-fondo.png               de bloki-negro-solo.jpg
+  bloki-amarillo-en-la-mano-sin-fondo.png      de bloki-amarillo-en-la-mano-brazo-completo.jpg
+
+04-app
+  app-sesion-bloqueando.jpg / app-retos.jpg    capturas de la app (422×900, tienen el texto propio de la app)
+
+05-logo
+  bloki-logo.png
