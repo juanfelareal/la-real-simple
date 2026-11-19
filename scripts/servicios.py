@@ -253,11 +253,11 @@ ORBIT = '''
     </div>
   </section>'''.replace('{bars}', ''.join(f'<span style="height:{h}%"></span><span class="m" style="height:{m}%"></span>' for h, m in [(48,14),(62,15),(55,13),(70,16),(66,15),(82,18),(74,17),(90,19),(78,18),(95,20)]))
 
+# Solo videos hechos por LA REAL. Los de Adriza no los hicimos nosotros: no van.
 VIDEOS = [
-    ('si-sammy', 'Sin Intermediarios'), ('adriza-berberina', 'Adriza'), ('A1_acrilico-no-se-acaba', 'Gratu'),
-    ('si-yeyo', 'Sin Intermediarios'), ('adriza-magnesio', 'Adriza'),
-    ('C5_cosido-antes-despues', 'Gratu'), ('si-natalia', 'Sin Intermediarios'), ('adriza-ashwagandha', 'Adriza'),
-    ('si-gabriela', 'Sin Intermediarios'),
+    ('si-sammy', 'Sin Intermediarios'), ('A1_acrilico-no-se-acaba', 'Gratu'),
+    ('si-yeyo', 'Sin Intermediarios'), ('C5_cosido-antes-despues', 'Gratu'),
+    ('si-natalia', 'Sin Intermediarios'), ('si-gabriela', 'Sin Intermediarios'),
 ]
 
 
