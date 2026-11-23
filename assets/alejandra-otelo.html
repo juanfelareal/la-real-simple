@@ -17,6 +17,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="facebook-domain-verification" content="ou4h66syyztvr764torqppfa8drp86" />
 <title>Alejandra Otelo — Ceremonias simbólicas de boda</title>
 <meta name="description" content="Construyo cada ceremonia a partir de su historia, de sus vínculos y de lo que significa para ustedes decidir casarse. La escribo y la diseño desde cero. Bucaramanga y toda Colombia.">
 <meta property="og:title" content="Alejandra Otelo — Ceremonias simbólicas de boda">
@@ -2811,6 +2812,23 @@ html[lang="en"] .solo-es { display: none; }
 .enlace--pendiente { opacity: .6; }
 .enlace--pendiente .enlace__ir { color: var(--vino-suave); }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2383500919065553');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2383500919065553&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -4536,6 +4554,17 @@ html[lang="en"] .solo-es { display: none; }
   });
 })();
 
+</script>
+<!-- Eventos del Pixel de Meta: agendar (Calendly) = Schedule; Instagram / WhatsApp / correo = Contact. -->
+<script>
+document.addEventListener("click", function (e) {
+  if (typeof window.fbq !== "function" || !e.target.closest) return;
+  var a = e.target.closest("a[href]");
+  if (!a) return;
+  var h = a.getAttribute("href") || "";
+  if (h.indexOf("calendly.com") > -1) window.fbq("track", "Schedule");
+  else if (/wa\.me|whatsapp|instagram\.com|^mailto:/.test(h)) window.fbq("track", "Contact");
+});
 </script>
 </body>
 </html>
