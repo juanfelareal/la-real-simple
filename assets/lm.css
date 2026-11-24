@@ -1,0 +1,37 @@
+/* Lead magnets y /admin: formularios y tablas sobre el sistema de la landing */
+.lm-main{padding:120px 0 96px}
+.lm-narrow{max-width:560px}
+.lm-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+.lm-form{display:grid;gap:14px;margin-top:28px}
+.lm-field{display:grid;gap:6px}
+.lm-field span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lm-field input,.lm-field select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-md);padding:13px 14px;outline:none}
+.lm-field input:focus,.lm-field select:focus{border-color:var(--ink)}
+.lm-msg{font-size:14px;color:var(--ink-2);min-height:20px}
+.lm-msg.err{color:#9A3412}
+.lm-fine{font-size:13px;color:var(--muted);line-height:1.5}
+.lm-list{list-style:none;display:grid;gap:10px;margin-top:24px}
+.lm-list li{display:flex;gap:12px;font-size:16px;color:var(--ink-2);line-height:1.45}
+.lm-list li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px}
+.lm-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}
+.lm-kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 22px}
+.lm-kpi small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lm-kpi b{display:block;margin-top:10px;font-size:40px;line-height:1;font-weight:300;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.lm-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.lm-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface)}
+.lm-table{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
+.lm-table th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:14px 18px;border-bottom:1px solid var(--line-2);white-space:nowrap}
+.lm-table td{padding:14px 18px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+.lm-table tr:last-child td{border-bottom:0}
+.lm-table td.n,.lm-table th.n{text-align:right;font-variant-numeric:tabular-nums}
+.lm-table td b{color:var(--ink);font-weight:500}
+.lm-table tbody tr[data-id]{cursor:pointer}
+.lm-table tbody tr[data-id]:hover td{background:rgba(18,18,18,.03)}
+.lm-link{background:none;border:0;font:inherit;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+.lm-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.lm-row .lm-field{flex:1;min-width:150px}
+.lm-sec{margin-top:48px}
+.lm-sec h2{font-size:26px;font-weight:500;letter-spacing:-.025em;margin-bottom:16px}
+.lm-empty{padding:28px;color:var(--muted);font-size:15px}
+[hidden]{display:none!important}
+@media(max-width:760px){.lm-kpis{grid-template-columns:1fr 1fr}.lm-kpi b{font-size:32px}.lm-main{padding-top:96px}}

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1382774486651868');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
+/></noscript>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Skill de Claude: auditor de cross-selling · Juanfe León</title>
+<meta name="description" content="Un skill de Claude que revisa tu tienda y te dice qué ofertas de cross-selling y upselling te faltan, con tus productos y tus precios." />
+<meta name="theme-color" content="#F3F1ED" />
+<meta property="og:title" content="Descubre cuánta plata deja tu tienda sobre la mesa" />
+<meta property="og:description" content="Skill de Claude gratis: audita tu ecommerce contra 7 palancas de cross-selling y upselling." />
+<meta property="og:image" content="https://landing.larealmarketing.com/assets/icon-192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/lr-min.css" />
+<link rel="stylesheet" href="assets/lm.css" />
+<link rel="stylesheet" href="assets/cross.css" />
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="./" class="brand"><img src="assets/brand/iso-navy-sm.png" alt="">LA REAL</a>
+    <a class="btn btn-ghost" href="./#servicios">Ver servicios</a>
+  </div>
+</header>
+<main class="cx">
+  <section class="wrap cx-hero">
+    <div class="cx-copy">
+      <p class="label hero-label"><span class="dot"></span>Skill de Claude · Gratis</p>
+      <h1 class="h1">Descubre cuánta plata deja <b>tu tienda sobre la mesa.</b></h1>
+      <p class="lead">Un skill de Claude que revisa tu ecommerce y te dice qué ofertas de cross-selling y upselling te faltan, con tus productos y tus precios.</p>
+      <ul class="lm-list">
+        <li>Revisa tu tienda contra las 7 palancas que usamos en GRATU.</li>
+        <li>Te da las 3 acciones para esta semana, con el texto listo para pegar.</li>
+        <li>Calcula cuánto puede subir tu ticket promedio.</li>
+      </ul>
+
+      <form class="cx-form" id="lm-form" novalidate>
+        <div class="cx-two">
+          <label class="lm-field"><span>Nombre</span><input name="nombre" autocomplete="given-name" maxlength="120" required /></label>
+          <label class="lm-field"><span>Correo</span><input name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" required /></label>
+        </div>
+        <label class="lm-field"><span>Link de tu tienda <em class="cx-opt">(opcional)</em></span><input name="tienda" inputmode="url" autocomplete="url" maxlength="300" placeholder="tutienda.com" /></label>
+        <label class="cx-check"><input type="checkbox" name="ofertas" id="lm-ofertas" checked /><span id="lm-ofertas-txt">Quiero recibir ideas y ofertas de Juanfe por email. <b>Cero spam</b>, y te sales cuando quieras.</span></label>
+        <button class="btn btn-dark" type="submit" id="lm-send">Quiero el skill</button>
+        <p class="lm-msg" id="lm-msg" role="status"></p>
+        <p class="lm-fine">LA REAL MARKETING S.A.S. guarda tu nombre y tu correo para enviarte el skill y, si dejas la casilla marcada, para escribirte. <a href="politica-de-datos.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Política de tratamiento de datos</a>.</p>
+      </form>
+
+      <div class="cx-ok" id="lm-ok" hidden>
+        <p class="label"><span class="dot"></span>Listo</p>
+        <h2 class="h2">Tu skill está <b>listo.</b></h2>
+        <a class="btn btn-dark" id="lm-dl" href="assets/lm/auditor-cross-selling.zip" download>Descargar el skill (.zip)</a>
+        <div class="cx-steps">
+          <div class="cx-step"><small>Paso 1</small><h3>Activa la ejecución de código</h3><p>En Claude, Settings › Capabilities.</p>
+            <div class="cx-ui"><div class="path">Settings › Capabilities</div><div class="cx-tog"><span>Code execution and file creation</span><i class="cx-sw"></i></div></div></div>
+          <div class="cx-step"><small>Paso 2</small><h3>Sube el skill</h3><p>Customize › Skills › + › Upload a skill. Sube el .zip tal cual.</p>
+            <div class="cx-ui"><div class="path">Customize › Skills › Upload a skill</div><div class="cx-file">auditor-cross-selling.zip</div></div></div>
+          <div class="cx-step"><small>Paso 3</small><h3>Pídele la auditoría</h3><p>Escríbele en un chat nuevo:</p>
+            <div class="cx-ui"><div class="cx-bub"><span id="lm-ask"></span><i class="car"></i></div></div></div>
+        </div>
+        <p class="lm-fine" style="margin-top:18px">Funciona en todos los planes de Claude, incluido el gratis.</p>
+        <a class="cx-more" href="./#servicios">Mientras tanto, mira cómo trabajamos en LA REAL →</a>
+      </div>
+    </div>
+
+    <aside class="cx-demo" aria-label="Ejemplo de la auditoría">
+      <div class="cx-bar"><i></i><i></i><i></i><span>Auditoría · gratu.co</span></div>
+      <div class="cx-score">
+        <div><small>Puntaje</small><b><span id="cx-n">0</span><em> / 7</em></b></div>
+        <p>palancas de cross-selling y upselling funcionando</p>
+      </div>
+      <ul class="cx-rows">
+        <li><span>Escalera de formatos</span><span class="cx-st ok">La tiene</span></li>
+        <li><span>Precio por cantidad</span><span class="cx-st ok">La tiene</span></li>
+        <li><span>Complementos junto al botón</span><span class="cx-st ok">La tiene</span></li>
+        <li><span>Kit armado</span><span class="cx-st mid">A medias</span></li>
+        <li><span>Umbral de envío gratis</span><span class="cx-st mid">A medias</span></li>
+        <li><span>Consumible y recompra</span><span class="cx-st mid">A medias</span></li>
+        <li><span>Recomendados al final</span><span class="cx-st ok">La tiene</span></li>
+      </ul>
+      <div class="cx-imp">
+        <div class="cx-imp-top"><span>Tu ticket promedio puede subir</span><b>+5 % a +11 %</b></div>
+        <div class="cx-track"><div class="cx-fill" id="cx-fill"></div></div>
+      </div>
+      <p class="cx-cap">Ejemplo real: así salió nuestra propia tienda</p>
+    </aside>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/lm-config.js"></script>
+<script>
+(function () {
+  // demo animada del reporte
+  var rows = document.querySelectorAll('.cx-rows li'), n = document.getElementById('cx-n'), fill = document.getElementById('cx-fill');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function play() {
+    rows.forEach(function (li, i) { setTimeout(function () { li.classList.add('on'); }, still ? 0 : 250 + i * 180); });
+    var t0 = null, dur = still ? 1 : 1500;
+    (function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / dur), v = 5.5 * (1 - Math.pow(1 - p, 3));
+      n.textContent = (Math.round(v * 2) / 2).toLocaleString('es-CO', { minimumFractionDigits: v % 1 ? 1 : 0 }); if (p < 1) requestAnimationFrame(step); })(performance.now());
+    setTimeout(function () { fill.style.width = '62%'; }, still ? 0 : 1500);
+  }
+  play();
+
+  // registro
+  var SLUG = 'cross';
+  var db = supabase.createClient(LM_CONFIG.url, LM_CONFIG.key);
+  var form = document.getElementById('lm-form'), msg = document.getElementById('lm-msg'), btn = document.getElementById('lm-send');
+  var q = new URLSearchParams(location.search), magnet = null;
+  db.from('lead_magnets').select('id,url_recurso').eq('slug', SLUG).maybeSingle().then(function (r) { magnet = r.data; });
+  function typeAsk(store) {
+    var txt = 'Audita mi tienda ' + (store || 'tutienda.com'), el = document.getElementById('lm-ask'), i = 0;
+    (function tick() { el.textContent = txt.slice(0, ++i); if (i < txt.length) setTimeout(tick, 45); })();
+  }
+  function done(store) {
+    form.hidden = true; document.querySelector('.cx-hero').classList.add('done');
+    var ok = document.getElementById('lm-ok');
+    if (magnet && magnet.url_recurso && location.protocol !== 'file:') document.getElementById('lm-dl').href = magnet.url_recurso;
+    ok.hidden = false; ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { ok.classList.add('go'); }, 600); typeAsk(store);
+    if (window.fbq) fbq('track', 'Lead');
+  }
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); msg.className = 'lm-msg'; msg.textContent = '';
+    var nombre = form.nombre.value.trim(), email = form.email.value.trim().toLowerCase();
+    var tienda = form.tienda.value.trim().replace(/^https?:\/\//i, '').replace(/\/$/, '').slice(0, 300);
+    var acepta = document.getElementById('lm-ofertas').checked;
+    if (!nombre || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.className = 'lm-msg err'; msg.textContent = 'Escribe tu nombre y un correo válido.'; return; }
+    if (!magnet) { msg.className = 'lm-msg err'; msg.textContent = 'No pudimos cargar el skill. Recarga la página e intenta de nuevo.'; return; }
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    var r = await db.from('leads').insert({ lead_magnet_id: magnet.id, nombre: nombre, email: email, tienda_url: tienda || null,
+      acepta_ofertas: acepta, consentimiento_texto: acepta ? document.getElementById('lm-ofertas-txt').textContent.trim() : null,
+      utm_source: (q.get('utm_source') || '').slice(0, 120) || null, utm_medium: (q.get('utm_medium') || '').slice(0, 120) || null, utm_campaign: (q.get('utm_campaign') || '').slice(0, 120) || null });
+    // 23505 = ese correo ya estaba registrado en este lead magnet: igual se lo entregamos
+    if (r.error && r.error.code !== '23505') { btn.disabled = false; btn.textContent = 'Quiero el skill'; msg.className = 'lm-msg err'; msg.textContent = 'No se pudo guardar. Intenta de nuevo en un momento.'; return; }
+    done(tienda);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Admin · Lead magnets · LA REAL</title>
+<meta name="theme-color" content="#F3F1ED" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/lr-min.css" />
+<link rel="stylesheet" href="assets/lm.css" />
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="./" class="brand"><img src="assets/brand/iso-navy-sm.png" alt="">LA REAL</a>
+    <button class="btn btn-ghost" id="salir" hidden>Salir</button>
+  </div>
+</header>
+<main class="lm-main">
+
+  <!-- Entrada -->
+  <section class="wrap lm-narrow" id="v-login" hidden>
+    <p class="label"><span class="dot"></span>Admin</p>
+    <h1 class="h1" style="font-size:52px;margin-top:14px">Lead <b>magnets.</b></h1>
+    <form class="lm-form" id="f-login">
+      <label class="lm-field"><span>Correo</span><input name="email" type="email" autocomplete="username" required /></label>
+      <label class="lm-field"><span>Clave</span><input name="clave" type="password" autocomplete="current-password" minlength="10" required /></label>
+      <button class="btn btn-dark" type="submit">Entrar</button>
+      <p class="lm-msg" id="m-login" role="status"></p>
+      <p class="lm-fine"><button type="button" class="lm-link" id="b-crear">Primera vez: crear mi clave</button> · <button type="button" class="lm-link" id="b-olvide">Olvidé mi clave</button></p>
+    </form>
+  </section>
+
+  <!-- Nueva clave (llega desde el enlace del correo) -->
+  <section class="wrap lm-narrow" id="v-clave" hidden>
+    <p class="label"><span class="dot"></span>Admin</p>
+    <h1 class="h1" style="font-size:52px;margin-top:14px">Nueva <b>clave.</b></h1>
+    <form class="lm-form" id="f-clave">
+      <label class="lm-field"><span>Clave nueva (mínimo 10 caracteres)</span><input name="clave" type="password" autocomplete="new-password" minlength="10" required /></label>
+      <button class="btn btn-dark" type="submit">Guardar clave</button>
+      <p class="lm-msg" id="m-clave" role="status"></p>
+    </form>
+  </section>
+
+  <!-- Sin permiso -->
+  <section class="wrap lm-narrow" id="v-no" hidden>
+    <h1 class="h1" style="font-size:44px">Este correo <b>no tiene acceso.</b></h1>
+    <p class="lead" style="margin-top:14px">Entraste, pero tu correo no está en la lista de administradores.</p>
+  </section>
+
+  <!-- Tablero -->
+  <section class="wrap" id="v-panel" hidden>
+    <div class="lm-head">
+      <div><p class="label"><span class="dot"></span>Admin</p><h1 class="h1" style="font-size:52px;margin-top:14px">Lead <b>magnets.</b></h1></div>
+      <button class="btn btn-ghost" id="b-csv">Descargar contactos (CSV)</button>
+    </div>
+    <div class="lm-kpis">
+      <div class="lm-kpi"><small>Contactos</small><b id="k-leads">0</b></div>
+      <div class="lm-kpi"><small>Últimos 7 días</small><b id="k-7">0</b></div>
+      <div class="lm-kpi"><small>Con ingresos</small><b id="k-cli">0</b></div>
+      <div class="lm-kpi"><small>Ingresos</small><b id="k-plata">$0</b></div>
+    </div>
+    <div class="lm-tablewrap"><table class="lm-table">
+      <thead><tr><th>Lead magnet</th><th>Palabra</th><th class="n">Contactos</th><th class="n">7 días</th><th class="n">Con ingresos</th><th class="n">Ingresos</th><th class="n">Por contacto</th></tr></thead>
+      <tbody id="t-magnets"></tbody>
+    </table></div>
+    <p class="lm-fine" style="margin-top:10px">Los ingresos se muestran en pesos. Los que registres en dólares aparecen aparte en el detalle.</p>
+
+    <div class="lm-sec" id="s-detalle" hidden>
+      <h2 id="d-titulo"></h2>
+      <p class="lm-fine" id="d-link" style="margin-bottom:14px"></p>
+      <div class="lm-tablewrap"><table class="lm-table">
+        <thead><tr><th>Nombre</th><th>Correo</th><th>Origen</th><th>Fecha</th><th class="n">Ingresos</th><th></th></tr></thead>
+        <tbody id="t-leads"></tbody>
+      </table></div>
+      <form class="lm-card lm-row" id="f-ingreso" hidden style="margin-top:14px">
+        <label class="lm-field"><span id="i-quien">Ingreso</span><input name="monto" inputmode="decimal" placeholder="Monto" required /></label>
+        <label class="lm-field" style="max-width:120px"><span>Moneda</span><select name="moneda"><option>COP</option><option>USD</option></select></label>
+        <label class="lm-field"><span>Fecha</span><input name="fecha" type="date" required /></label>
+        <label class="lm-field"><span>Concepto</span><input name="concepto" maxlength="200" placeholder="Growth Partner, mes 1" /></label>
+        <button class="btn btn-dark" type="submit">Guardar</button>
+      </form>
+    </div>
+
+    <div class="lm-sec">
+      <h2>Nuevo lead magnet</h2>
+      <form class="lm-card lm-row" id="f-magnet">
+        <label class="lm-field"><span>Nombre</span><input name="nombre" maxlength="160" required /></label>
+        <label class="lm-field"><span>Dirección (ej. cross)</span><input name="slug" pattern="[a-z0-9-]{2,60}" required /></label>
+        <label class="lm-field"><span>Palabra clave</span><input name="palabra" maxlength="40" /></label>
+        <label class="lm-field"><span>Enlace del recurso</span><input name="url" type="url" maxlength="500" /></label>
+        <button class="btn btn-dark" type="submit">Crear</button>
+      </form>
+      <p class="lm-msg" id="m-panel" role="status"></p>
+    </div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/lm-config.js"></script>
+<script>
+(function () {
+  var db = supabase.createClient(LM_CONFIG.url, LM_CONFIG.key);
+  var $ = function (id) { return document.getElementById(id); };
+  var vistas = ['v-login', 'v-clave', 'v-no', 'v-panel'];
+  function ver(v) { vistas.forEach(function (x) { $(x).hidden = x !== v; }); $('salir').hidden = (v === 'v-login' || v === 'v-clave'); }
+  function txt(el, t, err) { el.className = 'lm-msg' + (err ? ' err' : ''); el.textContent = t; }
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]; }); };
+  var cop = function (n) { return '$' + Math.round(n).toLocaleString('es-CO'); };
+  var fecha = function (d) { return new Date(d).toLocaleDateString('es-CO', { day: 'numeric', month: 'short', year: 'numeric' }); };
+  var D = { magnets: [], leads: [], ingresos: [] }, sel = null, leadSel = null, recuperando = false;
+
+  db.auth.onAuthStateChange(function (ev, s) {
+    if (ev === 'PASSWORD_RECOVERY') { recuperando = true; ver('v-clave'); return; }
+    if (recuperando) return;
+    if (s) cargar(); else ver('v-login');
+  });
+
+  $('f-login').addEventListener('submit', async function (e) {
+    e.preventDefault(); var f = e.target; txt($('m-login'), 'Entrando…');
+    var r = await db.auth.signInWithPassword({ email: f.email.value.trim(), password: f.clave.value });
+    if (r.error) txt($('m-login'), 'Correo o clave incorrectos, o falta confirmar el correo.', true); else txt($('m-login'), '');
+  });
+  $('b-crear').addEventListener('click', async function () {
+    var f = $('f-login'), email = f.email.value.trim(), clave = f.clave.value;
+    if (!email || clave.length < 10) return txt($('m-login'), 'Escribe tu correo y una clave de al menos 10 caracteres, y vuelve a tocar aquí.', true);
+    var r = await db.auth.signUp({ email: email, password: clave, options: { emailRedirectTo: location.origin + '/admin' } });
+    txt($('m-login'), r.error ? 'No se pudo crear: ' + r.error.message : 'Te enviamos un correo para confirmar. Ábrelo y vuelve a entrar.', !!r.error);
+  });
+  $('b-olvide').addEventListener('click', async function () {
+    var email = $('f-login').email.value.trim();
+    if (!email) return txt($('m-login'), 'Escribe tu correo y vuelve a tocar aquí.', true);
+    await db.auth.resetPasswordForEmail(email, { redirectTo: location.origin + '/admin' });
+    txt($('m-login'), 'Si ese correo tiene acceso, le llegó un enlace para cambiar la clave.');
+  });
+  $('f-clave').addEventListener('submit', async function (e) {
+    e.preventDefault(); var r = await db.auth.updateUser({ password: e.target.clave.value });
+    if (r.error) return txt($('m-clave'), 'No se pudo guardar: ' + r.error.message, true);
+    recuperando = false; cargar();
+  });
+  $('salir').addEventListener('click', function () { db.auth.signOut(); });
+
+  async function cargar() {
+    var a = await db.from('admins').select('email').limit(1);
+    if (a.error || !a.data.length) return ver('v-no');
+    var r = await Promise.all([
+      db.from('lead_magnets').select('*').order('created_at', { ascending: false }),
+      db.from('leads').select('*').order('created_at', { ascending: false }).limit(10000),
+      db.from('ingresos').select('*').limit(10000)]);
+    if (r.some(function (x) { return x.error; })) { ver('v-panel'); return txt($('m-panel'), 'No se pudieron leer los datos. Recarga la página.', true); }
+    D = { magnets: r[0].data, leads: r[1].data, ingresos: r[2].data }; pintar(); ver('v-panel');
+  }
+  function plataDe(leadIds, moneda) {
+    return D.ingresos.filter(function (i) { return leadIds.has(i.lead_id) && i.moneda === moneda; }).reduce(function (s, i) { return s + Number(i.monto); }, 0);
+  }
+  function pintar() {
+    var hace7 = Date.now() - 7 * 864e5, pagaron = new Set(D.ingresos.map(function (i) { return i.lead_id; }));
+    $('k-leads').textContent = D.leads.length.toLocaleString('es-CO');
+    $('k-7').textContent = D.leads.filter(function (l) { return new Date(l.created_at) > hace7; }).length.toLocaleString('es-CO');
+    $('k-cli').textContent = D.leads.filter(function (l) { return pagaron.has(l.id); }).length.toLocaleString('es-CO');
+    $('k-plata').textContent = cop(plataDe(new Set(D.leads.map(function (l) { return l.id; })), 'COP'));
+    $('t-magnets').innerHTML = D.magnets.length ? D.magnets.map(function (m) {
+      var ls = D.leads.filter(function (l) { return l.lead_magnet_id === m.id; }), ids = new Set(ls.map(function (l) { return l.id; })), p = plataDe(ids, 'COP');
+      return '<tr data-id="' + m.id + '"><td><b>' + esc(m.nombre) + '</b><br><span class="lm-fine">/' + esc(m.slug) + '</span></td><td>' + esc(m.palabra_clave || '') + '</td><td class="n">' + ls.length + '</td><td class="n">' +
+        ls.filter(function (l) { return new Date(l.created_at) > hace7; }).length + '</td><td class="n">' + ls.filter(function (l) { return pagaron.has(l.id); }).length + '</td><td class="n">' + cop(p) + '</td><td class="n">' + (ls.length ? cop(p / ls.length) : '') + '</td></tr>';
+    }).join('') : '<tr><td colspan="7" class="lm-empty">Todavía no hay lead magnets. Crea el primero abajo.</td></tr>';
+    if (sel) detalle(sel);
+  }
+  function detalle(id) {
+    sel = id; var m = D.magnets.find(function (x) { return x.id === id; }); if (!m) return;
+    var ls = D.leads.filter(function (l) { return l.lead_magnet_id === id; }), ids = new Set(ls.map(function (l) { return l.id; })), usd = plataDe(ids, 'USD');
+    $('d-titulo').textContent = m.nombre;
+    $('d-link').textContent = location.origin + '/' + m.slug + (usd ? ' · Ingresos en dólares: US$' + usd.toLocaleString('es-CO') : '');
+    $('t-leads').innerHTML = ls.length ? ls.map(function (l) {
+      var p = plataDe(new Set([l.id]), 'COP');
+      return '<tr><td><b>' + esc(l.nombre || '') + '</b></td><td>' + esc(l.email) + '</td><td>' + esc(l.utm_source || '') + '</td><td>' + fecha(l.created_at) + '</td><td class="n">' + (p ? cop(p) : '') + '</td><td><button class="lm-link" data-lead="' + l.id + '">Registrar ingreso</button></td></tr>';
+    }).join('') : '<tr><td colspan="6" class="lm-empty">Nadie se ha registrado todavía.</td></tr>';
+    $('s-detalle').hidden = false; $('f-ingreso').hidden = true;
+  }
+  $('t-magnets').addEventListener('click', function (e) { var tr = e.target.closest('tr[data-id]'); if (tr) { detalle(tr.dataset.id); $('s-detalle').scrollIntoView({ behavior: 'smooth' }); } });
+  $('t-leads').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-lead]'); if (!b) return;
+    leadSel = b.dataset.lead; var l = D.leads.find(function (x) { return x.id === leadSel; });
+    $('i-quien').textContent = 'Ingreso de ' + (l.nombre || l.email); var f = $('f-ingreso'); f.reset(); f.fecha.value = new Date().toISOString().slice(0, 10); f.hidden = false; f.monto.focus();
+  });
+  $('f-ingreso').addEventListener('submit', async function (e) {
+    e.preventDefault(); var f = e.target, monto = Number(String(f.monto.value).replace(/[^\d.,]/g, '').replace(/\./g, '').replace(',', '.'));
+    if (!(monto > 0)) return txt($('m-panel'), 'Escribe un monto mayor que cero.', true);
+    var r = await db.from('ingresos').insert({ lead_id: leadSel, monto: monto, moneda: f.moneda.value, fecha: f.fecha.value, concepto: f.concepto.value.trim() || null });
+    if (r.error) return txt($('m-panel'), 'No se pudo guardar el ingreso.', true);
+    txt($('m-panel'), 'Ingreso guardado.'); cargar();
+  });
+  $('f-magnet').addEventListener('submit', async function (e) {
+    e.preventDefault(); var f = e.target;
+    var r = await db.from('lead_magnets').insert({ nombre: f.nombre.value.trim(), slug: f.slug.value.trim(), palabra_clave: f.palabra.value.trim() || null, url_recurso: f.url.value.trim() || null });
+    if (r.error) return txt($('m-panel'), r.error.code === '23505' ? 'Ya existe un lead magnet con esa dirección.' : 'No se pudo crear.', true);
+    f.reset(); txt($('m-panel'), 'Lead magnet creado. Falta publicar su página.'); cargar();
+  });
+  $('b-csv').addEventListener('click', function () {
+    var nom = {}; D.magnets.forEach(function (m) { nom[m.id] = m.nombre; });
+    // un valor que empieza por = + - @ se antepone con ' para que la hoja de cálculo no lo lea como fórmula
+    var c = function (v) { v = String(v == null ? '' : v); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; return '"' + v.replace(/"/g, '""') + '"'; };
+    var filas = [['lead_magnet', 'nombre', 'correo', 'acepta_emails', 'whatsapp', 'tienda', 'utm_source', 'utm_campaign', 'fecha']].concat(D.leads.map(function (l) {
+      return [nom[l.lead_magnet_id], l.nombre, l.email, l.acepta_ofertas ? 'sí' : 'no', l.whatsapp, l.tienda_url, l.utm_source, l.utm_campaign, l.created_at]; }));
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + filas.map(function (f) { return f.map(c).join(','); }).join('\n')], { type: 'text/csv' }));
+    a.download = 'contactos-lead-magnets.csv'; a.click();
+  });
+})();
+</script>
+</body>
+</html>
