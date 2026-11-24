@@ -65,3 +65,8 @@ create policy "admin ingresos" on public.ingresos for all to authenticated using
 alter table public.leads
   add column if not exists acepta_ofertas boolean not null default false,
   add column if not exists consentimiento_texto text check (consentimiento_texto is null or length(consentimiento_texto) <= 500);
+
+-- Lead magnet DASHBOARD (skill de Claude: dashboard en vivo de tu tienda)
+insert into public.lead_magnets (slug, nombre, palabra_clave, url_recurso, activo)
+values ('dashboard','Skill de Claude: dashboard en vivo de tu tienda','DASHBOARD','https://landing.larealmarketing.com/assets/lm/dashboard-en-vivo.zip', true)
+on conflict (slug) do nothing;

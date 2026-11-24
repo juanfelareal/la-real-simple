@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1382774486651868');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1382774486651868&ev=PageView&noscript=1"
+/></noscript>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Skill de Claude: dashboard en vivo de tu tienda · Juanfe León</title>
+<meta name="description" content="Un skill de Claude que conecta tu Shopify y tu cuenta de Meta Ads y te arma un dashboard en vivo: venta neta, pedidos, inversión, ROAS y productos estrella." />
+<meta name="theme-color" content="#F3F1ED" />
+<meta property="og:title" content="Tu tienda y tu pauta, en vivo, en un solo tablero" />
+<meta property="og:description" content="Skill de Claude gratis: el dashboard que usamos en LA REAL para ver a nuestras marcas en Black Days." />
+<meta property="og:image" content="https://landing.larealmarketing.com/assets/icon-192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/lr-min.css" />
+<link rel="stylesheet" href="assets/lm.css" />
+<link rel="stylesheet" href="assets/cross.css" />
+<link rel="stylesheet" href="assets/dashboard-lm.css" />
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="./" class="brand"><img src="assets/brand/iso-navy-sm.png" alt="">LA REAL</a>
+    <a class="btn btn-ghost" href="./#servicios">Ver servicios</a>
+  </div>
+</header>
+<main class="cx dx">
+  <section class="wrap cx-hero">
+    <div class="cx-copy">
+      <p class="label hero-label"><span class="dot"></span>Skill de Claude · Gratis</p>
+      <h1 class="h1">Tu tienda y tu pauta, <b>en vivo, en un solo tablero.</b></h1>
+      <p class="lead">Un skill de Claude que conecta tu Shopify y tu cuenta de Meta Ads y te arma el mismo dashboard que usamos en LA REAL para ver a nuestras marcas en Black Days.</p>
+      <ul class="lm-list">
+        <li>Venta neta, pedidos, ticket, inversión y el ROAS real de tu tienda.</li>
+        <li>Cómo va hoy frente a un día normal, hora por hora.</li>
+        <li>Tus productos estrella y cada pedido nuevo apenas entra.</li>
+      </ul>
+      <form class="cx-form" id="lm-form" novalidate>
+        <div class="cx-two">
+          <label class="lm-field"><span>Nombre</span><input name="nombre" autocomplete="given-name" maxlength="120" required /></label>
+          <label class="lm-field"><span>Correo</span><input name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" required /></label>
+        </div>
+        <label class="lm-field"><span>Link de tu tienda <em class="cx-opt">(opcional)</em></span><input name="tienda" inputmode="url" autocomplete="url" maxlength="300" placeholder="tutienda.com" /></label>
+        <label class="cx-check"><input type="checkbox" name="ofertas" id="lm-ofertas" checked /><span id="lm-ofertas-txt">Quiero recibir ideas y ofertas de Juanfe por email. <b>Cero spam</b>, y te sales cuando quieras.</span></label>
+        <button class="btn btn-dark" type="submit" id="lm-send">Quiero el skill</button>
+        <p class="lm-msg" id="lm-msg" role="status"></p>
+        <p class="lm-fine">LA REAL MARKETING S.A.S. guarda tu nombre y tu correo para enviarte el skill y, si dejas la casilla marcada, para escribirte. <a href="politica-de-datos.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Política de tratamiento de datos</a>.</p>
+      </form>
+      <div class="cx-ok" id="lm-ok" hidden>
+        <p class="label"><span class="dot"></span>Listo</p>
+        <h2 class="h2">Tu skill está <b>listo.</b></h2>
+        <a class="btn btn-dark" id="lm-dl" href="assets/lm/dashboard-en-vivo.zip" download>Descargar el skill (.zip)</a>
+        <div class="cx-steps">
+          <div class="cx-step"><small>Paso 1</small><h3>Activa la ejecución de código</h3><p>En Claude, Settings › Capabilities.</p>
+            <div class="cx-ui"><div class="path">Settings › Capabilities</div><div class="cx-tog"><span>Code execution and file creation</span><i class="cx-sw"></i></div></div></div>
+          <div class="cx-step"><small>Paso 2</small><h3>Sube el skill</h3><p>Customize › Skills › + › Upload a skill. Sube el .zip tal cual.</p>
+            <div class="cx-ui"><div class="path">Customize › Skills › Upload a skill</div><div class="cx-file">dashboard-en-vivo.zip</div></div></div>
+          <div class="cx-step"><small>Paso 3</small><h3>Conecta Shopify y Meta Ads</h3><p>En un chat: + › Connectors › Manage connectors. Meta Ads es opcional; sin él, el tablero sale sin inversión ni ROAS.</p>
+            <div class="cx-ui"><div class="path">+ › Connectors</div><div class="cx-tog"><span>Shopify</span><i class="cx-sw"></i></div><div class="cx-tog"><span>Meta Ads</span><i class="cx-sw"></i></div></div></div>
+          <div class="cx-step"><small>Paso 4</small><h3>Pídele tu dashboard</h3><p>Escríbele en un chat nuevo:</p>
+            <div class="cx-ui"><div class="cx-bub"><span id="lm-ask"></span><i class="car"></i></div></div></div>
+        </div>
+        <p class="lm-fine" style="margin-top:18px">Funciona con el plan gratis de Claude. Necesitas una tienda en Shopify; la cuenta de Meta Ads es opcional. El skill solo lee datos: nunca cambia nada en tu tienda ni en tus anuncios.</p>
+        <a class="cx-more" href="./#servicios">Mientras tanto, mira cómo trabajamos en LA REAL →</a>
+      </div>
+    </div>
+    <aside class="cx-demo dx-demo" aria-label="Ejemplo del dashboard">
+      <div class="cx-bar"><i></i><i></i><i></i><span>Dashboard · tu tienda</span></div>
+      <div class="dx-top"><span class="dx-live"><i></i>EN VIVO</span><span class="dx-upd" id="dx-upd">cada 30 s</span></div>
+      <small class="dx-k">Venta neta en campaña</small>
+      <div class="dx-big" id="dx-big">$ 0</div>
+      <div class="dx-row"><span>Pedidos <b id="dx-ped">0</b></span><span>Ticket <b>$ 153.395</b></span><span>ROAS <b>6,0x</b></span></div>
+      <div class="dx-minis">
+        <div><small>Hoy hasta ahora</small><b id="dx-hoy">$ 0</b></div>
+        <div><small>Inversión</small><b>$ 4.120.000</b></div>
+      </div>
+      <small class="dx-k">Pulso por hora · hoy vs. un día normal</small>
+      <div class="dx-bars" id="dx-bars"></div>
+      <p class="cx-cap">Vista de ejemplo con datos de prueba</p>
+    </aside>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/lm-config.js"></script>
+<script>
+(function () {
+  // demo del dashboard
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fmt = function (v) { return '$ ' + Math.round(v).toLocaleString('es-CO'); };
+  var H = [18,4,0,0,0,3,12,41,69,98,115,0], N = [4,2,1,1,1,2,5,7,9,11,10,10];
+  var bars = document.getElementById('dx-bars');
+  H.forEach(function (v, i) { var c = document.createElement('div'); c.className = 'dx-col';
+    c.innerHTML = '<i class="dx-n" style="bottom:' + N[i] * 0.8 + '%"></i><span style="--h:' + (v ? Math.max(4, v * 0.8) : 0) + '%"' + (i === 10 ? ' class="now"' : '') + '></span>'; bars.appendChild(c); });
+  function count(el, to, dur) { var t0 = null; (function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / dur); el.textContent = el.id === 'dx-ped' ? Math.round(to * (1 - Math.pow(1 - p, 3))) : fmt(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(performance.now()); }
+  setTimeout(function () { bars.classList.add('on'); }, still ? 0 : 300);
+  count(document.getElementById('dx-big'), 24850000, still ? 1 : 1600); count(document.getElementById('dx-ped'), 162, still ? 1 : 1600); count(document.getElementById('dx-hoy'), 6320000, still ? 1 : 1600);
+  if (!still) { var big = 24850000, hoy = 6320000, ped = 162;
+    setInterval(function () { var add = 40000 + Math.round(Math.random() * 160000); big += add; hoy += add; ped += 1;
+      document.getElementById('dx-big').textContent = fmt(big); document.getElementById('dx-hoy').textContent = fmt(hoy); document.getElementById('dx-ped').textContent = ped;
+      var b = document.getElementById('dx-big'); b.classList.remove('tick'); void b.offsetWidth; b.classList.add('tick'); }, 4000); }
+  // registro
+  var SLUG = 'dashboard';
+  var db = supabase.createClient(LM_CONFIG.url, LM_CONFIG.key);
+  var form = document.getElementById('lm-form'), msg = document.getElementById('lm-msg'), btn = document.getElementById('lm-send');
+  var q = new URLSearchParams(location.search), magnet = null;
+  db.from('lead_magnets').select('id,url_recurso').eq('slug', SLUG).maybeSingle().then(function (r) { magnet = r.data; });
+  function typeAsk() {
+    var txt = 'Arma mi dashboard de Black Friday', el = document.getElementById('lm-ask'), i = 0;
+    (function tick() { el.textContent = txt.slice(0, ++i); if (i < txt.length) setTimeout(tick, 45); })();
+  }
+  function done() {
+    form.hidden = true; document.querySelector('.cx-hero').classList.add('done');
+    var ok = document.getElementById('lm-ok');
+    if (magnet && magnet.url_recurso && location.protocol !== 'file:') document.getElementById('lm-dl').href = magnet.url_recurso;
+    ok.hidden = false; ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { ok.classList.add('go'); }, 600); typeAsk();
+    if (window.fbq) fbq('track', 'Lead');
+  }
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); msg.className = 'lm-msg'; msg.textContent = '';
+    var nombre = form.nombre.value.trim(), email = form.email.value.trim().toLowerCase();
+    var tienda = form.tienda.value.trim().replace(/^https?:\/\//i, '').replace(/\/$/, '').slice(0, 300);
+    var acepta = document.getElementById('lm-ofertas').checked;
+    if (!nombre || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.className = 'lm-msg err'; msg.textContent = 'Escribe tu nombre y un correo válido.'; return; }
+    if (!magnet) { msg.className = 'lm-msg err'; msg.textContent = 'No pudimos cargar el skill. Recarga la página e intenta de nuevo.'; return; }
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    var r = await db.from('leads').insert({ lead_magnet_id: magnet.id, nombre: nombre, email: email, tienda_url: tienda || null,
+      acepta_ofertas: acepta, consentimiento_texto: acepta ? document.getElementById('lm-ofertas-txt').textContent.trim() : null,
+      utm_source: (q.get('utm_source') || '').slice(0, 120) || null, utm_medium: (q.get('utm_medium') || '').slice(0, 120) || null, utm_campaign: (q.get('utm_campaign') || '').slice(0, 120) || null });
+    // 23505 = ese correo ya estaba registrado en este lead magnet: igual se lo entregamos
+    if (r.error && r.error.code !== '23505') { btn.disabled = false; btn.textContent = 'Quiero el skill'; msg.className = 'lm-msg err'; msg.textContent = 'No se pudo guardar. Intenta de nuevo en un momento.'; return; }
+    done();
+  });
+})();
+</script>
+</body>
+</html>
